@@ -24,18 +24,6 @@ xxxx
 
 ## Como se ejecuta
 
-### Bien representado
-
-#### Porcentaje y cambio de la representatividad de la riqueza de especies
-
-#### Cambio en la media de representatividad de la distribución de especies
-
-#### Cambio en la media de representatividad de la integridad 
-
-### Bien conectado: 
-
-#### cambio en el porcentaje de conectividad. 
-
 
 ## Autores y contacto
 
