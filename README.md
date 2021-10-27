@@ -1,4 +1,4 @@
-# indicadores-sinap
+# Scripts ANH
 
 Descripción productos ronda 1 de análisis de diversidad. Proyecto ANH-PPII
 
