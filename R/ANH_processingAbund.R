@@ -4,9 +4,10 @@
 #Script to get basic biodiversity analyses for ANH
 
 #0) Load required libraries
-rqurd<-c("openxlsx","BiodiversityR","MASS","tidyverse","data.table","iNEXT",'reshape2','ggpubr',
-         'ggpmisc','evaluate')#,"maptools","rgdal","sp","lattice","ggplot2","rgeos","ade4","Rtsne","reshape2")
-for(p in rqurd ){
+rqurd <- c("openxlsx","BiodiversityR","MASS","tidyverse","data.table","iNEXT",'reshape2','ggpubr',
+           "ggpmisc",'evaluate',"maptools","rgdal","sp","lattice","ggplot2","rgeos","ade4","Rtsne","reshape2")
+
+for (p in rqurd ){
   if (!is.element(p, installed.packages()[,1])){			#if package is not installed
     # r <- getOption("repos")								#assign R mirror for download
     # r["CRAN"] <- "http://cran.us.r-project.org"
@@ -25,6 +26,7 @@ library(ggrepel)
 
 source(file.path("C:","Users","dsrbu","Dropbox","Humboldt","6_RcodeRepository",
                  "14_Script_others","NEwR-2ed_code_data","NEwR2-Functions","cleanplot.pca.R"))
+
 #0b) Define working directories
 
 WDOut<-file.path('G:','My Drive','DiseñoAnalisis_PPII','Analisis','SalidasPreliminares','Peces')
