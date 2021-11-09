@@ -1,6 +1,7 @@
 #Date.created Sep.22.2021
 #Dat.Modified Oct.11.2021
 
+library(stringi)
 #Script to get basic biodiversity analyses for ANH
 
 # 0a) Call packages and install them if required
@@ -19,38 +20,66 @@ WDCov <- WDobjects$WDCov
 WDOut <- WDobjects$WDOut
 
 
-
 source(file.path("C:","Users","dsrbu","Dropbox","Humboldt","6_RcodeRepository",
                  "14_Script_others","NEwR-2ed_code_data","NEwR2-Functions","cleanplot.pca.R"))
 
 
 #1) covariances
-covbk<-read.xlsx((file.path(WDCov,"BDPuntosMuestreoMag1910.xlsx")))
-#names(covbk)[c(2,22,23)]<-c('parentEventID','CobSR','Cobertura')
-names(covbk)[c(2,23,24)]<-c('parentEventID','CobSR','Cobertura')
-covbk$Cobertura[is.na(covbk$Cobertura)]<-covbk$CobSR[is.na(covbk$Cobertura)]
-covbk$Cobertura[covbk$Cobertura=="Bosque denso"]<-"Bosque Denso"
-covbk$Cobertura[covbk$Cobertura=="Herbazales"]<-"Herbazal"
-covbk$Cobertura[covbk$Cobertura=="Cienagas"]<-"Cienaga"
-covbk$Cobertura[covbk$Cobertura=="Ciénaga"]<-"Cienaga"
-covbk$Cobertura<-factor(covbk$Cobertura,levels=c("Rios","Cienaga","Zonas Pantanosas","Otros Cuerpos Agua",
-                                                    "Herbazal","Bosque Ripario",
-                                                    "Bosque Denso","Bosque Abierto","Vegetacion Secundaria",
-                                                    "Palma","Cultivos","Pastos","Zonas Desnudas Degradadas",
-                                                 "Vias","Area Urbana"))
-spa.c<-c("decimalLat","decimalLon")
-cat.c<-c("Plataf","Red.Hidrica","Orden")
-v.pres<-c("Dis_CP","Dis_Oleodu", "Dis_Pozo","Dis_Pozact","Dis_Ferroc","Dis_ViaPri","Dia_ViaSec")
-v.rec<-c("Dis_Cienag","Dis_MGSG")#, "DisBosque","Dis_CobNat","Tam_Parche")
+
+# read excel file of covariances
+covbk <- read.xlsx((file.path(WDCov,"BDPuntosMuestreoMag1910.xlsx")))
+
+# rename some covariables
+covbk <- rename(covbk, 'parentEventID' = 'parentEven', 'CobSR' = 'Cobertura')
+
+# rename and fill cobertures with habitat if them exist
+
+if(which(names(covbk) == "CobertXHabitat") != 0){
+  covbk <- rename(covbk, 'Cobertura' = 'CobertXHabitat')
+  covbk$Cobertura[is.na(covbk$Cobertura)]<-covbk$CobSR[is.na(covbk$Cobertura)]
+} 
+  
+# reconcile names of cobertures and change to factors
+
+tosave = covbk$Cobertura
+for(i in 1:length(unique(covbk$Cobertura))){
+  similar <- unique(covbk$Cobertura)[agrep(unique(covbk$Cobertura)[i], unique(covbk$Cobertura), max.distance = 0.2)] %>% 
+    stri_trans_general(id = "Latin-ASCII")
+  if(length(similar) > 1){
+    for(j in 1:length(similar)){
+      tosave[which(tosave == unique(covbk$Cobertura)[i])] <- similar[1]
+    }  
+  }
+}
+
+covbk$Cobertura <- tosave %>% as.factor()
+
+
+# Spatial columns
+spa.c <- c("decimalLat","decimalLon")
+
+# categoric columns
+cat.c <- c("Plataf","Red.Hidrica","Orden")
+
+# human pressure vector
+v.pres <- c("Dis_CP","Dis_Oleodu", "Dis_Pozo","Dis_Pozact","Dis_Ferroc","Dis_ViaPri","Dia_ViaSec")
+
+# environmnet vector
+v.rec <- c("Dis_Cienag","Dis_MGSG")#, "DisBosque","Dis_CobNat","Tam_Parche")
+
+# ????
 v.msite<-NULL
-##verify names
-names(covbk)[grep("[E|e]ven",names(covbk))]<-c('eventID','parentEventID')
-covbk$parentEventID<-trimws(gsub("-","_",covbk$parentEventID))
-covbk$eventID<-trimws(gsub("-","_",covbk$eventID))
-covbk<-covbk%>%select(-c('Tipo','GrupoBiolo'))
+
+
+# 1a) #verify names
+
+names(covbk)[grep("[E|e]ven",names(covbk))] <- c('eventID','parentEventID')
+covbk$parentEventID <- trimws(gsub("-", "_", covbk$parentEventID))
+covbk$eventID <- trimws(gsub("-", "_", covbk$eventID))
+covbk <- covbk %>% select(c('Tipo', 'GrupoBiolo'))
+
 #1b) micro habitat covariates
-CovM<-read.xlsx(file.path('G:','My Drive','DiseñoAnalisis_PPII',
-                           'Analisis','Covariables','variablesAmbientales_microH.xlsx'),sheet=1,startRow = 3 )
+CovM <- read.xlsx(file.path(WDCov,'variablesAmbientales_microH.xlsx'), sheet = 1, startRow = 3 )
 names(CovM)[c(1,2,3,5,6,7,8,18,19)]<-c('parentEventID','Plataf','Temp','OxgD','Cond','Pgras','Mflot','Vrip','Cdos')
 #transformation
 CovM$Log_Cond<-log10(CovM$Cond)
