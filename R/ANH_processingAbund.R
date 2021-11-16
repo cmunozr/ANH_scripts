@@ -1,7 +1,6 @@
 #Date.created Sep.22.2021
 #Dat.Modified Oct.11.2021
 
-library(stringi)
 #Script to get basic biodiversity analyses for ANH
 
 # 0a) Call packages and install them if required
@@ -12,7 +11,8 @@ do.install(rqurd = vector.rqurd)
 
 #0b) Define working directories
 
-WDobjects <- do.folderStructure(taxon = "Mamiferos")
+working_taxon <- dlgInput("Taxon to work")$res
+WDobjects <- do.folderStructure(taxon = working_taxon)
 
 WDIn <- WDobjects$WDIn
 WDIn2 <-  WDobjects$WDIn2
@@ -23,8 +23,11 @@ WDOut <- WDobjects$WDOut
 source(file.path("C:","Users","dsrbu","Dropbox","Humboldt","6_RcodeRepository",
                  "14_Script_others","NEwR-2ed_code_data","NEwR2-Functions","cleanplot.pca.R"))
 
+##################################################
 
-#1) covariances
+#1) covariances database
+
+# 1.a) Preprocesing covars
 
 # read excel file of covariances
 covbk <- read.xlsx((file.path(WDCov,"BDPuntosMuestreoMag1910.xlsx")))
@@ -54,44 +57,72 @@ for(i in 1:length(unique(covbk$Cobertura))){
 
 covbk$Cobertura <- tosave %>% as.factor()
 
+# 1.b) selecting covariables/ Only one time
 
 # Spatial columns
-spa.c <- c("decimalLat","decimalLon")
+spa.c <- dlgInput("Latitude and longitude columns name (separe by comma)")$res %>% process_input()
+  # c("decimalLat","decimalLon")  
 
+                
 # categoric columns
-cat.c <- c("Plataf","Red.Hidrica","Orden")
+cat.c <- dlgInput("Column names of categorical covariables to work in the analysis (separe by comma)")$res %>% 
+  process_input() #c("Plataf","Red.Hidrica","Orden")
 
 # human pressure vector
-v.pres <- c("Dis_CP","Dis_Oleodu", "Dis_Pozo","Dis_Pozact","Dis_Ferroc","Dis_ViaPri","Dia_ViaSec")
+v.pres <- dlgInput("Column names of Human pressure covariables (separe by comma)")$res %>% 
+  process_input() #c("Dis_CP","Dis_Oleodu", "Dis_Pozo","Dis_Pozact","Dis_Ferroc","Dis_ViaPri","Dia_ViaSec")
 
 # environmnet vector
-v.rec <- c("Dis_Cienag","Dis_MGSG")#, "DisBosque","Dis_CobNat","Tam_Parche")
+v.rec <- dlgInput("Column names of Environmental distance covariables (separe by comma)")$res %>% 
+  process_input() #c("Dis_Cienag","Dis_MGSG")#, "DisBosque","Dis_CobNat","Tam_Parche")
 
-# ????
-v.msite<-NULL
-
-
-# 1a) #verify names
+# 1b) #verify names
 
 names(covbk)[grep("[E|e]ven",names(covbk))] <- c('eventID','parentEventID')
 covbk$parentEventID <- trimws(gsub("-", "_", covbk$parentEventID))
 covbk$eventID <- trimws(gsub("-", "_", covbk$eventID))
-covbk <- covbk %>% select(c('Tipo', 'GrupoBiolo'))
+covbk <- covbk %>% select(-c('Tipo', 'GrupoBiolo'))
+
 
 #1b) micro habitat covariates
-CovM <- read.xlsx(file.path(WDCov,'variablesAmbientales_microH.xlsx'), sheet = 1, startRow = 3 )
-names(CovM)[c(1,2,3,5,6,7,8,18,19)]<-c('parentEventID','Plataf','Temp','OxgD','Cond','Pgras','Mflot','Vrip','Cdos')
-#transformation
-CovM$Log_Cond<-log10(CovM$Cond)
-CovM[is.na(CovM)]<-0
-v.msite<-names(CovM)[c(3,4,5,13,17,18,19,20)]
-#Join cov for fish only
-covbk<-covbk%>%select(-Plataf)%>%inner_join(.,CovM,by="parentEventID")
 
-cov<-covbk
+CovM <- read.xlsx(file.path(WDCov,'variablesAmbientales_microH.xlsx'), sheet = 1, startRow = 3 )
+
+renameBool <- dlgInput("Do you want to rename Micro-Habitat variables? (TRUE or FALSE)")$res %>% as.logical()
+
+if(renameBool == T){
+  if(!exists("where") | !exists("by")){
+    where = dlgInput("Position of columns to rename (separe by comma)")$res %>% 
+      process_input() %>% as.numeric() # c(1,2,3,5,6,7,8,18,19)
+    by = dlgInput("New names for columns (separe by comma)")$res %>% 
+      process_input() # c('parentEventID','Plataf','Temp','OxgD','Cond','Pgras','Mflot','Vrip','Cdos')  
+  }
+  names(CovM)[where]<- by
+}
+
+
+# transformation
+
+CovM$Log_Cond <- log10(CovM$Cond)
+CovM[is.na(CovM)] <- 0
+
+col_msite <- dlgInput("Position of covar columns to use inside the analysis (separe by comma)")$res %>% 
+  process_input() %>% as.numeric()
+v.msite <- names(CovM)[col_msite] # c(3,4,5,13,17,18,19,20)
+
+#Join cov for fish only
+
+bool_aqu <- dlgInput("Is your working taxon an aquatic one? (TRUE or FALSE")$res %>% process_input()
+if(bool_aqu == T){
+  covbk <- covbk %>% select(-Plataf) %>% inner_join(., CovM,by="parentEventID")  
+}
+
+##################################################
 
 #2) group specific variables
-## section to verify that names of the columns is consistent
+
+# 2a) section to verify that names of the columns is consistent
+
 catnm<-"Orden" #main factor for análisis
 gnm<-"Pec" #group prefix
 cnm.smp<-c("samplingEffort","samplingProtocol") #from data

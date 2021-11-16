@@ -2,7 +2,7 @@
 
 vector.rqurd <- c("openxlsx", "BiodiversityR", "MASS", "tidyverse", "data.table", "iNEXT", "reshape2", "ggpubr",
            "ggpmisc", "evaluate", "maptools", "rgdal", "sp", "lattice", "ggplot2", "rgeos", "ade4", "Rtsne",
-           "reshape2", "devtools")
+           "reshape2", "devtools", "stringi", "svDialogs")
 
 
 # Function to install required packages

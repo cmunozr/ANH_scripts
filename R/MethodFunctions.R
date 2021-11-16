@@ -1,5 +1,13 @@
 # Metodological functions
 
+# Process input users
+
+process_input <- function(input){
+  res_input <- input %>% gsub(pattern = " ", replacement = "") %>% 
+    strsplit(",") %>% unlist()
+}
+
+
 # XXXXXXXXXXXX
 
 complete_cols <- function(BD_registros, BD_eventos, link, vector_cols){
