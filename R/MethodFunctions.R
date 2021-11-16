@@ -1,32 +1,5 @@
 # Metodological functions
 
-# Process input users
-
-process_input <- function(input){
-  res_input <- input %>% gsub(pattern = " ", replacement = "") %>% 
-    strsplit(",") %>% unlist()
-}
-
-
-# XXXXXXXXXXXX
-
-complete_cols <- function(BD_registros, BD_eventos, link, vector_cols){
-  
-  col_registros <- colnames(BD_registros)
-  
-  missing_cols <- vector_cols[which(!vector_cols %in% col_registros)]
-  
-  if(!is.null(missing_cols)){
-    for(i in 1:unique(length(BD_eventos[, link]))){
-      Missed_Data <- BD_eventos[i, missing_cols]
-      link_index <- which(BD_registros[, link] == unique(BD_eventos[i, link]))
-      BD_registros[link_index, missing_cols] <- Missed_Data
-    }
-    return(BD_registros)
-  }else{
-    return(BD_registros)
-  }
-}
 
 # XXXXXXXXXXXXXXX
 

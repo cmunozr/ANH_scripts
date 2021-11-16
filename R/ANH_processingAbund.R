@@ -44,18 +44,8 @@ if(which(names(covbk) == "CobertXHabitat") != 0){
   
 # reconcile names of cobertures and change to factors
 
-tosave = covbk$Cobertura
-for(i in 1:length(unique(covbk$Cobertura))){
-  similar <- unique(covbk$Cobertura)[agrep(unique(covbk$Cobertura)[i], unique(covbk$Cobertura), max.distance = 0.2)] %>% 
-    stri_trans_general(id = "Latin-ASCII")
-  if(length(similar) > 1){
-    for(j in 1:length(similar)){
-      tosave[which(tosave == unique(covbk$Cobertura)[i])] <- similar[1]
-    }  
-  }
-}
+covbk$Cobertura <- homolog_factors(covbk, "Cobertura")
 
-covbk$Cobertura <- tosave %>% as.factor()
 
 # 1.b) selecting covariables/ Only one time
 
@@ -89,7 +79,6 @@ covbk <- covbk %>% select(-c('Tipo', 'GrupoBiolo'))
 CovM <- read.xlsx(file.path(WDCov,'variablesAmbientales_microH.xlsx'), sheet = 1, startRow = 3 )
 
 renameBool <- dlgInput("Do you want to rename Micro-Habitat variables? (TRUE or FALSE)")$res %>% as.logical()
-
 if(renameBool == T){
   if(!exists("where") | !exists("by")){
     where = dlgInput("Position of columns to rename (separe by comma)")$res %>% 
@@ -99,7 +88,6 @@ if(renameBool == T){
   }
   names(CovM)[where]<- by
 }
-
 
 # transformation
 
@@ -112,7 +100,7 @@ v.msite <- names(CovM)[col_msite] # c(3,4,5,13,17,18,19,20)
 
 #Join cov for fish only
 
-bool_aqu <- dlgInput("Is your working taxon an aquatic one? (TRUE or FALSE")$res %>% process_input()
+bool_aqu <- dlgInput("Is your working taxon a fish or related? (TRUE or FALSE")$res %>% process_input()
 if(bool_aqu == T){
   covbk <- covbk %>% select(-Plataf) %>% inner_join(., CovM,by="parentEventID")  
 }
@@ -123,26 +111,42 @@ if(bool_aqu == T){
 
 # 2a) section to verify that names of the columns is consistent
 
-catnm<-"Orden" #main factor for análisis
-gnm<-"Pec" #group prefix
-cnm.smp<-c("samplingEffort","samplingProtocol") #from data
-kpv<-c(ls(),'kpv') #variables to keep all the time
+catnm <- dlgInput("Main factor for analisis")$res %>% process_input() #"Orden"
+gnm <- dlgInput("Group prefix")$res %>% process_input() #"Pec" #group prefix
+cnm.smp <- c("samplingEffort","samplingProtocol") #from data
+kpv <- c(ls(),'kpv') #variables to keep all the time
 
 
 #2b) get raw data
+# preguntar en donde inician los datos
 Data.e<-read.xlsx(file.path(WDIn2,"I2D-BIO_2021_049_v2.xlsx"), sheet=1, startRow = 1, na.strings = "N/A")
 Data.r<-read.xlsx(file.path(WDIn2,"I2D-BIO_2021_049_v2.xlsx"), sheet=2, startRow = 1, na.strings = "N/A")
+
+Data.e<-read.xlsx(file.path(WDIn2,"I2D-BIO_2021_056_1.xlsx"), sheet=1, startRow = 2, na.strings = "N/A")
+Data.r<-read.xlsx(file.path(WDIn2,"I2D-BIO_2021_056_1.xlsx"), sheet=2, startRow = 2, na.strings = "N/A")
+
+
 #quality checks##
-###this applies for fish ###
-unique(Data.e$samplingProtocol)
-Data.e$samplingProtocol[Data.e$samplingProtocol=="Red de arrastre"|Data.e$samplingProtocol=="Red de Arrastre"]<-"Arrastre"
-Data.e$samplingProtocol[Data.e$samplingProtocol=="trasmallo"]<-"Trasmallo"
-unique(Data.e$samplingProtocol)
-### This applies for birds###
-names(Data.e)[2]<-'parentEventID'
-Data.e$samplingEffort[is.na(Data.e$samplingEffort)]<-0
-### This applies for herpetos###
-Data.e$samplingProtocol<-'VES'
+
+bool_herp <- dlgInput("Is your working taxon an herpetou species or related? (TRUE or FALSE)")$res %>% process_input()
+
+if(bool_herp == T){
+  Data.e$samplingProtocol <- 'VES'
+}
+
+# # reconcile names of sampling protocol and change to factors
+
+Data.e$samplingProtocol <- homolog_factors(Data.e, "samplingProtocol") 
+
+# 
+
+if(sum(grepl(pattern = 'parentEventID', colnames(Data.e))) == 0){
+  col_parentEventID <- dlgInput("Type position column of 'parentEventID' (numeric)")$res %>% process_input()
+  names(Data.e)[col_parentEventID] <- 'parentEventID'  
+}
+
+Data.e$samplingEffort[is.na(Data.e$samplingEffort)] <- 0
+
 
 #2c) complete columns
 #regular expression that varies by group:
