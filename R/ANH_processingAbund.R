@@ -6,6 +6,9 @@
 # 0a) Call packages and install them if required
 
 source(file.path(getwd(), "R", "Setup.R"))
+source(file.path(getwd(), "R", "Miscelanea.R"))
+source(file.path(getwd(), "R", "GraphicalFunctions.R"))
+source(file.path(getwd(), "R", "Miscelanea.R"))
 
 do.install(rqurd = vector.rqurd)
 
@@ -20,8 +23,8 @@ WDCov <- WDobjects$WDCov
 WDOut <- WDobjects$WDOut
 
 
-source(file.path("C:","Users","dsrbu","Dropbox","Humboldt","6_RcodeRepository",
-                 "14_Script_others","NEwR-2ed_code_data","NEwR2-Functions","cleanplot.pca.R"))
+#source(file.path("C:","Users","dsrbu","Dropbox","Humboldt","6_RcodeRepository",
+#                 "14_Script_others","NEwR-2ed_code_data","NEwR2-Functions","cleanplot.pca.R"))
 
 ##################################################
 
@@ -51,20 +54,20 @@ covbk$Cobertura <- homolog_factors(covbk, "Cobertura")
 
 # Spatial columns
 spa.c <- dlgInput("Latitude and longitude columns name (separe by comma)")$res %>% process_input()
-  # c("decimalLat","decimalLon")  
+  # decimalLat, decimalLon  
 
                 
 # categoric columns
 cat.c <- dlgInput("Column names of categorical covariables to work in the analysis (separe by comma)")$res %>% 
-  process_input() #c("Plataf","Red.Hidrica","Orden")
+  process_input() #Plataf, Red.Hidrica, Orden
 
 # human pressure vector
 v.pres <- dlgInput("Column names of Human pressure covariables (separe by comma)")$res %>% 
-  process_input() #c("Dis_CP","Dis_Oleodu", "Dis_Pozo","Dis_Pozact","Dis_Ferroc","Dis_ViaPri","Dia_ViaSec")
+  process_input() #Dis_CP, Dis_Oleodu, Dis_Pozo, Dis_Pozact, Dis_Ferroc, Dis_ViaPri, Dia_ViaSec
 
 # environmnet vector
 v.rec <- dlgInput("Column names of Environmental distance covariables (separe by comma)")$res %>% 
-  process_input() #c("Dis_Cienag","Dis_MGSG")#, "DisBosque","Dis_CobNat","Tam_Parche")
+  process_input() #Dis_Cienag, Dis_MGSG #DisBosque, Dis_CobNat, Tam_Parche
 
 # 1b) #verify names
 
@@ -82,9 +85,9 @@ renameBool <- dlgInput("Do you want to rename Micro-Habitat variables? (TRUE or 
 if(renameBool == T){
   if(!exists("where") | !exists("by")){
     where = dlgInput("Position of columns to rename (separe by comma)")$res %>% 
-      process_input() %>% as.numeric() # c(1,2,3,5,6,7,8,18,19)
-    by = dlgInput("New names for columns (separe by comma)")$res %>% 
-      process_input() # c('parentEventID','Plataf','Temp','OxgD','Cond','Pgras','Mflot','Vrip','Cdos')  
+      process_input() %>% as.numeric() # 1,2,3,5,6,7,8,18,19
+    by = dlgInput("New names for columns (separe by comma). Must match with number of columns position.")$res %>% 
+      process_input() # parentEventID, Plataf, Temp, OxgD, Cond, Pgras, Mflot, Vrip, Cdos  
   }
   names(CovM)[where]<- by
 }
@@ -96,7 +99,7 @@ CovM[is.na(CovM)] <- 0
 
 col_msite <- dlgInput("Position of covar columns to use inside the analysis (separe by comma)")$res %>% 
   process_input() %>% as.numeric()
-v.msite <- names(CovM)[col_msite] # c(3,4,5,13,17,18,19,20)
+v.msite <- names(CovM)[col_msite] # 3,4,5,13,17,18,19,20
 
 #Join cov for fish only
 
@@ -109,26 +112,28 @@ if(bool_aqu == T){
 
 #2) group specific variables
 
-# 2a) section to verify that names of the columns is consistent
+# 2a) section to verify if column names are consistent
 
-catnm <- dlgInput("Main factor for analisis")$res %>% process_input() #"Orden"
-gnm <- dlgInput("Group prefix")$res %>% process_input() #"Pec" #group prefix
+catnm <- dlgInput("Main factor for analisis")$res %>% process_input() # Orden
+gnm <- dlgInput("Group prefix")$res %>% process_input() # Pec #group prefix
 cnm.smp <- c("samplingEffort","samplingProtocol") #from data
 kpv <- c(ls(),'kpv') #variables to keep all the time
 
 
 #2b) get raw data
 # preguntar en donde inician los datos
-Data.e<-read.xlsx(file.path(WDIn2,"I2D-BIO_2021_049_v2.xlsx"), sheet=1, startRow = 1, na.strings = "N/A")
-Data.r<-read.xlsx(file.path(WDIn2,"I2D-BIO_2021_049_v2.xlsx"), sheet=2, startRow = 1, na.strings = "N/A")
 
-Data.e<-read.xlsx(file.path(WDIn2,"I2D-BIO_2021_056_1.xlsx"), sheet=1, startRow = 2, na.strings = "N/A")
-Data.r<-read.xlsx(file.path(WDIn2,"I2D-BIO_2021_056_1.xlsx"), sheet=2, startRow = 2, na.strings = "N/A")
+StartRow <- dlgInput("In which row the information start inside the database (numeric) ")$res %>% process_input() %>%
+  as.numeric() # 1
+DataBaseName <- "I2D-BIO_2021_049_v2.xlsx"
+
+Data.e<-read.xlsx(file.path(WDIn2, DataBaseName), sheet=1, startRow = StartRow, na.strings = "N/A")
+Data.r<-read.xlsx(file.path(WDIn2, DataBaseName), sheet=2, startRow = StartRow, na.strings = "N/A")
 
 
 #quality checks##
 
-bool_herp <- dlgInput("Is your working taxon an herpetou species or related? (TRUE or FALSE)")$res %>% process_input()
+bool_herp <- dlgInput("Is your working taxon an herpetous species or related? (TRUE or FALSE)")$res %>% process_input()
 
 if(bool_herp == T){
   Data.e$samplingProtocol <- 'VES'
@@ -149,50 +154,64 @@ Data.e$samplingEffort[is.na(Data.e$samplingEffort)] <- 0
 
 
 #2c) complete columns
-#regular expression that varies by group:
-#for fish
-#gsub(pattern = "^(ANH_[0-9]+)(_.*[C|D])$", replacement = "\\1", Data.r$eventID)
-# for birds
-#gsub(pattern = "^(ANH_[0-9]+)(_.*)$", replacement = "\\1", Data.r$eventID)
 
-Data.r$parentEventID <- gsub(pattern = "^(ANH_[0-9]+)(_.*)$", replacement = "\\1", Data.r$eventID) 
-UM<-unique(Data.r$parentEventID)
-Data.r$scientificName_2<-trimws(Data.r$scientificName)
-selrnm<-!is.na(Data.r$identificationQualifier)
-Data.r$scientificName_2[selrnm]<-paste(Data.r$scientificName[selrnm],trimws(Data.r$identificationQualifier[selrnm]))
+#regular expression that varies by group:
+
+Data.r$parentEventID <- gsub(pattern = "^(ANH_[0-9]+)(_.*[C|D])$", replacement = "\\1", Data.r$eventID) 
+
+UM <- unique(Data.r$parentEventID)
+Data.r$scientificName_2 <- trimws(Data.r$scientificName)
+selrnm <- !is.na(Data.r$identificationQualifier)
+Data.r$scientificName_2[selrnm] <- paste(Data.r$scientificName[selrnm],trimws(Data.r$identificationQualifier[selrnm]))
 unique(Data.r$scientificName_2)
-# quité las columnas que no se pueden completar desde BD_eventos o que no son necesarias en el análisis
+
+# Complete columns of individual registers using event data
 Data.r <- complete_cols(Data.r, Data.e,  "parentEventID", c("eventID","parentEventID", 
                                                             "samplingProtocol",
                                                             "habitat"
                                                             ))
 #quality control: varies from group to group.
+
 Data.r$samplingProtocol <- trimws(Data.r$samplingProtocol)
 Data.r$habitat<-trimws(Data.r$habitat)
 Data.r$organismQuantity<-as.numeric(Data.r$organismQuantity)
-#for birds
-#gsub("([0-9]+\\.*[0-9]+).*$"
-#for fish
-#gsub("([0-9]+).*$")
-     
 
 #2d) get sampling effort
-samEff.t<-Data.e[,c('parentEventID',cnm.smp)] %>% na.omit()%>%
-  mutate(samplEff=as.numeric(gsub("([0-9]+).*$",'\\1',samplingEffort)))%>%
-  group_by(parentEventID,get(cnm.smp[2]))%>%summarize(samplEff=sum(samplEff),Num_ev=n())
+
+samEff.t <- Data.e[,c('parentEventID', cnm.smp)] %>% na.omit() %>% 
+  mutate(samplEff = as.numeric(
+  regmatches(
+    Data.e$samplingEffort, regexpr(pattern = "[-+]?[0-9]*\\.?[0-9]+([eE][-+]?[0-9]+)?", Data.e$samplingEffort)))) %>%
+  group_by( parentEventID, get(cnm.smp[2]) ) %>% summarize( samplEff = sum(samplEff), Num_ev = n() )
+
 colnames(samEff.t)[1:2]<-c('parentEventID',cnm.smp[2])
 sameEff.tt<-split(samEff.t,as.factor(samEff.t$samplingProtocol))
 samEff.ttt<-map(sameEff.tt, function(x) data.frame(as.data.frame(x),decostand(as.vector(x[,"samplEff"]),"max")))
-kpv<-c(kpv,'samEff.ttt','Data.e','Data.r','UM')
-rm(list=ls()[!ls()%in%kpv])
+kpv <- c(kpv,'samEff.ttt','Data.e','Data.r','UM')
+rm(list = ls()[!ls() %in% kpv] )
 
+########################
 
 #3a) Diversity by method: abundance
-ommt<-c("Recorrido en lancha","Recorrido Libre") #method to be omitted
-ompv<-c("ANH_380","ANH_64","ANH_65")
-Data.r2<-Data.r%>%filter((!parentEventID%in%ompv)&(!samplingProtocol%in%ommt))
-nsp<-unique(Data.r2$parentEventID)
-nsp<-length(!nsp%in%ompv)
+
+# clearing methods and events
+
+ommt <- dlgInput("Are there methods to be omitted?")$res %>% process_input(spaces = T) 
+# Recorrido en lancha, Recorrido Libre
+ompv <- dlgInput("Are there sample events to be omitted?")$res %>% process_input() # ANH_380, ANH_64, ANH_65)
+
+if(exists("ommt")| exists("ompv")){
+  if(length(ommt) != 0  | length(ompv) != 0) {
+    Data.r2 <- Data.r %>% filter((!parentEventID%in%ompv)&(!samplingProtocol%in%ommt))  
+  }
+}
+
+unique(Data.r$samplingProtocol)
+
+nsp <- unique(Data.r2$parentEventID)
+
+nsp <- length(!nsp %in% ompv)
+
 Data.ee.r<-Data.r2%>%
   select(parentEventID,organismQuantity,samplingProtocol,scientificName_2)%>%
   pivot_wider(names_from=parentEventID,values_from=organismQuantity, 
@@ -201,23 +220,28 @@ Data.ee.r<-Data.r2%>%
   select(scientificName_2,samplingProtocol,TotAbu)%>%
   pivot_wider(names_from=samplingProtocol,values_from=TotAbu, values_fn=sum,values_fill=0)%>%
   column_to_rownames(.,var="scientificName_2")%>%as.list(.)
-Hill.r<-iNEXT(Data.ee.r,q=c(0,1,2),datatype = "abundance")
-PrintggiNext(paste(gnm,'_abM',sep=''),Hill.r)
-kpv<-c(kpv,'Hill.r')
+
+Hill.r <- iNEXT(Data.ee.r,q=c(0,1,2),datatype = "abundance")
+
+PrintggiNext(paste(gnm,'_abM',sep=''), Hill.r)
+kpv <- c(kpv,'Hill.r')
 rm(list=ls()[!ls()%in%kpv])
 
 #3b) Overall Diversity incidence
-ommt<-c("")
-ompv<-c("")
-Data.r2<-Data.r%>%filter((!parentEventID%in%ompv)&(!samplingProtocol%in%ommt))
-Data.ii.r<-Data.r2%>%
+
+ommt <- ""
+omv <- ""
+
+Data.r2 <- Data.r%>%filter((!parentEventID%in%ompv)&(!samplingProtocol%in%ommt))
+Data.ii.r <- Data.r2%>%
   select(parentEventID,organismQuantity,scientificName_2)%>%
   pivot_wider(names_from=parentEventID,values_from=organismQuantity, values_fn=sum,values_fill=0)%>%
   mutate_if(is.numeric,~1*(.>0))%>%column_to_rownames(.,var="scientificName_2")%>%list(.)
+
 Hill.rr<-iNEXT(Data.ii.r,q=c(0,1,2),datatype = "incidence_raw")
-names(Hill.rr$iNextEst)<-"Regional"
+names(Hill.rr$iNextEst) <- "Regional"
 PrintggiNext(paste(gnm,'_incO',sep=''),Hill.rr)
-kpv<-c(kpv,'Hill.rr')
+kpv <- c(kpv,'Hill.rr')
 rm(list=ls()[!ls()%in%kpv])
 
 #3c) Hill by factor and method with abundance

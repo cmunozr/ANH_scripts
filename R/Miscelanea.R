@@ -1,8 +1,12 @@
 # Procesing input users
 
-process_input <- function(input){
-  res_input <- input %>% gsub(pattern = " ", replacement = "") %>% 
-    strsplit(",") %>% unlist()
+process_input <- function(input, spaces = F){
+  input_string <- input %>% strsplit(",") %>% unlist() %>% trimws()
+  if(spaces == FALSE){
+    res_input <- gsub(x = input_string, pattern = " ", replacement = "")
+  }else{
+    res_input <- input_string
+  }
 }
 
 
