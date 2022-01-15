@@ -55,9 +55,9 @@ Data.r.rda.p<-function(D.rda,D.ord,plnm){
 
 # gets list by category with abundance
 
-Data.a.f<-function(catnm){
+Data.a.f<-function(catnm = catnm, cov = cov, ompv = ompv, ommt= ommt, data.r = data.r){
   names(cov)[names(cov)==catnm]<-'categ'
-  Data.r2<-Data.r%>%filter((!parentEventID%in%ompv)&(!samplingProtocol%in%ommt))
+  Data.r2<-Data.r%>%dplyr::filter((!parentEventID%in%ompv)&(!samplingProtocol%in%ommt))
   nsp<-unique(Data.r2$parentEventID)
   cov.1<-cov%>%select(parentEventID,categ)%>%distinct(parentEventID,.keep_all=T)%>%
     filter(parentEventID%in%nsp)
@@ -75,7 +75,7 @@ Data.a.f<-function(catnm){
       pivot_wider(names_from=categ,values_from=TotAbu,values_fill=0)%>%
       column_to_rownames(.,var="scientificName_2")
   })
-  +  return(Data.ee.oo)
+  return(Data.ee.oo)
 } 
 
 #gets list by category with incidence data

@@ -57,3 +57,24 @@ complete_cols <- function(BD_registros, BD_eventos, link, vector_cols){
     return(BD_registros)
   }
 }
+
+clear_meth_events <- function(){
+  sampProt <- unique(Data.r$samplingProtocol) %>% paste(collapse = ", ")
+  ommt_bolean <- dlgInput(paste0("From those methods: ", sampProt, 
+                                 ". Are there methods to be omitted? (TRUE OR FALSE)"))$res %>% 
+    process_input(spaces = T)
+  if(ommt_bolean == T){
+    ommt <- dlgInput(paste0("From those methods", sampProt, "Give me the position"))$res %>%
+      process_input(spaces = T) %>% as.numeric()
+    ommt <- sampProt[ommt]
+  }else{
+    ommt <- ""
+  }
+  ompv_bolean <- dlgInput("Are there sample events to be omitted? (TRUE OR FALSE)")$res %>% process_input()
+  if(ompv_bolean == T){
+    ompv <- dlgInput("Give me the name of events")$res %>% process_input() # ANH_380, ANH_64, ANH_65)
+  }else{
+    ompv <- ""
+  }
+  return(list("ommt" = ommt, "ompv" = ompv))
+}

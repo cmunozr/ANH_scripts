@@ -6,7 +6,7 @@
 # 0a) Call packages and install them if required
 
 source(file.path(getwd(), "R", "Setup.R"))
-source(file.path(getwd(), "R", "Miscelanea.R"))
+source(file.path(getwd(), "R", "MethodFunctions.R"))
 source(file.path(getwd(), "R", "GraphicalFunctions.R"))
 source(file.path(getwd(), "R", "Miscelanea.R"))
 
@@ -22,6 +22,9 @@ WDIn2 <-  WDobjects$WDIn2
 WDCov <- WDobjects$WDCov
 WDOut <- WDobjects$WDOut
 
+# WARNING#
+# fill folders with files: 'BDPuntoMuestreoXXX' in WDCov, 'variablesAmbientales_XXX' in WDCov,
+# 'I2D-BIO_XXXX' in WDIn2
 
 #source(file.path("C:","Users","dsrbu","Dropbox","Humboldt","6_RcodeRepository",
 #                 "14_Script_others","NEwR-2ed_code_data","NEwR2-Functions","cleanplot.pca.R"))
@@ -53,7 +56,8 @@ covbk$Cobertura <- homolog_factors(covbk, "Cobertura")
 # 1.b) selecting covariables/ Only one time
 
 # Spatial columns
-spa.c <- dlgInput("Latitude and longitude columns name (separe by comma)")$res %>% process_input()
+spa.c <- dlgInput("Latitude and longitude columns name (separe by comma)")$res %>% 
+  process_input()
   # decimalLat, decimalLon  
 
                 
@@ -63,7 +67,8 @@ cat.c <- dlgInput("Column names of categorical covariables to work in the analys
 
 # human pressure vector
 v.pres <- dlgInput("Column names of Human pressure covariables (separe by comma)")$res %>% 
-  process_input() #Dis_CP, Dis_Oleodu, Dis_Pozo, Dis_Pozact, Dis_Ferroc, Dis_ViaPri, Dia_ViaSec
+  process_input() #Dis_CP, Dis_Oleodu, Dis_Pozo, Dis_Pozact, Dis_Ferroc, Dis_ViaPri,
+  #Dia_ViaSec
 
 # environmnet vector
 v.rec <- dlgInput("Column names of Environmental distance covariables (separe by comma)")$res %>% 
@@ -77,9 +82,10 @@ covbk$eventID <- trimws(gsub("-", "_", covbk$eventID))
 covbk <- covbk %>% select(-c('Tipo', 'GrupoBiolo'))
 
 
-#1b) micro habitat covariates
+#1c) micro habitat covariates
 
-CovM <- read.xlsx(file.path(WDCov,'variablesAmbientales_microH.xlsx'), sheet = 1, startRow = 3 )
+CovM <- read.xlsx(file.path(WDCov,'variablesAmbientales_microH.xlsx'), 
+                  sheet = 1, startRow = 3 )
 
 renameBool <- dlgInput("Do you want to rename Micro-Habitat variables? (TRUE or FALSE)")$res %>% as.logical()
 if(renameBool == T){
@@ -103,9 +109,12 @@ v.msite <- names(CovM)[col_msite] # 3,4,5,13,17,18,19,20
 
 #Join cov for fish only
 
-bool_aqu <- dlgInput("Is your working taxon a fish or related? (TRUE or FALSE")$res %>% process_input()
+bool_aqu <- dlgInput("Is your working taxon a fish or related? (TRUE or FALSE")$res %>% 
+  process_input()
 if(bool_aqu == T){
-  covbk <- covbk %>% select(-Plataf) %>% inner_join(., CovM,by="parentEventID")  
+  cov <- covbk %>% select(-Plataf) %>% inner_join(., CovM,by="parentEventID")  
+}else{
+  cov <- covbk
 }
 
 ##################################################
@@ -123,8 +132,8 @@ kpv <- c(ls(),'kpv') #variables to keep all the time
 #2b) get raw data
 # preguntar en donde inician los datos
 
-StartRow <- dlgInput("In which row the information start inside the database (numeric) ")$res %>% process_input() %>%
-  as.numeric() # 1
+StartRow <- dlgInput("In which row, does the database start (numeric)? ")$res %>%
+  process_input() %>% as.numeric() # 1
 DataBaseName <- "I2D-BIO_2021_049_v2.xlsx"
 
 Data.e<-read.xlsx(file.path(WDIn2, DataBaseName), sheet=1, startRow = StartRow, na.strings = "N/A")
@@ -134,19 +143,19 @@ Data.r<-read.xlsx(file.path(WDIn2, DataBaseName), sheet=2, startRow = StartRow, 
 #quality checks##
 
 bool_herp <- dlgInput("Is your working taxon an herpetous species or related? (TRUE or FALSE)")$res %>% process_input()
-
 if(bool_herp == T){
   Data.e$samplingProtocol <- 'VES'
 }
 
 # # reconcile names of sampling protocol and change to factors
-
+unique(Data.e$samplingProtocol)
 Data.e$samplingProtocol <- homolog_factors(Data.e, "samplingProtocol") 
 
-# 
+# Where is parentEventID
 
 if(sum(grepl(pattern = 'parentEventID', colnames(Data.e))) == 0){
-  col_parentEventID <- dlgInput("Type position column of 'parentEventID' (numeric)")$res %>% process_input()
+  col_parentEventID <- dlgInput("Type position column of 'parentEventID' (numeric)")$res %>% 
+    process_input()
   names(Data.e)[col_parentEventID] <- 'parentEventID'  
 }
 
@@ -155,22 +164,20 @@ Data.e$samplingEffort[is.na(Data.e$samplingEffort)] <- 0
 
 #2c) complete columns
 
-#regular expression that varies by group:
-
+# Clean event_ID cell and paste to Data.r base
 Data.r$parentEventID <- gsub(pattern = "^(ANH_[0-9]+)(_.*[C|D])$", replacement = "\\1", Data.r$eventID) 
 
 UM <- unique(Data.r$parentEventID)
 Data.r$scientificName_2 <- trimws(Data.r$scientificName)
 selrnm <- !is.na(Data.r$identificationQualifier)
 Data.r$scientificName_2[selrnm] <- paste(Data.r$scientificName[selrnm],trimws(Data.r$identificationQualifier[selrnm]))
-unique(Data.r$scientificName_2)
 
 # Complete columns of individual registers using event data
 Data.r <- complete_cols(Data.r, Data.e,  "parentEventID", c("eventID","parentEventID", 
                                                             "samplingProtocol",
                                                             "habitat"
                                                             ))
-#quality control: varies from group to group.
+#quality control.
 
 Data.r$samplingProtocol <- trimws(Data.r$samplingProtocol)
 Data.r$habitat<-trimws(Data.r$habitat)
@@ -196,17 +203,10 @@ rm(list = ls()[!ls() %in% kpv] )
 
 # clearing methods and events
 
-ommt <- dlgInput("Are there methods to be omitted?")$res %>% process_input(spaces = T) 
-# Recorrido en lancha, Recorrido Libre
-ompv <- dlgInput("Are there sample events to be omitted?")$res %>% process_input() # ANH_380, ANH_64, ANH_65)
+clear <- clear_meth_events()
+ommt <- clear$ommt; ompv <- clear$ompv
 
-if(exists("ommt")| exists("ompv")){
-  if(length(ommt) != 0  | length(ompv) != 0) {
-    Data.r2 <- Data.r %>% filter((!parentEventID%in%ompv)&(!samplingProtocol%in%ommt))  
-  }
-}
-
-unique(Data.r$samplingProtocol)
+Data.r2 <- Data.r %>% filter((!parentEventID%in%ompv)&(!samplingProtocol%in%ommt))  
 
 nsp <- unique(Data.r2$parentEventID)
 
@@ -229,8 +229,8 @@ rm(list=ls()[!ls()%in%kpv])
 
 #3b) Overall Diversity incidence
 
-ommt <- ""
-omv <- ""
+clear <- clear_meth_events()
+ommt <- clear$ommt; ompv <- clear$ompv
 
 Data.r2 <- Data.r%>%filter((!parentEventID%in%ompv)&(!samplingProtocol%in%ommt))
 Data.ii.r <- Data.r2%>%
@@ -245,10 +245,12 @@ kpv <- c(kpv,'Hill.rr')
 rm(list=ls()[!ls()%in%kpv])
 
 #3c) Hill by factor and method with abundance
-ommt<-c("Recorrido en lancha","Recorrido Libre") #method to be omitted
-ompv<-c("ANH_380","ANH_64","ANH_65")
+
+clear <- clear_meth_events()
+ommt <- clear$ommt; ompv <- clear$ompv
+
 # catnm
-Data.ee.oo<-Data.a.f(catnm)
+Data.ee.oo<-Data.a.f(catnm, cov = cov, ompv = ompv, ommt = ommt)
 Data.ee.oo2<-map(names(Data.ee.oo),function(xx){
   x<-Data.ee.oo[[xx]]
   iNext.o<-iNEXT(x,q=c(0,1,2), datatype="abundance")
@@ -262,6 +264,7 @@ map(names(Data.ee.oo),function(xx){
   PrintRefiNext(fnm2,catnm,v)
   return()
 })
+
 kpv<-c(kpv,'Data.ee.oo')
 
 ## red. hídrica
@@ -300,8 +303,9 @@ kpv<-c(kpv,'Data.ee.pt')
 rm(list=ls()[!ls()%in%kpv])
 
 #3d) Hill by factor with Incidence
-ommt<-c("") #method to be omitted
-ompv<-c("ANH_380")
+
+clear <- clear_meth_events()
+ommt <- clear$ommt; ompv <- clear$ompv
 
 #catnm
 Data.ei.oo<-Data.i.f(catnm)
@@ -336,8 +340,10 @@ kpv<-c(kpv,'Data.ei.pt2')
 rm(list=ls()[!ls()%in%kpv])
 
 #4) Hills by MU
-ommt<-c("") #method to be omitted
-ompv<-c("ANH_380","ANH_64","ANH_65")
+
+clear <- clear_meth_events()
+ommt <- clear$ommt; ompv <- clear$ompv
+
 Data.ee.mm<-Data.a.MU(Data.r,'parentEventID',
                       "^(ANH_[0-9]+)(_.*)$")
 kpv<-c(kpv,'Data.ee.mm')
@@ -351,8 +357,10 @@ kpv<-c(kpv,'Data.ee.nn')
 rm(list=ls()[!ls()%in%kpv])
 
 #4c) agregando periodo (para peces es lo mismo que Sub_MU)
-ommt<-c("") #method to be omitted
-ompv<-c("")
+
+clear <- clear_meth_events()
+ommt <- clear$ommt; ompv <- clear$ompv
+
 #text for period event
 ##fish
 #gsub("_[R|A|E|T]_","_",eventID)
@@ -367,11 +375,14 @@ kpv<-c(kpv,'Data.ee.tt')
 rm(list=ls()[!ls()%in%kpv])
 
 #4d) Diversidad agregando protocols
-ommt<-""#c("Recorrido en lancha","Recorrido Libre")
-ompv<-""#c("ANH_380","ANH_64","ANH_65")
+
+clear <- clear_meth_events()
+ommt <- clear$ommt; ompv <- clear$ompv
+
 Data.pt<-Data.r%>%
   filter((!parentEventID%in%ompv)&(!samplingProtocol%in%ommt))
 nsp<-length(unique(Data.pt$parentEventID))
+
 ##peces
 grp<-list('Ar_At'=c('Arrastre','Atarraya'),
            'Ar_At_El'=c('Arrastre','Atarraya','Electropesca'),
@@ -380,6 +391,7 @@ grp<-list('Ar_At'=c('Arrastre','Atarraya'),
 #grp<-list('VES'=c('VES'))
 #Aves
 # # grp<-list('PntFijo'=c('Punto Fijo'))
+
 Data.ee.pr<-Data.a.pt(grp,Data.pt,'eventID')
 
 #gets estimates from incidence data
