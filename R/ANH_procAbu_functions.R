@@ -322,12 +322,13 @@ Data.a.f<-function(catnm,fn="sum",scale=F){
   
   if(fn=="sum"){
     Data.ee.o<-Data.r2%>%
-      dplyr::select(eventID,samplingProtocol,organismQuantity,scientificName_2)%>%
+      dplyr::select(eventID,parentEventID, samplingProtocol,organismQuantity,scientificName_2)%>%
       inner_join(.,cov.1, by="eventID")%>%dplyr::select(-eventID)%>%
-      pivot_wider(names_from=parentEventID,values_from=organismQuantity,
+      pivot_wider(names_from=parentEventID.x,values_from=organismQuantity,
                   values_fn=sum,values_fill=0,id_cols=c(scientificName_2,
-                                                        categ,samplingProtocol))%>%
-      mutate(TotAbu=rowSums(.[,4:(nsp+3)]),.keep="unused")%>%
+                                                        categ,samplingProtocol))
+    Data.ee.o <- Data.ee.o %>% 
+      mutate(TotAbu=rowSums(.[,4:(length(Data.ee.o))]),.keep="unused")%>%
       dplyr::select(categ,samplingProtocol,scientificName_2,TotAbu)
   }else{
     Data.ee.o<-Data.r2%>%
@@ -335,8 +336,9 @@ Data.a.f<-function(catnm,fn="sum",scale=F){
       inner_join(.,cov.1, by="eventID")%>%dplyr::select(-eventID)%>%
       pivot_wider(names_from=parentEventID,values_from=organismQuantity,
                   values_fn=max,values_fill=0,id_cols=c(scientificName_2,
-                                                        categ,samplingProtocol))%>%
-      mutate(TotAbu=rowSums(.[,4:(nsp+3)]),.keep="unused")%>%
+                                                        categ,samplingProtocol))
+    Data.ee.o <- Data.ee.o %>%
+      mutate(TotAbu=rowSums(.[,4:(length(Data.ee.o))]),.keep="unused")%>%
       dplyr::select(categ,samplingProtocol,scientificName_2,TotAbu)
   }
   if(scale==TRUE){
@@ -381,6 +383,7 @@ Data.i.f<-function(catnm){
   })
   return(Data.ei.oo)
 } #gets list by category with incidence data
+
 Data.a.MU<-function(DataP,evID,expPEID="^(ANH_[0-9]+)(_.*)$",fn="sum",scale=FALSE){
   cov.1<-cov%>%distinct(parentEventID,.keep_all=T)%>%
     dplyr::select('parentEventID',all_of(v.rec),all_of(v.pres),all_of(v.msite),all_of(cat.c))
@@ -400,7 +403,7 @@ Data.a.MU<-function(DataP,evID,expPEID="^(ANH_[0-9]+)(_.*)$",fn="sum",scale=FALS
   }else{
     Data.rr.n<-Data.rr.n%>%group_split(samplingProtocol)
   }
-  names(Data.rr.n)<-levels(as.factor(Data.r2$samplingProtocol))
+  names(Data.rr.n)<-levels(factor(Data.r2$samplingProtocol, exclude = NULL))
   Data.ee.nn<-map(names(Data.rr.n), function(x) {
     xx<-Data.rr.n[[x]][,-1]%>%column_to_rownames("scientificName_2")%>%dplyr::select(-which(colSums(.)==0))
     iNext.o<-iNEXT(xx,q=c(0,1,2), datatype="abundance")
@@ -418,6 +421,7 @@ Data.a.MU<-function(DataP,evID,expPEID="^(ANH_[0-9]+)(_.*)$",fn="sum",scale=FALS
   names(Data.ee.nn)<-names(Data.rr.n)
   return(Data.ee.nn)
 } #gets abundance by MU or sub MU. List by sampling protocol
+
 Data.a.pt<-function(grpp,Data.r2,evID,fn="sum",scale=FALSE){
   names(Data.r2)[names(Data.r2)==evID]<-'evID'
   yyy<-map(names(grpp), function(x) {
@@ -1009,4 +1013,37 @@ find_slots <- function(a, b){
   d = as.numeric(difftime(r[-1], r[-length(r)], unit = 'min'))
   
   data.frame(slot = slots, Q = d)
+}
+
+homolog_factors <- function(database, column, max.distance = 0.2){
+  cats = database[, column]
+  tosave = database[, column]
+  for(i in 1:length(unique(cats))){
+    similar <- unique(cats)[agrep(unique(cats)[i], unique(cats), max.distance = 0.2)] %>% 
+      stri_trans_general(id = "Latin-ASCII")
+    if(length(similar) > 1){
+      for(j in 1:length(similar)){
+        tosave[which(tosave == unique(tosave)[i])] <- similar[1]
+      }  
+    }
+  }
+  
+  return(tosave)
+}
+
+modify_event_label <- function(data, column = "eventID"){
+  require(stringr)
+  original <- data[,column] 
+  splitted <- original%>% str_split(., "_")
+  index_vect <- lapply(X= splitted, FUN = function(X){length(X)>=5}) %>% unlist()
+  if(sum(index_vect) != 0 ){
+    print("modifying")
+    modified <- lapply(X = splitted[index_vect], FUN = function(X){X[1:4]} %>% paste(., collapse = "_")) %>% unlist()
+    original[index_vect] <- modified
+    data[,column] <- original  
+  }else{
+    print("no changes")
+  }
+  
+  return(data)
 }

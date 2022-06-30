@@ -1,0 +1,13 @@
+"","Site","Diversity","Observed","Estimator","s.e.","LCL","UCL","n","S.obs","SC"
+"1","Quebrada","Species richness",23,40.971,23.585,25.528,150.763,622,23,0.9904
+"2","Quebrada","Shannon diversity",7.337,7.56,0.41,7.337,8.364,622,23,0.9904
+"3","Quebrada","Simpson diversity",4.259,4.282,0.265,4.259,4.8,622,23,0.9904
+"4","Ciénaga","Species richness",8,8.994,2.236,8.072,21.802,162,8,0.9878
+"5","Ciénaga","Shannon diversity",5.579,5.733,0.242,5.579,6.206,162,8,0.9878
+"6","Ciénaga","Simpson diversity",4.884,5.004,0.345,4.884,5.68,162,8,0.9878
+"7","Caño","Species richness",24,25.498,2.288,24.174,36.867,605,24,0.9951
+"8","Caño","Shannon diversity",7.913,8.087,0.459,7.913,8.987,605,24,0.9951
+"9","Caño","Simpson diversity",4.281,4.304,0.264,4.281,4.823,605,24,0.9951
+"10","Río Magdalena","Species richness",19,34.863,16.356,21.992,103.092,117,19,0.9319
+"11","Río Magdalena","Shannon diversity",8.666,10.038,1.387,8.666,12.756,117,19,0.9319
+"12","Río Magdalena","Simpson diversity",5.636,5.87,0.78,5.636,7.399,117,19,0.9319

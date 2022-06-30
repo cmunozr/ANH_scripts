@@ -4,16 +4,16 @@
 #Script to get basic biodiversity analyses for ANH
 
 #0) Load required libraries
-rqurd<-c("openxlsx","BiodiversityR","MASS","tidyverse","data.table","iNEXT",'reshape2','ggpubr',
-         'ggpmisc','evaluate',"fastDummies","corrplot","Hmisc","maptools","rgdal","sp",
-         "lattice","ggplot2","rgeos","ade4","Rtsne","reshape2", "purrr")
+rqurd<-c("purrr", "openxlsx","BiodiversityR","MASS","tidyverse","data.table","iNEXT",'reshape2','ggpubr',
+         'ggpmisc','evaluate',"fastDummies","corrplot","Hmisc","maptools","rgdal","sp", "dplyr",
+         "lattice","ggplot2","rgeos","ade4","Rtsne","reshape2")
 
 for(p in 1:length(rqurd) ){
-  if (is.element(rqurd[p], installed.packages()[,1])){		
-    require(rqurd[p], character.only = T)
+  if (sum(grepl(pattern =rqurd[p], x = installed.packages()[,1])) != 0){		
+    library(rqurd[p], character.only = T)
   }else{
     install.packages(rqurd[p], dep = TRUE)				#if package is not installed
-    require(rqurd[p])
+    library(rqurd[p], character.only = T)
   }
 }
 
@@ -21,10 +21,11 @@ for(p in 1:length(rqurd) ){
 #                 "14_Script_others","NEwR-2ed_code_data","NEwR2-Functions","cleanplot.pca.R"))
 
 #0b) Define working directories and group variables
-outD<-'Peces'#'Zooplancton' #master folder for output
-outDD<-'Peces'#'Hidrobiologicos' #Grupo like stated in the covariate file
-ctnm<-'waterBody' #CobColl'#"CuerpAgua" #main factor for análisis
-gnm<- 'Pec' #'Coll'#"Zoop" #group prefix
+
+outD<-'Aves'#'Zooplancton' #master folder for output
+outDD<-'Aves'#'Hidrobiologicos' #Grupo like stated in the covariate file
+ctnm<- "CobAves" # 'waterBody' #CobColl'#"CuerpAgua" #main factor for análisis
+gnm<- 'Ave' #'Coll'#"Zoop" #group prefix
 fnn<-"sum" #function to aggregate samples within sampling unites
 
 WDOut<-file.path(getwd(), "Analisis", "SalidasPreliminares")
@@ -43,22 +44,23 @@ dir.create(file.path(WDOut,'NMDS'), showWarnings = F)
 dir.create(file.path(WDOut,'RDA'), showWarnings = F)
 
 #0c) functions
-source(file.path(WDFunc,'ANH_procAbu_functions.R'))
+source(file.path(WDFunc,'R/ANH_procAbu_functions.R'))
 
 #1) covariances
-library(openxlsx)
-covbk<- openxlsx::read.xlsx((file.path(WDCov,"BDPuntosMuestreoMag3101.xlsx")))
+
+covbk<- openxlsx::read.xlsx((file.path(WDCov,"BDPuntosMuestreoMag270622.xlsx")), sheet = "BDPuntosMuestreoMag")
 covbk$FInt19meanx<-round(as.numeric(covbk$FInt19meanx),2)
 names(covbk)[c(2,23,24:31,39,40)]<-c('parentEventID','Cobertura','CobAves',
                                      'CobHerp','CobCopr','CobMarip',
                                      'CobHorm','CobColl','CobMam','CobBot','CuerpAgua','NomCuerpAg')
-unique(covbk$Cobertura)
-unique(covbk$CobAves)
-unique(covbk$CobHerp)
-unique(covbk$CobHorm)
-unique(covbk$CobMarip)
-unique(covbk$CobMam)
-unique(covbk$COBXCollembola)
+# unique(covbk$Cobertura)
+# unique(covbk$CobAves)
+# unique(covbk$CobHerp)
+# unique(covbk$CobHorm)
+# unique(covbk$CobMarip)
+# unique(covbk$CobMam)
+# unique(covbk$COBXCollembola)
+
 for(i in c('Cobertura','CobAves','CobHerp','CuerpAgua','CobCopr','CobMarip',
            'CobHorm','CobMam','CobBot','COBXCollembola')){
   ccov<-covbk[,i]
@@ -70,155 +72,188 @@ for(i in c('Cobertura','CobAves','CobHerp','CuerpAgua','CobCopr','CobMarip',
   ccov[ccov=="R?o Magdalena"]<-"R_Magdal"
   covbk[,i]<-ccov
 }
-unique(covbk$CuerpAgua)
+unique(covbk$CobAves)
 covbk$Cobertura<-factor(covbk$Cobertura,levels=c("Rios","Cienaga","Zonas Pantanosas","Otros Cuerpos Agua",
                                                     "Herbazal","Bosque Ripario",
                                                     "Bosque Denso","Bosque Abierto","Vegetacion Secundaria",
                                                     "Palma","Cultivos","Pastos","Zonas Desnudas Degradadas",
                                                  "Vias","Area Urbana"))
 spa.c<-c("decimalLat","decimalLon")
-cat.c<-c("Plataf","Red.Hidrica","CuerpAgua") #c("Plataf","CobColl","habitat","UCSuelo")#Coprofagos=c("Plataf","CobCopr","habitat")#Hidrobiol?gicos=c("Plataf","Red.Hidrica","CuerpAgua")#,"CobHerp")#c("Plataf","Red.Hidrica","CuerpAgua")
+cat.c<-c("Plataf", "CobAves") #peces; c("Plataf","Red.Hidrica","CuerpAgua") #colembolos: c("Plataf","CobColl","habitat","UCSuelo")#Coprofagos=c("Plataf","CobCopr","habitat")#Hidrobiol?gicos=c("Plataf","Red.Hidrica","CuerpAgua")#,"CobHerp")
 v.pres<-c("Dis_CP","Dis_Oleodu", "Dis_Pozo","Dis_Pozact","Dis_Ferroc","Dis_ViaPri","Dia_ViaSec")#,"HEH18meanx")
 v.rec<-c("Dis_Cienag","Dis_MGSG","Dis_Dre345", "DisBosque","Dis_CobNat","Tam_Parche")#,"FInt19meanx")
 v.msite<-NULL
 excl<-NULL
+
 for (i in c(v.pres,v.rec)){
   if(all(is.na(covbk[,i]))) excl<-c(excl,i)
 }
+
 v.pres<-v.pres[!v.pres%in%excl]
 v.rec<-v.rec[!v.rec%in%excl]
 
 ##verify names
 
 #not for coprofagos
-covbk$parentEventID<-trimws(gsub("-","_",covbk$parentEventID))
-covbk$eventID<-trimws(gsub("-","_",covbk$eventID))
-unique(covbk$GrupoBiolo)
+if(outD != "Coprofagos"){
+  covbk$parentEventID<-trimws(gsub("-","_",covbk$parentEventID))
+  covbk$eventID<-trimws(gsub("-","_",covbk$eventID))
+  unique(covbk$GrupoBiolo)
+}
+
 #Murcielagos
-covbk<-covbk%>%filter(GrupoBiolo%in%c(outDD,'Ultrasonido'))
+if(outD == "Murcielagos"){
+  covbk<-covbk%>%filter(GrupoBiolo%in%c(outDD,'Ultrasonido'))
+}
+
 #others
-library(dplyr)
 covbk<-covbk%>%dplyr::filter(GrupoBiolo==outDD)
 covbk<-covbk%>%dplyr::select(-c('Tipo','Habitat'))
 
 
 #1b)covariates only for Peces y Microbiol?gicos
-CovM<-read.xlsx(file.path(getwd(), 'Analisis','Covariables','Base De Datos Peces Fisico Quimicos 1212.xlsx'),sheet=1,startRow = 3 )
-##check names##
-names(CovM)[c(2,29:69,71,72,81:83)]<-c('parentEventID','CuerpAgua','NmCuerpAg','ProfProm','Ancho',
-                                       'ProfSechi','ProfCapFot','Temp','pH','OxgD','Cond',
-                            'SatO2','SolidDis','COrgT','FDisp','Magnesio','Calcio',
-                            'Sodio','TSolidDis','SoliTot','SoliSus','SoliSol','Fosfatos',
-                            'Nitratos','Silicatos','GrasAceit','SAAM','DurCalcica','DurTotal',
-                            'Alcalinid','sed_p_Arena','sed_p_Arcilla','sed_p_limo','sed_class',
-                            'sed_p_COrg','sed_fosforo','sed_Magnes','sed_calcio','sed_Sodio',
-                            'sed_boro','sed_hierro','sed_Nitrog',
-                            'Pgras','Mflot','Vacuat','Vrip','CDosel')
 
-
-#transformation
-CovM$Log_Cond<-log10(CovM$Cond)
-CovM[is.na(CovM)]<-0
-v.msiteQA<-c('Temp','pH','OxgD','Cond',
-'SatO2','SolidDis','COrgT','FDisp','Magnesio','Calcio',
-'Sodio','TSolidDis','SoliTot','SoliSus','SoliSol','Fosfatos',
-'Nitratos','Silicatos','GrasAceit','SAAM','DurCalcica','DurTotal',
-'Alcalinid','Log_Cond')
-v.msiteQS<-c('sed_p_Arena','sed_p_Arcilla','sed_p_limo','sed_p_COrg',
-                                        'sed_fosforo','sed_Magnes','sed_calcio','sed_Sodio',
-                                        'sed_boro','sed_hierro','sed_Nitrog')
-v.msiteF<-c('Bloques','Cantos.rodados','Guijarros','Grava','Pgras','Mflot','Vacuat','Vrip','CDosel','ProfProm','Ancho',
-                                       'ProfSechi','ProfCapFot')
-library(Hmisc)
-MQA<-CovM%>%dplyr::select(all_of(v.msiteQA))%>%na.omit(.)%>%as.matrix(.)%>%rcorr(.)
-MQA<-lapply(MQA,function(x){
-  x[is.na(x)]<-0
-  return(x)
+if(outDD == "Peces"|outDD == "Microbiologicos"){
+  CovM<-read.xlsx(file.path(getwd(), 'Analisis','Covariables','Base De Datos Peces Fisico Quimicos 1212.xlsx'),sheet=1,startRow = 3 )
+  ##check names##
+  names(CovM)[c(2,29:69,71,72,81:83)]<-c('parentEventID','CuerpAgua','NmCuerpAg','ProfProm','Ancho',
+                                         'ProfSechi','ProfCapFot','Temp','pH','OxgD','Cond',
+                                         'SatO2','SolidDis','COrgT','FDisp','Magnesio','Calcio',
+                                         'Sodio','TSolidDis','SoliTot','SoliSus','SoliSol','Fosfatos',
+                                         'Nitratos','Silicatos','GrasAceit','SAAM','DurCalcica','DurTotal',
+                                         'Alcalinid','sed_p_Arena','sed_p_Arcilla','sed_p_limo','sed_class',
+                                         'sed_p_COrg','sed_fosforo','sed_Magnes','sed_calcio','sed_Sodio',
+                                         'sed_boro','sed_hierro','sed_Nitrog',
+                                         'Pgras','Mflot','Vacuat','Vrip','CDosel')
+  
+  
+  #transformation
+  CovM$Log_Cond<-log10(CovM$Cond)
+  CovM[is.na(CovM)]<-0
+  v.msiteQA<-c('Temp','pH','OxgD','Cond',
+               'SatO2','SolidDis','COrgT','FDisp','Magnesio','Calcio',
+               'Sodio','TSolidDis','SoliTot','SoliSus','SoliSol','Fosfatos',
+               'Nitratos','Silicatos','GrasAceit','SAAM','DurCalcica','DurTotal',
+               'Alcalinid','Log_Cond')
+  v.msiteQS<-c('sed_p_Arena','sed_p_Arcilla','sed_p_limo','sed_p_COrg',
+               'sed_fosforo','sed_Magnes','sed_calcio','sed_Sodio',
+               'sed_boro','sed_hierro','sed_Nitrog')
+  v.msiteF<-c('Bloques','Cantos.rodados','Guijarros','Grava','Pgras','Mflot','Vacuat','Vrip','CDosel','ProfProm','Ancho',
+              'ProfSechi','ProfCapFot')
+  
+  library(Hmisc)
+  MQA<-CovM%>%dplyr::select(all_of(v.msiteQA))%>%na.omit(.)%>%as.matrix(.)%>%rcorr(.)
+  MQA<-lapply(MQA,function(x){
+    x[is.na(x)]<-0
+    return(x)
   }
-)
-library(corrplot)
-corrplot(MQA$r,type="upper", order="hclust", 
-         p.mat = MQA$P, sig.level = 0.01, insig = "blank",tl.col='black')
-
-f.nm<-file.path(WDOut,'Covariables_PCA',paste('CorrM_QAgua',gnm,'.jpeg',sep=''))
-jpeg(f.nm, width = 600, height = 480, quality=300)
-corrplot(MQA$r,type="upper", order="hclust", 
-         p.mat = MQA$P, sig.level = 0.01, insig = "blank",tl.col='black')
-dev.off()
-
-v.msiteQA<-c('Temp','OxgD',
-             'COrgT','FDisp',
-             'TSolidDis',
-             'Nitratos','Silicatos','GrasAceit','SAAM',
-             'Alcalinid','Log_Cond')
-MQS<-CovM %>% dplyr::select(all_of(v.msiteQS)) %>% na.omit(.) %>% as.matrix(.) %>% rcorr(.)
-MQS<-lapply(MQS,function(x){
-  x[is.na(x)]<-0
-  return(x)
+  )
+  
+  library(corrplot)
+  corrplot(MQA$r,type="upper", order="hclust", 
+           p.mat = MQA$P, sig.level = 0.01, insig = "blank",tl.col='black')
+  
+  f.nm<-file.path(WDOut,'Covariables_PCA',paste('CorrM_QAgua',gnm,'.jpeg',sep=''))
+  
+  jpeg(f.nm, width = 600, height = 480, quality=300)
+  corrplot(MQA$r,type="upper", order="hclust", 
+           p.mat = MQA$P, sig.level = 0.01, insig = "blank",tl.col='black')
+  dev.off()
+  
+  v.msiteQA<-c('Temp','OxgD',
+               'COrgT','FDisp',
+               'TSolidDis',
+               'Nitratos','Silicatos','GrasAceit','SAAM',
+               'Alcalinid','Log_Cond')
+  MQS<-CovM %>% dplyr::select(all_of(v.msiteQS)) %>% na.omit(.) %>% as.matrix(.) %>% rcorr(.)
+  MQS<-lapply(MQS,function(x){
+    x[is.na(x)]<-0
+    return(x)
   }
-)
-corrplot(MQS$r,type="upper", order="hclust", 
-         p.mat = MQS$P, sig.level = 0.01, insig = "blank",tl.col='black')
-f.nm<-file.path(WDOut,'Covariables_PCA',paste('CorrM_QSedim',gnm,'.jpeg',sep=''))
-jpeg(f.nm, width = 600, height = 480, quality=300)
-corrplot(MQS$r,type="upper", order="hclust", 
-         p.mat = MQS$P, sig.level = 0.01, insig = "blank",tl.col='black')
-dev.off()
-v.msiteQS<-c("sed_Nitrog","sed_p_limo","sed_fosforo","sed_Sodio",
-             "sed_hierro","sed_Magnes") #c("sed_Nitrog","sed_p_limo","sed_fosforo","sed_calcio",
-             #"sed_hierro","sed_Magnes")
-MF<-CovM%>%dplyr::select(all_of(v.msiteF))%>%na.omit(.)%>%as.matrix(.)%>%rcorr(.)
-MF<-lapply(MF,function(x){x[is.na(x)]<-0
-return(x)})
-corrplot(MF$r,type="upper", order="hclust", 
-         p.mat = MF$P, sig.level = 0.01, insig = "blank",tl.col='black')
-f.nm<-file.path(WDOut,'Covariables_PCA',paste('CorrM_Struct',gnm,'.jpeg',sep=''))
-jpeg(f.nm, width = 600, height = 480, quality=300)
-corrplot(MF$r,type="upper", order="hclust", 
-         p.mat = MF$P, sig.level = 0.01, insig = "blank",tl.col='black')
-dev.off()
-
-for(i in v.msiteF){
-  hist(CovM[,i],main=i)
-  readline(prompt='ENTER')
+  )
+  corrplot(MQS$r,type="upper", order="hclust", 
+           p.mat = MQS$P, sig.level = 0.01, insig = "blank",tl.col='black')
+  f.nm<-file.path(WDOut,'Covariables_PCA',paste('CorrM_QSedim',gnm,'.jpeg',sep=''))
+  jpeg(f.nm, width = 600, height = 480, quality=300)
+  corrplot(MQS$r,type="upper", order="hclust", 
+           p.mat = MQS$P, sig.level = 0.01, insig = "blank",tl.col='black')
+  dev.off()
+  v.msiteQS<-c("sed_Nitrog","sed_p_limo","sed_fosforo","sed_Sodio",
+               "sed_hierro","sed_Magnes") #c("sed_Nitrog","sed_p_limo","sed_fosforo","sed_calcio",
+  #"sed_hierro","sed_Magnes")
+  MF<-CovM%>%dplyr::select(all_of(v.msiteF))%>%na.omit(.)%>%as.matrix(.)%>%rcorr(.)
+  MF<-lapply(MF,function(x){x[is.na(x)]<-0
+  return(x)})
+  
+  corrplot(MF$r,type="upper", order="hclust", 
+           p.mat = MF$P, sig.level = 0.01, insig = "blank",tl.col='black')
+  f.nm<-file.path(WDOut,'Covariables_PCA',paste('CorrM_Struct',gnm,'.jpeg',sep=''))
+  jpeg(f.nm, width = 600, height = 480, quality=300)
+  corrplot(MF$r,type="upper", order="hclust", 
+           p.mat = MF$P, sig.level = 0.01, insig = "blank",tl.col='black')
+  dev.off()
+  
+  # for(i in v.msiteF){
+  #   hist(CovM[,i],main=i)
+  #   readline(prompt='ENTER')
+  # }
+  
+  v.msiteF<-v.msiteF[!v.msiteF%in%c("Bloques","Guijarros","Pgras","Mflot","Vacuat","Arena","ProfSechi")]
+  MT<-CovM%>%dplyr::select(all_of(v.msiteF), all_of(v.msiteQA),all_of(v.msiteQS))%>%
+    na.omit(.)%>%as.matrix(.)%>%rcorr(.)
+  MT<-lapply(MT,function(x){x[is.na(x)]<-0
+  return(x)})
+  
+  corrplot(MT$r,type="upper", order="hclust", 
+           p.mat = MT$P, sig.level = 0.01, insig = "blank",tl.col='black',
+           na.label.col = 'black')
+  f.nm<-file.path(WDOut,'Covariables_PCA',paste('CorrM_FinalV',gnm,'.jpeg',sep=''))
+  
+  jpeg(f.nm, width = 600, height = 480, quality=300)
+  corrplot(MT$r,type="upper", order="hclust", 
+           p.mat = MT$P, sig.level = 0.01, insig = "blank",tl.col='black')
+  dev.off()
+  
+  covbk<-CovM%>%dplyr::select(parentEventID,eventID,
+                              all_of(v.msiteQA),all_of(v.msiteQS),all_of(v.msiteF),
+                              all_of(cat.c),all_of(spa.c),all_of(v.pres),all_of(v.rec))
+  
+  ##Final Covariables
+  
+  covbk$eventID<-gsub('-','_',covbk$eventID)
+  covbk$eventID<-gsub('ANH_','ANH',covbk$eventID)
+  covbk$eventID<-gsub('ANH','ANH_',covbk$eventID)
+  v.msite<-c(v.msiteQA,v.msiteQS,v.msiteF)
+  
 }
-v.msiteF<-v.msiteF[!v.msiteF%in%c("Bloques","Guijarros","Pgras","Mflot","Vacuat","Arena","ProfSechi")]
-MT<-CovM%>%dplyr::select(all_of(v.msiteF), all_of(v.msiteQA),all_of(v.msiteQS))%>%
-  na.omit(.)%>%as.matrix(.)%>%rcorr(.)
-MT<-lapply(MT,function(x){x[is.na(x)]<-0
-return(x)})
-corrplot(MT$r,type="upper", order="hclust", 
-         p.mat = MT$P, sig.level = 0.01, insig = "blank",tl.col='black',
-         na.label.col = 'black')
-f.nm<-file.path(WDOut,'Covariables_PCA',paste('CorrM_FinalV',gnm,'.jpeg',sep=''))
-jpeg(f.nm, width = 600, height = 480, quality=300)
-corrplot(MT$r,type="upper", order="hclust", 
-         p.mat = MT$P, sig.level = 0.01, insig = "blank",tl.col='black')
-dev.off()
-
-##Final Covariables
-covbk<-CovM%>%dplyr::select(parentEventID,eventID,
-                    all_of(v.msiteQA),all_of(v.msiteQS),all_of(v.msiteF),
-                    all_of(cat.c),all_of(spa.c),all_of(v.pres),all_of(v.rec))
-
-
-covbk$eventID<-gsub('-','_',covbk$eventID)
-covbk$eventID<-gsub('ANH_','ANH',covbk$eventID)
-covbk$eventID<-gsub('ANH','ANH_',covbk$eventID)
-v.msite<-c(v.msiteQA,v.msiteQS,v.msiteF)
 
 #Zooplancton
-covbk<-covbk%>%filter(grepl('.*_Z_',eventID))
+if(outD == "Zooplancton"){
+  covbk<-covbk%>%filter(grepl('.*_Z_',eventID))
+}
 #perifiton
-covbk<-covbk%>%filter(grepl('.*_P_',eventID))
-#fitoplancton
-covbk<-covbk%>%filter(grepl('.*_F_',eventID))
-#Macrofitas
-covbk<-covbk%>%filter(grepl('.*_MA',eventID))
-#Macroinvertebrados
-covbk<-covbk%>%filter(grepl('.*_MI',eventID))
+if(outD == "Perifiton"){
+  covbk<-covbk%>%filter(grepl('.*_P_',eventID))  
+}
 
+#fitoplancton
+if(outD == "Fitoplancton"){
+  covbk<-covbk%>%filter(grepl('.*_F_',eventID))
+}
+#Macrofitas
+if(outD == "Macrofitas"){
+  covbk<-covbk%>%filter(grepl('.*_MA',eventID))  
+}
+#Macroinvertebrados
+if(outD == "Macroinvertebrados"){
+  covbk<-covbk%>%filter(grepl('.*_MI',eventID))
+}
+
+# All
 kpv<-c(ls(),'kpv') #variables to keep all the time
+
+#save.image(file = "kpv_temp.RData")
+#load("kpv_temp.RData")
 
 #2) group specific variables
 #2a) get raw data
@@ -230,21 +265,32 @@ kpv<-c(ls(),'kpv') #variables to keep all the time
 #Mamiferos=I2D-BIO_2021_083.xlsx
 #Botanica=I2D-BIO_2021_095.xlsx
 
-Data.et<-read.xlsx(file.path(getwd(),"data", "peces", "plantilla.xlsx"), sheet=1, startRow = 1, na.strings = "N/A")
+Data.et<-read.xlsx(file.path(getwd(),"data", "aves", "I2D-BIO_2021_050_v3_NoTag.xlsx"), 
+                   sheet="Eventos", startRow = 2, na.strings = "N/A")
 
+# MISSING IFS
 #coprofagos_adultos
 Data.et<-Data.et[Data.et$samplingProtocol=='Trampa de excremento humano',]
 #Coprofagos_larvas
 Data.et<-Data.et[Data.et$samplingProtocol=='Captura manual'&is.na(Data.et$EventRemaks),]
-#Hidrobiol?gicos
-Data.et<-Data.et[Data.et$locationRemarks=="Macroinvertebrados",] #Zooplancton Perifiton Fitoplancton Macrofitas
-Data.et$eventID<-gsub('ANH','ANH_',Data.et$eventID)
-Data.et$parentEventID<-gsub('ANH','ANH_',Data.et$parentEventID)
 
+#Hidrobiol?gicos
+if(outD == "Hidrobiologicos"){
+  Data.et<-Data.et[Data.et$locationRemarks=="Macroinvertebrados",] #Zooplancton Perifiton Fitoplancton Macrofitas
+  Data.et$eventID<-gsub('ANH','ANH_',Data.et$eventID)
+  Data.et$parentEventID<-gsub('ANH','ANH_',Data.et$parentEventID)
+}
+
+#All
 Data.et$eventID<-gsub('-','_',Data.et$eventID)
+
 #Murcielagos
-slevnt<-unique(Data.et$eventID[!grepl('M_R',Data.et$eventID)])
-slevntt<-unique(Data.et$eventID[grepl('M_R',Data.et$eventID)])
+if(outD == "Murcielagos"){
+  slevnt<-unique(Data.et$eventID[!grepl('M_R',Data.et$eventID)])
+  slevntt<-unique(Data.et$eventID[grepl('M_R',Data.et$eventID)])
+}
+
+# MISSING IFS
 #Plantas
 names(Data.et)[1]<-'eventID'
 Data.et$samplingProtocol[Data.et$samplingProtocol==
@@ -252,6 +298,7 @@ Data.et$samplingProtocol[Data.et$samplingProtocol==
 Data.et$samplingProtocol[Data.et$samplingProtocol=="Transecto de inventario de flora arb?rea (Oliver et al. 2002, Global Patterns of Plant Diversity: Alwyn H. Gentry Forest Transec Data Set, Missouri Botanical Garden Press) ajustado a DAP m?nimo de 5 cm"]<-'RAP_5cm'
 Data.et$samplingProtocol[Data.et$samplingProtocol=="Muestreo de comunidades de hierbas para estimar coberturas en cuadrantes de un metro cuadrado"]<-'M_Hierb'
 unique(Data.et$samplingProtocol)
+
 #Arboles
 Data.et<-Data.et[!Data.et$samplingProtocol%in%c('M_Hierb','M_epift'),]
 #Epifitas
@@ -263,36 +310,52 @@ Data.et<-Data.et[!Data.et$samplingProtocol%in%c('M_Hierb','RAP_5cm'),]
 #Coprofagos_lv=rrbb_scarabaeidae_santanderANH_2021_PEM_Larvas.xlsx
 #mariposas=I2D-BIO_2021_084_rrbb.xlsx
 
-Data.r<-read.xlsx(file.path(getwd(),"data", "peces", "plantilla.xlsx"), sheet=2, startRow = 1, na.strings = "N/A")
+Data.r<-read.xlsx(file.path(getwd(),"data", "aves", "I2D-BIO_2021_050_v3_NoTag.xlsx"), 
+                  sheet="Registros", startRow = 1, na.strings = "N/A")
 #Data.r<-Data.r[Data.r$class=="Reptilia",] # use to get the group of the analysis
 
+#All
 Data.r$eventID<-gsub('-','_',Data.r$eventID)
-Data.r$identificationQualifier<-tolower(Data.r$identificationQualifier)
-Data.r$scientificName[grep('^[[:lower:]]{1}',
-                           Data.r$scientificName)]<-capitalize(Data.r$scientificName[grep('^[[:lower:]]',
-                                                                                          Data.r$scientificName)])
+
+# identificationQualifier is used when we can't arrive to specific epithets of species
+# used with fishes for example but not with birds
+if(!is.null(Data.r$identificationQualifier)){
+  Data.r$identificationQualifier<-tolower(Data.r$identificationQualifier)
+}
+
+library(Hmisc)
+Data.r$scientificName[grep('^[[:lower:]]{1}',Data.r$scientificName)]<-
+  capitalize(Data.r$scientificName[grep('^[[:lower:]]', Data.r$scientificName)])
+
 #Hidrobiol?gicos
-Data.r$eventID<-gsub('ANH','ANH_',Data.r$eventID)
-Data.r$identificationQualifier<-tolower(Data.r$identificationQualifier)
-###Perifiton to work with non standardized abundances####
-Data.rs<-Data.r
-Data.r$organismQuantity<-Data.r$`measurementValue.(Abundancia.relativa)`
-###Perifiton revert to standardized abundances####
-Data.rss<-Data.rs
-Data.r<-Data.rss
+if(outD == "Hidrobiologicos"){
+  Data.r$eventID<-gsub('ANH','ANH_',Data.r$eventID)
+  Data.r$identificationQualifier<-tolower(Data.r$identificationQualifier)
+  ###Perifiton to work with non standardized abundances####
+  Data.rs<-Data.r
+  Data.r$organismQuantity<-Data.r$`measurementValue.(Abundancia.relativa)`
+  ###Perifiton revert to standardized abundances####
+  Data.rss<-Data.rs
+  Data.r<-Data.rss
+}
 
 #Hormigas
-Data.r$samplingEffort[Data.r$samplingEffort=="12 minutos"]<-12/60
-Data.r$samplingProtocol[Data.r$samplingProtocol=="Trampa de ca?da at?n"]<-"TrampCaid" 
-Data.r$samplingProtocol[Data.r$samplingProtocol=="Captura manual"]<-"CaptMan"
-Data.et$samplingEffort[Data.et$samplingEffort=="12 minutos"]<-12/60
-Data.et$samplingProtocol[Data.et$samplingProtocol=="Trampa de ca?da at?n"]<-"TrampCaid" 
-Data.et$samplingProtocol[Data.et$samplingProtocol=="Captura manual"]<-"CaptMan"
+if(outD == "Hormigas"){
+  Data.r$samplingEffort[Data.r$samplingEffort=="12 minutos"]<-12/60
+  Data.r$samplingProtocol[Data.r$samplingProtocol=="Trampa de ca?da at?n"]<-"TrampCaid" 
+  Data.r$samplingProtocol[Data.r$samplingProtocol=="Captura manual"]<-"CaptMan"
+  Data.et$samplingEffort[Data.et$samplingEffort=="12 minutos"]<-12/60
+  Data.et$samplingProtocol[Data.et$samplingProtocol=="Trampa de ca?da at?n"]<-"TrampCaid" 
+  Data.et$samplingProtocol[Data.et$samplingProtocol=="Captura manual"]<-"CaptMan"
+}
 
 #Mariposas
-Data.r$samplingProtocol<-"Trmp_vanSomRyd"
-Data.et$samplingProtocol<-"Trmp_vanSomRyd"
+if(outD == "Mariposas"){
+  Data.r$samplingProtocol<-"Trmp_vanSomRyd"
+  Data.et$samplingProtocol<-"Trmp_vanSomRyd"
+}
 
+# MISSING IF
 #murcielagos
 Data.r<-Data.r[Data.r$order=='Chiroptera',]
 slevnt2<-Data.r$eventID[Data.r$eventID%in%slevnt&Data.r$order=='Chiroptera'] #eventID in .et not coming from main sampling protocol
@@ -319,7 +382,6 @@ Data.r<-rbind(Data.r[,selC],Data.r_S[,selC])
 Data.et$samplingProtocol[Data.et$samplingProtocol%in%c('Red niebla','Redes de Niebla')]<-'RedNiebla'
 Data.et$samplingProtocol[Data.et$samplingProtocol%in%c('Punto grabaci?n automatica (ultrasonido)',
                                                        'Punto grabaci?n (ultrasonido)')]<-'GrbUltrasonido'
-
 Data.r$samplingProtocol[Data.r$samplingProtocol%in%c('Red de niebla ','Red de niebla')]<-'RedNiebla'
 Data.r$samplingProtocol[Data.r$samplingProtocol%in%c('Grabaci?n direccional (ultrasonido)')]<-'GrbUltrasonido'
 
@@ -343,7 +405,6 @@ Data.r<-Data.r[Data.r$`measurementValue.(Estado.general)`!='Muerto',]
 #Epifitas_NV
 Data.r$samplingProtocol<-'M_epift'
 Data.r<-Data.r[Data.r$scientificName!='Plantae',]
-
 Data.r<-Data.r[grepl('.*[0-9]{1}_[0-9]{1}$',Data.r$organismRemarks),]
 Data.r$eventID_F<-paste(Data.r$eventID,
                         gsub('(.*)([0-9]{1})(_[0-9]{1}$)','\\2',Data.r$organismRemarks),
@@ -353,7 +414,7 @@ Data.r$eventID_T<-paste(Data.r$eventID,
                         sep='_')
 Data.r$Forofito<-as.integer(gsub('(.*)([0-9]{1})(_[0-9]{1}$)','\\2',Data.r$organismRemarks))
 
-
+#All
 #Estimate unique data
 selr<-unique(Data.r$eventID)
 SbUME<-Data.et$eventID[which(!Data.et$eventID%in%selr)] #Data with zero records
@@ -367,9 +428,9 @@ SbUMT<-unique(Data.et$eventID[which(Data.et$samplingProtocol=="Trampa de excreme
 SbUME<-Data.et$eventID[which(!Data.et$eventID%in%selr&Data.et$samplingProtocol=="Captura manual")]
 SbUMT<-unique(Data.et$eventID[which(Data.et$samplingProtocol=="Captura manual")])
 
-
-
+#All
 kpv<-c(kpv,c('Data.et','Data.r','SbUME','SbUMT','Data.rs'))
+
 #########
 
 #2b) quality checks##
@@ -383,39 +444,56 @@ kpv<-c(kpv,c('Data.et','Data.r','SbUME','SbUMT','Data.rs'))
 #hidrobiologicos
 #gsub(pattern = "^(ANH)([0-9]+)(_.*)$", replacement = "\\1_\\2", Data.r$eventID)
 
+#All
 #UM  empty 
-Data.r$parentEventID <- gsub(pattern = "^(ANH_[0-9]+)(_.*[C|D])$", replacement = "\\1", Data.r$eventID) 
+Data.r$parentEventID <- gsub(pattern = "^(ANH_[0-9]+)(_.*)$", replacement = "\\1", Data.r$eventID)
 UM<-unique(Data.r$parentEventID)
-UME<-setdiff(unique(gsub(pattern = "^(ANH_[0-9]+)(_.*[C|D])$", replacement = "\\1", Data.r$eventID)), UM)
+UME<-setdiff(unique(gsub(pattern = "^(ANH_[0-9]+)(_.*)$", replacement = "\\1", Data.r$eventID)), UM)
 UMT<-unique(gsub(pattern = "^(ANH_[0-9]+)(_.*)$", replacement = "\\1", SbUMT))
-
-
 kpv<-c(kpv,c('UM','UME','UMT'))
 
 # this applies for fish
-Data.r <- complete_cols(Data.r, Data.et,  "eventID", c("eventID", "samplingProtocol", "habitat"))#
+if(outD == "Peces"){
+  Data.r <- complete_cols(Data.r, Data.et,  "eventID", c("eventID", "samplingProtocol", "habitat"))#  
+}
 
-#ALL
-unique(Data.et$samplingProtocol)
+#All
+# Complete columns in Data.r that are in Data.e. It usually is habitat #varies from group to group
+Data.r <- complete_cols(BD_registros = Data.r, BD_eventos = Data.et,  link = "eventID", 
+                        vector_cols = c("samplingProtocol"))#
+
+library(stringi)
 Data.et$samplingProtocol <- trimws(Data.et$samplingProtocol)
 Data.r$samplingProtocol <- trimws(Data.r$samplingProtocol)
+Data.et$samplingProtocol <- homolog_factors(Data.et, column = "samplingProtocol")
+Data.r$samplingProtocol <- homolog_factors(Data.r, column = "samplingProtocol")
 
 #Data.r$habitat<-trimws(Data.r$habitat)
 Data.r$organismQuantity<-as.numeric(Data.r$organismQuantity)
 Data.et$samplingEffort[is.na(Data.et$samplingEffort)]<-0
 
+unique(Data.et$samplingProtocol)
+unique(Data.r$samplingProtocol)
 
 ###this applies for fish ###
-Data.et$samplingProtocol[Data.et$samplingProtocol=="Red de arrastre"|Data.et$samplingProtocol=="Red de Arrastre"]<-"Arrastre"
-Data.et$samplingProtocol[Data.et$samplingProtocol=="trasmallo"]<-"Trasmallo"
-unique(Data.et$samplingProtocol)
+if(outD == "Peces"){
+  Data.et$samplingProtocol[Data.et$samplingProtocol=="Red de arrastre"|Data.et$samplingProtocol=="Red de Arrastre"]<-"Arrastre"
+  Data.et$samplingProtocol[Data.et$samplingProtocol=="trasmallo"]<-"Trasmallo"
+  unique(Data.et$samplingProtocol)
+}
 
 ### This applies for birds###
-names(Data.et)[2]<-'parentEventID'
+if(outD == "Aves"){
+  names(Data.et)[2]<-'parentEventID'  
+}
+
 
 ### This applies for herpetos###
-Data.et$samplingProtocol<-'VES'
+if(outD == "Herpetos"){
+  Data.et$samplingProtocol<-'VES'
+}
 
+# MISSING IFS
 ##Coprofagos-adults##
 Data.et$samplingProtocol[Data.et$samplingProtocol=="Trampa de excremento humano"]<-"TrmpExHum"
 Data.r$samplingProtocol[Data.r$samplingProtocol=="Trampa de excremento humano"]<-"TrmpExHum"
@@ -445,36 +523,43 @@ Data.et$samplingEffort<-sE[mtchSE]
 Data.et$samplingProtocol[Data.et$samplingProtocol=="Botella Van Dorn"]<-"B.vDorn"
 Data.r$samplingProtocol[Data.r$samplingProtocol=="Botella Van Dorn"]<-"B.vDorn"
 Data.r<-Data.r[,-4]
+
 #perifiton
 Data.et$samplingProtocol<-"Raspado"
 Data.r$samplingProtocol<-"Raspado"
+
 #Macrofitas
 Data.et$samplingProtocol<-"Cuadrante"
 Data.r$samplingProtocol<-"Cuadrante"
+
 #Macroinvertebrados
 Data.et$samplingProtocol<-"Red_D"
 Data.r$samplingProtocol<-"Red_D"
-
-unique(Data.r$samplingProtocol)
-unique(Data.r$habitat)
-
 Data.et$habitat[Data.et$habitat=="Bosque fragmentado con vegetaci?n secundaria"]<-"Bosque Frag VS" 
 Data.r<-Data.r%>%dplyr::select(-"habitat")
+
+#All
+unique(Data.r$samplingProtocol)
+
 #######
 
 Data.e<-Data.et[Data.et$eventID%in%selr,] #only those records with data
 
 
 #2c) group environment
+#All
 #section to verify that names of the columns is consistent
 cnm.smp<-c("samplingEffort","samplingProtocol") #from data
 kpv<-c(kpv,c('Data.e','ctnm','fnn','cnm.smp','gnm'))
-
-
 Data.r$scientificName_2<-trimws(Data.r$scientificName)
-selrnm<-!is.na(Data.r$identificationQualifier)
-Data.r$scientificName_2[selrnm]<-paste(Data.r$scientificName[selrnm],
-                                       trimws(Data.r$identificationQualifier[selrnm]))
+
+# identificationQualifier is used when we can't arrive to specific epithets of species
+# used with fishes for example but not with birds
+if(!is.null(Data.r$identificationQualifier)){
+  selrnm<-!is.na(Data.r$identificationQualifier)
+  Data.r$scientificName_2[selrnm]<-paste(Data.r$scientificName[selrnm],
+                                         trimws(Data.r$identificationQualifier[selrnm]))
+}
 
 #coprofagos
 Data.r$scientificName_2[selrnm]<-paste(Data.r$scientificName[selrnm],
@@ -490,8 +575,7 @@ Data.r$scientificName_2[selrnm]<-paste(Data.r$scientificName[selrnm],paste(
                                        sep=''))
 Data.r$scientificName_2[selrnm]<-gsub(' NA','',Data.r$scientificName_2[selrnm])
 
-
-
+#All
 unique(Data.r$scientificName_2)
 shrscitf<-gsub("^([[:alpha:]]{4}).*([[:space:]])([[:alpha:]]{4}).*$","\\1_\\3",
      unique(Data.r$scientificName_2))
@@ -502,9 +586,10 @@ print(duplsp)
 Data.r[Data.r$scientificName_2%in%duplsp[3:4],c('scientificName','scientificName_2')]
 
 ##Peces
-
-Data.r$scientificName_2[Data.r$scientificName_2%in%duplsp[c(1,3)]]<-'Hyphessobrycon natagaima aff. natagaima'
-Data.r$scientificName_2[Data.r$scientificName_2%in%duplsp[c(2,4)]]<-'Characidium zebra cf. zebra'
+if(outD == "Peces" & length(duplsp) != 0){
+  #Data.r$scientificName_2[Data.r$scientificName_2%in%duplsp[c(1,3)]]<-'Hyphessobrycon natagaima aff. natagaima'
+  Data.r$scientificName_2[Data.r$scientificName_2%in%duplsp[c(2,4)]]<-'Characidium zebra cf. zebra'
+}
 
 #perifiton
 Data.r$scientificName_2[Data.r$scientificName_2%in%duplsp[1:2]]<-'Closterium gracile cf. gracile'
@@ -526,24 +611,23 @@ UME<-setdiff(unique(gsub(pattern = "^(ANH_[0-9]+)(_.*)$", replacement = "\\1", S
 #epifitas
 Data.r$scientificName_2[Data.r$scientificName_2%in%duplsp[1]]<-'Malmidea ppris'
 
-# Complete columns in Data.r that are in Data.e. It usually is habitat #varies from group to group
-Data.r <- complete_cols(Data.r, Data.et,  "eventID", c("eventID","parentEventID", 
-                                                            "samplingProtocol","habitat", "eventDate",
-                                                       "eventTime"
-                                                            ))#
+
 # final covariate table
 #Collembola
-covbk <- complete_cols(covbk, Data.et,  "eventID", c("habitat"))
-covbk<-covbk[covbk$parentEventID%in%UMT,] #gets covariates on all UM
+if(outD == "Colembola"){
+  covbk <- complete_cols(covbk, Data.et,  "eventID", c("habitat"))
+  covbk<-covbk[covbk$parentEventID%in%UMT,] #gets covariates on all UM
+}
 
-#others
+# All
+# others
 covbk<-covbk[covbk$parentEventID%in%UMT,] #gets covariates on all UM
 
 #Epifitas
 covbk<-covbk[covbk$eventID%in%Data.r$eventID,]
 covbk <- complete_cols(covbk, Data.et,  "eventID", c("habitat"))
 
-#epifitas-fix datasets
+##epifitas-fix datasets
 Data.r$parentEventID <- Data.r$eventID
 Data.r$eventID<-Data.r$eventID_F
 Data.r$organismQuantity[is.na(Data.r$organismQuantity)|(Data.r$organismQuantity==0)]<-1
@@ -555,6 +639,7 @@ Data.et2<-unique(Data.et2)
 rownames(Data.et2)<-NULL
 Data.et<-Data.et2
 
+#Arboles
 #Fix habitat Arboles
 cov$habitat2<-gsub(' ripario| denso','',cov$habitat)
 cov$habitat2[is.na(cov$habitat2)]<-'Bosque'
@@ -573,12 +658,7 @@ covbk2<-covbk[mtchEv,]
 covbk2$eventID<-Data.et$eventID
 covbk<-covbk2
 
-
-
-cov<-covbk
-kpv<-c(kpv,c('cov'))
-
-#Cob_vs_Habitat
+##Cob_vs_Habitat
 TablC_v_HH<-table(cov[,'Cobertura'],cov[,ctnm]) #matrix of changes in habitat categorization
 TablH_v_HH<-table(cov[,'habitat'],cov[,ctnm]) 
 write.csv(TablC_v_HH,file.path(WDOut,'Cob_v_Hhomologado.csv'))
@@ -593,21 +673,27 @@ cov.2<-cov[,c('eventID','parentEventID','CobMam','habitat','Cobertura')]%>%
 Tabl2H_v_HH<-table(cov.2[,'habitat'],cov.2[,ctnm]) 
 write.csv(Tabl2H_v_HH,file.path(WDOut,'habitat_v_Hhomologado_RedNiebla.csv'))
 
+#All
+cov<-covbk
+kpv<-c(kpv,c('cov'))
 
 #2d) get sampling effort
+# MISSING IFS
 #for birds
 #gsub("([0-9]+\\.*[0-9]+).*$"
 #for fish/coprofagos
 #gsub("([0-9]+).*$")
 #zooplancton
 #gsub("([0-9]+).*$",'\\1',samplingEffort)
+
+# modify gsub searching character
 samEff.t<-Data.et[,c('parentEventID',cnm.smp)] %>% na.omit(.)%>%
-  dplyr::mutate(samplEff=as.numeric(gsub("([0-9]+|[0-9]+\\.[0-9]+).*$",'\\1',samplingEffort)))%>%
+  dplyr::mutate(samplEff=as.numeric(gsub("([0-9]+\\.*[0-9]+).*$",'\\1',samplingEffort)))%>%
   dplyr::group_by(parentEventID,get(cnm.smp[2]))%>%
   dplyr::summarize(samplEff=sum(samplEff),Num_ev=dplyr::n())
 
-
-
+#All
+# modify gsub searching character
 colnames(samEff.t)[1:2]<-c('parentEventID',cnm.smp[2])
 sameEff.tt<-split(samEff.t,as.factor(samEff.t$samplingProtocol))
 library(vegan)
@@ -616,26 +702,34 @@ samEff.ttt<-purrr::map(sameEff.tt, function(x) data.frame(as.data.frame(x),
 kpv<-c(kpv,'samEff.ttt')
 rm(list=ls()[!ls()%in%kpv])
 
+##
+#All
+#function for modyfing eventID from 5 or more labels to 4 in order to match with eventID from eventos database
+Data.r <- modify_event_label(data = Data.r)
+
 
 #3a) Diversity by method: abundance
 #Regional Diversity
 table(Data.r$parentEventID,Data.r$samplingProtocol)
 rowSums(table(Data.r$parentEventID,Data.r$samplingProtocol))
 
-#Collembola/Epifitas/Arboles/Anfibios/reptiles/coprofagos_ad/Peces/Aves/zooplancton/perifiton/fitoplancton/macrofitas/hormigas
+# Collembola/Epifitas/Arboles/Anfibios/reptiles/coprofagos_ad/Peces/
+# Aves/zooplancton/perifiton/fitoplancton/macrofitas/hormigas
 ommt<-c("") 
 ompv<-c("")
+
 #Roedores
 ommt<-c("Manual")
 ompv<-c("")
+
 #murcielagos
 ommt<-c("RedNiebla_Av","GrbUltrasonido")
 ompv<-c("")
 
+# All
 Data.r2<-Data.r %>% dplyr::filter((!parentEventID%in%ompv)&(!samplingProtocol%in%ommt))
 nsp<-unique(Data.r2$parentEventID)
 nsp<-length(!nsp%in%ompv)
-
 library(tidyr)
 Data.ee.r<-Data.r2%>%
   dplyr::select(parentEventID,organismQuantity,samplingProtocol,scientificName_2)%>%
@@ -665,19 +759,24 @@ library(tibble)
 Data.ee.r<-Data.ee.r%>%pivot_wider(.,names_from=samplingProtocol,values_from=TotAbu, values_fn=sum,values_fill=0)%>%
   column_to_rownames(.,var="scientificName_2")%>%as.list(.)
 
+# All
 library(iNEXT)
+library(dplyr)
 Hill.r<-iNEXT(Data.ee.r,q=c(0,1,2),datatype = "abundance")
 PrintggiNext(paste(gnm,'_abM',sep=''),Hill.r)
 kpv<-c(kpv,'Hill.r','Data.ee.r')
 rm(list=ls()[!ls()%in%kpv])
 
 #3b) Overall Diversity incidence
+
 #Muercielagos
 ommt<-c("RedNiebla_Av")
 ompv<-c("")
+
 #Otros
 ommt<-c("")
 ompv<-c("")
+
 Data.r2<-Data.r%>%filter((!parentEventID%in%ompv)&(!samplingProtocol%in%ommt))
 Data.ii.r<-Data.r2%>%
   dplyr::select(parentEventID,organismQuantity,scientificName_2)%>%
@@ -692,7 +791,7 @@ rm(list=ls()[!ls()%in%kpv])
 #3c) Hill by factor and method with abundance
 
 #Aves
-ommt<-c("Recorrido en lancha","Recorrido Libre") #method to be omitted
+ommt<-c("Recorrido en lancha", "Recorrido Libre", "Accidental") #method to be omitted
 ompv<-c("ANH_380")
 #Arboles/Anfibios/Reptiles/Coprofagos/hidrobiol?gicos
 ommt<-c("")
@@ -703,11 +802,12 @@ ompv<-c("")
 #mam?feros
 ommt<-c("RedNiebla_Av","GrbUltrasonido")
 ompv<-c("")
-
-###################
+#otros
+ommt<-c("")
+ompv<-c("")
 
 # ctnm
-Data.ee.oo<-Data.a.f(ctnm,fn="sum",scale=TRUE) #scale is used for groups non-integer abundance
+Data.ee.oo<-Data.a.f(catnm = ctnm, fn="sum",scale=TRUE) #scale is used for groups non-integer abundance
 map(names(Data.ee.oo), function (x){
   write.csv(Data.ee.oo[[x]],file.path(WDOut,
                                       paste("species_HabHomolog", x,".csv", sep="")))
@@ -736,7 +836,7 @@ Data.ee.rd2<-map(names(Data.ee.rd),function(xx){
   iNext.o<-iNEXT(x,q=c(0,1,2), datatype="abundance")
   return(iNext.o)
 })
-  names(Data.ee.rd2)<-names(Data.ee.rd)
+names(Data.ee.rd2)<-names(Data.ee.rd)
 map(names(Data.ee.rd),function(xx){
   fnm2<-paste(gnm,'Red.Hidrica',xx,sep='_')
   v<-Data.ee.rd2[[xx]]
@@ -839,6 +939,8 @@ map(names(Data.ee.sl2),function(xx){
   return()
 })
 kpv<-c(kpv,'Data.ee.sl')
+
+#All
 rm(list=ls()[!ls()%in%kpv])
 
 #3d) Hill by factor with Incidence
@@ -901,8 +1003,9 @@ PrintggiNextInc(fnm2,Data.ei.sl2)
 fnm2<-paste(gnm,'UCSuelo','Inc',sep='_')
 PrintRefiNext(fnm2,'UCSuelo',Data.ei.sl2)
 kpv<-c(kpv,'Data.ei.sl2')
-rm(list=ls()[!ls()%in%kpv])
 
+# All
+rm(list=ls()[!ls()%in%kpv])
 save.image(file.path(WDOut,paste("wrkspc",gnm,Sys.Date(),".RData",sep="")))
 
 
@@ -912,8 +1015,8 @@ rowSums(table(Data.r$parentEventID,Data.r$organismQuantity))
 ommt<-c("") #method to be omitted
 ompv<-c("ANH_380","ANH_64","ANH_65") #does not have covariates
 #reptiles
-# ommt<-c("") #method to be omitted
-# ompv<-c("ANH_9") 
+ommt<-c("") #method to be omitted
+ompv<-c("ANH_9") 
 #Arboles/Anfibios/Reptiles/Peces/zooplancton/Coprofagos
 ommt<-c("")
 ompv<-c("")
@@ -925,8 +1028,8 @@ ompv<-c("")
 ommt<-c("RedNiebla_Av","GrbUltrasonido")
 ompv<-c("")
 
-Data.ee.mm0<-Data.a.MU(Data.r,'parentEventID',
-                      "^(ANH_[0-9]+)(_.*)$",fnn,scale=FALSE)
+Data.ee.mm0<-Data.a.MU(DataP = Data.r,evID = 'parentEventID',
+                       expPEID = "^(ANH_[0-9]+)(_.*)$",fn = fnn, scale=FALSE)
 Data.ee.mm<-map(names(Data.ee.mm0),function(x){
   xx<-Data.ee.mm0[[x]]
   y<-CompletEmpty(xx,'parentEventID',UME,x)
@@ -938,15 +1041,19 @@ rm(list=ls()[!ls()%in%kpv])
 
 #4b) Hills by sub-MU with abundance
 rowSums(table(Data.r$eventID,Data.r$organismQuantity))
+
 #Aves
 ommt<-c("") #method to be omitted
 ompv<-c("ANH_380","ANH_64","ANH_65")
+
 #Reptiles
 ommt<-c("") #method to be omitted
 ompv<-c("ANH_9") #c("ANH_380","ANH_64","ANH_65")
+
 #Arboles/Anfibios/Reptiles/peces/hidrobiologicos/coprofagos
 ommt<-c("")
 ompv<-c("")
+
 #murcielagos
 ommt<-c("RedNiebla_Av","GrbUltrasonido")
 ompv<-c("")
@@ -968,14 +1075,13 @@ rm(list=ls()[!ls()%in%kpv])
 ommt<-c("") #method to be omitted
 ompv<-c("")
 
-
 #text for period event
 
 ##fish
 #schtxt<-"_[R|A|E|T]_"
 #gsub(schtxt,"_",eventID)
 #aves
-#No aplica
+#schtxt<-""
 ##herpetos
 #schtxt<-"_Herp_T[1|2|3]_"
 #Murcielagos
@@ -984,11 +1090,14 @@ ompv<-c("")
 ommt<-c("RedNiebla_Av","GrbUltrasonido")
 ompv<-c("")
 
+library(lubridate)
 Data.pr<-Data.r%>%
   mutate('eventPer'=hour(as.POSIXct(Data.r$eventTime,format="%H:%M:%S")))
 Data.pr$eventPer[Data.pr$eventPer<18|Data.pr$eventPer>21]<-21
 Data.pr$eventPer<-paste(Data.pr$parentEventID,Data.pr$eventPer,sep='_')
 Data.pr<-Data.pr[,names(Data.pr)!='eventID']
+
+#All
 #Others
 Data.pr<-Data.r%>%
   mutate('eventPer'=gsub(schtxt,"_",eventID))%>%dplyr::select(-eventID)
@@ -1000,7 +1109,7 @@ rm(list=ls()[!ls()%in%kpv])
 
 #4d) Diversidad agregando protocols
 #Aves
-ommt<-c("Recorrido en lancha","Recorrido Libre")
+ommt<-c("Recorrido en lancha","Recorrido Libre", "Accidental")
 ompv<-c("ANH_380","ANH_64","ANH_65")
 #Peces
 ommt<-""
@@ -1012,18 +1121,21 @@ ompv<-c("")
 ommt<-c("RedNiebla_Av")
 ompv<-c("")
 
-
+# All
 Data.pt<-Data.r%>%
   filter((!parentEventID%in%ompv)&(!samplingProtocol%in%ommt))
 nsp<-length(unique(Data.pt$parentEventID))
 ##peces
-grp<-list('Ar_At'=c('Arrastre','Atarraya'),
-           'Ar_At_El'=c('Arrastre','Atarraya','Electropesca'),
-           'Ar_At_Tr'=c('Arrastre','Atarraya','Trasmallo'))
+unique(Data.pt$samplingProtocol)
+
+grp<-list('Ar_At'=c('Red de arrastre','Atarraya'),
+           'Ar_At_El'=c('Red de arrastre','Atarraya','Electropesca'),
+           'Ar_At_Tr'=c('Red de arrastre','Atarraya','Trasmallo'))
 #herpetos
 grp<-list('VES'=c('VES'))
 #Aves
-grp<-list('PntFijo'=c('Punto Fijo'))
+grp<-list('PntFijo'=c('Punto Fijo'), 
+          'PntFijo_RdNiebla'=c('Punto Fijo', "Redes de Niebla"))
 #Coprofagos_ad
 grp<-list('TrmpExHum'=c('TrmpExHum'))dfad
 #Coprofagos_lv
@@ -1125,6 +1237,7 @@ Data.ee.prr<-Data.i.pr(Data.ee.pr,grp,'parentEventID',
                        expPEID='^(ANH_[0-9]+)(_.*)$',
                        c('Berlese'))
 
+#All
 cov.1<-cov%>%filter(parentEventID%in%Data.ee.prr$parentEventID)%>%
   distinct(parentEventID,.keep_all=T)%>%dplyr::select(-c('eventID'))
 Data.ee.prr<-Data.ee.prr%>%
@@ -1144,17 +1257,18 @@ Data.pr<-Data.r%>%
 Data.ei.t<-Data.a.pt(grp,Data.pr,'eventPer',fn="sum")
 ## sampling method which will be the baseline of the grouping. In orignal form
 #Peces
-c('Arrastre','Atarraya')
+c('Red de arrastre','Atarraya')
 #Aves
 c('Punto Fijo')
 #Herpetos
 c('VES')
 
-Data.ei.ttt<-Data.a.t(Data.ei.t,'evenPer',grp,samEff.ttt,c('Arrastre','Atarraya')) 
+Data.ei.ttt<-Data.a.t(Data.ei.t,'evenPer',grp,samEff.ttt,c("Punto Fijo", "Redes de Niebla")) 
 write.csv(Data.ei.ttt,file.path(WDOut,'CurvasDiversidad', paste(gnm,'_','SubTempMU_Estim_Grp.csv',sep='')))
 kpv<-c(kpv,'Data.ei.t','Data.ei.ttt')
 rm(list=ls()[!ls()%in%kpv])
 
+###########################################################
 
 #5) Plot with MU diversity -Abundance
 #plot with cover color

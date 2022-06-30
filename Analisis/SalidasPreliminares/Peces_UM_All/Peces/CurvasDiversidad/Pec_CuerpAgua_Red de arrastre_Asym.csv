@@ -1,0 +1,4 @@
+"","Site","Diversity","Observed","Estimator","s.e.","LCL","UCL","n","S.obs","SC"
+"1","A","Species richness",20,24.878,4.82,20.968,44.594,223,20,0.9688
+"2","A","Shannon diversity",7.185,7.635,0.627,7.185,8.863,223,20,0.9688
+"3","A","Simpson diversity",4.803,4.887,0.377,4.803,5.626,223,20,0.9688

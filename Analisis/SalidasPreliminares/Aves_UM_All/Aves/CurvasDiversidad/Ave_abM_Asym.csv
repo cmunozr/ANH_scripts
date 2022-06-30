@@ -1,0 +1,13 @@
+"","Site","Diversity","Observed","Estimator","s.e.","LCL","UCL","n","S.obs","SC"
+"1","Redes de Niebla","Species richness",36,57.182,14.427,42.317,107.029,141,36,0.8871
+"2","Redes de Niebla","Shannon diversity",19.31,24.006,2.734,19.31,29.364,141,36,0.8871
+"3","Redes de Niebla","Simpson diversity",10.978,11.82,1.971,10.978,15.684,141,36,0.8871
+"4","Punto Fijo","Species richness",207,227.248,10.186,214.981,258.368,9158,207,0.9971
+"5","Punto Fijo","Shannon diversity",66.344,67.221,0.909,66.344,69.003,9158,207,0.9971
+"6","Punto Fijo","Simpson diversity",36.676,36.819,0.685,36.676,38.162,9158,207,0.9971
+"7","Recorrido en lancha","Species richness",90,102.493,7.312,94.312,126.194,1695,90,0.9882
+"8","Recorrido en lancha","Shannon diversity",30.02,31.025,0.981,30.02,32.948,1695,90,0.9882
+"9","Recorrido en lancha","Simpson diversity",18.253,18.441,0.646,18.253,19.707,1695,90,0.9882
+"10","Accidental","Species richness",2,2.5,1.107,2.037,8.808,2,2,0.6667
+"11","Accidental","Shannon diversity",2,3.375,1.096,2,5.524,2,2,0.6667
+"12","Accidental","Simpson diversity",2,2,0.484,2,2.949,2,2,0.6667

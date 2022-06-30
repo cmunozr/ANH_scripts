@@ -1,0 +1,19 @@
+"","Site","Diversity","Observed","Estimator","s.e.","LCL","UCL","n","S.obs","SC"
+"1","SOGAMOSITO-PAREDES","Species richness",3,3,0.489,3,4.543,17,3,1
+"2","SOGAMOSITO-PAREDES","Shannon diversity",2.123,2.265,0.348,2.123,2.948,17,3,1
+"3","SOGAMOSITO-PAREDES","Simpson diversity",1.795,1.889,0.397,1.795,2.668,17,3,1
+"4","SALADO-MAGDALENA","Species richness",8,9.045,1.665,8.115,17.464,14,8,0.8222
+"5","SALADO-MAGDALENA","Shannon diversity",7.445,10.444,2.083,7.445,14.527,14,8,0.8222
+"6","SALADO-MAGDALENA","Simpson diversity",7,13,2.107,8.871,17.129,14,8,0.8222
+"7","RIO MAGDALENA","Species richness",10,22.188,16.72,11.622,101.551,40,10,0.8763
+"8","RIO MAGDALENA","Shannon diversity",6.454,8.32,1.898,6.454,12.04,40,10,0.8763
+"9","RIO MAGDALENA","Simpson diversity",5.161,5.778,0.895,5.161,7.532,40,10,0.8763
+"10","MONTECRISTO-YARIRI","Species richness",3,3,0.477,3,4.5,12,3,1
+"11","MONTECRISTO-YARIRI","Shannon diversity",2.505,2.746,0.413,2.505,3.555,12,3,1
+"12","MONTECRISTO-YARIRI","Simpson diversity",2.323,2.64,0.454,2.323,3.529,12,3,1
+"13","CAÑO NEGRO Y AFLUENTES","Species richness",5,6.882,3.537,5.169,25.942,17,5,0.8893
+"14","CAÑO NEGRO Y AFLUENTES","Shannon diversity",3.331,4.065,1.127,3.331,6.274,17,5,0.8893
+"15","CAÑO NEGRO Y AFLUENTES","Simpson diversity",2.513,2.776,0.889,2.513,4.518,17,5,0.8893
+"16","LA MORENA-TRECE","Species richness",1,1,0.312,1,2.549,1,1,1
+"17","LA MORENA-TRECE","Shannon diversity",1,0,0,1,0,1,1,1
+"18","LA MORENA-TRECE","Simpson diversity",1,1,0,1,1,1,1,1
