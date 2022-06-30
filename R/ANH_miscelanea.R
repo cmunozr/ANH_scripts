@@ -3,6 +3,7 @@
 
 # Librerias
 library(openxlsx)
+library(dplyr)
 
 # leer el archivo original
 dataReg <- read.xlsx("data/aves/I2D-BIO_2021_050_v3.xlsx", sheet="Registros", startRow = 1, na.strings = "N/A")
@@ -26,6 +27,12 @@ split_temporadas <- function(db, column = "eventID", char_search = "_T2"){
   
   return(list("T1" = T1, "T2" = T2))
 }
+
+remove_UM <- function(data, by, UM){
+  x <- data %>% filter(., by == UM)
+}
+
+
 
 # correr funcion split_temporadas
 splitReg <- split_temporadas(db = dataReg)

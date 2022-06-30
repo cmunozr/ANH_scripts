@@ -311,7 +311,7 @@ complete_cols<- function(BD_registros, BD_eventos, link, vector_cols){
 Data.a.f<-function(catnm,fn="sum",scale=F){
   cov.1<-cov
   names(cov.1)[names(cov.1)==catnm]<-'categ'
-  Data.r2<-Data.r%>%filter((!parentEventID%in%ompv)&(!samplingProtocol%in%ommt))
+  Data.r2<-Data.r%>%filter((!parentEventID%in%ompv)&(!eventID%in%ompv)&(!samplingProtocol%in%ommt))
   nsp<-unique(Data.r2$parentEventID)
   cov.1<-cov.1%>%dplyr::select(eventID,parentEventID,categ)%>%
     distinct(eventID,.keep_all=T)%>%
@@ -357,7 +357,7 @@ Data.a.f<-function(catnm,fn="sum",scale=F){
 Data.i.f<-function(catnm){
   cov.1<-cov
   names(cov.1)[names(cov.1)==catnm]<-'categ'
-  Data.r2<-Data.r%>%filter((!parentEventID%in%ompv)&(!samplingProtocol%in%ommt))
+  Data.r2<-Data.r%>%filter((!parentEventID%in%ompv)&(!eventID%in%ompv)&(!samplingProtocol%in%ommt))
   nsp<-unique(Data.r2$parentEventID)
   cov.1<-cov.1%>%dplyr::select(eventID,parentEventID,categ)%>%
     distinct(eventID,.keep_all=T)%>%
@@ -387,7 +387,7 @@ Data.i.f<-function(catnm){
 Data.a.MU<-function(DataP,evID,expPEID="^(ANH_[0-9]+)(_.*)$",fn="sum",scale=FALSE){
   cov.1<-cov%>%distinct(parentEventID,.keep_all=T)%>%
     dplyr::select('parentEventID',all_of(v.rec),all_of(v.pres),all_of(v.msite),all_of(cat.c))
-  Data.r2<-DataP%>%filter((!parentEventID%in%ompv)&(!samplingProtocol%in%ommt))
+  Data.r2<-DataP%>%filter((!parentEventID%in%ompv)&(!eventID%in%ompv)&(!samplingProtocol%in%ommt))
   names(Data.r2)[names(Data.r2)==evID]<-'evID'
   if(fn=="sum"){
     Data.rr.n<-Data.r2%>%
@@ -854,7 +854,7 @@ getNMDS_i_DF<-function(Data.ordi,evenID){
 Data.a.r<-function(cnm,grnm,fn,scale=FALSE){
   cov.1<-cov
   names(cov.1)[names(cov.1)==cnm]<-'categ'
-  Data.r2<-Data.r%>%filter((!parentEventID%in%ompv)&(!samplingProtocol%in%ommt))
+  Data.r2<-Data.r%>%filter((!parentEventID%in%ompv)&(!eventID%in%ompv)&(!samplingProtocol%in%ommt))
   nsp<-unique(Data.r2$parentEventID)
   cov.1<-cov.1%>%dplyr::select(parentEventID,categ)%>%distinct(parentEventID,.keep_all=T)%>%
     filter(parentEventID%in%nsp)
@@ -900,7 +900,7 @@ Data.a.r<-function(cnm,grnm,fn,scale=FALSE){
 } #getslist by category with abundance
 Data.a.rt<-function(Data.rr,cnm1,cnm2,grnm,fn,scale=FALSE){
   cov.1<-cov
-  Data.r2<-Data.rr%>%filter((!parentEventID%in%ompv)&(!samplingProtocol%in%ommt))
+  Data.r2<-Data.rr%>%filter((!parentEventID%in%ompv)&(!eventID%in%ompv)&(!samplingProtocol%in%ommt))
   nsp<-unique(Data.r2$parentEventID)
   cov.1<-cov.1%>%distinct(parentEventID,.keep_all=T)%>%
     filter(parentEventID%in%nsp)

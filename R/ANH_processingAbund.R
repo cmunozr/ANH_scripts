@@ -22,7 +22,7 @@ for(p in 1:length(rqurd) ){
 
 #0b) Define working directories and group variables
 
-outD<-'Aves'#'Zooplancton' #master folder for output
+outD<-'Aves_T2'#'Zooplancton' #master folder for output
 outDD<-'Aves'#'Hidrobiologicos' #Grupo like stated in the covariate file
 ctnm<- "CobAves" # 'waterBody' #CobColl'#"CuerpAgua" #main factor for análisis
 gnm<- 'Ave' #'Coll'#"Zoop" #group prefix
@@ -265,8 +265,8 @@ kpv<-c(ls(),'kpv') #variables to keep all the time
 #Mamiferos=I2D-BIO_2021_083.xlsx
 #Botanica=I2D-BIO_2021_095.xlsx
 
-Data.et<-read.xlsx(file.path(getwd(),"data", "aves", "I2D-BIO_2021_050_v3_NoTag.xlsx"), 
-                   sheet="Eventos", startRow = 2, na.strings = "N/A")
+Data.et<-read.xlsx(file.path(getwd(),"data", "aves", "I2D-BIO_2021_050_v3_T2.xlsx"), 
+                   sheet="Eventos", startRow = 1, na.strings = "N/A")
 
 # MISSING IFS
 #coprofagos_adultos
@@ -310,8 +310,8 @@ Data.et<-Data.et[!Data.et$samplingProtocol%in%c('M_Hierb','RAP_5cm'),]
 #Coprofagos_lv=rrbb_scarabaeidae_santanderANH_2021_PEM_Larvas.xlsx
 #mariposas=I2D-BIO_2021_084_rrbb.xlsx
 
-Data.r<-read.xlsx(file.path(getwd(),"data", "aves", "I2D-BIO_2021_050_v3_NoTag.xlsx"), 
-                  sheet="Registros", startRow = 1, na.strings = "N/A")
+Data.r<-read.xlsx(file.path(getwd(),"data", "aves", "I2D-BIO_2021_050_v3_T2.xlsx"), 
+                  sheet="Registro", startRow = 1, na.strings = "N/A")
 #Data.r<-Data.r[Data.r$class=="Reptilia",] # use to get the group of the analysis
 
 #All
@@ -458,7 +458,7 @@ if(outD == "Peces"){
 }
 
 #All
-# Complete columns in Data.r that are in Data.e. It usually is habitat #varies from group to group
+# Complete columns in Data.r that are in Data.e.
 Data.r <- complete_cols(BD_registros = Data.r, BD_eventos = Data.et,  link = "eventID", 
                         vector_cols = c("samplingProtocol"))#
 
@@ -693,7 +693,6 @@ samEff.t<-Data.et[,c('parentEventID',cnm.smp)] %>% na.omit(.)%>%
   dplyr::summarize(samplEff=sum(samplEff),Num_ev=dplyr::n())
 
 #All
-# modify gsub searching character
 colnames(samEff.t)[1:2]<-c('parentEventID',cnm.smp[2])
 sameEff.tt<-split(samEff.t,as.factor(samEff.t$samplingProtocol))
 library(vegan)
@@ -726,8 +725,12 @@ ompv<-c("")
 ommt<-c("RedNiebla_Av","GrbUltrasonido")
 ompv<-c("")
 
+#Aves2
+ommt<-c("")
+ompv<-c("ANH_220", "ANH_250", "ANH_274", "ANH_279", "ANH_213_A_P3")
+
 # All
-Data.r2<-Data.r %>% dplyr::filter((!parentEventID%in%ompv)&(!samplingProtocol%in%ommt))
+Data.r2<-Data.r %>% dplyr::filter((!parentEventID%in%ompv)&(!eventID%in%ompv)&(!samplingProtocol%in%ommt))
 nsp<-unique(Data.r2$parentEventID)
 nsp<-length(!nsp%in%ompv)
 library(tidyr)
@@ -773,11 +776,15 @@ rm(list=ls()[!ls()%in%kpv])
 ommt<-c("RedNiebla_Av")
 ompv<-c("")
 
+#Aves2
+ommt<-c("")
+ompv<-c("ANH_220", "ANH_250", "ANH_274", "ANH_279", "ANH_213_A_P3")
+
 #Otros
 ommt<-c("")
 ompv<-c("")
 
-Data.r2<-Data.r%>%filter((!parentEventID%in%ompv)&(!samplingProtocol%in%ommt))
+Data.r2<-Data.r%>%filter((!parentEventID%in%ompv)&(!eventID%in%ompv)&(!samplingProtocol%in%ommt))
 Data.ii.r<-Data.r2%>%
   dplyr::select(parentEventID,organismQuantity,scientificName_2)%>%
   pivot_wider(names_from=parentEventID,values_from=organismQuantity, values_fn=sum,values_fill=0)%>%
@@ -793,6 +800,9 @@ rm(list=ls()[!ls()%in%kpv])
 #Aves
 ommt<-c("Recorrido en lancha", "Recorrido Libre", "Accidental") #method to be omitted
 ompv<-c("ANH_380")
+#Aves2
+ommt<-c("Recorrido en lancha", "Recorrido Libre", "Accidental")
+ompv<-c("ANH_220", "ANH_250", "ANH_274", "ANH_279", "ANH_213_A_P3", "ANH_380")
 #Arboles/Anfibios/Reptiles/Coprofagos/hidrobiol?gicos
 ommt<-c("")
 ompv<-c("")
@@ -949,6 +959,9 @@ ompv<-c("")
 #aves
 ompv<-c("ANH_380")
 ommt<-c("")
+#Aves2
+ommt<-c()
+ompv<-c("ANH_220", "ANH_250", "ANH_274", "ANH_279", "ANH_213_A_P3", "ANH_380")
 #Coprofagos
 ompv<-c("")
 ommt<-c("")
@@ -1014,6 +1027,9 @@ rowSums(table(Data.r$parentEventID,Data.r$organismQuantity))
 #Aves
 ommt<-c("") #method to be omitted
 ompv<-c("ANH_380","ANH_64","ANH_65") #does not have covariates
+#Aves2
+ommt<-c("")
+ompv<-c("ANH_220", "ANH_250", "ANH_274", "ANH_279", "ANH_213_A_P3", "ANH_380", "ANH_64","ANH_65")
 #reptiles
 ommt<-c("") #method to be omitted
 ompv<-c("ANH_9") 
@@ -1046,6 +1062,10 @@ rowSums(table(Data.r$eventID,Data.r$organismQuantity))
 ommt<-c("") #method to be omitted
 ompv<-c("ANH_380","ANH_64","ANH_65")
 
+#Aves2
+ommt<-c("")
+ompv<-c("ANH_220", "ANH_250", "ANH_274", "ANH_279", "ANH_213_A_P3", "ANH_380", "ANH_64","ANH_65")
+
 #Reptiles
 ommt<-c("") #method to be omitted
 ompv<-c("ANH_9") #c("ANH_380","ANH_64","ANH_65")
@@ -1075,6 +1095,11 @@ rm(list=ls()[!ls()%in%kpv])
 ommt<-c("") #method to be omitted
 ompv<-c("")
 
+#Aves2
+ommt<-c("")
+ompv<-c("ANH_220", "ANH_250", "ANH_274", "ANH_279", "ANH_213_A_P3", "ANH_380", 
+        "ANH_64","ANH_65")
+
 #text for period event
 
 ##fish
@@ -1097,6 +1122,10 @@ Data.pr$eventPer[Data.pr$eventPer<18|Data.pr$eventPer>21]<-21
 Data.pr$eventPer<-paste(Data.pr$parentEventID,Data.pr$eventPer,sep='_')
 Data.pr<-Data.pr[,names(Data.pr)!='eventID']
 
+#Aves2
+Data.pr<-Data.r%>%
+  mutate('eventPer'=gsub(schtxt,"_",eventID))
+
 #All
 #Others
 Data.pr<-Data.r%>%
@@ -1111,6 +1140,9 @@ rm(list=ls()[!ls()%in%kpv])
 #Aves
 ommt<-c("Recorrido en lancha","Recorrido Libre", "Accidental")
 ompv<-c("ANH_380","ANH_64","ANH_65")
+#Aves2
+ommt<-c("Recorrido en lancha","Recorrido Libre", "Accidental")
+ompv<-c("ANH_220", "ANH_250", "ANH_274", "ANH_279", "ANH_213_A_P3", "ANH_380", "ANH_64","ANH_65")
 #Peces
 ommt<-""
 ompv<-c("ANH_9")
@@ -1123,7 +1155,7 @@ ompv<-c("")
 
 # All
 Data.pt<-Data.r%>%
-  filter((!parentEventID%in%ompv)&(!samplingProtocol%in%ommt))
+  filter((!parentEventID%in%ompv)&(!eventID%in%ompv)&(!samplingProtocol%in%ommt))
 nsp<-length(unique(Data.pt$parentEventID))
 ##peces
 unique(Data.pt$samplingProtocol)
@@ -1251,6 +1283,9 @@ rm(list=ls()[!ls()%in%kpv])
 ommt<-c("") #method to be omitted
 ompv<-c("")
 
+#Aves2
+ommt<-c("")
+ompv<-c("ANH_220", "ANH_250", "ANH_274", "ANH_279", "ANH_213_A_P3", "ANH_380", "ANH_64","ANH_65")
 
 Data.pr<-Data.r%>%
   mutate('eventPer'=gsub(schtxt,"_",eventID))%>%dplyr::select(-eventID) #Peces _
@@ -1259,7 +1294,7 @@ Data.ei.t<-Data.a.pt(grp,Data.pr,'eventPer',fn="sum")
 #Peces
 c('Red de arrastre','Atarraya')
 #Aves
-c('Punto Fijo')
+c('Punto Fijo',"Redes de Niebla")
 #Herpetos
 c('VES')
 
