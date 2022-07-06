@@ -6,8 +6,11 @@ library(openxlsx)
 library(dplyr)
 
 # leer el archivo original
-dataReg <- read.xlsx("data/aves/I2D-BIO_2021_050_v3.xlsx", sheet="Registros", startRow = 1, na.strings = "N/A")
-dataEvent <- read.xlsx("data/aves/I2D-BIO_2021_050_v3.xlsx", sheet="Eventos", startRow = 2, na.strings = "N/A")
+dataReg <- read.xlsx("data/escarabajos/AltasBajasEscarabajosCoprofagos.xlsx", sheet = 1, startRow = 1, na.strings = "N/A")
+dataEvent <- read.xlsx("data/escarabajos/I2D-BIO_2021_069_v2_ev.xlsx", sheet=1, 
+                       startRow = 1, na.strings = "N/A")
+covs <- read.xlsx("Analisis/Covariables/BDPuntosMuestreoMag270622.xlsx", sheet=1, 
+                  startRow = 1, na.strings = "N/A") %>% filter(GrupoBiolo == "Escarabajos")
 
 # Funcion para dividir el archivo original
 # db = data.frame, debe tener una columna que tenga el valor de busqueda char_search por 
@@ -28,37 +31,41 @@ split_temporadas <- function(db, column = "eventID", char_search = "_T2"){
   return(list("T1" = T1, "T2" = T2))
 }
 
-remove_UM <- function(data, by, UM){
-  x <- data %>% filter(., by == UM)
-}
-
-
-
 # correr funcion split_temporadas
-splitReg <- split_temporadas(db = dataReg)
-splitEvent <- split_temporadas(db = dataEvent)
+splitReg <- split_temporadas(db = dataReg, column = "eventRemarks", char_search = "altas")
+splitEvent <- split_temporadas(db = dataEvent, column = "locationRemarks", char_search = "altas")
 
-## Quitar caracteres "_T1" para que los scripts subsiguientes no se necesite transformar
-splitReg[["T1"]]$eventID <- gsub(pattern = "_T1", replacement = "", x = splitReg[["T1"]]$eventID)
-splitEvent[["T1"]]$eventID <- gsub(pattern = "_T1", replacement = "", x = splitEvent[["T1"]]$eventID)
+# Condicional: revise manualmente si los eventID tienen la etiqueta de la temporada, en caso de ser asi
+# es necesario quitar aquellos caracteres como "_T1" para que los scripts subsiguientes no se necesite transformar,
+# de la misma manera se debe desarrollar para la base de datos original
+#splitReg[["T1"]]$eventID <- gsub(pattern = "_T1", replacement = "", x = splitReg[["T1"]]$eventID)
+#splitEvent[["T1"]]$eventID <- gsub(pattern = "_T1", replacement = "", x = splitEvent[["T1"]]$eventID)
 
-## Quitar caracteres "_T2" para que los scripts subsiguientes no se necesite transformar
-splitReg[["T2"]]$eventID <- gsub(pattern = "_T2", replacement = "", x = splitReg[["T2"]]$eventID)
-splitEvent[["T2"]]$eventID <- gsub(pattern = "_T2", replacement = "", x = splitEvent[["T2"]]$eventID)
+#splitReg[["T2"]]$eventID <- gsub(pattern = "_TE2", replacement = "", x = splitReg[["T2"]]$eventID)
+#splitEvent[["T2"]]$eventID <- gsub(pattern = "_TE2", replacement = "", x = splitEvent[["T2"]]$eventID)
+
+#dataReg$eventID <- gsub(pattern = "_TE2", replacement = "", x = dataReg$eventID)
+#dataEvent$eventID <- gsub(pattern = "_TE2", replacement = "", x = dataEvent$eventID)
 
 # constituyendo archivos de la temporada 1: dado que se mantendra el formato excel
 # es necesario primero crear un excel con una sola hoja de trabajo, cargarlo de nuevo,
 # agregar una nueva hoja y por ultimo escribir/guardar los datos de la nueva hoja
-write.xlsx(splitReg[["T1"]], "data/aves/I2D-BIO_2021_050_v3_T1.xlsx", sheetName = "Registro")
-wb <- loadWorkbook("data/aves/I2D-BIO_2021_050_v3_T1.xlsx")
+write.xlsx(splitReg[["T1"]], "data/escarabajos/AltasBajasEscarabajosCoprofagos_T1.xlsx", sheetName = "Registros")
+wb <- loadWorkbook("data/escarabajos/AltasBajasEscarabajosCoprofagos_T1.xlsx")
 addWorksheet(wb, "Eventos")
 writeData(wb, "Eventos",splitEvent[["T1"]])
-saveWorkbook(wb, "data/aves/I2D-BIO_2021_050_v3_T1.xlsx", overwrite = TRUE)
+saveWorkbook(wb, "data/escarabajos/AltasBajasEscarabajosCoprofagos_T1.xlsx", overwrite = TRUE)
 
 # constituyendo archivos de la temporada 2
-write.xlsx(splitReg[["T2"]], "data/aves/I2D-BIO_2021_050_v3_T2.xlsx", sheetName = "Registro")
-wb <- loadWorkbook("data/aves/I2D-BIO_2021_050_v3_T2.xlsx")
+write.xlsx(splitReg[["T2"]], "data/escarabajos/AltasBajasEscarabajosCoprofagos_T2.xlsx", sheetName = "Registros")
+wb <- loadWorkbook("data/escarabajos/AltasBajasEscarabajosCoprofagos_T2.xlsx")
 addWorksheet(wb, "Eventos")
 writeData(wb, "Eventos",splitEvent[["T2"]])
-saveWorkbook(wb, "data/aves/I2D-BIO_2021_050_v3_T2.xlsx", overwrite = TRUE)
+saveWorkbook(wb, "data/escarabajos/AltasBajasEscarabajosCoprofagos_T2.xlsx", overwrite = TRUE)
 
+# constituyendo archivo original sin tag de temporada
+write.xlsx(dataReg, "data/escarabajos/AltasBajasEscarabajosCoprofagos_NoTag.xlsx", sheetName = "Registros")
+wb <- loadWorkbook("data/escarabajos/AltasBajasEscarabajosCoprofagos_NoTag.xlsx")
+addWorksheet(wb, "Eventos")
+writeData(wb, "Eventos", dataEvent)
+saveWorkbook(wb, "data/escarabajos/AltasBajasEscarabajosCoprofagos_NoTag.xlsx", overwrite = TRUE)

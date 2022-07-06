@@ -79,11 +79,11 @@ PrintggiNextInc<-function(fnm,iNxt){
   names(point.df)<-gsub('[S|s]ite','site',names(point.df))
   jpeg(f.nm, width = 480, height = 480, quality=300)
   #fix problem with different columns from fortify.ggiNext
-  # fixNm<-lapply(iNxt$iNextEst,names)
-  # intNm<-do.call(c,fixNm)
-  # tblnm<-table(intNm)
-  # selclm<-names(tblnm)[tblnm==length(fixNm)]
-  # iNxt$iNextEst<-lapply(iNxt$iNextEst,function(x){x<-x[,selclm]})
+   fixNm<-lapply(iNxt$iNextEst,names)
+   intNm<-do.call(c,fixNm)
+   tblnm<-table(intNm)
+   selclm<-names(tblnm)[tblnm==length(fixNm)]
+   iNxt$iNextEst<-lapply(iNxt$iNextEst,function(x){x<-x[,selclm]})
   g1<-ggiNEXT(iNxt,type=1, facet.var = "site")+
     labs(title=paste('Diversidad Verdadera ',fnm,sep=''), y='Diversidad extrapolada',
          x='Número de UM-bootstrap')+
@@ -403,7 +403,7 @@ Data.a.MU<-function(DataP,evID,expPEID="^(ANH_[0-9]+)(_.*)$",fn="sum",scale=FALS
   }else{
     Data.rr.n<-Data.rr.n%>%group_split(samplingProtocol)
   }
-  names(Data.rr.n)<-levels(factor(Data.r2$samplingProtocol, exclude = NULL))
+  names(Data.rr.n)<-levels(factor(Data.r2$samplingProtocol, exclude = NA))
   Data.ee.nn<-map(names(Data.rr.n), function(x) {
     xx<-Data.rr.n[[x]][,-1]%>%column_to_rownames("scientificName_2")%>%dplyr::select(-which(colSums(.)==0))
     iNext.o<-iNEXT(xx,q=c(0,1,2), datatype="abundance")

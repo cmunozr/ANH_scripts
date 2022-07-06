@@ -18,3 +18,30 @@ Aves_UM_Sel: resultados taxon aves sin usar las siguientes unidades muestrales=A
 		Aves: resultados sin dividir temporadas de muestreo
 		Aves_T1: resultados temporada 1 de muestreo
 		Aves_T2: resultados temporada 2 de muestreo 
+
+1 de julio de 2022
+Anfibios_UM_All: resultados taxon anfibios usando todas las unidades muestrales
+	Subcarpetas
+		Anfibios: resultados sin dividir temporadas de muestreo
+		Anfibios_T1: resultados temporada 1 de muestreo
+		Anfibios_T2: resultados temporada 2 de muestreo
+
+1 de julio de 2022
+Reptiles_UM_All: resultados taxon reptiles usando todas las unidades muestrales
+	Subcarpetas
+		Reptiles: resultados sin dividir temporadas de muestreo
+		Reptiles_T1: resultados temporada 1 de muestreo
+		Reptiles_T2: resultados temporada 2 de muestreo
+
+5 de julio de 2022
+Escarabajos_UM_All: resultados taxon escarabajos usando todas las unidades muestrales
+	Subcarpetas
+		Escarabajos: resultados sin dividir temporadas de muestreo
+		Escarabajos_T1: resultados temporada 1 de muestreo
+		Escarabajos_T2: resultados temporada 2 de muestreo
+
+Escarabajos_larvas_UM_All: resultados taxon escarabajos-larvas usando todas las unidades muestrales
+	Subcarpetas
+		Escarabajos_larvas: resultados sin dividir temporadas de muestreo
+		Escarabajos_larvas_T1: resultados temporada 1 de muestreo
+		Escarabajos_larvas_T2: resultados temporada 2 de muestreo

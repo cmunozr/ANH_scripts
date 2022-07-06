@@ -16,16 +16,17 @@ for(p in 1:length(rqurd) ){
     library(rqurd[p], character.only = T)
   }
 }
+library(dplyr)
 
 #source(file.path("C:","Users","dsrbu","Dropbox","Humboldt","6_RcodeRepository",
 #                 "14_Script_others","NEwR-2ed_code_data","NEwR2-Functions","cleanplot.pca.R"))
 
 #0b) Define working directories and group variables
 
-outD<-'Aves_T2'#'Zooplancton' #master folder for output
-outDD<-'Aves'#'Hidrobiologicos' #Grupo like stated in the covariate file
-ctnm<- "CobAves" # 'waterBody' #CobColl'#"CuerpAgua" #main factor for análisis
-gnm<- 'Ave' #'Coll'#"Zoop" #group prefix
+outD<-'Escarabajos_lv_T2'#'Zooplancton' #master folder for output
+outDD<-'Escarabajos'#'Hidrobiologicos' #Grupo like stated in the covariate file
+ctnm<- "CobCopr" # 'waterBody' #CobColl'#"CuerpAgua" #reptiles y anfibios: CobHerp #escarabajos coprofagos: "CobCopr" #main factor for análisis
+gnm<- 'Esc_lv' #'Coll'#"Zoop" #group prefix
 fnn<-"sum" #function to aggregate samples within sampling unites
 
 WDOut<-file.path(getwd(), "Analisis", "SalidasPreliminares")
@@ -48,7 +49,8 @@ source(file.path(WDFunc,'R/ANH_procAbu_functions.R'))
 
 #1) covariances
 
-covbk<- openxlsx::read.xlsx((file.path(WDCov,"BDPuntosMuestreoMag270622.xlsx")), sheet = "BDPuntosMuestreoMag")
+covbk<- openxlsx::read.xlsx((file.path(WDCov,"BDPuntosMuestreoMag300622.xlsx")), 
+                            sheet = "BDPuntosMuestreoMag")
 covbk$FInt19meanx<-round(as.numeric(covbk$FInt19meanx),2)
 names(covbk)[c(2,23,24:31,39,40)]<-c('parentEventID','Cobertura','CobAves',
                                      'CobHerp','CobCopr','CobMarip',
@@ -56,6 +58,7 @@ names(covbk)[c(2,23,24:31,39,40)]<-c('parentEventID','Cobertura','CobAves',
 # unique(covbk$Cobertura)
 # unique(covbk$CobAves)
 # unique(covbk$CobHerp)
+# unique(covbk$CobCopr)
 # unique(covbk$CobHorm)
 # unique(covbk$CobMarip)
 # unique(covbk$CobMam)
@@ -72,14 +75,18 @@ for(i in c('Cobertura','CobAves','CobHerp','CuerpAgua','CobCopr','CobMarip',
   ccov[ccov=="R?o Magdalena"]<-"R_Magdal"
   covbk[,i]<-ccov
 }
-unique(covbk$CobAves)
+
 covbk$Cobertura<-factor(covbk$Cobertura,levels=c("Rios","Cienaga","Zonas Pantanosas","Otros Cuerpos Agua",
                                                     "Herbazal","Bosque Ripario",
                                                     "Bosque Denso","Bosque Abierto","Vegetacion Secundaria",
                                                     "Palma","Cultivos","Pastos","Zonas Desnudas Degradadas",
                                                  "Vias","Area Urbana"))
 spa.c<-c("decimalLat","decimalLon")
-cat.c<-c("Plataf", "CobAves") #peces; c("Plataf","Red.Hidrica","CuerpAgua") #colembolos: c("Plataf","CobColl","habitat","UCSuelo")#Coprofagos=c("Plataf","CobCopr","habitat")#Hidrobiol?gicos=c("Plataf","Red.Hidrica","CuerpAgua")#,"CobHerp")
+#peces; c("Plataf","Red.Hidrica","CuerpAgua") #colembolos: c("Plataf","CobColl","habitat","UCSuelo")
+#Coprofagos ad: c("Plataf","CobCopr") # #Coprofagos lv: c("Plataf", "CobCopr", "UCSuelo") 
+#Hidrobiol?gicos=c("Plataf","Red.Hidrica","CuerpAgua")#,"CobHerp")
+# Aves: c("Plataf", "CobAves") #anfibios: c("Plataf", "CobHerp")
+cat.c<-c("Plataf", "CobCopr", "UCSuelo") 
 v.pres<-c("Dis_CP","Dis_Oleodu", "Dis_Pozo","Dis_Pozact","Dis_Ferroc","Dis_ViaPri","Dia_ViaSec")#,"HEH18meanx")
 v.rec<-c("Dis_Cienag","Dis_MGSG","Dis_Dre345", "DisBosque","Dis_CobNat","Tam_Parche")#,"FInt19meanx")
 v.msite<-NULL
@@ -95,15 +102,20 @@ v.rec<-v.rec[!v.rec%in%excl]
 ##verify names
 
 #not for coprofagos
-if(outD != "Coprofagos"){
+if(outDD != "Escarabajos"){
   covbk$parentEventID<-trimws(gsub("-","_",covbk$parentEventID))
   covbk$eventID<-trimws(gsub("-","_",covbk$eventID))
   unique(covbk$GrupoBiolo)
 }
 
 #Murcielagos
-if(outD == "Murcielagos"){
+if(outDD == "Murcielagos"){
   covbk<-covbk%>%filter(GrupoBiolo%in%c(outDD,'Ultrasonido'))
+}
+
+#Anfibios
+if(outDD == "Anfibios" | outDD == "Reptiles"){
+  covbk<-covbk%>%filter(., GrupoBiolo == "Herpetos")
 }
 
 #others
@@ -228,26 +240,29 @@ if(outDD == "Peces"|outDD == "Microbiologicos"){
 }
 
 #Zooplancton
-if(outD == "Zooplancton"){
+if(outDD == "Zooplancton"){
   covbk<-covbk%>%filter(grepl('.*_Z_',eventID))
 }
 #perifiton
-if(outD == "Perifiton"){
+if(outDD == "Perifiton"){
   covbk<-covbk%>%filter(grepl('.*_P_',eventID))  
 }
 
 #fitoplancton
-if(outD == "Fitoplancton"){
+if(outDD == "Fitoplancton"){
   covbk<-covbk%>%filter(grepl('.*_F_',eventID))
 }
 #Macrofitas
-if(outD == "Macrofitas"){
+if(outDD == "Macrofitas"){
   covbk<-covbk%>%filter(grepl('.*_MA',eventID))  
 }
 #Macroinvertebrados
-if(outD == "Macroinvertebrados"){
+if(outDD == "Macroinvertebrados"){
   covbk<-covbk%>%filter(grepl('.*_MI',eventID))
 }
+
+#Coprofagos/escarabajos ad and lv
+covbk$eventID<-gsub('-','_',covbk$eventID)
 
 # All
 kpv<-c(ls(),'kpv') #variables to keep all the time
@@ -265,14 +280,14 @@ kpv<-c(ls(),'kpv') #variables to keep all the time
 #Mamiferos=I2D-BIO_2021_083.xlsx
 #Botanica=I2D-BIO_2021_095.xlsx
 
-Data.et<-read.xlsx(file.path(getwd(),"data", "aves", "I2D-BIO_2021_050_v3_T2.xlsx"), 
+Data.et<-read.xlsx(file.path(getwd(),"data", "escarabajos", "AltasBajasLarvasMelolonthinos_T2.xlsx"), 
                    sheet="Eventos", startRow = 1, na.strings = "N/A")
 
 # MISSING IFS
 #coprofagos_adultos
 Data.et<-Data.et[Data.et$samplingProtocol=='Trampa de excremento humano',]
 #Coprofagos_larvas
-Data.et<-Data.et[Data.et$samplingProtocol=='Captura manual'&is.na(Data.et$EventRemaks),]
+Data.et<-Data.et[Data.et$samplingProtocol=='Captura manual',]
 
 #Hidrobiol?gicos
 if(outD == "Hidrobiologicos"){
@@ -310,8 +325,8 @@ Data.et<-Data.et[!Data.et$samplingProtocol%in%c('M_Hierb','RAP_5cm'),]
 #Coprofagos_lv=rrbb_scarabaeidae_santanderANH_2021_PEM_Larvas.xlsx
 #mariposas=I2D-BIO_2021_084_rrbb.xlsx
 
-Data.r<-read.xlsx(file.path(getwd(),"data", "aves", "I2D-BIO_2021_050_v3_T2.xlsx"), 
-                  sheet="Registro", startRow = 1, na.strings = "N/A")
+Data.r<-read.xlsx(file.path(getwd(),"data", "escarabajos", "AltasBajasLarvasMelolonthinos_T2.xlsx"), 
+                  sheet="Registros", startRow = 1, na.strings = "N/A")
 #Data.r<-Data.r[Data.r$class=="Reptilia",] # use to get the group of the analysis
 
 #All
@@ -328,7 +343,7 @@ Data.r$scientificName[grep('^[[:lower:]]{1}',Data.r$scientificName)]<-
   capitalize(Data.r$scientificName[grep('^[[:lower:]]', Data.r$scientificName)])
 
 #Hidrobiol?gicos
-if(outD == "Hidrobiologicos"){
+if(outDD == "Hidrobiologicos"){
   Data.r$eventID<-gsub('ANH','ANH_',Data.r$eventID)
   Data.r$identificationQualifier<-tolower(Data.r$identificationQualifier)
   ###Perifiton to work with non standardized abundances####
@@ -340,7 +355,7 @@ if(outD == "Hidrobiologicos"){
 }
 
 #Hormigas
-if(outD == "Hormigas"){
+if(outDD == "Hormigas"){
   Data.r$samplingEffort[Data.r$samplingEffort=="12 minutos"]<-12/60
   Data.r$samplingProtocol[Data.r$samplingProtocol=="Trampa de ca?da at?n"]<-"TrampCaid" 
   Data.r$samplingProtocol[Data.r$samplingProtocol=="Captura manual"]<-"CaptMan"
@@ -350,7 +365,7 @@ if(outD == "Hormigas"){
 }
 
 #Mariposas
-if(outD == "Mariposas"){
+if(outDD == "Mariposas"){
   Data.r$samplingProtocol<-"Trmp_vanSomRyd"
   Data.et$samplingProtocol<-"Trmp_vanSomRyd"
 }
@@ -434,15 +449,19 @@ kpv<-c(kpv,c('Data.et','Data.r','SbUME','SbUMT','Data.rs'))
 #########
 
 #2b) quality checks##
-#quality control: varies from group to group.
-#complete columns
-#regular expression that varies by group:
-#for fish
-#gsub(pattern = "^(ANH_[0-9]+)(_.*[C|D])$", replacement = "\\1", Data.r$eventID)
+# quality control: varies from group to group.
+# complete columns
+# regular expression that varies by group:
+# for fish
+# gsub(pattern = "^(ANH_[0-9]+)(_.*[C|D])$", replacement = "\\1", Data.r$eventID)
 # for birds
-#gsub(pattern = "^(ANH_[0-9]+)(_.*)$", replacement = "\\1", Data.r$eventID)
-#hidrobiologicos
-#gsub(pattern = "^(ANH)([0-9]+)(_.*)$", replacement = "\\1_\\2", Data.r$eventID)
+# gsub(pattern = "^(ANH_[0-9]+)(_.*)$", replacement = "\\1", Data.r$eventID)
+# for herp
+# gsub(pattern = "^(ANH_[0-9]+)(_.*)$", replacement = "\\1", Data.r$eventID)
+# for escarabajos
+# gsub(pattern = "^(ANH_[0-9]+)(_.*)$", replacement = "\\1", Data.r$eventID)
+# hidrobiologicos
+# gsub(pattern = "^(ANH)([0-9]+)(_.*)$", replacement = "\\1_\\2", Data.r$eventID)
 
 #All
 #UM  empty 
@@ -457,10 +476,9 @@ if(outD == "Peces"){
   Data.r <- complete_cols(Data.r, Data.et,  "eventID", c("eventID", "samplingProtocol", "habitat"))#  
 }
 
-#All
+#others
 # Complete columns in Data.r that are in Data.e.
-Data.r <- complete_cols(BD_registros = Data.r, BD_eventos = Data.et,  link = "eventID", 
-                        vector_cols = c("samplingProtocol"))#
+Data.r <- complete_cols(Data.r, Data.et, "eventID",vector_cols = c("samplingProtocol"))#
 
 library(stringi)
 Data.et$samplingProtocol <- trimws(Data.et$samplingProtocol)
@@ -488,9 +506,10 @@ if(outD == "Aves"){
 }
 
 
-### This applies for herpetos###
-if(outD == "Herpetos"){
+### This applies for herpetos: anfibios y reptiles###
+if(outDD == "Anfibios" | outDD == "Reptiles"){
   Data.et$samplingProtocol<-'VES'
+  Data.r$samplingProtocol<-'VES'
 }
 
 # MISSING IFS
@@ -681,14 +700,14 @@ kpv<-c(kpv,c('cov'))
 # MISSING IFS
 #for birds
 #gsub("([0-9]+\\.*[0-9]+).*$"
-#for fish/coprofagos
-#gsub("([0-9]+).*$")
+#for fish/coprofagos, anfibios and reptiles
+#gsub("([0-9]+).*$"
 #zooplancton
 #gsub("([0-9]+).*$",'\\1',samplingEffort)
 
 # modify gsub searching character
 samEff.t<-Data.et[,c('parentEventID',cnm.smp)] %>% na.omit(.)%>%
-  dplyr::mutate(samplEff=as.numeric(gsub("([0-9]+\\.*[0-9]+).*$",'\\1',samplingEffort)))%>%
+  dplyr::mutate(samplEff=as.numeric(gsub("([0-9]+).*$",'\\1',samplingEffort)))%>%
   dplyr::group_by(parentEventID,get(cnm.smp[2]))%>%
   dplyr::summarize(samplEff=sum(samplEff),Num_ev=dplyr::n())
 
@@ -702,7 +721,7 @@ kpv<-c(kpv,'samEff.ttt')
 rm(list=ls()[!ls()%in%kpv])
 
 ##
-#All
+#Not for Herpetos (anfibios and reptiles), Not for Escarabajos Coprofagos
 #function for modyfing eventID from 5 or more labels to 4 in order to match with eventID from eventos database
 Data.r <- modify_event_label(data = Data.r)
 
@@ -712,7 +731,7 @@ Data.r <- modify_event_label(data = Data.r)
 table(Data.r$parentEventID,Data.r$samplingProtocol)
 rowSums(table(Data.r$parentEventID,Data.r$samplingProtocol))
 
-# Collembola/Epifitas/Arboles/Anfibios/reptiles/coprofagos_ad/Peces/
+# Collembola/Epifitas/Arboles/Anfibios/reptiles/coprofagos_ad/coprofagos_lv/Peces/
 # Aves/zooplancton/perifiton/fitoplancton/macrofitas/hormigas
 ommt<-c("") 
 ompv<-c("")
@@ -1002,7 +1021,7 @@ kpv<-c(kpv,'Data.ei.pt2')
 Data.ei.hb<-Data.i.f('Cobertura')
 Data.ei.hb2<-iNEXT(Data.ei.hb,q=c(0,1,2), datatype="incidence_raw")
 fnm2<-paste(gnm, 'Cobertura',sep='_')
-PrintggiNextInc(fnm2,Data.ei.hb2)
+PrintggiNextInc(fnm = fnm2,iNxt = Data.ei.hb2)
 fnm2<-paste(gnm,'Cobertura','Inc',sep='_')
 PrintRefiNext(fnm2,'Cobertura',Data.ei.hb2)
 kpv<-c(kpv,'Data.ei.hb2')
@@ -1105,22 +1124,25 @@ ompv<-c("ANH_220", "ANH_250", "ANH_274", "ANH_279", "ANH_213_A_P3", "ANH_380",
 ##fish
 #schtxt<-"_[R|A|E|T]_"
 #gsub(schtxt,"_",eventID)
-#aves
+#aves/coprofagos
 #schtxt<-""
-##herpetos
+##herpetos: anfibios y reptiles
 #schtxt<-"_Herp_T[1|2|3]_"
+
 #Murcielagos
 # shchtxt<-paste('Data.r$parentEventID',
 #                'hour(as.POSIXct(Data.r$eventTime,format="%H:%M:%S"))',sep='_')
 ommt<-c("RedNiebla_Av","GrbUltrasonido")
 ompv<-c("")
 
+#murcielagos/coprofagos
+
 library(lubridate)
 Data.pr<-Data.r%>%
   mutate('eventPer'=hour(as.POSIXct(Data.r$eventTime,format="%H:%M:%S")))
 Data.pr$eventPer[Data.pr$eventPer<18|Data.pr$eventPer>21]<-21
 Data.pr$eventPer<-paste(Data.pr$parentEventID,Data.pr$eventPer,sep='_')
-Data.pr<-Data.pr[,names(Data.pr)!='eventID']
+#Data.pr<-Data.pr[,names(Data.pr)!='eventID']
 
 #Aves2
 Data.pr<-Data.r%>%
@@ -1129,7 +1151,7 @@ Data.pr<-Data.r%>%
 #All
 #Others
 Data.pr<-Data.r%>%
-  mutate('eventPer'=gsub(schtxt,"_",eventID))%>%dplyr::select(-eventID)
+  mutate('eventPer'=gsub(schtxt,"_",eventID))#%>%dplyr::select(-eventID)
 
 Data.ee.tt<-Data.a.MU(Data.pr,'eventPer',"^(ANH_[0-9]+)(_.*)$",fnn)
 kpv<-c(kpv,'Data.ee.tt','schtxt')
@@ -1163,13 +1185,13 @@ unique(Data.pt$samplingProtocol)
 grp<-list('Ar_At'=c('Red de arrastre','Atarraya'),
            'Ar_At_El'=c('Red de arrastre','Atarraya','Electropesca'),
            'Ar_At_Tr'=c('Red de arrastre','Atarraya','Trasmallo'))
-#herpetos
+#herpetos: anfibios y reptiles
 grp<-list('VES'=c('VES'))
 #Aves
 grp<-list('PntFijo'=c('Punto Fijo'), 
           'PntFijo_RdNiebla'=c('Punto Fijo', "Redes de Niebla"))
 #Coprofagos_ad
-grp<-list('TrmpExHum'=c('TrmpExHum'))dfad
+grp<-list('TrmpExHum'=c('TrmpExHum'))#dfad
 #Coprofagos_lv
 grp<-list('CapManual'=c('CapManual'))
 #zooplanction/fitoplancton
@@ -1297,11 +1319,17 @@ c('Red de arrastre','Atarraya')
 c('Punto Fijo',"Redes de Niebla")
 #Herpetos
 c('VES')
+#coprofagos ad
+c('TrmpExHum')
+#coprofagos lv
+c('CapManual')
 
-Data.ei.ttt<-Data.a.t(Data.ei.t,'evenPer',grp,samEff.ttt,c("Punto Fijo", "Redes de Niebla")) 
+Data.ei.ttt<-Data.a.t(Data.ei.t,'evenPer',grp,samEff.ttt,c('CapManual')) 
 write.csv(Data.ei.ttt,file.path(WDOut,'CurvasDiversidad', paste(gnm,'_','SubTempMU_Estim_Grp.csv',sep='')))
 kpv<-c(kpv,'Data.ei.t','Data.ei.ttt')
 rm(list=ls()[!ls()%in%kpv])
+
+save.image(file.path(WDOut,paste("wrkspc",gnm,Sys.Date(),".RData",sep="")))
 
 ###########################################################
 
