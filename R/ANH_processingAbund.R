@@ -21,12 +21,14 @@ library(dplyr)
 #source(file.path("C:","Users","dsrbu","Dropbox","Humboldt","6_RcodeRepository",
 #                 "14_Script_others","NEwR-2ed_code_data","NEwR2-Functions","cleanplot.pca.R"))
 
+#load("kpv_temp.RData")
+
 #0b) Define working directories and group variables
 
-outD<-'Escarabajos_lv_T2'#'Zooplancton' #master folder for output
-outDD<-'Escarabajos'#'Hidrobiologicos' #Grupo like stated in the covariate file
-ctnm<- "CobCopr" # 'waterBody' #CobColl'#"CuerpAgua" #reptiles y anfibios: CobHerp #escarabajos coprofagos: "CobCopr" #main factor for análisis
-gnm<- 'Esc_lv' #'Coll'#"Zoop" #group prefix
+outD<-'Aves_ptoFijo_T2'#'Zooplancton' #master folder for output
+outDD<-'Aves'#'Hidrobiologicos' #Grupo like stated in the covariate file
+ctnm<- "CobAves" # 'waterBody' #CobColl'#"CuerpAgua" #reptiles y anfibios: CobHerp #escarabajos coprofagos: "CobCopr" #main factor for análisis
+gnm<- 'Aves_pto' #'Coll'#"Zoop" #group prefix
 fnn<-"sum" #function to aggregate samples within sampling unites
 
 WDOut<-file.path(getwd(), "Analisis", "SalidasPreliminares")
@@ -50,7 +52,7 @@ source(file.path(WDFunc,'R/ANH_procAbu_functions.R'))
 #1) covariances
 
 covbk<- openxlsx::read.xlsx((file.path(WDCov,"BDPuntosMuestreoMag300622.xlsx")), 
-                            sheet = "BDPuntosMuestreoMag")
+                            sheet = 1)
 covbk$FInt19meanx<-round(as.numeric(covbk$FInt19meanx),2)
 names(covbk)[c(2,23,24:31,39,40)]<-c('parentEventID','Cobertura','CobAves',
                                      'CobHerp','CobCopr','CobMarip',
@@ -73,6 +75,9 @@ for(i in c('Cobertura','CobAves','CobHerp','CuerpAgua','CobCopr','CobMarip',
   ccov[ccov=="Cienagas"]<-"Cienaga"
   ccov[ccov=="V?as"]<-"Vias"
   ccov[ccov=="R?o Magdalena"]<-"R_Magdal"
+  ccov[ccov=="Bosque ripario"]<-"Bosque Ripario"
+  ccov[ccov=="Bosque abierto"]<-"Bosque Abierto"
+  ccov[ccov=="Pastos limpios"]<-"Pastos"
   covbk[,i]<-ccov
 }
 
@@ -81,6 +86,7 @@ covbk$Cobertura<-factor(covbk$Cobertura,levels=c("Rios","Cienaga","Zonas Pantano
                                                     "Bosque Denso","Bosque Abierto","Vegetacion Secundaria",
                                                     "Palma","Cultivos","Pastos","Zonas Desnudas Degradadas",
                                                  "Vias","Area Urbana"))
+
 spa.c<-c("decimalLat","decimalLon")
 #peces; c("Plataf","Red.Hidrica","CuerpAgua") #colembolos: c("Plataf","CobColl","habitat","UCSuelo")
 #Coprofagos ad: c("Plataf","CobCopr") # #Coprofagos lv: c("Plataf", "CobCopr", "UCSuelo") 
@@ -268,7 +274,6 @@ covbk$eventID<-gsub('-','_',covbk$eventID)
 kpv<-c(ls(),'kpv') #variables to keep all the time
 
 #save.image(file = "kpv_temp.RData")
-#load("kpv_temp.RData")
 
 #2) group specific variables
 #2a) get raw data
@@ -280,7 +285,7 @@ kpv<-c(ls(),'kpv') #variables to keep all the time
 #Mamiferos=I2D-BIO_2021_083.xlsx
 #Botanica=I2D-BIO_2021_095.xlsx
 
-Data.et<-read.xlsx(file.path(getwd(),"data", "escarabajos", "AltasBajasLarvasMelolonthinos_T2.xlsx"), 
+Data.et<-read.xlsx(file.path(getwd(),"data", "aves", "I2D-BIO_2021_050_v3_T2.xlsx"), 
                    sheet="Eventos", startRow = 1, na.strings = "N/A")
 
 # MISSING IFS
@@ -325,7 +330,7 @@ Data.et<-Data.et[!Data.et$samplingProtocol%in%c('M_Hierb','RAP_5cm'),]
 #Coprofagos_lv=rrbb_scarabaeidae_santanderANH_2021_PEM_Larvas.xlsx
 #mariposas=I2D-BIO_2021_084_rrbb.xlsx
 
-Data.r<-read.xlsx(file.path(getwd(),"data", "escarabajos", "AltasBajasLarvasMelolonthinos_T2.xlsx"), 
+Data.r<-read.xlsx(file.path(getwd(),"data", "aves", "I2D-BIO_2021_050_v3_T1.xlsx"), 
                   sheet="Registros", startRow = 1, na.strings = "N/A")
 #Data.r<-Data.r[Data.r$class=="Reptilia",] # use to get the group of the analysis
 
@@ -458,7 +463,7 @@ kpv<-c(kpv,c('Data.et','Data.r','SbUME','SbUMT','Data.rs'))
 # gsub(pattern = "^(ANH_[0-9]+)(_.*)$", replacement = "\\1", Data.r$eventID)
 # for herp
 # gsub(pattern = "^(ANH_[0-9]+)(_.*)$", replacement = "\\1", Data.r$eventID)
-# for escarabajos
+# for escarabajos ad and lv
 # gsub(pattern = "^(ANH_[0-9]+)(_.*)$", replacement = "\\1", Data.r$eventID)
 # hidrobiologicos
 # gsub(pattern = "^(ANH)([0-9]+)(_.*)$", replacement = "\\1_\\2", Data.r$eventID)
@@ -694,6 +699,7 @@ write.csv(Tabl2H_v_HH,file.path(WDOut,'habitat_v_Hhomologado_RedNiebla.csv'))
 
 #All
 cov<-covbk
+cov$eventID <- gsub(pattern = "-", replacement = "_", x = cov$eventID)
 kpv<-c(kpv,c('cov'))
 
 #2d) get sampling effort
@@ -707,7 +713,7 @@ kpv<-c(kpv,c('cov'))
 
 # modify gsub searching character
 samEff.t<-Data.et[,c('parentEventID',cnm.smp)] %>% na.omit(.)%>%
-  dplyr::mutate(samplEff=as.numeric(gsub("([0-9]+).*$",'\\1',samplingEffort)))%>%
+  dplyr::mutate(samplEff=as.numeric(gsub("([0-9]+\\.*[0-9]+).*$",'\\1',samplingEffort)))%>%
   dplyr::group_by(parentEventID,get(cnm.smp[2]))%>%
   dplyr::summarize(samplEff=sum(samplEff),Num_ev=dplyr::n())
 
@@ -725,6 +731,10 @@ rm(list=ls()[!ls()%in%kpv])
 #function for modyfing eventID from 5 or more labels to 4 in order to match with eventID from eventos database
 Data.r <- modify_event_label(data = Data.r)
 
+#aves solo punto fijo
+Data.e <- Data.e %>% filter(samplingProtocol == "Punto Fijo" )
+Data.et <- Data.et %>% filter(samplingProtocol == "Punto Fijo" )
+Data.r <- Data.r %>% filter(samplingProtocol == "Punto Fijo" )
 
 #3a) Diversity by method: abundance
 #Regional Diversity
@@ -788,6 +798,7 @@ Hill.r<-iNEXT(Data.ee.r,q=c(0,1,2),datatype = "abundance")
 PrintggiNext(paste(gnm,'_abM',sep=''),Hill.r)
 kpv<-c(kpv,'Hill.r','Data.ee.r')
 rm(list=ls()[!ls()%in%kpv])
+
 
 #3b) Overall Diversity incidence
 
@@ -908,8 +919,6 @@ map(names(Data.ee.pts),function(xx){
   PrintRefiNext(fnm2,'Plataf_nst',v)
   return()
 })
-
-
 kpv<-c(kpv,'Data.ee.pt','Data.ee.pts')
 
 
@@ -1009,7 +1018,8 @@ kpv<-c(kpv,'Data.ei.rd2')
 
 
 #plataforma
-Data.ei.pt<-Data.i.f('Plataf')
+
+Data.ei.pt<-Data.i.f(catnm = 'Plataf')
 Data.ei.pt2<-iNEXT(Data.ei.pt,q=c(0,1,2), datatype="incidence_raw")
 fnm2<-paste(gnm, 'Plataf',sep='_')
 PrintggiNextInc(fnm2,Data.ei.pt2)
@@ -1018,7 +1028,7 @@ PrintRefiNext(fnm2,'Plataf',Data.ei.pt2)
 kpv<-c(kpv,'Data.ei.pt2')
 
 #Cobertura
-Data.ei.hb<-Data.i.f('Cobertura')
+Data.ei.hb<-Data.i.f(catnm = 'Cobertura')
 Data.ei.hb2<-iNEXT(Data.ei.hb,q=c(0,1,2), datatype="incidence_raw")
 fnm2<-paste(gnm, 'Cobertura',sep='_')
 PrintggiNextInc(fnm = fnm2,iNxt = Data.ei.hb2)
@@ -1028,7 +1038,7 @@ kpv<-c(kpv,'Data.ei.hb2')
 rm(list=ls()[!ls()%in%kpv])
 
 #Suelo
-Data.ei.sl<-Data.i.f('UCSuelo')
+Data.ei.sl<-Data.i.f(catnm = 'UCSuelo')
 Data.ei.sl2<-iNEXT(Data.ei.sl,q=c(0,1,2), datatype="incidence_raw")
 fnm2<-paste(gnm, 'UCSuelo',sep='_')
 PrintggiNextInc(fnm2,Data.ei.sl2)
@@ -1148,11 +1158,11 @@ Data.pr$eventPer<-paste(Data.pr$parentEventID,Data.pr$eventPer,sep='_')
 Data.pr<-Data.r%>%
   mutate('eventPer'=gsub(schtxt,"_",eventID))
 
-#All
 #Others
 Data.pr<-Data.r%>%
   mutate('eventPer'=gsub(schtxt,"_",eventID))#%>%dplyr::select(-eventID)
 
+#All
 Data.ee.tt<-Data.a.MU(Data.pr,'eventPer',"^(ANH_[0-9]+)(_.*)$",fnn)
 kpv<-c(kpv,'Data.ee.tt','schtxt')
 rm(list=ls()[!ls()%in%kpv])
@@ -1238,7 +1248,7 @@ Data.ee.prr<-Data.i.pr(Data.ee.pr,grp,'parentEventID',
 Data.ee.prr<-Data.i.pr(Data.ee.pr,grp,'parentEventID',
                        expPEID='^(ANH_[0-9]+)(_.*)$',
                        c('Punto Fijo')) 
-#Coprofagos
+#Coprofagos ad
 Data.ee.prr<-Data.i.pr(Data.ee.pr,grp,'parentEventID',
                        expPEID='^(ANH_[0-9]+)(_.*)$',
                        c('TrmpExHum')) 
@@ -1311,6 +1321,7 @@ ompv<-c("ANH_220", "ANH_250", "ANH_274", "ANH_279", "ANH_213_A_P3", "ANH_380", "
 
 Data.pr<-Data.r%>%
   mutate('eventPer'=gsub(schtxt,"_",eventID))%>%dplyr::select(-eventID) #Peces _
+
 Data.ei.t<-Data.a.pt(grp,Data.pr,'eventPer',fn="sum")
 ## sampling method which will be the baseline of the grouping. In orignal form
 #Peces
@@ -1324,7 +1335,7 @@ c('TrmpExHum')
 #coprofagos lv
 c('CapManual')
 
-Data.ei.ttt<-Data.a.t(Data.ei.t,'evenPer',grp,samEff.ttt,c('CapManual')) 
+Data.ei.ttt<-Data.a.t(Data.t = Data.ei.t,evID = 'evenPer',grpp = grp,samEf = samEff.ttt,selcc = c('CapManual')) 
 write.csv(Data.ei.ttt,file.path(WDOut,'CurvasDiversidad', paste(gnm,'_','SubTempMU_Estim_Grp.csv',sep='')))
 kpv<-c(kpv,'Data.ei.t','Data.ei.ttt')
 rm(list=ls()[!ls()%in%kpv])

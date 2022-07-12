@@ -1,0 +1,16 @@
+"","Site","Diversity","Observed","Estimator","s.e.","LCL","UCL","n","S.obs","SC"
+"1","Bosque Ripario","Species richness",4,4,0.221,4,4.493,37,4,1
+"2","Bosque Ripario","Shannon diversity",3.409,3.555,0.327,3.409,4.196,37,4,1
+"3","Bosque Ripario","Simpson diversity",3.076,3.265,0.397,3.076,4.043,37,4,1
+"4","Herbazal","Species richness",4,4,0.48,4,5.352,12,4,1
+"5","Herbazal","Shannon diversity",3.78,4.325,0.483,3.78,5.271,12,4,1
+"6","Herbazal","Simpson diversity",3.6,4.714,0.854,3.6,6.388,12,4,1
+"7","Palma","Species richness",4,4,0.518,4,5.611,16,4,1
+"8","Palma","Shannon diversity",3.361,3.721,0.523,3.361,4.746,16,4,1
+"9","Palma","Simpson diversity",3.048,3.529,0.638,3.048,4.779,16,4,1
+"10","Pastos","Species richness",2,2.333,0.943,2.018,8.09,3,2,0.8333
+"11","Pastos","Shannon diversity",1.89,2.52,2.003,1.89,6.446,3,2,0.8333
+"12","Pastos","Simpson diversity",1.8,3,0.837,1.8,4.641,3,2,0.8333
+"13","Area Urbana","Species richness",2,2.5,1.107,2.037,8.808,2,2,0.6667
+"14","Area Urbana","Shannon diversity",2,3.375,1.124,2,5.578,2,2,0.6667
+"15","Area Urbana","Simpson diversity",2,2,0.471,2,2.924,2,2,0.6667

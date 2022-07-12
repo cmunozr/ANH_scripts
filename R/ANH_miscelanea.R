@@ -9,7 +9,7 @@ library(dplyr)
 dataReg <- read.xlsx("data/escarabajos/AltasBajasEscarabajosCoprofagos.xlsx", sheet = 1, startRow = 1, na.strings = "N/A")
 dataEvent <- read.xlsx("data/escarabajos/I2D-BIO_2021_069_v2_ev.xlsx", sheet=1, 
                        startRow = 1, na.strings = "N/A")
-covs <- read.xlsx("Analisis/Covariables/BDPuntosMuestreoMag270622.xlsx", sheet=1, 
+covs <- read.xlsx("Analisis/Covariables/BDPuntosMuestreoMag060722.xlsx", sheet=1, 
                   startRow = 1, na.strings = "N/A") %>% filter(GrupoBiolo == "Escarabajos")
 
 # Funcion para dividir el archivo original
@@ -69,3 +69,5 @@ wb <- loadWorkbook("data/escarabajos/AltasBajasEscarabajosCoprofagos_NoTag.xlsx"
 addWorksheet(wb, "Eventos")
 writeData(wb, "Eventos", dataEvent)
 saveWorkbook(wb, "data/escarabajos/AltasBajasEscarabajosCoprofagos_NoTag.xlsx", overwrite = TRUE)
+
+dataEvent$eventID %in% covs$eventID

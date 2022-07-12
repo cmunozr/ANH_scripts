@@ -33,13 +33,14 @@ Reptiles_UM_All: resultados taxon reptiles usando todas las unidades muestrales
 		Reptiles_T1: resultados temporada 1 de muestreo
 		Reptiles_T2: resultados temporada 2 de muestreo
 
-5 de julio de 2022
+8 de julio de 2022
 Escarabajos_UM_All: resultados taxon escarabajos usando todas las unidades muestrales
 	Subcarpetas
 		Escarabajos: resultados sin dividir temporadas de muestreo
 		Escarabajos_T1: resultados temporada 1 de muestreo
 		Escarabajos_T2: resultados temporada 2 de muestreo
 
+8 de julio de 2022
 Escarabajos_larvas_UM_All: resultados taxon escarabajos-larvas usando todas las unidades muestrales
 	Subcarpetas
 		Escarabajos_larvas: resultados sin dividir temporadas de muestreo

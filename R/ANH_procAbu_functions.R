@@ -79,11 +79,11 @@ PrintggiNextInc<-function(fnm,iNxt){
   names(point.df)<-gsub('[S|s]ite','site',names(point.df))
   jpeg(f.nm, width = 480, height = 480, quality=300)
   #fix problem with different columns from fortify.ggiNext
-   fixNm<-lapply(iNxt$iNextEst,names)
-   intNm<-do.call(c,fixNm)
-   tblnm<-table(intNm)
-   selclm<-names(tblnm)[tblnm==length(fixNm)]
-   iNxt$iNextEst<-lapply(iNxt$iNextEst,function(x){x<-x[,selclm]})
+    fixNm<-lapply(iNxt$iNextEst,names)
+    intNm<-do.call(c,fixNm)
+    tblnm<-table(intNm)
+    selclm<-names(tblnm)[tblnm==length(fixNm)]
+    iNxt$iNextEst<-lapply(iNxt$iNextEst,function(x){x<-x[,selclm]})
   g1<-ggiNEXT(iNxt,type=1, facet.var = "site")+
     labs(title=paste('Diversidad Verdadera ',fnm,sep=''), y='Diversidad extrapolada',
          x='Número de UM-bootstrap')+
@@ -373,7 +373,7 @@ Data.i.f<-function(catnm){
     mutate_if(is.numeric,~1*(.>0))
   nmlvl<-levels(as.factor(as.character(Data.ei.o$categ)))
   print(nmlvl)
-  Data.ei.o<-Data.ei.o%>%
+  Data.ei.o<-Data.ei.o%>% filter(!is.na(categ)) %>% 
     group_split(categ)
   names(Data.ei.o)<-nmlvl
   Data.ei.oo<-map(Data.ei.o, function(x){
@@ -501,6 +501,7 @@ Data.i.pr<-function(Data.ee.ss,grpp,evID,expPEID="^(ANH_[0-9]+)(_.*)$",selcc){
   Data.ee.sss<-Data.ee.sss%>%dplyr::select(-ends_with(names(samEff.ttt)))
   return(Data.ee.sss)
 }#gets diversity estimates for incidence and adds sampling effort.DF with group protocols
+
 Data.a.t<-function(Data.t,evID,grpp,samEf,selcc){
   tt<-map(Data.t, function(y){
     yy<-map(y,function(v){
@@ -540,6 +541,7 @@ Data.a.t<-function(Data.t,evID,grpp,samEf,selcc){
   }
   ttt<-ttt%>%dplyr::select(-ends_with(names(samEf)))
 } #gets final df with sampling effort
+
 lm_eqn <- function(m){
   eq <- substitute(italic(y) == a + b %.% italic(x)*","~~italic(r)^2~"="~r2, 
                    list(a = sprintf(unname(coef(m)[1]), fmt="%.2f"),
