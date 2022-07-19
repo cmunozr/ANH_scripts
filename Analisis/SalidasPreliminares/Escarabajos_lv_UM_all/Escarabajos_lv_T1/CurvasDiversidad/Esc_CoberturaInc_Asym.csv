@@ -1,0 +1,7 @@
+"","site","Diversity","Observed","Estimator","s.e.","LCL","UCL","T","U","S.obs","SC","Q1","Q2","Q3","Q4","Q5","Q6","Q7","Q8","Q9","Q10"
+"1","Bosque Ripario","Species richness",2,2,0,NA,NA,1,2,2,1,2,0,0,0,0,0,0,0,0,0
+"2","Bosque Ripario","Shannon diversity",2,0,0,2,0,1,2,2,1,2,0,0,0,0,0,0,0,0,0
+"3","Bosque Ripario","Simpson diversity",2,2,0,2,2,1,2,2,1,2,0,0,0,0,0,0,0,0,0
+"4","Herbazal","Species richness",2,2,0.22,2,2.502,6,8,2,1,0,0,1,0,1,0,0,0,0,0
+"5","Herbazal","Shannon diversity",1.938,2.027,0.168,1.938,2.356,6,8,2,1,0,0,1,0,1,0,0,0,0,0
+"6","Herbazal","Simpson diversity",1.882,1.962,0.261,1.882,2.473,6,8,2,1,0,0,1,0,1,0,0,0,0,0

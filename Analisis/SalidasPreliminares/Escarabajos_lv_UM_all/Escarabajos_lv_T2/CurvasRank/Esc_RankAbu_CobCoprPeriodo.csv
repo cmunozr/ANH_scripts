@@ -1,0 +1,10 @@
+"","samplingProtocol","Grouping","species","labelit","rank","abundance","proportion","plower","pupper","accumfreq","logabun","rankfreq"
+"1","CapManual","Bosque Ripario_21","Ceraspis sp.NA",TRUE,1,23,56.1,NA,NA,56.1,1.4,25
+"2","CapManual","Bosque Ripario_21","Plectris sp.NA",TRUE,2,12,29.3,NA,NA,85.4,1.1,50
+"3","CapManual","Bosque Ripario_21","Barybas sp.NA",TRUE,3,3,7.3,NA,NA,92.7,0.5,75
+"4","CapManual","Bosque Ripario_21","Phyllophaga sp.NA",FALSE,4,3,7.3,NA,NA,100,0.5,100
+"5","CapManual","Herbazal_21","Cyclocephala sp.NA",TRUE,1,9,64.3,NA,NA,64.3,1,33.3
+"6","CapManual","Herbazal_21","Plectris sp.NA",TRUE,2,4,28.6,NA,NA,92.9,0.6,66.7
+"7","CapManual","Herbazal_21","Phyllophaga sp.NA",TRUE,3,1,7.1,NA,NA,100,0,100
+"8","CapManual","Pastos_21","Astaena sp.NA",TRUE,1,2,66.7,NA,NA,66.7,0.3,50
+"9","CapManual","Pastos_21","Leucothyreus sp.NA",TRUE,2,1,33.3,NA,NA,100,0,100

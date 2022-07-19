@@ -1,0 +1,7 @@
+"","samplingProtocol","Grouping","species","labelit","rank","abundance","proportion","plower","pupper","accumfreq","logabun","rankfreq"
+"1","CapManual","Caracterizacion","Aegidinus candezei",TRUE,1,1,100,NA,NA,100,0,100
+"2","CapManual","Kale","Aegidinus candezei",TRUE,1,1,50,NA,NA,50,0,50
+"3","CapManual","Kale","Plectris sp.NA",TRUE,2,1,50,NA,NA,100,0,100
+"4","CapManual","Platero","Aegidinus candezei",TRUE,1,2,50,NA,NA,50,0.3,33.3
+"5","CapManual","Platero","Leucothyreus sp.NA",TRUE,2,1,25,NA,NA,75,0,66.7
+"6","CapManual","Platero","Plectris sp.NA",TRUE,3,1,25,NA,NA,100,0,100

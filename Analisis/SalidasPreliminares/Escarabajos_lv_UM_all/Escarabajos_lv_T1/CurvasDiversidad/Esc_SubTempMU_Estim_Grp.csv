@@ -1,0 +1,25 @@
+"","evenPer","order","observado","estimado","s.e.","LCL","UCL","parentEventID","grp","cmb_smpEf"
+"1","ANH_112_Captura manual1_2022_03_30","Species richness",1,1,0.312,1,2.549,"ANH_112","CapManual",1
+"2","ANH_112_Captura manual1_2022_03_30","Shannon diversity",1,0,0,1,0,"ANH_112","CapManual",1
+"3","ANH_112_Captura manual1_2022_03_30","Simpson diversity",1,1,0,1,1,"ANH_112","CapManual",1
+"4","ANH_112_Captura manual2_2022_03_30","Species richness",1,1,0.312,1,2.549,"ANH_112","CapManual",1
+"5","ANH_112_Captura manual2_2022_03_30","Shannon diversity",1,0,0,1,0,"ANH_112","CapManual",1
+"6","ANH_112_Captura manual2_2022_03_30","Simpson diversity",1,1,0,1,1,"ANH_112","CapManual",1
+"7","ANH_137_Captura manual2_2022_03_29","Species richness",1,1,0.284,1,1.799,"ANH_137","CapManual",1
+"8","ANH_137_Captura manual2_2022_03_29","Shannon diversity",1,1,0,1,1,"ANH_137","CapManual",1
+"9","ANH_137_Captura manual2_2022_03_29","Simpson diversity",1,1,0,1,1,"ANH_137","CapManual",1
+"10","ANH_138_Captura manual2_2022_03_28","Species richness",2,2.5,1.107,2.037,8.808,"ANH_138","CapManual",1
+"11","ANH_138_Captura manual2_2022_03_28","Shannon diversity",2,3.375,1.166,2,5.661,"ANH_138","CapManual",1
+"12","ANH_138_Captura manual2_2022_03_28","Simpson diversity",2,2,0.477,2,2.934,"ANH_138","CapManual",1
+"13","ANH_142_Captura manual4_2022_04_01","Species richness",1,1,0.312,1,2.549,"ANH_142","CapManual",1
+"14","ANH_142_Captura manual4_2022_04_01","Shannon diversity",1,0,0,1,0,"ANH_142","CapManual",1
+"15","ANH_142_Captura manual4_2022_04_01","Simpson diversity",1,NA,0,NA,NA,"ANH_142","CapManual",1
+"16","ANH_147_Captura manual3_2022_03_22","Species richness",2,2.333,0.943,2.018,8.09,"ANH_147","CapManual",1
+"17","ANH_147_Captura manual3_2022_03_22","Shannon diversity",1.89,2.52,1.947,1.89,6.336,"ANH_147","CapManual",1
+"18","ANH_147_Captura manual3_2022_03_22","Simpson diversity",1.8,1.8,0.794,1.8,3.357,"ANH_147","CapManual",1
+"19","ANH_365_Captura manual2_2022_03_25","Species richness",1,1,0.312,1,2.549,"ANH_365","CapManual",1
+"20","ANH_365_Captura manual2_2022_03_25","Shannon diversity",1,0,0,1,0,"ANH_365","CapManual",1
+"21","ANH_365_Captura manual2_2022_03_25","Simpson diversity",1,NA,0,NA,NA,"ANH_365","CapManual",1
+"22","ANH_368_Captura manual1_2022_04_05","Species richness",1,1,0.312,1,2.549,"ANH_368","CapManual",1
+"23","ANH_368_Captura manual1_2022_04_05","Shannon diversity",1,0,0,1,0,"ANH_368","CapManual",1
+"24","ANH_368_Captura manual1_2022_04_05","Simpson diversity",1,NA,0,NA,NA,"ANH_368","CapManual",1

@@ -1,0 +1,101 @@
+"","samplingProtocol","Grouping","species","labelit","rank","abundance","proportion","plower","pupper","accumfreq","logabun","rankfreq"
+"1","TrmpExHum","Bosque Abierto","Onthophagus sp.01H",TRUE,1,272,41.5,NA,NA,41.5,2.4,10
+"2","TrmpExHum","Bosque Abierto","Pseudocanthon perplexus",TRUE,2,166,25.3,NA,NA,66.9,2.2,20
+"3","TrmpExHum","Bosque Abierto","Canthon septemmaculatus",TRUE,3,118,18,NA,NA,84.9,2.1,30
+"4","TrmpExHum","Bosque Abierto","Onthophagus marginicollis",FALSE,4,85,13,NA,NA,97.9,1.9,40
+"5","TrmpExHum","Bosque Abierto","Canthon juvencus",FALSE,5,6,0.9,NA,NA,98.8,0.8,50
+"6","TrmpExHum","Bosque Abierto","Onthophagus lebasi",FALSE,6,3,0.5,NA,NA,99.2,0.5,60
+"7","TrmpExHum","Bosque Abierto","Canthon sp.10H",FALSE,7,2,0.3,NA,NA,99.5,0.3,70
+"8","TrmpExHum","Bosque Abierto","Canthidium sp.02H",FALSE,8,1,0.2,NA,NA,99.7,0,80
+"9","TrmpExHum","Bosque Abierto","Canthon sp.06H",FALSE,9,1,0.2,NA,NA,99.8,0,90
+"10","TrmpExHum","Bosque Abierto","Coprophanaeus corythus",FALSE,10,1,0.2,NA,NA,100,0,100
+"11","TrmpExHum","Bosque Denso","Canthon subhyalinus",TRUE,1,1302,60.3,NA,NA,60.3,3.1,4.8
+"12","TrmpExHum","Bosque Denso","Sylvicanthon aequinoctialis",TRUE,2,390,18.1,NA,NA,78.4,2.6,9.5
+"13","TrmpExHum","Bosque Denso","Canthon juvencus",TRUE,3,173,8,NA,NA,86.4,2.2,14.3
+"14","TrmpExHum","Bosque Denso","Dichotomius agenor",FALSE,4,74,3.4,NA,NA,89.8,1.9,19
+"15","TrmpExHum","Bosque Denso","Canthon sp.09H",FALSE,5,70,3.2,NA,NA,93.1,1.8,23.8
+"16","TrmpExHum","Bosque Denso","Onthophagus sp.01H",FALSE,6,50,2.3,NA,NA,95.4,1.7,28.6
+"17","TrmpExHum","Bosque Denso","Trichillidium pilosum",FALSE,7,20,0.9,NA,NA,96.3,1.3,33.3
+"18","TrmpExHum","Bosque Denso","Uroxys sp.02H",FALSE,8,14,0.6,NA,NA,96.9,1.1,38.1
+"19","TrmpExHum","Bosque Denso","Dichotomius andresi",FALSE,9,13,0.6,NA,NA,97.5,1.1,42.9
+"20","TrmpExHum","Bosque Denso","Onthophagus acuminatus",FALSE,10,11,0.5,NA,NA,98.1,1,47.6
+"21","TrmpExHum","Bosque Denso","Eurysternus mexicanus",FALSE,11,9,0.4,NA,NA,98.5,1,52.4
+"22","TrmpExHum","Bosque Denso","Coprophanaeus corythus",FALSE,12,8,0.4,NA,NA,98.8,0.9,57.1
+"23","TrmpExHum","Bosque Denso","Onthophagus marginicollis",FALSE,13,8,0.4,NA,NA,99.2,0.9,61.9
+"24","TrmpExHum","Bosque Denso","Eurysternus foedus",FALSE,14,6,0.3,NA,NA,99.5,0.8,66.7
+"25","TrmpExHum","Bosque Denso","Eurysternus plebejus",FALSE,15,3,0.1,NA,NA,99.6,0.5,71.4
+"26","TrmpExHum","Bosque Denso","Uroxys sp.05H",FALSE,16,3,0.1,NA,NA,99.8,0.5,76.2
+"27","TrmpExHum","Bosque Denso","Deltochilum guildingii",FALSE,17,1,0,NA,NA,99.8,0,81
+"28","TrmpExHum","Bosque Denso","Ateuchus aeneomicans",FALSE,18,1,0,NA,NA,99.9,0,85.7
+"29","TrmpExHum","Bosque Denso","Canthon septemmaculatus",FALSE,19,1,0,NA,NA,99.9,0,90.5
+"30","TrmpExHum","Bosque Denso","Dichotomius reclinatus",FALSE,20,1,0,NA,NA,100,0,95.2
+"31","TrmpExHum","Bosque Denso","Canthon sp.10H",FALSE,21,1,0,NA,NA,100,0,100
+"32","TrmpExHum","Bosque Ripario","Onthophagus sp.01H",TRUE,1,2601,52.8,NA,NA,52.8,3.4,3.2
+"33","TrmpExHum","Bosque Ripario","Dichotomius agenor",TRUE,2,864,17.6,NA,NA,70.4,2.9,6.5
+"34","TrmpExHum","Bosque Ripario","Canthon septemmaculatus",TRUE,3,295,6,NA,NA,76.4,2.5,9.7
+"35","TrmpExHum","Bosque Ripario","Canthon juvencus",FALSE,4,197,4,NA,NA,80.4,2.3,12.9
+"36","TrmpExHum","Bosque Ripario","Sylvicanthon aequinoctialis",FALSE,5,126,2.6,NA,NA,83,2.1,16.1
+"37","TrmpExHum","Bosque Ripario","Pseudocanthon perplexus",FALSE,6,111,2.3,NA,NA,85.2,2,19.4
+"38","TrmpExHum","Bosque Ripario","Eurysternus mexicanus",FALSE,7,109,2.2,NA,NA,87.4,2,22.6
+"39","TrmpExHum","Bosque Ripario","Ateuchus aeneomicans",FALSE,8,100,2,NA,NA,89.5,2,25.8
+"40","TrmpExHum","Bosque Ripario","Coprophanaeus corythus",FALSE,9,69,1.4,NA,NA,90.9,1.8,29
+"41","TrmpExHum","Bosque Ripario","Canthon subhyalinus",FALSE,10,63,1.3,NA,NA,92.1,1.8,32.3
+"42","TrmpExHum","Bosque Ripario","Onthophagus lebasi",FALSE,11,60,1.2,NA,NA,93.4,1.8,35.5
+"43","TrmpExHum","Bosque Ripario","Onthophagus marginicollis",FALSE,12,52,1.1,NA,NA,94.4,1.7,38.7
+"44","TrmpExHum","Bosque Ripario","Canthon sp.09H",FALSE,13,37,0.8,NA,NA,95.2,1.6,41.9
+"45","TrmpExHum","Bosque Ripario","Canthidium sp.02H",FALSE,14,37,0.8,NA,NA,95.9,1.6,45.2
+"46","TrmpExHum","Bosque Ripario","Canthidium sp.05H",FALSE,15,27,0.5,NA,NA,96.5,1.4,48.4
+"47","TrmpExHum","Bosque Ripario","Coprophanaeus gamezi",FALSE,16,22,0.4,NA,NA,96.9,1.3,51.6
+"48","TrmpExHum","Bosque Ripario","Deltochilum guildingii",FALSE,17,21,0.4,NA,NA,97.3,1.3,54.8
+"49","TrmpExHum","Bosque Ripario","Phanaeus hermes",FALSE,18,20,0.4,NA,NA,97.7,1.3,58.1
+"50","TrmpExHum","Bosque Ripario","Dichotomius sp.03H",FALSE,19,19,0.4,NA,NA,98.1,1.3,61.3
+"51","TrmpExHum","Bosque Ripario","Canthidium sp.12H",FALSE,20,14,0.3,NA,NA,98.4,1.1,64.5
+"52","TrmpExHum","Bosque Ripario","Canthon sp.10H",FALSE,21,13,0.3,NA,NA,98.7,1.1,67.7
+"53","TrmpExHum","Bosque Ripario","Canthon sp.06H",FALSE,22,11,0.2,NA,NA,98.9,1,71
+"54","TrmpExHum","Bosque Ripario","Trichillidium pilosum",FALSE,23,11,0.2,NA,NA,99.1,1,74.2
+"55","TrmpExHum","Bosque Ripario","Eurysternus foedus",FALSE,24,10,0.2,NA,NA,99.3,1,77.4
+"56","TrmpExHum","Bosque Ripario","Uroxys sp.05H",FALSE,25,8,0.2,NA,NA,99.5,0.9,80.6
+"57","TrmpExHum","Bosque Ripario","Uroxys sp.02H",FALSE,26,7,0.1,NA,NA,99.6,0.8,83.9
+"58","TrmpExHum","Bosque Ripario","Eurysternus plebejus",FALSE,27,6,0.1,NA,NA,99.8,0.8,87.1
+"59","TrmpExHum","Bosque Ripario","Canthidium sp.01H",FALSE,28,5,0.1,NA,NA,99.9,0.7,90.3
+"60","TrmpExHum","Bosque Ripario","Canthidium sp.10H",FALSE,29,4,0.1,NA,NA,99.9,0.6,93.5
+"61","TrmpExHum","Bosque Ripario","Onthophagus acuminatus",FALSE,30,2,0,NA,NA,100,0.3,96.8
+"62","TrmpExHum","Bosque Ripario","Canthon sp.05H",FALSE,31,1,0,NA,NA,100,0,100
+"63","TrmpExHum","Herbazal","Onthophagus sp.01H",TRUE,1,2017,42.9,NA,NA,42.9,3.3,4.3
+"64","TrmpExHum","Herbazal","Onthophagus marginicollis",TRUE,2,946,20.1,NA,NA,63,3,8.7
+"65","TrmpExHum","Herbazal","Pseudocanthon perplexus",TRUE,3,511,10.9,NA,NA,73.9,2.7,13
+"66","TrmpExHum","Herbazal","Onthophagus lebasi",FALSE,4,296,6.3,NA,NA,80.2,2.5,17.4
+"67","TrmpExHum","Herbazal","Dichotomius agenor",FALSE,5,240,5.1,NA,NA,85.3,2.4,21.7
+"68","TrmpExHum","Herbazal","Canthon septemmaculatus",FALSE,6,138,2.9,NA,NA,88.2,2.1,26.1
+"69","TrmpExHum","Herbazal","Eurysternus mexicanus",FALSE,7,114,2.4,NA,NA,90.6,2.1,30.4
+"70","TrmpExHum","Herbazal","Canthon juvencus",FALSE,8,94,2,NA,NA,92.6,2,34.8
+"71","TrmpExHum","Herbazal","Coprophanaeus gamezi",FALSE,9,85,1.8,NA,NA,94.4,1.9,39.1
+"72","TrmpExHum","Herbazal","Canthon sp.10H",FALSE,10,79,1.7,NA,NA,96.1,1.9,43.5
+"73","TrmpExHum","Herbazal","Canthon sp.06H",FALSE,11,52,1.1,NA,NA,97.2,1.7,47.8
+"74","TrmpExHum","Herbazal","Uroxys sp.02H",FALSE,12,35,0.7,NA,NA,98,1.5,52.2
+"75","TrmpExHum","Herbazal","Deltochilum guildingii",FALSE,13,31,0.7,NA,NA,98.6,1.5,56.5
+"76","TrmpExHum","Herbazal","Canthidium sp.01H",FALSE,14,26,0.6,NA,NA,99.2,1.4,60.9
+"77","TrmpExHum","Herbazal","Canthon sp.05H",FALSE,15,15,0.3,NA,NA,99.5,1.2,65.2
+"78","TrmpExHum","Herbazal","Dichotomius sp.03H",FALSE,16,9,0.2,NA,NA,99.7,1,69.6
+"79","TrmpExHum","Herbazal","Pseudocanthon xanthurus",FALSE,17,7,0.1,NA,NA,99.8,0.8,73.9
+"80","TrmpExHum","Herbazal","Coprophanaeus corythus",FALSE,18,2,0,NA,NA,99.9,0.3,78.3
+"81","TrmpExHum","Herbazal","Uroxys sp.05H",FALSE,19,2,0,NA,NA,99.9,0.3,82.6
+"82","TrmpExHum","Herbazal","Canthidium sp.02H",FALSE,20,1,0,NA,NA,99.9,0,87
+"83","TrmpExHum","Herbazal","Canthon subhyalinus",FALSE,21,1,0,NA,NA,100,0,91.3
+"84","TrmpExHum","Herbazal","Canthon lituratus",FALSE,22,1,0,NA,NA,100,0,95.7
+"85","TrmpExHum","Herbazal","Sulcophanaeus steinheili",FALSE,23,1,0,NA,NA,100,0,100
+"86","TrmpExHum","Pastos","Onthophagus marginicollis",TRUE,1,557,65.2,NA,NA,65.2,2.7,6.7
+"87","TrmpExHum","Pastos","Onthophagus sp.01H",TRUE,2,136,15.9,NA,NA,81.1,2.1,13.3
+"88","TrmpExHum","Pastos","Dichotomius agenor",TRUE,3,79,9.3,NA,NA,90.4,1.9,20
+"89","TrmpExHum","Pastos","Eurysternus mexicanus",FALSE,4,21,2.5,NA,NA,92.9,1.3,26.7
+"90","TrmpExHum","Pastos","Canthon juvencus",FALSE,5,17,2,NA,NA,94.8,1.2,33.3
+"91","TrmpExHum","Pastos","Canthon septemmaculatus",FALSE,6,10,1.2,NA,NA,96,1,40
+"92","TrmpExHum","Pastos","Onthophagus lebasi",FALSE,7,9,1.1,NA,NA,97.1,1,46.7
+"93","TrmpExHum","Pastos","Canthon sp.10H",FALSE,8,8,0.9,NA,NA,98,0.9,53.3
+"94","TrmpExHum","Pastos","Digitonthophagus gazella",FALSE,9,6,0.7,NA,NA,98.7,0.8,60
+"95","TrmpExHum","Pastos","Canthon lituratus",FALSE,10,3,0.4,NA,NA,99.1,0.5,66.7
+"96","TrmpExHum","Pastos","Canthon sp.09H",FALSE,11,2,0.2,NA,NA,99.3,0.3,73.3
+"97","TrmpExHum","Pastos","Canthon subhyalinus",FALSE,12,2,0.2,NA,NA,99.5,0.3,80
+"98","TrmpExHum","Pastos","Sylvicanthon aequinoctialis",FALSE,13,2,0.2,NA,NA,99.8,0.3,86.7
+"99","TrmpExHum","Pastos","Pseudocanthon xanthurus",FALSE,14,1,0.1,NA,NA,99.9,0,93.3
+"100","TrmpExHum","Pastos","Uroxys sp.02H",FALSE,15,1,0.1,NA,NA,100,0,100
