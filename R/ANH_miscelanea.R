@@ -6,11 +6,11 @@ library(openxlsx)
 library(dplyr)
 
 # leer el archivo original
-dataReg <- read.xlsx("data/mamiferos/I2D-BIO_2021_083_v2.xlsx", sheet = "Registros", startRow = 1, na.strings = "N/A")
-dataEvent <- read.xlsx("data/mamiferos/I2D-BIO_2021_083_v2.xlsx", sheet="Eventos", 
+dataReg <- read.xlsx("data/peces/Peces_ANH_Carlos.xlsx", sheet = "Diurno", startRow = 1, na.strings = "N/A")
+dataEvent <- read.xlsx("data/peces/I2D-BIO_2021_049_v3.xlsx", sheet="Evento", 
                        startRow = 1, na.strings = "N/A")
-covs <- read.xlsx("Analisis/Covariables/BDPuntosMuestreoMag180722.xlsx", sheet=1, 
-                  startRow = 1, na.strings = "N/A") %>% filter(GrupoBiolo == "Mamiferos")
+covs <- read.xlsx("Analisis/Covariables/BDPuntosMuestreoMag270622.xlsx", sheet=1, 
+                  startRow = 1, na.strings = "N/A") %>% filter(GrupoBiolo == "Peces")
 
 # Funcion para dividir el archivo original
 # db = data.frame, debe tener una columna que tenga el valor de busqueda char_search por 
@@ -32,42 +32,42 @@ split_temporadas <- function(db, column = "eventID", char_search = "_T2"){
 }
 
 # correr funcion split_temporadas
-splitReg <- split_temporadas(db = dataReg, column = "eventID", char_search = "T2")
-splitEvent <- split_temporadas(db = dataEvent, column = "eventID", char_search = "T2")
+splitReg <- split_temporadas(db = dataReg, column = "eventID", char_search = "_T2")
+splitEvent <- split_temporadas(db = dataEvent, column = "eventID", char_search = "_T2")
 
 # Condicional: revise manualmente si los eventID tienen la etiqueta de la temporada, en caso de ser asi
 # es necesario quitar aquellos caracteres como "_T1" para que los scripts subsiguientes no se necesite transformar,
 # de la misma manera se debe desarrollar para la base de datos original
-#splitReg[["T1"]]$eventID <- gsub(pattern = "_T1", replacement = "", x = splitReg[["T1"]]$eventID)
-#splitEvent[["T1"]]$eventID <- gsub(pattern = "_T1", replacement = "", x = splitEvent[["T1"]]$eventID)
+splitReg[["T1"]]$eventID <- gsub(pattern = "_T1", replacement = "", x = splitReg[["T1"]]$eventID)
+splitEvent[["T1"]]$eventID <- gsub(pattern = "_T1", replacement = "", x = splitEvent[["T1"]]$eventID)
 
-#splitReg[["T2"]]$eventID <- gsub(pattern = "_T2", replacement = "", x = splitReg[["T2"]]$eventID)
-#splitEvent[["T2"]]$eventID <- gsub(pattern = "_T2", replacement = "", x = splitEvent[["T2"]]$eventID)
+splitReg[["T2"]]$eventID <- gsub(pattern = "_T2", replacement = "", x = splitReg[["T2"]]$eventID)
+splitEvent[["T2"]]$eventID <- gsub(pattern = "_T2", replacement = "", x = splitEvent[["T2"]]$eventID)
 
-#dataReg$eventID <- gsub(pattern = "_T2", replacement = "", x = dataReg$eventID)
-#dataEvent$eventID <- gsub(pattern = "_T2", replacement = "", x = dataEvent$eventID)
+dataReg$eventID <- gsub(pattern = "_T2", replacement = "", x = dataReg$eventID)
+dataEvent$eventID <- gsub(pattern = "_T2", replacement = "", x = dataEvent$eventID)
 
 # constituyendo archivos de la temporada 1: dado que se mantendra el formato excel
 # es necesario primero crear un excel con una sola hoja de trabajo, cargarlo de nuevo,
 # agregar una nueva hoja y por ultimo escribir/guardar los datos de la nueva hoja
-write.xlsx(splitReg[["T1"]], "data/mamiferos/Mamiferos_T1.xlsx", sheetName = "Registros")
-wb <- loadWorkbook("data/mamiferos/mamiferos_T1.xlsx")
+write.xlsx(splitReg[["T1"]], "data/peces/Peces_ANH_diurno_T1.xlsx", sheetName = "Registros")
+wb <- loadWorkbook("data/peces/Peces_ANH_diurno_T1.xlsx")
 addWorksheet(wb, "Eventos")
 writeData(wb, "Eventos",splitEvent[["T1"]])
-saveWorkbook(wb, "data/mamiferos/mamiferos_T1.xlsx", overwrite = TRUE)
+saveWorkbook(wb, "data/peces/Peces_ANH_diurno_T1.xlsx", overwrite = TRUE)
 
 # constituyendo archivos de la temporada 2
-write.xlsx(splitReg[["T2"]], "data/mamiferos/mamiferos_T2.xlsx", sheetName = "Registros")
-wb <- loadWorkbook("data/mamiferos/mamiferos_T2.xlsx")
+write.xlsx(splitReg[["T2"]], "data/peces/Peces_ANH_diurno_T2.xlsx", sheetName = "Registros")
+wb <- loadWorkbook("data/peces/Peces_ANH_diurno_T2.xlsx")
 addWorksheet(wb, "Eventos")
 writeData(wb, "Eventos",splitEvent[["T2"]])
-saveWorkbook(wb, "data/escarabajos/mamiferos_T2.xlsx", overwrite = TRUE)
+saveWorkbook(wb, "data/peces/Peces_ANH_diurno_T2.xlsx", overwrite = TRUE)
 
 # constituyendo archivo original sin tag de temporada
-write.xlsx(dataReg, "data/mamiferos/mamiferos_NoTag.xlsx", sheetName = "Registros")
-wb <- loadWorkbook("data/mamiferos/mamiferos_NoTag.xlsx")
+write.xlsx(dataReg, "data/peces/Peces_ANH_diurno_NoTag.xlsx", sheetName = "Registros")
+wb <- loadWorkbook("data/peces/Peces_ANH_diurno_NoTag.xlsx")
 addWorksheet(wb, "Eventos")
 writeData(wb, "Eventos", dataEvent)
-saveWorkbook(wb, "data/mamiferos/mamiferos_NoTag.xlsx", overwrite = TRUE)
+saveWorkbook(wb, "data/peces/Peces_ANH_diurno_NoTag.xlsx", overwrite = TRUE)
 
-splitReg[["T1"]]$eventID %in% covs$eventID
+dataEvent$eventID %in% covs$eventID

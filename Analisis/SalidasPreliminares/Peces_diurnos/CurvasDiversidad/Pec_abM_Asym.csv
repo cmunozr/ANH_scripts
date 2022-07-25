@@ -1,0 +1,13 @@
+"","Site","Diversity","Observed","Estimator","s.e.","LCL","UCL","n","S.obs","SC"
+"1","Electropesca","Species richness",38,46.078,7.08,39.839,73.476,368,38,0.9756
+"2","Electropesca","Shannon diversity",22.856,24.438,1.075,22.856,26.545,368,38,0.9756
+"3","Electropesca","Simpson diversity",18.305,19.211,1.065,18.305,21.299,368,38,0.9756
+"4","Arrastre","Species richness",53,59.397,5.92,54.369,82.887,2428,53,0.9967
+"5","Arrastre","Shannon diversity",21.131,21.404,0.503,21.131,22.389,2428,53,0.9967
+"6","Arrastre","Simpson diversity",13.253,13.32,0.479,13.253,14.258,2428,53,0.9967
+"7","Atarraya","Species richness",41,81.465,49.047,47.278,301.818,1155,41,0.9922
+"8","Atarraya","Shannon diversity",17.625,18.149,0.596,17.625,19.318,1155,41,0.9922
+"9","Atarraya","Simpson diversity",11.807,11.918,0.509,11.807,12.916,1155,41,0.9922
+"10","Trasmallo","Species richness",19,34.85,16.343,21.99,103.027,107,19,0.9256
+"11","Trasmallo","Shannon diversity",11.524,13.527,1.692,11.524,16.843,107,19,0.9256
+"12","Trasmallo","Simpson diversity",9.008,9.744,1.044,9.008,11.79,107,19,0.9256

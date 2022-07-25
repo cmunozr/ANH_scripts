@@ -1,0 +1,62 @@
+"","samplingProtocol","Grouping","species","labelit","rank","abundance","proportion","plower","pupper","accumfreq","logabun","rankfreq"
+"1","RedNiebla_Av","Bosque Ripario","Carollia perspicillata",TRUE,1,871,47.1,NA,NA,47.1,2.9,3
+"2","RedNiebla_Av","Bosque Ripario","Artibeus lituratus",TRUE,2,312,16.9,NA,NA,64,2.5,6.1
+"3","RedNiebla_Av","Bosque Ripario","Carollia brevicauda",TRUE,3,268,14.5,NA,NA,78.5,2.4,9.1
+"4","RedNiebla_Av","Bosque Ripario","Phyllostomus hastatus",FALSE,4,141,7.6,NA,NA,86.1,2.1,12.1
+"5","RedNiebla_Av","Bosque Ripario","Artibeus planirostris",FALSE,5,57,3.1,NA,NA,89.2,1.8,15.2
+"6","RedNiebla_Av","Bosque Ripario","Phyllostomus discolor",FALSE,6,42,2.3,NA,NA,91.5,1.6,18.2
+"7","RedNiebla_Av","Bosque Ripario","Glossophaga soricina",FALSE,7,33,1.8,NA,NA,93.3,1.5,21.2
+"8","RedNiebla_Av","Bosque Ripario","Artibeus anderseni",FALSE,8,24,1.3,NA,NA,94.6,1.4,24.2
+"9","RedNiebla_Av","Bosque Ripario","Sturnira giannae",FALSE,9,20,1.1,NA,NA,95.7,1.3,27.3
+"10","RedNiebla_Av","Bosque Ripario","Carollia castanea",FALSE,10,13,0.7,NA,NA,96.4,1.1,30.3
+"11","RedNiebla_Av","Bosque Ripario","Rhogeessa io",FALSE,11,9,0.5,NA,NA,96.9,1,33.3
+"12","RedNiebla_Av","Bosque Ripario","Lophostoma brasiliense",FALSE,12,8,0.4,NA,NA,97.3,0.9,36.4
+"13","RedNiebla_Av","Bosque Ripario","Uroderma convexum",FALSE,13,8,0.4,NA,NA,97.7,0.9,39.4
+"14","RedNiebla_Av","Bosque Ripario","Uroderma magnirostrum",FALSE,14,6,0.3,NA,NA,98.1,0.8,42.4
+"15","RedNiebla_Av","Bosque Ripario","Myotis nigricans",FALSE,15,5,0.3,NA,NA,98.3,0.7,45.5
+"16","RedNiebla_Av","Bosque Ripario","Saccopteryx leptura",FALSE,16,3,0.2,NA,NA,98.5,0.5,48.5
+"17","RedNiebla_Av","Bosque Ripario","Micronycteris schmidtorum",FALSE,17,3,0.2,NA,NA,98.6,0.5,51.5
+"18","RedNiebla_Av","Bosque Ripario","Noctilio leporinus",FALSE,18,3,0.2,NA,NA,98.8,0.5,54.5
+"19","RedNiebla_Av","Bosque Ripario","Artibeus jamaicensis cf. jamaicensis",FALSE,19,3,0.2,NA,NA,99,0.5,57.6
+"20","RedNiebla_Av","Bosque Ripario","Platyrrhinus helleri",FALSE,20,2,0.1,NA,NA,99.1,0.3,60.6
+"21","RedNiebla_Av","Bosque Ripario","Micronycteris microtis",FALSE,21,2,0.1,NA,NA,99.2,0.3,63.6
+"22","RedNiebla_Av","Bosque Ripario","Myotis riparius",FALSE,22,2,0.1,NA,NA,99.3,0.3,66.7
+"23","RedNiebla_Av","Bosque Ripario","Noctilio albiventris",FALSE,23,2,0.1,NA,NA,99.4,0.3,69.7
+"24","RedNiebla_Av","Bosque Ripario","Desmodus rotundus",FALSE,24,2,0.1,NA,NA,99.5,0.3,72.7
+"25","RedNiebla_Av","Bosque Ripario","Saccopteryx canescens",FALSE,25,1,0.1,NA,NA,99.6,0,75.8
+"26","RedNiebla_Av","Bosque Ripario","Lampronycteris brachyotis",FALSE,26,1,0.1,NA,NA,99.6,0,78.8
+"27","RedNiebla_Av","Bosque Ripario","Lophostoma silvicola",FALSE,27,1,0.1,NA,NA,99.7,0,81.8
+"28","RedNiebla_Av","Bosque Ripario","Tonatia maresi",FALSE,28,1,0.1,NA,NA,99.7,0,84.8
+"29","RedNiebla_Av","Bosque Ripario","Gardnerycteris keenani",FALSE,29,1,0.1,NA,NA,99.8,0,87.9
+"30","RedNiebla_Av","Bosque Ripario","Rhynchonycteris naso",FALSE,30,1,0.1,NA,NA,99.8,0,90.9
+"31","RedNiebla_Av","Bosque Ripario","Artibeus phaeotis",FALSE,31,1,0.1,NA,NA,99.9,0,93.9
+"32","RedNiebla_Av","Bosque Ripario","Micronycteris hirsuta",FALSE,32,1,0.1,NA,NA,99.9,0,97
+"33","RedNiebla_Av","Bosque Ripario","Artibeus glaucus",FALSE,33,1,0.1,NA,NA,100,0,100
+"34","RedNiebla_Av","Palma","Artibeus lituratus",TRUE,1,631,42.5,NA,NA,42.5,2.8,3.6
+"35","RedNiebla_Av","Palma","Carollia perspicillata",TRUE,2,472,31.8,NA,NA,74.3,2.7,7.1
+"36","RedNiebla_Av","Palma","Carollia brevicauda",TRUE,3,112,7.5,NA,NA,81.8,2,10.7
+"37","RedNiebla_Av","Palma","Phyllostomus hastatus",FALSE,4,68,4.6,NA,NA,86.4,1.8,14.3
+"38","RedNiebla_Av","Palma","Phyllostomus discolor",FALSE,5,52,3.5,NA,NA,89.9,1.7,17.9
+"39","RedNiebla_Av","Palma","Artibeus planirostris",FALSE,6,33,2.2,NA,NA,92.1,1.5,21.4
+"40","RedNiebla_Av","Palma","Glossophaga soricina",FALSE,7,26,1.8,NA,NA,93.9,1.4,25
+"41","RedNiebla_Av","Palma","Uroderma convexum",FALSE,8,18,1.2,NA,NA,95.1,1.3,28.6
+"42","RedNiebla_Av","Palma","Carollia castanea",FALSE,9,12,0.8,NA,NA,95.9,1.1,32.1
+"43","RedNiebla_Av","Palma","Sturnira giannae",FALSE,10,11,0.7,NA,NA,96.6,1,35.7
+"44","RedNiebla_Av","Palma","Noctilio leporinus",FALSE,11,7,0.5,NA,NA,97.1,0.8,39.3
+"45","RedNiebla_Av","Palma","Eptesicus brasiliensis",FALSE,12,5,0.3,NA,NA,97.4,0.7,42.9
+"46","RedNiebla_Av","Palma","Molossus molossus",FALSE,13,5,0.3,NA,NA,97.8,0.7,46.4
+"47","RedNiebla_Av","Palma","Lophostoma brasiliense",FALSE,14,5,0.3,NA,NA,98.1,0.7,50
+"48","RedNiebla_Av","Palma","Artibeus anderseni",FALSE,15,3,0.2,NA,NA,98.3,0.5,53.6
+"49","RedNiebla_Av","Palma","Platyrrhinus helleri",FALSE,16,3,0.2,NA,NA,98.5,0.5,57.1
+"50","RedNiebla_Av","Palma","Noctilio albiventris",FALSE,17,3,0.2,NA,NA,98.7,0.5,60.7
+"51","RedNiebla_Av","Palma","Lasiurus ega",FALSE,18,3,0.2,NA,NA,98.9,0.5,64.3
+"52","RedNiebla_Av","Palma","Micronycteris schmidtorum",FALSE,19,2,0.1,NA,NA,99.1,0.3,67.9
+"53","RedNiebla_Av","Palma","Saccopteryx leptura",FALSE,20,2,0.1,NA,NA,99.2,0.3,71.4
+"54","RedNiebla_Av","Palma","Molossops temminckii",FALSE,21,2,0.1,NA,NA,99.3,0.3,75
+"55","RedNiebla_Av","Palma","Rhogeessa io",FALSE,22,2,0.1,NA,NA,99.5,0.3,78.6
+"56","RedNiebla_Av","Palma","Platyrrhinus angustirostris",FALSE,23,2,0.1,NA,NA,99.6,0.3,82.1
+"57","RedNiebla_Av","Palma","Myotis nigricans",FALSE,24,2,0.1,NA,NA,99.7,0.3,85.7
+"58","RedNiebla_Av","Palma","Marmosa robinsoni",FALSE,25,1,0.1,NA,NA,99.8,0,89.3
+"59","RedNiebla_Av","Palma","Micronycteris microtis",FALSE,26,1,0.1,NA,NA,99.9,0,92.9
+"60","RedNiebla_Av","Palma","Saccopteryx canescens",FALSE,27,1,0.1,NA,NA,99.9,0,96.4
+"61","RedNiebla_Av","Palma","Platyrrhinus brachycephalus",FALSE,28,1,0.1,NA,NA,100,0,100

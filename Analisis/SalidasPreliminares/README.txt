@@ -46,3 +46,10 @@ Escarabajos_larvas_UM_All: resultados taxon escarabajos-larvas usando todas las 
 		Escarabajos_larvas: resultados sin dividir temporadas de muestreo
 		Escarabajos_larvas_T1: resultados temporada 1 de muestreo
 		Escarabajos_larvas_T2: resultados temporada 2 de muestreo
+
+21 de julio de 2022
+Mamiferos_UM_All: resultados taxon mamiferos-murcielagos usando todas las unidades muestrales
+	Subcarpetas
+		Murcielagos: resultados sin dividir temporadas de muestreo
+		Murcielagos_T1: resultados temporada 1 de muestreo
+		Murcielagos_T2: resultados temporada 2 de muestreo
