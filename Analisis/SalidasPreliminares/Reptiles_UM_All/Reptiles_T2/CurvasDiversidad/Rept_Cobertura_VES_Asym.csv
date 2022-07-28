@@ -1,25 +1,28 @@
 "","Site","Diversity","Observed","Estimator","s.e.","LCL","UCL","n","S.obs","SC"
-"1","Bosque Ripario","Species richness",32,38.382,5.907,33.366,61.821,349,32,0.9772
-"2","Bosque Ripario","Shannon diversity",12.283,13.032,0.933,12.283,14.861,349,32,0.9772
-"3","Bosque Ripario","Simpson diversity",7.13,7.258,0.585,7.13,8.405,349,32,0.9772
-"4","Palma","Species richness",11,14.907,5.177,11.543,39.111,43,11,0.9091
-"5","Palma","Shannon diversity",7.274,8.726,1.55,7.274,11.764,43,11,0.9091
-"6","Palma","Simpson diversity",5.359,5.98,1.187,5.359,8.306,43,11,0.9091
-"7","Vias","Species richness",11,14.977,4.68,11.64,35.724,22,11,0.785
-"8","Vias","Shannon diversity",9.361,13.553,2.758,9.361,18.959,22,11,0.785
-"9","Vias","Simpson diversity",8.067,12.158,3.188,8.067,18.406,22,11,0.785
-"10","Pastos","Species richness",5,10.333,6.257,5.861,38.034,9,5,0.5897
-"11","Pastos","Shannon diversity",3.681,6.601,2.551,3.681,11.6,9,5,0.5897
-"12","Pastos","Simpson diversity",2.793,3.6,2.047,2.793,7.613,9,5,0.5897
-"13","Bosque Abierto","Species richness",5,6.929,2.958,5.223,21.648,7,5,0.6494
-"14","Bosque Abierto","Shannon diversity",4.711,7.924,3.574,4.711,14.93,7,5,0.6494
-"15","Bosque Abierto","Simpson diversity",4.455,10.5,3.585,4.455,17.527,7,5,0.6494
-"16","Herbazal","Species richness",9,15.034,7.306,9.938,47.839,29,9,0.8324
-"17","Herbazal","Shannon diversity",5.218,6.848,1.688,5.218,10.157,29,9,0.8324
-"18","Herbazal","Simpson diversity",3.641,4.02,1.137,3.641,6.249,29,9,0.8324
-"19","Zonas Pantanosas","Species richness",4,4.488,1.295,4.029,12.271,41,4,0.9768
-"20","Zonas Pantanosas","Shannon diversity",2.039,2.141,0.341,2.039,2.809,41,4,0.9768
-"21","Zonas Pantanosas","Simpson diversity",1.578,1.602,0.232,1.578,2.056,41,4,0.9768
-"22","Rios","Species richness",3,3,0.503,3,4.642,9,3,1
-"23","Rios","Shannon diversity",2.552,2.888,0.54,2.552,3.946,9,3,1
-"24","Rios","Simpson diversity",2.314,2.769,0.68,2.314,4.102,9,3,1
+"1","Bosque Ripario","Species richness",33,37.072,4.039,33.804,53.621,375,33,0.9814
+"2","Bosque Ripario","Shannon diversity",12.677,13.368,0.912,12.677,15.155,375,33,0.9814
+"3","Bosque Ripario","Simpson diversity",7.537,7.671,0.603,7.537,8.852,375,33,0.9814
+"4","Bosque Denso","Species richness",5,8.938,6.334,5.43,41.08,8,5,0.6576
+"5","Bosque Denso","Shannon diversity",4.456,7.799,3.585,4.456,14.825,8,5,0.6576
+"6","Bosque Denso","Simpson diversity",4,7,4.241,4,15.313,8,5,0.6576
+"7","Palma","Species richness",11,14.907,5.177,11.543,39.111,43,11,0.9091
+"8","Palma","Shannon diversity",7.274,8.726,1.573,7.274,11.809,43,11,0.9091
+"9","Palma","Simpson diversity",5.359,5.98,1.183,5.359,8.299,43,11,0.9091
+"10","Vias","Species richness",11,14.977,4.68,11.64,35.724,22,11,0.785
+"11","Vias","Shannon diversity",9.361,13.553,2.871,9.361,19.181,22,11,0.785
+"12","Vias","Simpson diversity",8.067,12.158,2.855,8.067,17.754,22,11,0.785
+"13","Pastos","Species richness",5,10.333,6.257,5.861,38.034,9,5,0.5897
+"14","Pastos","Shannon diversity",3.681,6.601,2.432,3.681,11.368,9,5,0.5897
+"15","Pastos","Simpson diversity",2.793,3.6,2.068,2.793,7.654,9,5,0.5897
+"16","Bosque Abierto","Species richness",5,6.929,2.958,5.223,21.648,7,5,0.6494
+"17","Bosque Abierto","Shannon diversity",4.711,7.924,3.497,4.711,14.777,7,5,0.6494
+"18","Bosque Abierto","Simpson diversity",4.455,10.5,4.149,4.455,18.631,7,5,0.6494
+"19","Herbazal","Species richness",10,22.281,16.845,11.635,102.232,57,10,0.9129
+"20","Herbazal","Shannon diversity",4.327,5.174,0.962,4.327,7.059,57,10,0.9129
+"21","Herbazal","Simpson diversity",2.893,2.994,0.493,2.893,3.961,57,10,0.9129
+"22","Zonas Pantanosas","Species richness",4,4.488,1.295,4.029,12.271,41,4,0.9768
+"23","Zonas Pantanosas","Shannon diversity",2.039,2.141,0.312,2.039,2.752,41,4,0.9768
+"24","Zonas Pantanosas","Simpson diversity",1.578,1.602,0.233,1.578,2.057,41,4,0.9768
+"25","Rios","Species richness",3,3,0.503,3,4.642,9,3,1
+"26","Rios","Shannon diversity",2.552,2.888,0.547,2.552,3.961,9,3,1
+"27","Rios","Simpson diversity",2.314,2.769,0.632,2.314,4.008,9,3,1

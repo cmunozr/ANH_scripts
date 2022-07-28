@@ -1,0 +1,245 @@
+"","samplingProtocol","Grouping","species","labelit","rank","abundance","proportion","plower","pupper","accumfreq","logabun","rankfreq"
+"1","VES","Bosque Abierto_ANH_169_N","Anolis",TRUE,1,2,40,NA,NA,40,0.3,25
+"2","VES","Bosque Abierto_ANH_169_N","Imantodes cenchoa",TRUE,2,1,20,NA,NA,60,0,50
+"3","VES","Bosque Abierto_ANH_169_N","Gonatodes albogularis",TRUE,3,1,20,NA,NA,80,0,75
+"4","VES","Bosque Abierto_ANH_169_N","Dendrophidion percarinatum",FALSE,4,1,20,NA,NA,100,0,100
+"5","VES","Bosque Denso_ANH_360_D","Anolis tropidogaster",TRUE,1,5,62.5,NA,NA,62.5,0.7,33.3
+"6","VES","Bosque Denso_ANH_360_D","Anolis auratus",TRUE,2,2,25,NA,NA,87.5,0.3,66.7
+"7","VES","Bosque Denso_ANH_360_D","Sphaerodactylus lineolatus",TRUE,3,1,12.5,NA,NA,100,0,100
+"8","VES","Bosque Denso_ANH_360_N","Gonatodes albogularis",TRUE,1,3,37.5,NA,NA,37.5,0.5,16.7
+"9","VES","Bosque Denso_ANH_360_N","Anolis auratus",TRUE,2,1,12.5,NA,NA,50,0,33.3
+"10","VES","Bosque Denso_ANH_360_N","Enuliophis sclateri",TRUE,3,1,12.5,NA,NA,62.5,0,50
+"11","VES","Bosque Denso_ANH_360_N","Loxopholis rugiceps",FALSE,4,1,12.5,NA,NA,75,0,66.7
+"12","VES","Bosque Denso_ANH_360_N","Imantodes cenchoa",FALSE,5,1,12.5,NA,NA,87.5,0,83.3
+"13","VES","Bosque Denso_ANH_360_N","Thecadactylus rapicauda",FALSE,6,1,12.5,NA,NA,100,0,100
+"14","VES","Bosque Denso_ANH_375_N","Anolis tropidogaster",TRUE,1,3,37.5,NA,NA,37.5,0.5,20
+"15","VES","Bosque Denso_ANH_375_N","Basiliscus galeritus",TRUE,2,2,25,NA,NA,62.5,0.3,40
+"16","VES","Bosque Denso_ANH_375_N","Gonatodes albogularis",TRUE,3,1,12.5,NA,NA,75,0,60
+"17","VES","Bosque Denso_ANH_375_N","Alopoglossus festae",FALSE,4,1,12.5,NA,NA,87.5,0,80
+"18","VES","Bosque Denso_ANH_375_N","Enuliophis sclateri",FALSE,5,1,12.5,NA,NA,100,0,100
+"19","VES","Bosque Ripario_ANH_117_D","Anolis tropidogaster",TRUE,1,1,100,NA,NA,100,0,100
+"20","VES","Bosque Ripario_ANH_117_N","Imantodes cenchoa",TRUE,1,1,33.3,NA,NA,33.3,0,33.3
+"21","VES","Bosque Ripario_ANH_117_N","Loxopholis rugiceps",TRUE,2,1,33.3,NA,NA,66.7,0,66.7
+"22","VES","Bosque Ripario_ANH_117_N","Porthidium lansbergii",TRUE,3,1,33.3,NA,NA,100,0,100
+"23","VES","Bosque Ripario_ANH_133_D","Anolis tropidogaster",TRUE,1,1,33.3,NA,NA,33.3,0,33.3
+"24","VES","Bosque Ripario_ANH_133_D","Gonatodes albogularis",TRUE,2,1,33.3,NA,NA,66.7,0,66.7
+"25","VES","Bosque Ripario_ANH_133_D","Mabuya",TRUE,3,1,33.3,NA,NA,100,0,100
+"26","VES","Bosque Ripario_ANH_133_N","Loxopholis rugiceps",TRUE,1,7,31.8,NA,NA,31.8,0.8,14.3
+"27","VES","Bosque Ripario_ANH_133_N","Anolis tropidogaster",TRUE,2,6,27.3,NA,NA,59.1,0.8,28.6
+"28","VES","Bosque Ripario_ANH_133_N","Caiman crocodilus",TRUE,3,4,18.2,NA,NA,77.3,0.6,42.9
+"29","VES","Bosque Ripario_ANH_133_N","Anolis auratus",FALSE,4,2,9.1,NA,NA,86.4,0.3,57.1
+"30","VES","Bosque Ripario_ANH_133_N","Mabuya",FALSE,5,1,4.5,NA,NA,90.9,0,71.4
+"31","VES","Bosque Ripario_ANH_133_N","Pseudoboa neuwiedii",FALSE,6,1,4.5,NA,NA,95.5,0,85.7
+"32","VES","Bosque Ripario_ANH_133_N","Lepidoblepharis xanthostigma",FALSE,7,1,4.5,NA,NA,100,0,100
+"33","VES","Bosque Ripario_ANH_136_D","Basiliscus galeritus",TRUE,1,6,85.7,NA,NA,85.7,0.8,50
+"34","VES","Bosque Ripario_ANH_136_D","Rhinoclemmys melanosterna",TRUE,2,1,14.3,NA,NA,100,0,100
+"35","VES","Bosque Ripario_ANH_136_N","Caiman crocodilus",TRUE,1,5,25,NA,NA,25,0.7,11.1
+"36","VES","Bosque Ripario_ANH_136_N","Anolis tropidogaster",TRUE,2,4,20,NA,NA,45,0.6,22.2
+"37","VES","Bosque Ripario_ANH_136_N","Basiliscus galeritus",TRUE,3,4,20,NA,NA,65,0.6,33.3
+"38","VES","Bosque Ripario_ANH_136_N","Anolis auratus",FALSE,4,2,10,NA,NA,75,0.3,44.4
+"39","VES","Bosque Ripario_ANH_136_N","Leptodeira annulata",FALSE,5,1,5,NA,NA,80,0,55.6
+"40","VES","Bosque Ripario_ANH_136_N","Rhinoclemmys melanosterna",FALSE,6,1,5,NA,NA,85,0,66.7
+"41","VES","Bosque Ripario_ANH_136_N","Imantodes cenchoa",FALSE,7,1,5,NA,NA,90,0,77.8
+"42","VES","Bosque Ripario_ANH_136_N","Corallus ruschenbergerii",FALSE,8,1,5,NA,NA,95,0,88.9
+"43","VES","Bosque Ripario_ANH_136_N","Loxopholis rugiceps",FALSE,9,1,5,NA,NA,100,0,100
+"44","VES","Bosque Ripario_ANH_148_D","Basiliscus galeritus",TRUE,1,5,62.5,NA,NA,62.5,0.7,50
+"45","VES","Bosque Ripario_ANH_148_D","Gonatodes albogularis",TRUE,2,3,37.5,NA,NA,100,0.5,100
+"46","VES","Bosque Ripario_ANH_148_N","Basiliscus galeritus",TRUE,1,14,93.3,NA,NA,93.3,1.1,50
+"47","VES","Bosque Ripario_ANH_148_N","Bothrops asper",TRUE,2,1,6.7,NA,NA,100,0,100
+"48","VES","Bosque Ripario_ANH_149_D","Chironius spixii",TRUE,1,1,100,NA,NA,100,0,100
+"49","VES","Bosque Ripario_ANH_149_N","Anolis tropidogaster",TRUE,1,3,60,NA,NA,60,0.5,33.3
+"50","VES","Bosque Ripario_ANH_149_N","Basiliscus galeritus",TRUE,2,1,20,NA,NA,80,0,66.7
+"51","VES","Bosque Ripario_ANH_149_N","Corallus ruschenbergerii",TRUE,3,1,20,NA,NA,100,0,100
+"52","VES","Bosque Ripario_ANH_150_D","Basiliscus galeritus",TRUE,1,6,85.7,NA,NA,85.7,0.8,50
+"53","VES","Bosque Ripario_ANH_150_D","Kinosternon scorpioides",TRUE,2,1,14.3,NA,NA,100,0,100
+"54","VES","Bosque Ripario_ANH_150_N","Basiliscus galeritus",TRUE,1,8,50,NA,NA,50,0.9,16.7
+"55","VES","Bosque Ripario_ANH_150_N","Anolis tropidogaster",TRUE,2,3,18.8,NA,NA,68.8,0.5,33.3
+"56","VES","Bosque Ripario_ANH_150_N","Imantodes cenchoa",TRUE,3,2,12.5,NA,NA,81.2,0.3,50
+"57","VES","Bosque Ripario_ANH_150_N","Bothrops asper",FALSE,4,1,6.2,NA,NA,87.5,0,66.7
+"58","VES","Bosque Ripario_ANH_150_N","Dendrophidion percarinatum",FALSE,5,1,6.2,NA,NA,93.8,0,83.3
+"59","VES","Bosque Ripario_ANH_150_N","Leptophis ahaetulla",FALSE,6,1,6.2,NA,NA,100,0,100
+"60","VES","Bosque Ripario_ANH_151_D","Basiliscus galeritus",TRUE,1,4,50,NA,NA,50,0.6,33.3
+"61","VES","Bosque Ripario_ANH_151_D","Gonatodes albogularis",TRUE,2,3,37.5,NA,NA,87.5,0.5,66.7
+"62","VES","Bosque Ripario_ANH_151_D","Mabuya",TRUE,3,1,12.5,NA,NA,100,0,100
+"63","VES","Bosque Ripario_ANH_151_N","Loxopholis rugiceps",TRUE,1,7,24.1,NA,NA,24.1,0.8,9.1
+"64","VES","Bosque Ripario_ANH_151_N","Basiliscus galeritus",TRUE,2,5,17.2,NA,NA,41.4,0.7,18.2
+"65","VES","Bosque Ripario_ANH_151_N","Holcosus festivus",TRUE,3,4,13.8,NA,NA,55.2,0.6,27.3
+"66","VES","Bosque Ripario_ANH_151_N","Gonatodes albogularis",FALSE,4,4,13.8,NA,NA,69,0.6,36.4
+"67","VES","Bosque Ripario_ANH_151_N","Pseudoboa neuwiedii",FALSE,5,2,6.9,NA,NA,75.9,0.3,45.5
+"68","VES","Bosque Ripario_ANH_151_N","Leptodeira annulata",FALSE,6,2,6.9,NA,NA,82.8,0.3,54.5
+"69","VES","Bosque Ripario_ANH_151_N","Anolis tropidogaster",FALSE,7,1,3.4,NA,NA,86.2,0,63.6
+"70","VES","Bosque Ripario_ANH_151_N","Corallus ruschenbergerii",FALSE,8,1,3.4,NA,NA,89.7,0,72.7
+"71","VES","Bosque Ripario_ANH_151_N","Bothrops asper",FALSE,9,1,3.4,NA,NA,93.1,0,81.8
+"72","VES","Bosque Ripario_ANH_151_N","Clelia clelia",FALSE,10,1,3.4,NA,NA,96.6,0,90.9
+"73","VES","Bosque Ripario_ANH_151_N","Kinosternon scorpioides",FALSE,11,1,3.4,NA,NA,100,0,100
+"74","VES","Bosque Ripario_ANH_152_D","Gonatodes albogularis",TRUE,1,2,66.7,NA,NA,66.7,0.3,50
+"75","VES","Bosque Ripario_ANH_152_D","Basiliscus galeritus",TRUE,2,1,33.3,NA,NA,100,0,100
+"76","VES","Bosque Ripario_ANH_152_N","Basiliscus galeritus",TRUE,1,16,88.9,NA,NA,88.9,1.2,33.3
+"77","VES","Bosque Ripario_ANH_152_N","Loxopholis rugiceps",TRUE,2,1,5.6,NA,NA,94.4,0,66.7
+"78","VES","Bosque Ripario_ANH_152_N","Imantodes cenchoa",TRUE,3,1,5.6,NA,NA,100,0,100
+"79","VES","Bosque Ripario_ANH_153_D","Anolis tropidogaster",TRUE,1,2,28.6,NA,NA,28.6,0.3,25
+"80","VES","Bosque Ripario_ANH_153_D","Gonatodes albogularis",TRUE,2,2,28.6,NA,NA,57.1,0.3,50
+"81","VES","Bosque Ripario_ANH_153_D","Basiliscus galeritus",TRUE,3,2,28.6,NA,NA,85.7,0.3,75
+"82","VES","Bosque Ripario_ANH_153_D","Mabuya",FALSE,4,1,14.3,NA,NA,100,0,100
+"83","VES","Bosque Ripario_ANH_153_N","Basiliscus galeritus",TRUE,1,5,50,NA,NA,50,0.7,16.7
+"84","VES","Bosque Ripario_ANH_153_N","Gonatodes albogularis",TRUE,2,1,10,NA,NA,60,0,33.3
+"85","VES","Bosque Ripario_ANH_153_N","Alopoglossus festae",TRUE,3,1,10,NA,NA,70,0,50
+"86","VES","Bosque Ripario_ANH_153_N","Anolis tropidogaster",FALSE,4,1,10,NA,NA,80,0,66.7
+"87","VES","Bosque Ripario_ANH_153_N","Holcosus festivus",FALSE,5,1,10,NA,NA,90,0,83.3
+"88","VES","Bosque Ripario_ANH_153_N","Leptodeira annulata",FALSE,6,1,10,NA,NA,100,0,100
+"89","VES","Bosque Ripario_ANH_154_D","Anolis tropidogaster",TRUE,1,3,42.9,NA,NA,42.9,0.5,20
+"90","VES","Bosque Ripario_ANH_154_D","Gonatodes albogularis",TRUE,2,1,14.3,NA,NA,57.1,0,40
+"91","VES","Bosque Ripario_ANH_154_D","Lepidoblepharis xanthostigma",TRUE,3,1,14.3,NA,NA,71.4,0,60
+"92","VES","Bosque Ripario_ANH_154_D","Basiliscus galeritus",FALSE,4,1,14.3,NA,NA,85.7,0,80
+"93","VES","Bosque Ripario_ANH_154_D","Rhinoclemmys melanosterna",FALSE,5,1,14.3,NA,NA,100,0,100
+"94","VES","Bosque Ripario_ANH_154_N","Basiliscus galeritus",TRUE,1,5,55.6,NA,NA,55.6,0.7,25
+"95","VES","Bosque Ripario_ANH_154_N","Leptodeira annulata",TRUE,2,2,22.2,NA,NA,77.8,0.3,50
+"96","VES","Bosque Ripario_ANH_154_N","Anolis tropidogaster",TRUE,3,1,11.1,NA,NA,88.9,0,75
+"97","VES","Bosque Ripario_ANH_154_N","Gonatodes albogularis",FALSE,4,1,11.1,NA,NA,100,0,100
+"98","VES","Bosque Ripario_ANH_155_D","Basiliscus galeritus",TRUE,1,1,50,NA,NA,50,0,50
+"99","VES","Bosque Ripario_ANH_155_D","Lygophis lineatus",TRUE,2,1,50,NA,NA,100,0,100
+"100","VES","Bosque Ripario_ANH_155_N","Anolis tropidogaster",TRUE,1,2,33.3,NA,NA,33.3,0.3,20
+"101","VES","Bosque Ripario_ANH_155_N","Loxopholis rugiceps",TRUE,2,1,16.7,NA,NA,50,0,40
+"102","VES","Bosque Ripario_ANH_155_N","Gonatodes albogularis",TRUE,3,1,16.7,NA,NA,66.7,0,60
+"103","VES","Bosque Ripario_ANH_155_N","Imantodes cenchoa",FALSE,4,1,16.7,NA,NA,83.3,0,80
+"104","VES","Bosque Ripario_ANH_155_N","Rhinoclemmys melanosterna",FALSE,5,1,16.7,NA,NA,100,0,100
+"105","VES","Bosque Ripario_ANH_157_D","Basiliscus galeritus",TRUE,1,2,66.7,NA,NA,66.7,0.3,50
+"106","VES","Bosque Ripario_ANH_157_D","Anolis tropidogaster",TRUE,2,1,33.3,NA,NA,100,0,100
+"107","VES","Bosque Ripario_ANH_157_N","Imantodes cenchoa",TRUE,1,1,100,NA,NA,100,0,100
+"108","VES","Bosque Ripario_ANH_158_D","Mabuya",TRUE,1,1,100,NA,NA,100,0,100
+"109","VES","Bosque Ripario_ANH_158_N","Loxopholis rugiceps",TRUE,1,6,50,NA,NA,50,0.8,16.7
+"110","VES","Bosque Ripario_ANH_158_N","Gonatodes albogularis",TRUE,2,2,16.7,NA,NA,66.7,0.3,33.3
+"111","VES","Bosque Ripario_ANH_158_N","Anolis auratus",TRUE,3,1,8.3,NA,NA,75,0,50
+"112","VES","Bosque Ripario_ANH_158_N","Bothrops asper",FALSE,4,1,8.3,NA,NA,83.3,0,66.7
+"113","VES","Bosque Ripario_ANH_158_N","Mabuya",FALSE,5,1,8.3,NA,NA,91.7,0,83.3
+"114","VES","Bosque Ripario_ANH_158_N","Imantodes cenchoa",FALSE,6,1,8.3,NA,NA,100,0,100
+"115","VES","Bosque Ripario_ANH_159_D","Anolis tropidogaster",TRUE,1,6,54.5,NA,NA,54.5,0.8,25
+"116","VES","Bosque Ripario_ANH_159_D","Anolis auratus",TRUE,2,3,27.3,NA,NA,81.8,0.5,50
+"117","VES","Bosque Ripario_ANH_159_D","Diploglossus monotropis",TRUE,3,1,9.1,NA,NA,90.9,0,75
+"118","VES","Bosque Ripario_ANH_159_D","Lepidoblepharis xanthostigma",FALSE,4,1,9.1,NA,NA,100,0,100
+"119","VES","Bosque Ripario_ANH_159_N","Anolis auratus",TRUE,1,3,30,NA,NA,30,0.5,16.7
+"120","VES","Bosque Ripario_ANH_159_N","Imantodes cenchoa",TRUE,2,2,20,NA,NA,50,0.3,33.3
+"121","VES","Bosque Ripario_ANH_159_N","Lepidoblepharis xanthostigma",TRUE,3,2,20,NA,NA,70,0.3,50
+"122","VES","Bosque Ripario_ANH_159_N","Anolis tropidogaster",FALSE,4,1,10,NA,NA,80,0,66.7
+"123","VES","Bosque Ripario_ANH_159_N","Dendrophidion percarinatum",FALSE,5,1,10,NA,NA,90,0,83.3
+"124","VES","Bosque Ripario_ANH_159_N","Mabuya",FALSE,6,1,10,NA,NA,100,0,100
+"125","VES","Bosque Ripario_ANH_160_N","Anolis tropidogaster",TRUE,1,2,22.2,NA,NA,22.2,0.3,16.7
+"126","VES","Bosque Ripario_ANH_160_N","Loxopholis rugiceps",TRUE,2,2,22.2,NA,NA,44.4,0.3,33.3
+"127","VES","Bosque Ripario_ANH_160_N","Basiliscus galeritus",TRUE,3,2,22.2,NA,NA,66.7,0.3,50
+"128","VES","Bosque Ripario_ANH_160_N","Bothrops asper",FALSE,4,1,11.1,NA,NA,77.8,0,66.7
+"129","VES","Bosque Ripario_ANH_160_N","Lepidoblepharis xanthostigma",FALSE,5,1,11.1,NA,NA,88.9,0,83.3
+"130","VES","Bosque Ripario_ANH_160_N","Diploglossus monotropis",FALSE,6,1,11.1,NA,NA,100,0,100
+"131","VES","Bosque Ripario_ANH_179_D","Gonatodes albogularis",TRUE,1,2,100,NA,NA,100,0.3,100
+"132","VES","Bosque Ripario_ANH_179_N","Anolis tropidogaster",TRUE,1,2,28.6,NA,NA,28.6,0.3,16.7
+"133","VES","Bosque Ripario_ANH_179_N","Enuliophis sclateri",TRUE,2,1,14.3,NA,NA,42.9,0,33.3
+"134","VES","Bosque Ripario_ANH_179_N","Gonatodes albogularis",TRUE,3,1,14.3,NA,NA,57.1,0,50
+"135","VES","Bosque Ripario_ANH_179_N","Imantodes cenchoa",FALSE,4,1,14.3,NA,NA,71.4,0,66.7
+"136","VES","Bosque Ripario_ANH_179_N","Mastigodryas boddaerti",FALSE,5,1,14.3,NA,NA,85.7,0,83.3
+"137","VES","Bosque Ripario_ANH_179_N","Thecadactylus rapicauda",FALSE,6,1,14.3,NA,NA,100,0,100
+"138","VES","Bosque Ripario_ANH_181_D","Basiliscus galeritus",TRUE,1,5,71.4,NA,NA,71.4,0.7,33.3
+"139","VES","Bosque Ripario_ANH_181_D","Anolis tropidogaster",TRUE,2,1,14.3,NA,NA,85.7,0,66.7
+"140","VES","Bosque Ripario_ANH_181_D","Gonatodes albogularis",TRUE,3,1,14.3,NA,NA,100,0,100
+"141","VES","Bosque Ripario_ANH_181_N","Kinosternon scorpioides",TRUE,1,5,55.6,NA,NA,55.6,0.7,25
+"142","VES","Bosque Ripario_ANH_181_N","Basiliscus galeritus",TRUE,2,2,22.2,NA,NA,77.8,0.3,50
+"143","VES","Bosque Ripario_ANH_181_N","Leptophis ahaetulla",TRUE,3,1,11.1,NA,NA,88.9,0,75
+"144","VES","Bosque Ripario_ANH_181_N","Caiman crocodilus",FALSE,4,1,11.1,NA,NA,100,0,100
+"145","VES","Bosque Ripario_ANH_182_N","Loxopholis rugiceps",TRUE,1,8,61.5,NA,NA,61.5,0.9,20
+"146","VES","Bosque Ripario_ANH_182_N","Mabuya",TRUE,2,2,15.4,NA,NA,76.9,0.3,40
+"147","VES","Bosque Ripario_ANH_182_N","Leptodeira annulata",TRUE,3,1,7.7,NA,NA,84.6,0,60
+"148","VES","Bosque Ripario_ANH_182_N","Gonatodes albogularis",FALSE,4,1,7.7,NA,NA,92.3,0,80
+"149","VES","Bosque Ripario_ANH_182_N","Micrurus dumerilii",FALSE,5,1,7.7,NA,NA,100,0,100
+"150","VES","Bosque Ripario_ANH_223_N","Lepidoblepharis xanthostigma",TRUE,1,5,45.5,NA,NA,45.5,0.7,16.7
+"151","VES","Bosque Ripario_ANH_223_N","Basiliscus galeritus",TRUE,2,2,18.2,NA,NA,63.6,0.3,33.3
+"152","VES","Bosque Ripario_ANH_223_N","Anolis auratus",TRUE,3,1,9.1,NA,NA,72.7,0,50
+"153","VES","Bosque Ripario_ANH_223_N","Anolis tropidogaster",FALSE,4,1,9.1,NA,NA,81.8,0,66.7
+"154","VES","Bosque Ripario_ANH_223_N","Mabuya",FALSE,5,1,9.1,NA,NA,90.9,0,83.3
+"155","VES","Bosque Ripario_ANH_223_N","Loxopholis rugiceps",FALSE,6,1,9.1,NA,NA,100,0,100
+"156","VES","Bosque Ripario_ANH_232_D","Basiliscus galeritus",TRUE,1,10,100,NA,NA,100,1,100
+"157","VES","Bosque Ripario_ANH_232_N","Anolis tropidogaster",TRUE,1,4,23.5,NA,NA,23.5,0.6,14.3
+"158","VES","Bosque Ripario_ANH_232_N","Basiliscus galeritus",TRUE,2,4,23.5,NA,NA,47.1,0.6,28.6
+"159","VES","Bosque Ripario_ANH_232_N","Helicops danieli",TRUE,3,3,17.6,NA,NA,64.7,0.5,42.9
+"160","VES","Bosque Ripario_ANH_232_N","Chironius spixii",FALSE,4,2,11.8,NA,NA,76.5,0.3,57.1
+"161","VES","Bosque Ripario_ANH_232_N","Leptodeira annulata",FALSE,5,2,11.8,NA,NA,88.2,0.3,71.4
+"162","VES","Bosque Ripario_ANH_232_N","Kinosternon scorpioides",FALSE,6,1,5.9,NA,NA,94.1,0,85.7
+"163","VES","Bosque Ripario_ANH_232_N","Corallus ruschenbergerii",FALSE,7,1,5.9,NA,NA,100,0,100
+"164","VES","Bosque Ripario_ANH_306_D","Anolis tropidogaster",TRUE,1,3,42.9,NA,NA,42.9,0.5,33.3
+"165","VES","Bosque Ripario_ANH_306_D","Basiliscus galeritus",TRUE,2,3,42.9,NA,NA,85.7,0.5,66.7
+"166","VES","Bosque Ripario_ANH_306_D","Gonatodes albogularis",TRUE,3,1,14.3,NA,NA,100,0,100
+"167","VES","Bosque Ripario_ANH_306_N","Loxopholis rugiceps",TRUE,1,9,40.9,NA,NA,40.9,1,11.1
+"168","VES","Bosque Ripario_ANH_306_N","Basiliscus galeritus",TRUE,2,4,18.2,NA,NA,59.1,0.6,22.2
+"169","VES","Bosque Ripario_ANH_306_N","Bothrops asper",TRUE,3,2,9.1,NA,NA,68.2,0.3,33.3
+"170","VES","Bosque Ripario_ANH_306_N","Gonatodes albogularis",FALSE,4,2,9.1,NA,NA,77.3,0.3,44.4
+"171","VES","Bosque Ripario_ANH_306_N","Trachemys callirostris",FALSE,5,1,4.5,NA,NA,81.8,0,55.6
+"172","VES","Bosque Ripario_ANH_306_N","Leptodeira annulata",FALSE,6,1,4.5,NA,NA,86.4,0,66.7
+"173","VES","Bosque Ripario_ANH_306_N","Caiman crocodilus",FALSE,7,1,4.5,NA,NA,90.9,0,77.8
+"174","VES","Bosque Ripario_ANH_306_N","Lepidoblepharis",FALSE,8,1,4.5,NA,NA,95.5,0,88.9
+"175","VES","Bosque Ripario_ANH_306_N","Corallus ruschenbergerii",FALSE,9,1,4.5,NA,NA,100,0,100
+"176","VES","Bosque Ripario_ANH_398_D","Anolis tropidogaster",TRUE,1,2,33.3,NA,NA,33.3,0.3,33.3
+"177","VES","Bosque Ripario_ANH_398_D","Gonatodes albogularis",TRUE,2,2,33.3,NA,NA,66.7,0.3,66.7
+"178","VES","Bosque Ripario_ANH_398_D","Sphaerodactylus lineolatus",TRUE,3,2,33.3,NA,NA,100,0.3,100
+"179","VES","Bosque Ripario_ANH_398_N","Gonatodes albogularis",TRUE,1,8,40,NA,NA,40,0.9,16.7
+"180","VES","Bosque Ripario_ANH_398_N","Loxopholis rugiceps",TRUE,2,4,20,NA,NA,60,0.6,33.3
+"181","VES","Bosque Ripario_ANH_398_N","Lepidoblepharis xanthostigma",TRUE,3,2,10,NA,NA,70,0.3,50
+"182","VES","Bosque Ripario_ANH_398_N","Alopoglossus festae",FALSE,4,2,10,NA,NA,80,0.3,66.7
+"183","VES","Bosque Ripario_ANH_398_N","Imantodes cenchoa",FALSE,5,2,10,NA,NA,90,0.3,83.3
+"184","VES","Bosque Ripario_ANH_398_N","Anolis tropidogaster",FALSE,6,2,10,NA,NA,100,0.3,100
+"185","VES","Bosque Ripario_ANH_82_N","Leptophis ahaetulla",TRUE,1,3,33.3,NA,NA,33.3,0.5,20
+"186","VES","Bosque Ripario_ANH_82_N","Anolis tropidogaster",TRUE,2,2,22.2,NA,NA,55.6,0.3,40
+"187","VES","Bosque Ripario_ANH_82_N","Leptodeira annulata",TRUE,3,2,22.2,NA,NA,77.8,0.3,60
+"188","VES","Bosque Ripario_ANH_82_N","Loxopholis rugiceps",FALSE,4,1,11.1,NA,NA,88.9,0,80
+"189","VES","Bosque Ripario_ANH_82_N","Oxybelis aeneus",FALSE,5,1,11.1,NA,NA,100,0,100
+"190","VES","Ciénaga_ANH_162_D","Iguana iguana",TRUE,1,1,100,NA,NA,100,0,100
+"191","VES","Ciénaga_ANH_162_N","Caiman crocodilus",TRUE,1,23,76.7,NA,NA,76.7,1.4,25
+"192","VES","Ciénaga_ANH_162_N","Iguana iguana",TRUE,2,4,13.3,NA,NA,90,0.6,50
+"193","VES","Ciénaga_ANH_162_N","Anolis tropidogaster",TRUE,3,2,6.7,NA,NA,96.7,0.3,75
+"194","VES","Ciénaga_ANH_162_N","Anolis auratus",FALSE,4,1,3.3,NA,NA,100,0,100
+"195","VES","Ciénaga_ANH_163_N","Caiman crocodilus",TRUE,1,6,100,NA,NA,100,0.8,100
+"196","VES","Ciénaga_ANH_164_D","Iguana iguana",TRUE,1,1,100,NA,NA,100,0,100
+"197","VES","Ciénaga_ANH_164_N","Caiman crocodilus",TRUE,1,10,71.4,NA,NA,71.4,1,33.3
+"198","VES","Ciénaga_ANH_164_N","Iguana iguana",TRUE,2,3,21.4,NA,NA,92.9,0.5,66.7
+"199","VES","Ciénaga_ANH_164_N","Anolis auratus",TRUE,3,1,7.1,NA,NA,100,0,100
+"200","VES","Herbazal_ANH_109_N","Mabuya",TRUE,1,2,50,NA,NA,50,0.3,33.3
+"201","VES","Herbazal_ANH_109_N","Micrurus dumerilii",TRUE,2,1,25,NA,NA,75,0,66.7
+"202","VES","Herbazal_ANH_109_N","Oxyrhopus petolarius",TRUE,3,1,25,NA,NA,100,0,100
+"203","VES","Herbazal_ANH_135_N","Anolis auratus",TRUE,1,23,82.1,NA,NA,82.1,1.4,20
+"204","VES","Herbazal_ANH_135_N","Imantodes cenchoa",TRUE,2,2,7.1,NA,NA,89.3,0.3,40
+"205","VES","Herbazal_ANH_135_N","Chironius spixii",TRUE,3,1,3.6,NA,NA,92.9,0,60
+"206","VES","Herbazal_ANH_135_N","Caiman crocodilus",FALSE,4,1,3.6,NA,NA,96.4,0,80
+"207","VES","Herbazal_ANH_135_N","Thamnodynastes gambotensis",FALSE,5,1,3.6,NA,NA,100,0,100
+"208","VES","Herbazal_ANH_165_N","Caiman crocodilus",TRUE,1,10,83.3,NA,NA,83.3,1,33.3
+"209","VES","Herbazal_ANH_165_N","Anolis auratus",TRUE,2,1,8.3,NA,NA,91.7,0,66.7
+"210","VES","Herbazal_ANH_165_N","Thamnodynastes gambotensis",TRUE,3,1,8.3,NA,NA,100,0,100
+"211","VES","Herbazal_ANH_166_D","Anolis auratus",TRUE,1,1,100,NA,NA,100,0,100
+"212","VES","Herbazal_ANH_166_N","Anolis auratus",TRUE,1,5,50,NA,NA,50,0.7,16.7
+"213","VES","Herbazal_ANH_166_N","Helicops danieli",TRUE,2,1,10,NA,NA,60,0,33.3
+"214","VES","Herbazal_ANH_166_N","Clelia clelia",TRUE,3,1,10,NA,NA,70,0,50
+"215","VES","Herbazal_ANH_166_N","Imantodes cenchoa",FALSE,4,1,10,NA,NA,80,0,66.7
+"216","VES","Herbazal_ANH_166_N","Caiman crocodilus",FALSE,5,1,10,NA,NA,90,0,83.3
+"217","VES","Herbazal_ANH_166_N","Thamnodynastes gambotensis",FALSE,6,1,10,NA,NA,100,0,100
+"218","VES","Herbazal_ANH_167_D","Iguana iguana",TRUE,1,2,40,NA,NA,40,0.3,25
+"219","VES","Herbazal_ANH_167_D","Anolis auratus",TRUE,2,1,20,NA,NA,60,0,50
+"220","VES","Herbazal_ANH_167_D","Trachemys callirostris",TRUE,3,1,20,NA,NA,80,0,75
+"221","VES","Herbazal_ANH_167_D","Tupinambis cryptus",FALSE,4,1,20,NA,NA,100,0,100
+"222","VES","Herbazal_ANH_167_N","Caiman crocodilus",TRUE,1,4,50,NA,NA,50,0.6,25
+"223","VES","Herbazal_ANH_167_N","Loxopholis rugiceps",TRUE,2,2,25,NA,NA,75,0.3,50
+"224","VES","Herbazal_ANH_167_N","Anolis auratus",TRUE,3,1,12.5,NA,NA,87.5,0,75
+"225","VES","Herbazal_ANH_167_N","Mabuya",FALSE,4,1,12.5,NA,NA,100,0,100
+"226","VES","Herbazal_ANH_168_N","Anolis tropidogaster",TRUE,1,1,50,NA,NA,50,0,50
+"227","VES","Herbazal_ANH_168_N","Gonatodes albogularis",TRUE,2,1,50,NA,NA,100,0,100
+"228","VES","Pastos_ANH_185_D","Cnemidophorus lemniscatus",TRUE,1,5,83.3,NA,NA,83.3,0.7,50
+"229","VES","Pastos_ANH_185_D","Ameiva bifrontata",TRUE,2,1,16.7,NA,NA,100,0,100
+"230","VES","Pastos_ANH_185_N","Pseudoboa neuwiedii",TRUE,1,1,100,NA,NA,100,0,100
+"231","VES","Vías_ANH_100_N","Anolis auratus",TRUE,1,1,33.3,NA,NA,33.3,0,33.3
+"232","VES","Vías_ANH_100_N","Chironius spixii",TRUE,2,1,33.3,NA,NA,66.7,0,66.7
+"233","VES","Vías_ANH_100_N","Leptodeira annulata",TRUE,3,1,33.3,NA,NA,100,0,100
+"234","VES","Vías_ANH_141_N","Anolis auratus",TRUE,1,4,57.1,NA,NA,57.1,0.6,25
+"235","VES","Vías_ANH_141_N","Chironius spixii",TRUE,2,1,14.3,NA,NA,71.4,0,50
+"236","VES","Vías_ANH_141_N","Erythrolamprus melanotus",TRUE,3,1,14.3,NA,NA,85.7,0,75
+"237","VES","Vías_ANH_141_N","Tantilla melanocephala",FALSE,4,1,14.3,NA,NA,100,0,100
+"238","VES","Vías_ANH_178_N","Loxopholis rugiceps",TRUE,1,4,66.7,NA,NA,66.7,0.6,50
+"239","VES","Vías_ANH_178_N","Gonatodes albogularis",TRUE,2,2,33.3,NA,NA,100,0.3,100
+"240","VES","Vías_ANH_180_D","Gonatodes albogularis",TRUE,1,3,50,NA,NA,50,0.5,33.3
+"241","VES","Vías_ANH_180_D","Cnemidophorus lemniscatus",TRUE,2,2,33.3,NA,NA,83.3,0.3,66.7
+"242","VES","Vías_ANH_180_D","Leptodeira annulata",TRUE,3,1,16.7,NA,NA,100,0,100
+"243","VES","Vías_ANH_180_N","Hemidactylus frenatus",TRUE,1,2,66.7,NA,NA,66.7,0.3,50
+"244","VES","Vías_ANH_180_N","Imantodes cenchoa",TRUE,2,1,33.3,NA,NA,100,0,100

@@ -1,29 +1,29 @@
 "","Bosque Ripario","Herbazal","Bosque Denso","Pastos","Ciénaga","Vías","Bosque Abierto"
-"Gonatodes albogularis",91,4,18,1,0,11,1
-"Anolis tropidogaster",84,2,14,0,3,1,2
-"Basiliscus galeritus",197,0,0,0,0,0,0
-"Loxopholis rugiceps",102,14,1,0,0,9,0
-"Caiman crocodilus",16,34,1,0,49,2,0
-"Anolis auratus",19,17,3,0,7,19,0
-"Imantodes cenchoa",20,2,2,0,0,1,2
+"Gonatodes albogularis",101,4,19,1,0,11,1
+"Anolis tropidogaster",88,2,17,0,3,1,2
+"Basiliscus galeritus",197,0,2,0,0,0,0
+"Loxopholis rugiceps",106,14,1,0,0,9,0
+"Caiman crocodilus",16,35,1,0,49,2,0
+"Anolis auratus",19,40,3,0,7,19,0
+"Imantodes cenchoa",22,4,2,0,0,1,2
 "Tantilla melanocephala",1,1,0,0,0,3,0
-"Lepidoblepharis xanthostigma",19,0,0,0,0,0,0
+"Lepidoblepharis xanthostigma",21,0,0,0,0,0,0
 "Rhinoclemmys melanosterna",6,1,0,0,0,0,0
 "Kinosternon scorpioides",10,0,0,0,0,0,0
 "Corallus ruschenbergerii",11,2,1,0,0,0,0
-"Chironius spixii",4,0,0,0,0,2,0
+"Chironius spixii",4,1,0,0,0,2,0
 "Ameiva ameiva",1,0,0,0,0,1,0
 "Leptophis ahaetulla",7,0,0,0,2,0,0
 "Helicops danieli",6,3,0,0,0,0,0
-"Enuliophis sclateri",2,0,2,0,0,0,0
+"Enuliophis sclateri",2,0,3,0,0,0,0
 "Holcosus festivus",4,0,1,1,0,0,0
-"Thamnodynastes gambotensis",0,3,0,1,1,0,1
+"Thamnodynastes gambotensis",0,4,0,1,1,0,1
 "Epicrates maurus",0,0,0,1,0,0,0
 "Pseudoboa neuwiedii",3,0,0,2,0,0,0
 "Mabuya",11,5,0,0,0,2,0
 "Cnemidophorus lemniscatus",0,4,0,5,0,2,0
 "Hemidactylus frenatus",0,0,0,0,0,4,0
-"Sphaerodactylus lineolatus",3,0,1,0,0,0,0
+"Sphaerodactylus lineolatus",5,0,1,0,0,0,0
 "Leptodeira annulata",23,0,0,0,0,2,0
 "Thecadactylus rapicauda",3,0,1,0,0,0,0
 "Atractus",1,0,0,0,0,0,0
@@ -35,6 +35,7 @@
 "Porthidium lansbergii",2,0,0,0,0,0,0
 "Dendrophidion percarinatum",2,0,0,0,0,0,1
 "Bothrops asper",7,0,0,0,0,0,0
+"Alopoglossus festae",2,0,1,0,0,0,0
 "Clelia clelia",1,1,0,0,0,0,0
 "Micrurus dumerilii",1,1,0,0,0,0,0
 "Iguana iguana",0,2,0,0,9,0,0

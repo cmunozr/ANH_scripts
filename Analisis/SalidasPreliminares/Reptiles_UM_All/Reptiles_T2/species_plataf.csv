@@ -1,18 +1,19 @@
 "","Platero","Caracterizacion","Kale"
-"Anolis auratus",17,3,11
-"Anolis tropidogaster",26,13,19
+"Anolis auratus",40,3,11
+"Anolis tropidogaster",26,13,26
 "Diploglossus monotropis",2,0,0
-"Lepidoblepharis xanthostigma",10,1,0
+"Lepidoblepharis xanthostigma",10,1,2
 "Mabuya",6,0,7
 "Dendrophidion percarinatum",1,0,2
-"Imantodes cenchoa",3,4,7
+"Imantodes cenchoa",5,4,9
 "Bothrops asper",1,0,6
-"Loxopholis rugiceps",19,4,29
-"Basiliscus galeritus",35,24,59
-"Sphaerodactylus lineolatus",0,1,0
-"Gonatodes albogularis",3,14,21
-"Enuliophis sclateri",0,2,0
+"Loxopholis rugiceps",19,4,33
+"Basiliscus galeritus",35,24,61
+"Sphaerodactylus lineolatus",0,1,2
+"Gonatodes albogularis",3,14,32
+"Enuliophis sclateri",0,2,1
 "Thecadactylus rapicauda",0,2,0
+"Alopoglossus festae",0,0,3
 "Holcosus festivus",0,0,4
 "Pseudoboa neuwiedii",2,0,2
 "Kinosternon scorpioides",6,0,2
@@ -22,8 +23,8 @@
 "Rhinoclemmys melanosterna",2,2,0
 "Micrurus dumerilii",1,0,1
 "Leptophis ahaetulla",1,0,4
-"Caiman crocodilus",26,0,39
-"Chironius spixii",4,0,1
+"Caiman crocodilus",27,0,39
+"Chironius spixii",5,0,1
 "Helicops danieli",3,0,1
 "Porthidium lansbergii",0,0,1
 "Cnemidophorus lemniscatus",5,2,0
@@ -31,7 +32,7 @@
 "Iguana iguana",4,0,7
 "Trachemys callirostris",0,0,2
 "Tupinambis cryptus",0,0,1
-"Thamnodynastes gambotensis",0,0,2
+"Thamnodynastes gambotensis",1,0,2
 "Anolis",0,0,2
 "Lepidoblepharis",0,0,1
 "Oxybelis aeneus",0,0,1

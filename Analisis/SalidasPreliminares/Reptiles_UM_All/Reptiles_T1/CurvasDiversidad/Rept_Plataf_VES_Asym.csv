@@ -1,10 +1,10 @@
 "","Site","Diversity","Observed","Estimator","s.e.","LCL","UCL","n","S.obs","SC"
-"1","Kale","Species richness",24,48.862,24.107,29.041,146.608,181,24,0.9449
-"2","Kale","Shannon diversity",11.9,13.508,1.401,11.9,16.254,181,24,0.9449
-"3","Kale","Simpson diversity",8.601,8.98,0.794,8.601,10.536,181,24,0.9449
-"4","Platero","Species richness",26,35.948,8.326,28.385,67.492,192,26,0.9482
-"5","Platero","Shannon diversity",11.453,12.681,1.034,11.453,14.707,192,26,0.9482
-"6","Platero","Simpson diversity",7.83,8.12,0.746,7.83,9.583,192,26,0.9482
-"7","Caracterizacion","Species richness",13,15.635,3.449,13.372,31.671,85,13,0.9538
-"8","Caracterizacion","Shannon diversity",6.708,7.394,0.935,6.708,9.227,85,13,0.9538
-"9","Caracterizacion","Simpson diversity",4.518,4.716,0.674,4.518,6.038,85,13,0.9538
+"1","Kale","Species richness",21,45.76,24.01,26.02,143.117,104,21,0.9042
+"2","Kale","Shannon diversity",11.2,13.76,2.142,11.2,17.958,104,21,0.9042
+"3","Kale","Simpson diversity",7.596,8.115,1.077,7.596,10.226,104,21,0.9042
+"4","Platero","Species richness",20,30.035,8.943,22.243,64.906,113,20,0.921
+"5","Platero","Shannon diversity",9.482,10.945,1.408,9.482,13.704,113,20,0.921
+"6","Platero","Simpson diversity",6.142,6.437,0.849,6.142,8.102,113,20,0.921
+"7","Caracterizacion","Species richness",12,16.08,4.79,12.658,37.291,48,12,0.8984
+"8","Caracterizacion","Shannon diversity",6.984,8.364,1.416,6.984,11.139,48,12,0.8984
+"9","Caracterizacion","Simpson diversity",4.721,5.127,1.041,4.721,7.168,48,12,0.8984

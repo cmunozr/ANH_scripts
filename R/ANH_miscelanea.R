@@ -6,10 +6,10 @@ library(openxlsx)
 library(dplyr)
 
 # leer el archivo original
-dataReg <- read.xlsx("data/anfibios/DwC_ANH_Anfibios_27072022.xlsx", sheet = "Anfibios (2)", 
-                     startRow = 2, na.strings = "N/A")
-dataEvent <- read.xlsx("data/anfibios/DwC_ANH_Anfibios_27072022.xlsx", sheet="Eventos", 
-                       startRow = 2, na.strings = "N/A")
+dataReg <- read.xlsx("data/reptiles/I2D-BIO_2022_060 DwC_Reptiles_final.xlsx", sheet = "Reptiles", 
+                     startRow = 1, na.strings = "N/A")
+dataEvent <- read.xlsx("data/reptiles/I2D-BIO_2022_060 DwC_Reptiles_final.xlsx", sheet="Evento", 
+                       startRow = 1, na.strings = "N/A")
 covs <- read.xlsx("Analisis/Covariables/BDPuntosMuestreoMag180722.xlsx", sheet=1, 
                   startRow = 1, na.strings = "N/A") %>% filter(GrupoBiolo == "Herpetos")
 
@@ -54,23 +54,22 @@ dataEvent$eventID <- gsub(pattern = "_TE2", replacement = "", x = dataEvent$even
 # constituyendo archivos de la temporada 1: dado que se mantendra el formato excel
 # es necesario primero crear un excel con una sola hoja de trabajo, cargarlo de nuevo,
 # agregar una nueva hoja y por ultimo escribir/guardar los datos de la nueva hoja
-write.xlsx(splitReg[["T1"]], "data/anfibios/DwC_ANH_Anfibios_27072022_T1.xlsx", sheetName = "Registros")
-wb <- loadWorkbook("data/anfibios/DwC_ANH_Anfibios_27072022_T1.xlsx")
+write.xlsx(splitReg[["T1"]], "data/reptiles/I2D-BIO_2022_060 DwC_Reptiles_final_T1.xlsx", sheetName = "Registros")
+wb <- loadWorkbook("data/reptiles/I2D-BIO_2022_060 DwC_Reptiles_final_T1.xlsx")
 addWorksheet(wb, "Eventos")
 writeData(wb, "Eventos",splitEvent[["T1"]])
-saveWorkbook(wb, "data/anfibios/DwC_ANH_Anfibios_27072022_T1.xlsx", overwrite = TRUE)
+saveWorkbook(wb, "data/reptiles/I2D-BIO_2022_060 DwC_Reptiles_final_T1.xlsx", overwrite = TRUE)
 
 # constituyendo archivos de la temporada 2
-write.xlsx(splitReg[["T2"]], "data/anfibios/DwC_ANH_Anfibios_27072022_T2.xlsx", sheetName = "Registros")
-wb <- loadWorkbook("data/anfibios/DwC_ANH_Anfibios_27072022_T2.xlsx")
+write.xlsx(splitReg[["T2"]], "data/reptiles/I2D-BIO_2022_060 DwC_Reptiles_final_T2.xlsx", sheetName = "Registros")
+wb <- loadWorkbook("data/reptiles/I2D-BIO_2022_060 DwC_Reptiles_final_T2.xlsx")
 addWorksheet(wb, "Eventos")
 writeData(wb, "Eventos",splitEvent[["T2"]])
-saveWorkbook(wb, "data/anfibios/DwC_ANH_Anfibios_27072022_T2.xlsx", overwrite = TRUE)
+saveWorkbook(wb, "data/reptiles/I2D-BIO_2022_060 DwC_Reptiles_final_T2.xlsx", overwrite = TRUE)
 
 # constituyendo archivo original sin tag de temporada
-write.xlsx(dataReg, "data/anfibios/DwC_ANH_Anfibios_27072022_NoTag.xlsx", sheetName = "Registros")
-wb <- loadWorkbook("data/anfibios/DwC_ANH_Anfibios_27072022_NoTag.xlsx")
+write.xlsx(dataReg, "data/reptiles/I2D-BIO_2022_060 DwC_Reptiles_final_NoTag.xlsx", sheetName = "Registros")
+wb <- loadWorkbook("data/reptiles/I2D-BIO_2022_060 DwC_Reptiles_final_NoTag.xlsx")
 addWorksheet(wb, "Eventos")
 writeData(wb, "Eventos", dataEvent)
-saveWorkbook(wb, "data/anfibios/DwC_ANH_Anfibios_27072022_NoTag.xlsx", overwrite = TRUE)
-
+saveWorkbook(wb, "data/reptiles/I2D-BIO_2022_060 DwC_Reptiles_final_NoTag.xlsx", overwrite = TRUE)

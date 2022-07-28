@@ -25,10 +25,10 @@ library(dplyr)
 
 #0b) Define working directories and group variables
 
-outD<-'Anfibios'#'Zooplancton' #master folder for output
-outDD<-'Anfibios'#'Hidrobiologicos' #Grupo like stated in the covariate file
+outD<-'Reptiles'#'Zooplancton' #master folder for output
+outDD<-'Reptiles'#'Hidrobiologicos' #Grupo like stated in the covariate file
 ctnm<- "CobHerp" #"CobMam" # 'waterBody' #CobColl'#"CuerpAgua" #reptiles y anfibios: CobHerp #escarabajos coprofagos: "CobCopr" #main factor for análisis
-gnm<- 'Anf' #'Coll'#"Zoop" #group prefix
+gnm<- 'Rept' #'Coll'#"Zoop" #group prefix
 fnn<-"sum" #function to aggregate samples within sampling unites
 
 WDOut<-file.path(getwd(), "Analisis", "SalidasPreliminares")
@@ -92,7 +92,7 @@ spa.c<-c("decimalLat","decimalLon")
 #Coprofagos ad: c("Plataf","CobCopr") # #Coprofagos lv: c("Plataf", "CobCopr", "UCSuelo") 
 #Hidrobiol?gicos=c("Plataf","Red.Hidrica","CuerpAgua")#,"CobHerp")
 # Aves: c("Plataf", "CobAves") #anfibios: c("Plataf", "CobHerp")
-# Mamiferos: c("Plataf", "CobHerp")
+# Mamiferos: c("Plataf", "CobMam")
 cat.c <- c("Plataf","CobHerp")
 v.pres<-c("Dis_CP","Dis_Oleodu", "Dis_Pozo","Dis_Pozact","Dis_Ferroc","Dis_ViaPri","Dia_ViaSec")#,"HEH18meanx")
 v.rec<-c("Dis_Cienag","Dis_MGSG","Dis_Dre345", "DisBosque","Dis_CobNat","Tam_Parche")#,"FInt19meanx")
@@ -287,7 +287,7 @@ kpv<-c(ls(),'kpv') #variables to keep all the time
 #Mamiferos=I2D-BIO_2021_083.xlsx
 #Botanica=I2D-BIO_2021_095.xlsx
 
-Data.et<-read.xlsx(file.path(getwd(),"data", "anfibios", "DwC_ANH_Anfibios_27072022_NoTag.xlsx"), 
+Data.et<-read.xlsx(file.path(getwd(),"data", "reptiles", "I2D-BIO_2022_060 DwC_Reptiles_final_NoTag.xlsx"), 
                    sheet="Eventos", startRow = 1, na.strings = "N/A")
 
 # MISSING IFS
@@ -331,7 +331,7 @@ Data.et<-Data.et[!Data.et$samplingProtocol%in%c('M_Hierb','RAP_5cm'),]
 #Coprofagos_lv=rrbb_scarabaeidae_santanderANH_2021_PEM_Larvas.xlsx
 #mariposas=I2D-BIO_2021_084_rrbb.xlsx
 
-Data.r<-read.xlsx(file.path(getwd(),"data", "anfibios", "DwC_ANH_Anfibios_27072022_NoTag.xlsx"), 
+Data.r<-read.xlsx(file.path(getwd(),"data", "reptiles", "I2D-BIO_2022_060 DwC_Reptiles_final_NoTag.xlsx"), 
                   sheet="Registros", startRow = 1, na.strings = "N/A")
 
 #All
@@ -1112,7 +1112,7 @@ ompv<-c("ANH_220", "ANH_250", "ANH_274", "ANH_279", "ANH_213_A_P3")
 #coprofagos_lv
 #schtxt <- "_Captura manual_"
 ##herpetos: anfibios y reptiles
-#schtxt<-"_Herp_T[1|2|3]_"
+#schtxt<-"_Herp_T[1|2|3]_|_Herp_"
 
 #coprofagos
 

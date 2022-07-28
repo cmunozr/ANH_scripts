@@ -1,0 +1,81 @@
+"","samplingProtocol","Grouping","species","labelit","rank","abundance","proportion","plower","pupper","accumfreq","logabun","rankfreq"
+"1","VES","Bosque Abierto","Anolis",TRUE,1,2,40,NA,NA,40,0.3,25
+"2","VES","Bosque Abierto","Imantodes cenchoa",TRUE,2,1,20,NA,NA,60,0,50
+"3","VES","Bosque Abierto","Gonatodes albogularis",TRUE,3,1,20,NA,NA,80,0,75
+"4","VES","Bosque Abierto","Dendrophidion percarinatum",FALSE,4,1,20,NA,NA,100,0,100
+"5","VES","Bosque Denso","Anolis tropidogaster",TRUE,1,8,33.3,NA,NA,33.3,0.9,10
+"6","VES","Bosque Denso","Gonatodes albogularis",TRUE,2,4,16.7,NA,NA,50,0.6,20
+"7","VES","Bosque Denso","Anolis auratus",TRUE,3,3,12.5,NA,NA,62.5,0.5,30
+"8","VES","Bosque Denso","Enuliophis sclateri",FALSE,4,2,8.3,NA,NA,70.8,0.3,40
+"9","VES","Bosque Denso","Basiliscus galeritus",FALSE,5,2,8.3,NA,NA,79.2,0.3,50
+"10","VES","Bosque Denso","Imantodes cenchoa",FALSE,6,1,4.2,NA,NA,83.3,0,60
+"11","VES","Bosque Denso","Loxopholis rugiceps",FALSE,7,1,4.2,NA,NA,87.5,0,70
+"12","VES","Bosque Denso","Thecadactylus rapicauda",FALSE,8,1,4.2,NA,NA,91.7,0,80
+"13","VES","Bosque Denso","Sphaerodactylus lineolatus",FALSE,9,1,4.2,NA,NA,95.8,0,90
+"14","VES","Bosque Denso","Alopoglossus festae",FALSE,10,1,4.2,NA,NA,100,0,100
+"15","VES","Bosque Ripario","Basiliscus galeritus",TRUE,1,118,29.9,NA,NA,29.9,2.1,3
+"16","VES","Bosque Ripario","Anolis tropidogaster",TRUE,2,55,14,NA,NA,43.9,1.7,6.1
+"17","VES","Bosque Ripario","Loxopholis rugiceps",TRUE,3,49,12.4,NA,NA,56.3,1.7,9.1
+"18","VES","Bosque Ripario","Gonatodes albogularis",FALSE,4,39,9.9,NA,NA,66.2,1.6,12.1
+"19","VES","Bosque Ripario","Lepidoblepharis xanthostigma",FALSE,5,13,3.3,NA,NA,69.5,1.1,15.2
+"20","VES","Bosque Ripario","Imantodes cenchoa",FALSE,6,13,3.3,NA,NA,72.8,1.1,18.2
+"21","VES","Bosque Ripario","Leptodeira annulata",FALSE,7,12,3,NA,NA,75.9,1.1,21.2
+"22","VES","Bosque Ripario","Anolis auratus",FALSE,8,12,3,NA,NA,78.9,1.1,24.2
+"23","VES","Bosque Ripario","Caiman crocodilus",FALSE,9,11,2.8,NA,NA,81.7,1,27.3
+"24","VES","Bosque Ripario","Mabuya",FALSE,10,10,2.5,NA,NA,84.3,1,30.3
+"25","VES","Bosque Ripario","Kinosternon scorpioides",FALSE,11,8,2,NA,NA,86.3,0.9,33.3
+"26","VES","Bosque Ripario","Bothrops asper",FALSE,12,7,1.8,NA,NA,88.1,0.8,36.4
+"27","VES","Bosque Ripario","Leptophis ahaetulla",FALSE,13,5,1.3,NA,NA,89.3,0.7,39.4
+"28","VES","Bosque Ripario","Holcosus festivus",FALSE,14,5,1.3,NA,NA,90.6,0.7,42.4
+"29","VES","Bosque Ripario","Corallus ruschenbergerii",FALSE,15,5,1.3,NA,NA,91.9,0.7,45.5
+"30","VES","Bosque Ripario","Rhinoclemmys melanosterna",FALSE,16,4,1,NA,NA,92.9,0.6,48.5
+"31","VES","Bosque Ripario","Alopoglossus festae",FALSE,17,3,0.8,NA,NA,93.7,0.5,51.5
+"32","VES","Bosque Ripario","Pseudoboa neuwiedii",FALSE,18,3,0.8,NA,NA,94.4,0.5,54.5
+"33","VES","Bosque Ripario","Chironius spixii",FALSE,19,3,0.8,NA,NA,95.2,0.5,57.6
+"34","VES","Bosque Ripario","Helicops danieli",FALSE,20,3,0.8,NA,NA,95.9,0.5,60.6
+"35","VES","Bosque Ripario","Diploglossus monotropis",FALSE,21,2,0.5,NA,NA,96.4,0.3,63.6
+"36","VES","Bosque Ripario","Sphaerodactylus lineolatus",FALSE,22,2,0.5,NA,NA,97,0.3,66.7
+"37","VES","Bosque Ripario","Dendrophidion percarinatum",FALSE,23,2,0.5,NA,NA,97.5,0.3,69.7
+"38","VES","Bosque Ripario","Lygophis lineatus",FALSE,24,1,0.3,NA,NA,97.7,0,72.7
+"39","VES","Bosque Ripario","Enuliophis sclateri",FALSE,25,1,0.3,NA,NA,98,0,75.8
+"40","VES","Bosque Ripario","Oxybelis aeneus",FALSE,26,1,0.3,NA,NA,98.2,0,78.8
+"41","VES","Bosque Ripario","Trachemys callirostris",FALSE,27,1,0.3,NA,NA,98.5,0,81.8
+"42","VES","Bosque Ripario","Lepidoblepharis",FALSE,28,1,0.3,NA,NA,98.7,0,84.8
+"43","VES","Bosque Ripario","Clelia clelia",FALSE,29,1,0.3,NA,NA,99,0,87.9
+"44","VES","Bosque Ripario","Thecadactylus rapicauda",FALSE,30,1,0.3,NA,NA,99.2,0,90.9
+"45","VES","Bosque Ripario","Porthidium lansbergii",FALSE,31,1,0.3,NA,NA,99.5,0,93.9
+"46","VES","Bosque Ripario","Mastigodryas boddaerti",FALSE,32,1,0.3,NA,NA,99.7,0,97
+"47","VES","Bosque Ripario","Micrurus dumerilii",FALSE,33,1,0.3,NA,NA,100,0,100
+"48","VES","Ciénaga","Caiman crocodilus",TRUE,1,20,74.1,NA,NA,74.1,1.3,25
+"49","VES","Ciénaga","Iguana iguana",TRUE,2,5,18.5,NA,NA,92.6,0.7,50
+"50","VES","Ciénaga","Anolis auratus",TRUE,3,1,3.7,NA,NA,96.3,0,75
+"51","VES","Ciénaga","Anolis tropidogaster",FALSE,4,1,3.7,NA,NA,100,0,100
+"52","VES","Herbazal","Anolis auratus",TRUE,1,32,45.7,NA,NA,45.7,1.5,6.2
+"53","VES","Herbazal","Caiman crocodilus",TRUE,2,16,22.9,NA,NA,68.6,1.2,12.5
+"54","VES","Herbazal","Mabuya",TRUE,3,3,4.3,NA,NA,72.9,0.5,18.8
+"55","VES","Herbazal","Imantodes cenchoa",FALSE,4,3,4.3,NA,NA,77.1,0.5,25
+"56","VES","Herbazal","Thamnodynastes gambotensis",FALSE,5,3,4.3,NA,NA,81.4,0.5,31.2
+"57","VES","Herbazal","Loxopholis rugiceps",FALSE,6,2,2.9,NA,NA,84.3,0.3,37.5
+"58","VES","Herbazal","Iguana iguana",FALSE,7,2,2.9,NA,NA,87.1,0.3,43.8
+"59","VES","Herbazal","Anolis tropidogaster",FALSE,8,1,1.4,NA,NA,88.6,0,50
+"60","VES","Herbazal","Helicops danieli",FALSE,9,1,1.4,NA,NA,90,0,56.2
+"61","VES","Herbazal","Chironius spixii",FALSE,10,1,1.4,NA,NA,91.4,0,62.5
+"62","VES","Herbazal","Gonatodes albogularis",FALSE,11,1,1.4,NA,NA,92.9,0,68.8
+"63","VES","Herbazal","Clelia clelia",FALSE,12,1,1.4,NA,NA,94.3,0,75
+"64","VES","Herbazal","Micrurus dumerilii",FALSE,13,1,1.4,NA,NA,95.7,0,81.2
+"65","VES","Herbazal","Oxyrhopus petolarius",FALSE,14,1,1.4,NA,NA,97.1,0,87.5
+"66","VES","Herbazal","Tupinambis cryptus",FALSE,15,1,1.4,NA,NA,98.6,0,93.8
+"67","VES","Herbazal","Trachemys callirostris",FALSE,16,1,1.4,NA,NA,100,0,100
+"68","VES","Pastos","Cnemidophorus lemniscatus",TRUE,1,5,71.4,NA,NA,71.4,0.7,33.3
+"69","VES","Pastos","Ameiva bifrontata",TRUE,2,1,14.3,NA,NA,85.7,0,66.7
+"70","VES","Pastos","Pseudoboa neuwiedii",TRUE,3,1,14.3,NA,NA,100,0,100
+"71","VES","Vías","Anolis auratus",TRUE,1,5,20,NA,NA,20,0.7,10
+"72","VES","Vías","Gonatodes albogularis",TRUE,2,5,20,NA,NA,40,0.7,20
+"73","VES","Vías","Loxopholis rugiceps",TRUE,3,4,16,NA,NA,56,0.6,30
+"74","VES","Vías","Cnemidophorus lemniscatus",FALSE,4,2,8,NA,NA,64,0.3,40
+"75","VES","Vías","Leptodeira annulata",FALSE,5,2,8,NA,NA,72,0.3,50
+"76","VES","Vías","Hemidactylus frenatus",FALSE,6,2,8,NA,NA,80,0.3,60
+"77","VES","Vías","Chironius spixii",FALSE,7,2,8,NA,NA,88,0.3,70
+"78","VES","Vías","Erythrolamprus melanotus",FALSE,8,1,4,NA,NA,92,0,80
+"79","VES","Vías","Tantilla melanocephala",FALSE,9,1,4,NA,NA,96,0,90
+"80","VES","Vías","Imantodes cenchoa",FALSE,10,1,4,NA,NA,100,0,100
