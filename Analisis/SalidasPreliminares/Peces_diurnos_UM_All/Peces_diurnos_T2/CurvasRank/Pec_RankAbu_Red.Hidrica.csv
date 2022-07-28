@@ -1,0 +1,434 @@
+"","samplingProtocol","Grouping","species","labelit","rank","abundance","proportion","plower","pupper","accumfreq","logabun","rankfreq"
+"1","Arrastre","AGUA BONITA-PAREDES","Astyanax magdalenae",TRUE,1,56,20.1,NA,NA,20.1,1.7,4.5
+"2","Arrastre","AGUA BONITA-PAREDES","Gephyrocharax melanocheir",TRUE,2,46,16.5,NA,NA,36.7,1.7,9.1
+"3","Arrastre","AGUA BONITA-PAREDES","Hyphessobrycon natagaima",TRUE,3,40,14.4,NA,NA,51.1,1.6,13.6
+"4","Arrastre","AGUA BONITA-PAREDES","Characidium zebra",FALSE,4,34,12.2,NA,NA,63.3,1.5,18.2
+"5","Arrastre","AGUA BONITA-PAREDES","Nanocheirodon insignis",FALSE,5,22,7.9,NA,NA,71.2,1.3,22.7
+"6","Arrastre","AGUA BONITA-PAREDES","Gasteropelecus maculatus",FALSE,6,15,5.4,NA,NA,76.6,1.2,27.3
+"7","Arrastre","AGUA BONITA-PAREDES","Astyanax sp. 1",FALSE,7,12,4.3,NA,NA,80.9,1.1,31.8
+"8","Arrastre","AGUA BONITA-PAREDES","Poecilia caucana",FALSE,8,10,3.6,NA,NA,84.5,1,36.4
+"9","Arrastre","AGUA BONITA-PAREDES","Brachyhypopomus occidentalis",FALSE,9,8,2.9,NA,NA,87.4,0.9,40.9
+"10","Arrastre","AGUA BONITA-PAREDES","Rivulus xi",FALSE,10,7,2.5,NA,NA,89.9,0.8,45.5
+"11","Arrastre","AGUA BONITA-PAREDES","Eigenmannia camposi",FALSE,11,6,2.2,NA,NA,92.1,0.8,50
+"12","Arrastre","AGUA BONITA-PAREDES","Caquetaia kraussii",FALSE,12,5,1.8,NA,NA,93.9,0.7,54.5
+"13","Arrastre","AGUA BONITA-PAREDES","Andinoacara latifrons",FALSE,13,4,1.4,NA,NA,95.3,0.6,59.1
+"14","Arrastre","AGUA BONITA-PAREDES","Roeboides dayi",FALSE,14,3,1.1,NA,NA,96.4,0.5,63.6
+"15","Arrastre","AGUA BONITA-PAREDES","Saccoderma hastata",FALSE,15,2,0.7,NA,NA,97.1,0.3,68.2
+"16","Arrastre","AGUA BONITA-PAREDES","Astyanax yariguies",FALSE,16,2,0.7,NA,NA,97.8,0.3,72.7
+"17","Arrastre","AGUA BONITA-PAREDES","Hoplosternum magdalenae",FALSE,17,1,0.4,NA,NA,98.2,0,77.3
+"18","Arrastre","AGUA BONITA-PAREDES","Apteronotus milesi",FALSE,18,1,0.4,NA,NA,98.6,0,81.8
+"19","Arrastre","AGUA BONITA-PAREDES","Kronoheros umbrifer",FALSE,19,1,0.4,NA,NA,98.9,0,86.4
+"20","Arrastre","AGUA BONITA-PAREDES","Hoplias malabaricus",FALSE,20,1,0.4,NA,NA,99.3,0,90.9
+"21","Arrastre","AGUA BONITA-PAREDES","Farlowella yarigui",FALSE,21,1,0.4,NA,NA,99.6,0,95.5
+"22","Arrastre","AGUA BONITA-PAREDES","Synbranchus marmoratus",FALSE,22,1,0.4,NA,NA,100,0,100
+"23","Arrastre","CAÑO NEGRO Y AFLUENTES","Hyphessobrycon natagaima",TRUE,1,265,21.8,NA,NA,21.8,2.4,3.1
+"24","Arrastre","CAÑO NEGRO Y AFLUENTES","Nanocheirodon insignis",TRUE,2,183,15.1,NA,NA,36.9,2.3,6.2
+"25","Arrastre","CAÑO NEGRO Y AFLUENTES","Astyanax magdalenae",TRUE,3,131,10.8,NA,NA,47.7,2.1,9.4
+"26","Arrastre","CAÑO NEGRO Y AFLUENTES","Dasyloricaria filamentosa",FALSE,4,112,9.2,NA,NA,56.9,2,12.5
+"27","Arrastre","CAÑO NEGRO Y AFLUENTES","Poecilia caucana",FALSE,5,61,5,NA,NA,61.9,1.8,15.6
+"28","Arrastre","CAÑO NEGRO Y AFLUENTES","Andinoacara latifrons",FALSE,6,54,4.4,NA,NA,66.3,1.7,18.8
+"29","Arrastre","CAÑO NEGRO Y AFLUENTES","Ctenolucius hujeta",FALSE,7,53,4.4,NA,NA,70.7,1.7,21.9
+"30","Arrastre","CAÑO NEGRO Y AFLUENTES","Eigenmannia camposi",FALSE,8,49,4,NA,NA,74.7,1.7,25
+"31","Arrastre","CAÑO NEGRO Y AFLUENTES","Astyanax sp. 2",FALSE,9,47,3.9,NA,NA,78.6,1.7,28.1
+"32","Arrastre","CAÑO NEGRO Y AFLUENTES","Roeboides dayi",FALSE,10,36,3,NA,NA,81.6,1.6,31.2
+"33","Arrastre","CAÑO NEGRO Y AFLUENTES","Rineloricaria magdalenae",FALSE,11,34,2.8,NA,NA,84.4,1.5,34.4
+"34","Arrastre","CAÑO NEGRO Y AFLUENTES","Gasteropelecus maculatus",FALSE,12,24,2,NA,NA,86.3,1.4,37.5
+"35","Arrastre","CAÑO NEGRO Y AFLUENTES","Brachyhypopomus occidentalis",FALSE,13,19,1.6,NA,NA,87.9,1.3,40.6
+"36","Arrastre","CAÑO NEGRO Y AFLUENTES","Trichopodus trichopterus",FALSE,14,19,1.6,NA,NA,89.5,1.3,43.8
+"37","Arrastre","CAÑO NEGRO Y AFLUENTES","Characidium zebra",FALSE,15,15,1.2,NA,NA,90.7,1.2,46.9
+"38","Arrastre","CAÑO NEGRO Y AFLUENTES","Trichopodus pectoralis",FALSE,16,15,1.2,NA,NA,91.9,1.2,50
+"39","Arrastre","CAÑO NEGRO Y AFLUENTES","Cyphocharax magdalenae",FALSE,17,14,1.2,NA,NA,93.1,1.1,53.1
+"40","Arrastre","CAÑO NEGRO Y AFLUENTES","Rivulus xi",FALSE,18,14,1.2,NA,NA,94.2,1.1,56.2
+"41","Arrastre","CAÑO NEGRO Y AFLUENTES","Trachelyopterus insignis",FALSE,19,13,1.1,NA,NA,95.3,1.1,59.4
+"42","Arrastre","CAÑO NEGRO Y AFLUENTES","Hoplosternum magdalenae",FALSE,20,10,0.8,NA,NA,96.1,1,62.5
+"43","Arrastre","CAÑO NEGRO Y AFLUENTES","Bunocephalus colombianus",FALSE,21,9,0.7,NA,NA,96.9,1,65.6
+"44","Arrastre","CAÑO NEGRO Y AFLUENTES","Caquetaia kraussii",FALSE,22,9,0.7,NA,NA,97.6,1,68.8
+"45","Arrastre","CAÑO NEGRO Y AFLUENTES","Apteronotus milesi",FALSE,23,8,0.7,NA,NA,98.3,0.9,71.9
+"46","Arrastre","CAÑO NEGRO Y AFLUENTES","Hoplias malabaricus",FALSE,24,5,0.4,NA,NA,98.7,0.7,75
+"47","Arrastre","CAÑO NEGRO Y AFLUENTES","Saccoderma hastata",FALSE,25,4,0.3,NA,NA,99,0.6,78.1
+"48","Arrastre","CAÑO NEGRO Y AFLUENTES","Astyanax yariguies",FALSE,26,4,0.3,NA,NA,99.3,0.6,81.2
+"49","Arrastre","CAÑO NEGRO Y AFLUENTES","Cynopotamus magdalenae",FALSE,27,3,0.2,NA,NA,99.6,0.5,84.4
+"50","Arrastre","CAÑO NEGRO Y AFLUENTES","Sternopygus aequilabiatus",FALSE,28,1,0.1,NA,NA,99.7,0,87.5
+"51","Arrastre","CAÑO NEGRO Y AFLUENTES","Gephyrocharax melanocheir",FALSE,29,1,0.1,NA,NA,99.8,0,90.6
+"52","Arrastre","CAÑO NEGRO Y AFLUENTES","Rhamdia guatemalensis",FALSE,30,1,0.1,NA,NA,99.8,0,93.8
+"53","Arrastre","CAÑO NEGRO Y AFLUENTES","Prochilodus magdalenae",FALSE,31,1,0.1,NA,NA,99.9,0,96.9
+"54","Arrastre","CAÑO NEGRO Y AFLUENTES","Kronoheros umbrifer",FALSE,32,1,0.1,NA,NA,100,0,100
+"55","Arrastre","CORREDOR","Hyphessobrycon natagaima",TRUE,1,299,36,NA,NA,36,2.5,5
+"56","Arrastre","CORREDOR","Poecilia caucana",TRUE,2,122,14.7,NA,NA,50.7,2.1,10
+"57","Arrastre","CORREDOR","Astyanax magdalenae",TRUE,3,91,11,NA,NA,61.7,2,15
+"58","Arrastre","CORREDOR","Gephyrocharax melanocheir",FALSE,4,64,7.7,NA,NA,69.4,1.8,20
+"59","Arrastre","CORREDOR","Caquetaia kraussii",FALSE,5,45,5.4,NA,NA,74.8,1.7,25
+"60","Arrastre","CORREDOR","Rivulus xi",FALSE,6,41,4.9,NA,NA,79.8,1.6,30
+"61","Arrastre","CORREDOR","Andinoacara latifrons",FALSE,7,40,4.8,NA,NA,84.6,1.6,35
+"62","Arrastre","CORREDOR","Roeboides dayi",FALSE,8,32,3.9,NA,NA,88.4,1.5,40
+"63","Arrastre","CORREDOR","Characidium zebra",FALSE,9,28,3.4,NA,NA,91.8,1.4,45
+"64","Arrastre","CORREDOR","Brachyhypopomus occidentalis",FALSE,10,26,3.1,NA,NA,94.9,1.4,50
+"65","Arrastre","CORREDOR","Cyphocharax magdalenae",FALSE,11,13,1.6,NA,NA,96.5,1.1,55
+"66","Arrastre","CORREDOR","Ctenolucius hujeta",FALSE,12,13,1.6,NA,NA,98.1,1.1,60
+"67","Arrastre","CORREDOR","Eigenmannia camposi",FALSE,13,6,0.7,NA,NA,98.8,0.8,65
+"68","Arrastre","CORREDOR","Hoplosternum magdalenae",FALSE,14,2,0.2,NA,NA,99,0.3,70
+"69","Arrastre","CORREDOR","Hoplias malabaricus",FALSE,15,2,0.2,NA,NA,99.3,0.3,75
+"70","Arrastre","CORREDOR","Gasteropelecus maculatus",FALSE,16,2,0.2,NA,NA,99.5,0.3,80
+"71","Arrastre","CORREDOR","Rineloricaria magdalenae",FALSE,17,1,0.1,NA,NA,99.6,0,85
+"72","Arrastre","CORREDOR","Characidium sp.",FALSE,18,1,0.1,NA,NA,99.8,0,90
+"73","Arrastre","CORREDOR","Rhamdia guatemalensis",FALSE,19,1,0.1,NA,NA,99.9,0,95
+"74","Arrastre","CORREDOR","Astyanax sp. 1",FALSE,20,1,0.1,NA,NA,100,0,100
+"75","Arrastre","LA MORENA-TRECE","Astyanax magdalenae",TRUE,1,113,22.8,NA,NA,22.8,2.1,4
+"76","Arrastre","LA MORENA-TRECE","Gephyrocharax melanocheir",TRUE,2,74,14.9,NA,NA,37.8,1.9,8
+"77","Arrastre","LA MORENA-TRECE","Characidium zebra",TRUE,3,42,8.5,NA,NA,46.3,1.6,12
+"78","Arrastre","LA MORENA-TRECE","Astyanax sp. 1",FALSE,4,40,8.1,NA,NA,54.3,1.6,16
+"79","Arrastre","LA MORENA-TRECE","Hyphessobrycon natagaima",FALSE,5,32,6.5,NA,NA,60.8,1.5,20
+"80","Arrastre","LA MORENA-TRECE","Poecilia caucana",FALSE,6,29,5.9,NA,NA,66.7,1.5,24
+"81","Arrastre","LA MORENA-TRECE","Gasteropelecus maculatus",FALSE,7,25,5.1,NA,NA,71.7,1.4,28
+"82","Arrastre","LA MORENA-TRECE","Eigenmannia camposi",FALSE,8,18,3.6,NA,NA,75.4,1.3,32
+"83","Arrastre","LA MORENA-TRECE","Andinoacara latifrons",FALSE,9,18,3.6,NA,NA,79,1.3,36
+"84","Arrastre","LA MORENA-TRECE","Creagrutus magdalenae",FALSE,10,14,2.8,NA,NA,81.8,1.1,40
+"85","Arrastre","LA MORENA-TRECE","Saccoderma hastata",FALSE,11,12,2.4,NA,NA,84.2,1.1,44
+"86","Arrastre","LA MORENA-TRECE","Ancistrus caucanus",FALSE,12,12,2.4,NA,NA,86.7,1.1,48
+"87","Arrastre","LA MORENA-TRECE","Caquetaia kraussii",FALSE,13,12,2.4,NA,NA,89.1,1.1,52
+"88","Arrastre","LA MORENA-TRECE","Sturisomatichthys aureus",FALSE,14,12,2.4,NA,NA,91.5,1.1,56
+"89","Arrastre","LA MORENA-TRECE","Roeboides dayi",FALSE,15,11,2.2,NA,NA,93.7,1,60
+"90","Arrastre","LA MORENA-TRECE","Nanocheirodon insignis",FALSE,16,10,2,NA,NA,95.8,1,64
+"91","Arrastre","LA MORENA-TRECE","Bunocephalus colombianus",FALSE,17,6,1.2,NA,NA,97,0.8,68
+"92","Arrastre","LA MORENA-TRECE","Rivulus xi",FALSE,18,4,0.8,NA,NA,97.8,0.6,72
+"93","Arrastre","LA MORENA-TRECE","Ctenolucius hujeta",FALSE,19,3,0.6,NA,NA,98.4,0.5,76
+"94","Arrastre","LA MORENA-TRECE","Rineloricaria magdalenae",FALSE,20,2,0.4,NA,NA,98.8,0.3,80
+"95","Arrastre","LA MORENA-TRECE","Apteronotus milesi",FALSE,21,2,0.4,NA,NA,99.2,0.3,84
+"96","Arrastre","LA MORENA-TRECE","Rhamdia guatemalensis",FALSE,22,1,0.2,NA,NA,99.4,0,88
+"97","Arrastre","LA MORENA-TRECE","Leporinus striatus",FALSE,23,1,0.2,NA,NA,99.6,0,92
+"98","Arrastre","LA MORENA-TRECE","Hoplias malabaricus",FALSE,24,1,0.2,NA,NA,99.8,0,96
+"99","Arrastre","LA MORENA-TRECE","Hoplosternum magdalenae",FALSE,25,1,0.2,NA,NA,100,0,100
+"100","Arrastre","MONTECRISTO-YARIRI","Rineloricaria magdalenae",TRUE,1,30,19.5,NA,NA,19.5,1.5,6.2
+"101","Arrastre","MONTECRISTO-YARIRI","Hoplosternum magdalenae",TRUE,2,28,18.2,NA,NA,37.7,1.4,12.5
+"102","Arrastre","MONTECRISTO-YARIRI","Hyphessobrycon natagaima",TRUE,3,22,14.3,NA,NA,51.9,1.3,18.8
+"103","Arrastre","MONTECRISTO-YARIRI","Caquetaia kraussii",FALSE,4,20,13,NA,NA,64.9,1.3,25
+"104","Arrastre","MONTECRISTO-YARIRI","Andinoacara latifrons",FALSE,5,18,11.7,NA,NA,76.6,1.3,31.2
+"105","Arrastre","MONTECRISTO-YARIRI","Cyphocharax magdalenae",FALSE,6,9,5.8,NA,NA,82.5,1,37.5
+"106","Arrastre","MONTECRISTO-YARIRI","Roeboides dayi",FALSE,7,6,3.9,NA,NA,86.4,0.8,43.8
+"107","Arrastre","MONTECRISTO-YARIRI","Eigenmannia camposi",FALSE,8,5,3.2,NA,NA,89.6,0.7,50
+"108","Arrastre","MONTECRISTO-YARIRI","Poecilia caucana",FALSE,9,5,3.2,NA,NA,92.9,0.7,56.2
+"109","Arrastre","MONTECRISTO-YARIRI","Astyanax magdalenae",FALSE,10,3,1.9,NA,NA,94.8,0.5,62.5
+"110","Arrastre","MONTECRISTO-YARIRI","Rhamdia guatemalensis",FALSE,11,3,1.9,NA,NA,96.8,0.5,68.8
+"111","Arrastre","MONTECRISTO-YARIRI","Ctenolucius hujeta",FALSE,12,1,0.6,NA,NA,97.4,0,75
+"112","Arrastre","MONTECRISTO-YARIRI","Hoplias malabaricus",FALSE,13,1,0.6,NA,NA,98.1,0,81.2
+"113","Arrastre","MONTECRISTO-YARIRI","Synbranchus marmoratus",FALSE,14,1,0.6,NA,NA,98.7,0,87.5
+"114","Arrastre","MONTECRISTO-YARIRI","Bunocephalus colombianus",FALSE,15,1,0.6,NA,NA,99.4,0,93.8
+"115","Arrastre","MONTECRISTO-YARIRI","Dasyloricaria filamentosa",FALSE,16,1,0.6,NA,NA,100,0,100
+"116","Arrastre","RIO MAGDALENA","Argopleura magdalenensis",TRUE,1,255,57,NA,NA,57,2.4,4.8
+"117","Arrastre","RIO MAGDALENA","Creagrutus magdalenae",TRUE,2,50,11.2,NA,NA,68.2,1.7,9.5
+"118","Arrastre","RIO MAGDALENA","Pimelodus yuma",TRUE,3,39,8.7,NA,NA,77,1.6,14.3
+"119","Arrastre","RIO MAGDALENA","Astyanax filiferus",FALSE,4,37,8.3,NA,NA,85.2,1.6,19
+"120","Arrastre","RIO MAGDALENA","Pimelodus grosskopfii",FALSE,5,25,5.6,NA,NA,90.8,1.4,23.8
+"121","Arrastre","RIO MAGDALENA","Triportheus magdalenae",FALSE,6,12,2.7,NA,NA,93.5,1.1,28.6
+"122","Arrastre","RIO MAGDALENA","Astyanax sp. 1",FALSE,7,6,1.3,NA,NA,94.9,0.8,33.3
+"123","Arrastre","RIO MAGDALENA","Pseudopimelodus atricaudus",FALSE,8,4,0.9,NA,NA,95.7,0.6,38.1
+"124","Arrastre","RIO MAGDALENA","Trachelyopterus insignis",FALSE,9,4,0.9,NA,NA,96.6,0.6,42.9
+"125","Arrastre","RIO MAGDALENA","Eigenmannia camposi",FALSE,10,2,0.4,NA,NA,97.1,0.3,47.6
+"126","Arrastre","RIO MAGDALENA","Roeboides dayi",FALSE,11,2,0.4,NA,NA,97.5,0.3,52.4
+"127","Arrastre","RIO MAGDALENA","Megalonema xanthum",FALSE,12,2,0.4,NA,NA,98,0.3,57.1
+"128","Arrastre","RIO MAGDALENA","Cetopsorhamdia molinae",FALSE,13,1,0.2,NA,NA,98.2,0,61.9
+"129","Arrastre","RIO MAGDALENA","Curimata mivartii",FALSE,14,1,0.2,NA,NA,98.4,0,66.7
+"130","Arrastre","RIO MAGDALENA","Hyphessobrycon natagaima",FALSE,15,1,0.2,NA,NA,98.7,0,71.4
+"131","Arrastre","RIO MAGDALENA","Microgenys minuta",FALSE,16,1,0.2,NA,NA,98.9,0,76.2
+"132","Arrastre","RIO MAGDALENA","Dupouyichthys sapito",FALSE,17,1,0.2,NA,NA,99.1,0,81
+"133","Arrastre","RIO MAGDALENA","Apteronotus mariae",FALSE,18,1,0.2,NA,NA,99.3,0,85.7
+"134","Arrastre","RIO MAGDALENA","Cyphocharax magdalenae",FALSE,19,1,0.2,NA,NA,99.6,0,90.5
+"135","Arrastre","RIO MAGDALENA","Rhamdia guatemalensis",FALSE,20,1,0.2,NA,NA,99.8,0,95.2
+"136","Arrastre","RIO MAGDALENA","Poecilia caucana",FALSE,21,1,0.2,NA,NA,100,0,100
+"137","Arrastre","SALADO-MAGDALENA","Nanocheirodon insignis",TRUE,1,111,28,NA,NA,28,2,3.4
+"138","Arrastre","SALADO-MAGDALENA","Hyphessobrycon natagaima",TRUE,2,51,12.8,NA,NA,40.8,1.7,6.9
+"139","Arrastre","SALADO-MAGDALENA","Saccoderma hastata",TRUE,3,50,12.6,NA,NA,53.4,1.7,10.3
+"140","Arrastre","SALADO-MAGDALENA","Astyanax magdalenae",FALSE,4,47,11.8,NA,NA,65.2,1.7,13.8
+"141","Arrastre","SALADO-MAGDALENA","Astyanax sp. 2",FALSE,5,23,5.8,NA,NA,71,1.4,17.2
+"142","Arrastre","SALADO-MAGDALENA","Roeboides dayi",FALSE,6,21,5.3,NA,NA,76.3,1.3,20.7
+"143","Arrastre","SALADO-MAGDALENA","Characidium zebra",FALSE,7,10,2.5,NA,NA,78.8,1,24.1
+"144","Arrastre","SALADO-MAGDALENA","Caquetaia kraussii",FALSE,8,9,2.3,NA,NA,81.1,1,27.6
+"145","Arrastre","SALADO-MAGDALENA","Trichopodus pectoralis",FALSE,9,9,2.3,NA,NA,83.4,1,31
+"146","Arrastre","SALADO-MAGDALENA","Ctenolucius hujeta",FALSE,10,8,2,NA,NA,85.4,0.9,34.5
+"147","Arrastre","SALADO-MAGDALENA","Prochilodus magdalenae",FALSE,11,7,1.8,NA,NA,87.2,0.8,37.9
+"148","Arrastre","SALADO-MAGDALENA","Rineloricaria magdalenae",FALSE,12,6,1.5,NA,NA,88.7,0.8,41.4
+"149","Arrastre","SALADO-MAGDALENA","Gasteropelecus maculatus",FALSE,13,6,1.5,NA,NA,90.2,0.8,44.8
+"150","Arrastre","SALADO-MAGDALENA","Poecilia caucana",FALSE,14,6,1.5,NA,NA,91.7,0.8,48.3
+"151","Arrastre","SALADO-MAGDALENA","Megaleporinus muyscorum",FALSE,15,5,1.3,NA,NA,92.9,0.7,51.7
+"152","Arrastre","SALADO-MAGDALENA","Andinoacara latifrons",FALSE,16,3,0.8,NA,NA,93.7,0.5,55.2
+"153","Arrastre","SALADO-MAGDALENA","Hoplosternum magdalenae",FALSE,17,3,0.8,NA,NA,94.5,0.5,58.6
+"154","Arrastre","SALADO-MAGDALENA","Cyphocharax magdalenae",FALSE,18,3,0.8,NA,NA,95.2,0.5,62.1
+"155","Arrastre","SALADO-MAGDALENA","Hypostomus hondae",FALSE,19,3,0.8,NA,NA,96,0.5,65.5
+"156","Arrastre","SALADO-MAGDALENA","Hoplias malabaricus",FALSE,20,3,0.8,NA,NA,96.7,0.5,69
+"157","Arrastre","SALADO-MAGDALENA","Eigenmannia camposi",FALSE,21,3,0.8,NA,NA,97.5,0.5,72.4
+"158","Arrastre","SALADO-MAGDALENA","Dasyloricaria filamentosa",FALSE,22,2,0.5,NA,NA,98,0.3,75.9
+"159","Arrastre","SALADO-MAGDALENA","Synbranchus marmoratus",FALSE,23,2,0.5,NA,NA,98.5,0.3,79.3
+"160","Arrastre","SALADO-MAGDALENA","Bunocephalus colombianus",FALSE,24,1,0.3,NA,NA,98.7,0,82.8
+"161","Arrastre","SALADO-MAGDALENA","Gephyrocharax melanocheir",FALSE,25,1,0.3,NA,NA,99,0,86.2
+"162","Arrastre","SALADO-MAGDALENA","Triportheus magdalenae",FALSE,26,1,0.3,NA,NA,99.2,0,89.7
+"163","Arrastre","SALADO-MAGDALENA","Rivulus xi",FALSE,27,1,0.3,NA,NA,99.5,0,93.1
+"164","Arrastre","SALADO-MAGDALENA","Rhamdia guatemalensis",FALSE,28,1,0.3,NA,NA,99.7,0,96.6
+"165","Arrastre","SALADO-MAGDALENA","Astyanax sp. 1",FALSE,29,1,0.3,NA,NA,100,0,100
+"166","Arrastre","SOGAMOSITO-PAREDES","Saccoderma hastata",TRUE,1,129,27.3,NA,NA,27.3,2.1,3.3
+"167","Arrastre","SOGAMOSITO-PAREDES","Astyanax magdalenae",TRUE,2,50,10.6,NA,NA,37.9,1.7,6.7
+"168","Arrastre","SOGAMOSITO-PAREDES","Nanocheirodon insignis",TRUE,3,40,8.5,NA,NA,46.4,1.6,10
+"169","Arrastre","SOGAMOSITO-PAREDES","Characidium zebra",FALSE,4,36,7.6,NA,NA,54,1.6,13.3
+"170","Arrastre","SOGAMOSITO-PAREDES","Poecilia caucana",FALSE,5,33,7,NA,NA,61,1.5,16.7
+"171","Arrastre","SOGAMOSITO-PAREDES","Caquetaia kraussii",FALSE,6,31,6.6,NA,NA,67.6,1.5,20
+"172","Arrastre","SOGAMOSITO-PAREDES","Gephyrocharax melanocheir",FALSE,7,30,6.4,NA,NA,73.9,1.5,23.3
+"173","Arrastre","SOGAMOSITO-PAREDES","Paravandellia phaneronema",FALSE,8,19,4,NA,NA,78,1.3,26.7
+"174","Arrastre","SOGAMOSITO-PAREDES","Roeboides dayi",FALSE,9,18,3.8,NA,NA,81.8,1.3,30
+"175","Arrastre","SOGAMOSITO-PAREDES","Gasteropelecus maculatus",FALSE,10,15,3.2,NA,NA,85,1.2,33.3
+"176","Arrastre","SOGAMOSITO-PAREDES","Andinoacara latifrons",FALSE,11,11,2.3,NA,NA,87.3,1,36.7
+"177","Arrastre","SOGAMOSITO-PAREDES","Hyphessobrycon natagaima",FALSE,12,11,2.3,NA,NA,89.6,1,40
+"178","Arrastre","SOGAMOSITO-PAREDES","Astyanax sp. 1",FALSE,13,8,1.7,NA,NA,91.3,0.9,43.3
+"179","Arrastre","SOGAMOSITO-PAREDES","Rineloricaria magdalenae",FALSE,14,5,1.1,NA,NA,92.4,0.7,46.7
+"180","Arrastre","SOGAMOSITO-PAREDES","Bunocephalus colombianus",FALSE,15,4,0.8,NA,NA,93.2,0.6,50
+"181","Arrastre","SOGAMOSITO-PAREDES","Astyanax filiferus",FALSE,16,4,0.8,NA,NA,94.1,0.6,53.3
+"182","Arrastre","SOGAMOSITO-PAREDES","Eigenmannia camposi",FALSE,17,3,0.6,NA,NA,94.7,0.5,56.7
+"183","Arrastre","SOGAMOSITO-PAREDES","Prochilodus magdalenae",FALSE,18,3,0.6,NA,NA,95.3,0.5,60
+"184","Arrastre","SOGAMOSITO-PAREDES","Ctenolucius hujeta",FALSE,19,3,0.6,NA,NA,96,0.5,63.3
+"185","Arrastre","SOGAMOSITO-PAREDES","Sturisomatichthys aureus",FALSE,20,3,0.6,NA,NA,96.6,0.5,66.7
+"186","Arrastre","SOGAMOSITO-PAREDES","Astyanax sp. 2",FALSE,21,2,0.4,NA,NA,97,0.3,70
+"187","Arrastre","SOGAMOSITO-PAREDES","Apteronotus milesi",FALSE,22,2,0.4,NA,NA,97.5,0.3,73.3
+"188","Arrastre","SOGAMOSITO-PAREDES","Cyphocharax magdalenae",FALSE,23,2,0.4,NA,NA,97.9,0.3,76.7
+"189","Arrastre","SOGAMOSITO-PAREDES","Geophagus steindachneri",FALSE,24,2,0.4,NA,NA,98.3,0.3,80
+"190","Arrastre","SOGAMOSITO-PAREDES","Leporinus striatus",FALSE,25,2,0.4,NA,NA,98.7,0.3,83.3
+"191","Arrastre","SOGAMOSITO-PAREDES","Hoplias malabaricus",FALSE,26,2,0.4,NA,NA,99.2,0.3,86.7
+"192","Arrastre","SOGAMOSITO-PAREDES","Imparfinis usmai",FALSE,27,1,0.2,NA,NA,99.4,0,90
+"193","Arrastre","SOGAMOSITO-PAREDES","Hypostomus hondae",FALSE,28,1,0.2,NA,NA,99.6,0,93.3
+"194","Arrastre","SOGAMOSITO-PAREDES","Pimelodella floridablancaensis",FALSE,29,1,0.2,NA,NA,99.8,0,96.7
+"195","Arrastre","SOGAMOSITO-PAREDES","Sternopygus aequilabiatus",FALSE,30,1,0.2,NA,NA,100,0,100
+"196","Atarraya","CAÑO NEGRO Y AFLUENTES","Cyphocharax magdalenae",TRUE,1,94,24.2,NA,NA,24.2,2,5.9
+"197","Atarraya","CAÑO NEGRO Y AFLUENTES","Astyanax magdalenae",TRUE,2,53,13.7,NA,NA,37.9,1.7,11.8
+"198","Atarraya","CAÑO NEGRO Y AFLUENTES","Dasyloricaria filamentosa",TRUE,3,50,12.9,NA,NA,50.8,1.7,17.6
+"199","Atarraya","CAÑO NEGRO Y AFLUENTES","Andinoacara latifrons",FALSE,4,46,11.9,NA,NA,62.6,1.7,23.5
+"200","Atarraya","CAÑO NEGRO Y AFLUENTES","Hyphessobrycon natagaima",FALSE,5,31,8,NA,NA,70.6,1.5,29.4
+"201","Atarraya","CAÑO NEGRO Y AFLUENTES","Gasteropelecus maculatus",FALSE,6,29,7.5,NA,NA,78.1,1.5,35.3
+"202","Atarraya","CAÑO NEGRO Y AFLUENTES","Rhamdia guatemalensis",FALSE,7,23,5.9,NA,NA,84,1.4,41.2
+"203","Atarraya","CAÑO NEGRO Y AFLUENTES","Caquetaia kraussii",FALSE,8,17,4.4,NA,NA,88.4,1.2,47.1
+"204","Atarraya","CAÑO NEGRO Y AFLUENTES","Trichopodus pectoralis",FALSE,9,16,4.1,NA,NA,92.5,1.2,52.9
+"205","Atarraya","CAÑO NEGRO Y AFLUENTES","Hoplias malabaricus",FALSE,10,9,2.3,NA,NA,94.8,1,58.8
+"206","Atarraya","CAÑO NEGRO Y AFLUENTES","Trichopodus trichopterus",FALSE,11,6,1.5,NA,NA,96.4,0.8,64.7
+"207","Atarraya","CAÑO NEGRO Y AFLUENTES","Ctenolucius hujeta",FALSE,12,4,1,NA,NA,97.4,0.6,70.6
+"208","Atarraya","CAÑO NEGRO Y AFLUENTES","Hoplosternum magdalenae",FALSE,13,4,1,NA,NA,98.5,0.6,76.5
+"209","Atarraya","CAÑO NEGRO Y AFLUENTES","Astyanax sp. 2",FALSE,14,3,0.8,NA,NA,99.2,0.5,82.4
+"210","Atarraya","CAÑO NEGRO Y AFLUENTES","Prochilodus magdalenae",FALSE,15,1,0.3,NA,NA,99.5,0,88.2
+"211","Atarraya","CAÑO NEGRO Y AFLUENTES","Roeboides dayi",FALSE,16,1,0.3,NA,NA,99.7,0,94.1
+"212","Atarraya","CAÑO NEGRO Y AFLUENTES","Cynopotamus magdalenae",FALSE,17,1,0.3,NA,NA,100,0,100
+"213","Atarraya","CAÑO RAICERO","Andinoacara latifrons",TRUE,1,3,15.8,NA,NA,15.8,0.5,11.1
+"214","Atarraya","CAÑO RAICERO","Cyphocharax magdalenae",TRUE,2,3,15.8,NA,NA,31.6,0.5,22.2
+"215","Atarraya","CAÑO RAICERO","Hoplosternum magdalenae",TRUE,3,3,15.8,NA,NA,47.4,0.5,33.3
+"216","Atarraya","CAÑO RAICERO","Hypostomus hondae",FALSE,4,3,15.8,NA,NA,63.2,0.5,44.4
+"217","Atarraya","CAÑO RAICERO","Hoplias malabaricus",FALSE,5,2,10.5,NA,NA,73.7,0.3,55.6
+"218","Atarraya","CAÑO RAICERO","Rineloricaria magdalenae",FALSE,6,2,10.5,NA,NA,84.2,0.3,66.7
+"219","Atarraya","CAÑO RAICERO","Bunocephalus colombianus",FALSE,7,1,5.3,NA,NA,89.5,0,77.8
+"220","Atarraya","CAÑO RAICERO","Astyanax magdalenae",FALSE,8,1,5.3,NA,NA,94.7,0,88.9
+"221","Atarraya","CAÑO RAICERO","Rhamdia guatemalensis",FALSE,9,1,5.3,NA,NA,100,0,100
+"222","Atarraya","CORREDOR","Astyanax magdalenae",TRUE,1,25,36.2,NA,NA,36.2,1.4,11.1
+"223","Atarraya","CORREDOR","Cyphocharax magdalenae",TRUE,2,17,24.6,NA,NA,60.9,1.2,22.2
+"224","Atarraya","CORREDOR","Andinoacara latifrons",TRUE,3,10,14.5,NA,NA,75.4,1,33.3
+"225","Atarraya","CORREDOR","Caquetaia kraussii",FALSE,4,5,7.2,NA,NA,82.6,0.7,44.4
+"226","Atarraya","CORREDOR","Roeboides dayi",FALSE,5,5,7.2,NA,NA,89.9,0.7,55.6
+"227","Atarraya","CORREDOR","Gasteropelecus maculatus",FALSE,6,3,4.3,NA,NA,94.2,0.5,66.7
+"228","Atarraya","CORREDOR","Rineloricaria magdalenae",FALSE,7,2,2.9,NA,NA,97.1,0.3,77.8
+"229","Atarraya","CORREDOR","Hoplias malabaricus",FALSE,8,1,1.4,NA,NA,98.6,0,88.9
+"230","Atarraya","CORREDOR","Rhamdia guatemalensis",FALSE,9,1,1.4,NA,NA,100,0,100
+"231","Atarraya","LA MORENA-TRECE","Astyanax magdalenae",TRUE,1,135,51.9,NA,NA,51.9,2.1,7.1
+"232","Atarraya","LA MORENA-TRECE","Cyphocharax magdalenae",TRUE,2,38,14.6,NA,NA,66.5,1.6,14.3
+"233","Atarraya","LA MORENA-TRECE","Astyanax filiferus",TRUE,3,25,9.6,NA,NA,76.2,1.4,21.4
+"234","Atarraya","LA MORENA-TRECE","Gasteropelecus maculatus",FALSE,4,16,6.2,NA,NA,82.3,1.2,28.6
+"235","Atarraya","LA MORENA-TRECE","Sturisomatichthys aureus",FALSE,5,10,3.8,NA,NA,86.2,1,35.7
+"236","Atarraya","LA MORENA-TRECE","Ancistrus caucanus",FALSE,6,8,3.1,NA,NA,89.2,0.9,42.9
+"237","Atarraya","LA MORENA-TRECE","Astyanax sp. 1",FALSE,7,7,2.7,NA,NA,91.9,0.8,50
+"238","Atarraya","LA MORENA-TRECE","Andinoacara latifrons",FALSE,8,5,1.9,NA,NA,93.8,0.7,57.1
+"239","Atarraya","LA MORENA-TRECE","Leporinus striatus",FALSE,9,4,1.5,NA,NA,95.4,0.6,64.3
+"240","Atarraya","LA MORENA-TRECE","Caquetaia kraussii",FALSE,10,4,1.5,NA,NA,96.9,0.6,71.4
+"241","Atarraya","LA MORENA-TRECE","Hoplias malabaricus",FALSE,11,3,1.2,NA,NA,98.1,0.5,78.6
+"242","Atarraya","LA MORENA-TRECE","Roeboides dayi",FALSE,12,3,1.2,NA,NA,99.2,0.5,85.7
+"243","Atarraya","LA MORENA-TRECE","Bunocephalus colombianus",FALSE,13,1,0.4,NA,NA,99.6,0,92.9
+"244","Atarraya","LA MORENA-TRECE","Rineloricaria magdalenae",FALSE,14,1,0.4,NA,NA,100,0,100
+"245","Atarraya","MONTECRISTO-YARIRI","Cyphocharax magdalenae",TRUE,1,55,48.7,NA,NA,48.7,1.7,14.3
+"246","Atarraya","MONTECRISTO-YARIRI","Andinoacara latifrons",TRUE,2,22,19.5,NA,NA,68.1,1.3,28.6
+"247","Atarraya","MONTECRISTO-YARIRI","Rineloricaria magdalenae",TRUE,3,15,13.3,NA,NA,81.4,1.2,42.9
+"248","Atarraya","MONTECRISTO-YARIRI","Dasyloricaria filamentosa",FALSE,4,15,13.3,NA,NA,94.7,1.2,57.1
+"249","Atarraya","MONTECRISTO-YARIRI","Caquetaia kraussii",FALSE,5,3,2.7,NA,NA,97.3,0.5,71.4
+"250","Atarraya","MONTECRISTO-YARIRI","Astyanax magdalenae",FALSE,6,2,1.8,NA,NA,99.1,0.3,85.7
+"251","Atarraya","MONTECRISTO-YARIRI","Hoplias malabaricus",FALSE,7,1,0.9,NA,NA,100,0,100
+"252","Atarraya","RIO MAGDALENA","Triportheus magdalenae",TRUE,1,37,31.6,NA,NA,31.6,1.6,5.3
+"253","Atarraya","RIO MAGDALENA","Pimelodus yuma",TRUE,2,26,22.2,NA,NA,53.8,1.4,10.5
+"254","Atarraya","RIO MAGDALENA","Pimelodus grosskopfii",TRUE,3,15,12.8,NA,NA,66.7,1.2,15.8
+"255","Atarraya","RIO MAGDALENA","Trachelyopterus insignis",FALSE,4,8,6.8,NA,NA,73.5,0.9,21.1
+"256","Atarraya","RIO MAGDALENA","Cyphocharax magdalenae",FALSE,5,6,5.1,NA,NA,78.6,0.8,26.3
+"257","Atarraya","RIO MAGDALENA","Curimata mivartii",FALSE,6,4,3.4,NA,NA,82.1,0.6,31.6
+"258","Atarraya","RIO MAGDALENA","Astyanax magdalenae",FALSE,7,3,2.6,NA,NA,84.6,0.5,36.8
+"259","Atarraya","RIO MAGDALENA","Cynopotamus magdalenae",FALSE,8,3,2.6,NA,NA,87.2,0.5,42.1
+"260","Atarraya","RIO MAGDALENA","Roeboides dayi",FALSE,9,3,2.6,NA,NA,89.7,0.5,47.4
+"261","Atarraya","RIO MAGDALENA","Eigenmannia camposi",FALSE,10,2,1.7,NA,NA,91.5,0.3,52.6
+"262","Atarraya","RIO MAGDALENA","Megalonema xanthum",FALSE,11,2,1.7,NA,NA,93.2,0.3,57.9
+"263","Atarraya","RIO MAGDALENA","Sternopygus aequilabiatus",FALSE,12,1,0.9,NA,NA,94,0,63.2
+"264","Atarraya","RIO MAGDALENA","Sorubim cuspicaudus",FALSE,13,1,0.9,NA,NA,94.9,0,68.4
+"265","Atarraya","RIO MAGDALENA","Apteronotus mariae",FALSE,14,1,0.9,NA,NA,95.7,0,73.7
+"266","Atarraya","RIO MAGDALENA","Sturisomatichthys aureus",FALSE,15,1,0.9,NA,NA,96.6,0,78.9
+"267","Atarraya","RIO MAGDALENA","Potamotrygon magdalenae",FALSE,16,1,0.9,NA,NA,97.4,0,84.2
+"268","Atarraya","RIO MAGDALENA","Spatuloricaria gymnogaster",FALSE,17,1,0.9,NA,NA,98.3,0,89.5
+"269","Atarraya","RIO MAGDALENA","Crossoloricaria variegata",FALSE,18,1,0.9,NA,NA,99.1,0,94.7
+"270","Atarraya","RIO MAGDALENA","Prochilodus magdalenae",FALSE,19,1,0.9,NA,NA,100,0,100
+"271","Atarraya","SALADO-MAGDALENA","Cyphocharax magdalenae",TRUE,1,82,80.4,NA,NA,80.4,1.9,11.1
+"272","Atarraya","SALADO-MAGDALENA","Astyanax magdalenae",TRUE,2,7,6.9,NA,NA,87.3,0.8,22.2
+"273","Atarraya","SALADO-MAGDALENA","Andinoacara latifrons",TRUE,3,3,2.9,NA,NA,90.2,0.5,33.3
+"274","Atarraya","SALADO-MAGDALENA","Hypostomus hondae",FALSE,4,3,2.9,NA,NA,93.1,0.5,44.4
+"275","Atarraya","SALADO-MAGDALENA","Hoplias malabaricus",FALSE,5,2,2,NA,NA,95.1,0.3,55.6
+"276","Atarraya","SALADO-MAGDALENA","Roeboides dayi",FALSE,6,2,2,NA,NA,97.1,0.3,66.7
+"277","Atarraya","SALADO-MAGDALENA","Rineloricaria magdalenae",FALSE,7,1,1,NA,NA,98,0,77.8
+"278","Atarraya","SALADO-MAGDALENA","Megaleporinus muyscorum",FALSE,8,1,1,NA,NA,99,0,88.9
+"279","Atarraya","SALADO-MAGDALENA","Curimata mivartii",FALSE,9,1,1,NA,NA,100,0,100
+"280","Atarraya","SOGAMOSITO-PAREDES","Astyanax magdalenae",TRUE,1,61,37,NA,NA,37,1.8,6.2
+"281","Atarraya","SOGAMOSITO-PAREDES","Andinoacara latifrons",TRUE,2,32,19.4,NA,NA,56.4,1.5,12.5
+"282","Atarraya","SOGAMOSITO-PAREDES","Cyphocharax magdalenae",TRUE,3,23,13.9,NA,NA,70.3,1.4,18.8
+"283","Atarraya","SOGAMOSITO-PAREDES","Caquetaia kraussii",FALSE,4,12,7.3,NA,NA,77.6,1.1,25
+"284","Atarraya","SOGAMOSITO-PAREDES","Roeboides dayi",FALSE,5,7,4.2,NA,NA,81.8,0.8,31.2
+"285","Atarraya","SOGAMOSITO-PAREDES","Triportheus magdalenae",FALSE,6,6,3.6,NA,NA,85.5,0.8,37.5
+"286","Atarraya","SOGAMOSITO-PAREDES","Rineloricaria magdalenae",FALSE,7,5,3,NA,NA,88.5,0.7,43.8
+"287","Atarraya","SOGAMOSITO-PAREDES","Astyanax filiferus",FALSE,8,5,3,NA,NA,91.5,0.7,50
+"288","Atarraya","SOGAMOSITO-PAREDES","Geophagus steindachneri",FALSE,9,4,2.4,NA,NA,93.9,0.6,56.2
+"289","Atarraya","SOGAMOSITO-PAREDES","Sturisomatichthys aureus",FALSE,10,3,1.8,NA,NA,95.8,0.5,62.5
+"290","Atarraya","SOGAMOSITO-PAREDES","Hoplias malabaricus",FALSE,11,2,1.2,NA,NA,97,0.3,68.8
+"291","Atarraya","SOGAMOSITO-PAREDES","Pimelodus yuma",FALSE,12,1,0.6,NA,NA,97.6,0,75
+"292","Atarraya","SOGAMOSITO-PAREDES","Pimelodella floridablancaensis",FALSE,13,1,0.6,NA,NA,98.2,0,81.2
+"293","Atarraya","SOGAMOSITO-PAREDES","Prochilodus magdalenae",FALSE,14,1,0.6,NA,NA,98.8,0,87.5
+"294","Atarraya","SOGAMOSITO-PAREDES","Cynopotamus magdalenae",FALSE,15,1,0.6,NA,NA,99.4,0,93.8
+"295","Atarraya","SOGAMOSITO-PAREDES","Bunocephalus colombianus",FALSE,16,1,0.6,NA,NA,100,0,100
+"296","Electropesca","AGUA BONITA-PAREDES","Brachyhypopomus occidentalis",TRUE,1,21,47.7,NA,NA,47.7,1.3,8.3
+"297","Electropesca","AGUA BONITA-PAREDES","Imparfinis usmai",TRUE,2,6,13.6,NA,NA,61.4,0.8,16.7
+"298","Electropesca","AGUA BONITA-PAREDES","Eigenmannia camposi",TRUE,3,6,13.6,NA,NA,75,0.8,25
+"299","Electropesca","AGUA BONITA-PAREDES","Characidium zebra",FALSE,4,3,6.8,NA,NA,81.8,0.5,33.3
+"300","Electropesca","AGUA BONITA-PAREDES","Andinoacara latifrons",FALSE,5,1,2.3,NA,NA,84.1,0,41.7
+"301","Electropesca","AGUA BONITA-PAREDES","Poecilia caucana",FALSE,6,1,2.3,NA,NA,86.4,0,50
+"302","Electropesca","AGUA BONITA-PAREDES","Farlowella yarigui",FALSE,7,1,2.3,NA,NA,88.6,0,58.3
+"303","Electropesca","AGUA BONITA-PAREDES","Apteronotus milesi",FALSE,8,1,2.3,NA,NA,90.9,0,66.7
+"304","Electropesca","AGUA BONITA-PAREDES","Rhamdia guatemalensis",FALSE,9,1,2.3,NA,NA,93.2,0,75
+"305","Electropesca","AGUA BONITA-PAREDES","Hoplias malabaricus",FALSE,10,1,2.3,NA,NA,95.5,0,83.3
+"306","Electropesca","AGUA BONITA-PAREDES","Gephyrocharax melanocheir",FALSE,11,1,2.3,NA,NA,97.7,0,91.7
+"307","Electropesca","AGUA BONITA-PAREDES","Synbranchus marmoratus",FALSE,12,1,2.3,NA,NA,100,0,100
+"308","Electropesca","CAÑO NEGRO Y AFLUENTES","Brachyhypopomus occidentalis",TRUE,1,42,25.9,NA,NA,25.9,1.6,6.2
+"309","Electropesca","CAÑO NEGRO Y AFLUENTES","Eigenmannia camposi",TRUE,2,30,18.5,NA,NA,44.4,1.5,12.5
+"310","Electropesca","CAÑO NEGRO Y AFLUENTES","Characidium zebra",TRUE,3,23,14.2,NA,NA,58.6,1.4,18.8
+"311","Electropesca","CAÑO NEGRO Y AFLUENTES","Rivulus xi",FALSE,4,13,8,NA,NA,66.7,1.1,25
+"312","Electropesca","CAÑO NEGRO Y AFLUENTES","Apteronotus milesi",FALSE,5,12,7.4,NA,NA,74.1,1.1,31.2
+"313","Electropesca","CAÑO NEGRO Y AFLUENTES","Poecilia caucana",FALSE,6,11,6.8,NA,NA,80.9,1,37.5
+"314","Electropesca","CAÑO NEGRO Y AFLUENTES","Andinoacara latifrons",FALSE,7,9,5.6,NA,NA,86.4,1,43.8
+"315","Electropesca","CAÑO NEGRO Y AFLUENTES","Ancistrus caucanus",FALSE,8,7,4.3,NA,NA,90.7,0.8,50
+"316","Electropesca","CAÑO NEGRO Y AFLUENTES","Kronoheros umbrifer",FALSE,9,4,2.5,NA,NA,93.2,0.6,56.2
+"317","Electropesca","CAÑO NEGRO Y AFLUENTES","Rineloricaria magdalenae",FALSE,10,4,2.5,NA,NA,95.7,0.6,62.5
+"318","Electropesca","CAÑO NEGRO Y AFLUENTES","Nanocheirodon insignis",FALSE,11,2,1.2,NA,NA,96.9,0.3,68.8
+"319","Electropesca","CAÑO NEGRO Y AFLUENTES","Rhamdia guatemalensis",FALSE,12,1,0.6,NA,NA,97.5,0,75
+"320","Electropesca","CAÑO NEGRO Y AFLUENTES","Hyphessobrycon natagaima",FALSE,13,1,0.6,NA,NA,98.1,0,81.2
+"321","Electropesca","CAÑO NEGRO Y AFLUENTES","Imparfinis usmai",FALSE,14,1,0.6,NA,NA,98.8,0,87.5
+"322","Electropesca","CAÑO NEGRO Y AFLUENTES","Saccoderma hastata",FALSE,15,1,0.6,NA,NA,99.4,0,93.8
+"323","Electropesca","CAÑO NEGRO Y AFLUENTES","Synbranchus marmoratus",FALSE,16,1,0.6,NA,NA,100,0,100
+"324","Electropesca","CAÑO RAICERO","Rivulus xi",TRUE,1,6,31.6,NA,NA,31.6,0.8,11.1
+"325","Electropesca","CAÑO RAICERO","Nanocheirodon insignis",TRUE,2,5,26.3,NA,NA,57.9,0.7,22.2
+"326","Electropesca","CAÑO RAICERO","Rineloricaria magdalenae",TRUE,3,2,10.5,NA,NA,68.4,0.3,33.3
+"327","Electropesca","CAÑO RAICERO","Hyphessobrycon natagaima",FALSE,4,1,5.3,NA,NA,73.7,0,44.4
+"328","Electropesca","CAÑO RAICERO","Saccoderma hastata",FALSE,5,1,5.3,NA,NA,78.9,0,55.6
+"329","Electropesca","CAÑO RAICERO","Rhamdia guatemalensis",FALSE,6,1,5.3,NA,NA,84.2,0,66.7
+"330","Electropesca","CAÑO RAICERO","Astyanax yariguies",FALSE,7,1,5.3,NA,NA,89.5,0,77.8
+"331","Electropesca","CAÑO RAICERO","Poecilia caucana",FALSE,8,1,5.3,NA,NA,94.7,0,88.9
+"332","Electropesca","CAÑO RAICERO","Hoplosternum magdalenae",FALSE,9,1,5.3,NA,NA,100,0,100
+"333","Electropesca","CORREDOR","Brachyhypopomus occidentalis",TRUE,1,73,26,NA,NA,26,1.9,8.3
+"334","Electropesca","CORREDOR","Poecilia caucana",TRUE,2,56,19.9,NA,NA,45.9,1.7,16.7
+"335","Electropesca","CORREDOR","Rivulus xi",TRUE,3,53,18.9,NA,NA,64.8,1.7,25
+"336","Electropesca","CORREDOR","Characidium zebra",FALSE,4,34,12.1,NA,NA,76.9,1.5,33.3
+"337","Electropesca","CORREDOR","Gephyrocharax melanocheir",FALSE,5,26,9.3,NA,NA,86.1,1.4,41.7
+"338","Electropesca","CORREDOR","Imparfinis usmai",FALSE,6,13,4.6,NA,NA,90.7,1.1,50
+"339","Electropesca","CORREDOR","Caquetaia kraussii",FALSE,7,10,3.6,NA,NA,94.3,1,58.3
+"340","Electropesca","CORREDOR","Andinoacara latifrons",FALSE,8,6,2.1,NA,NA,96.4,0.8,66.7
+"341","Electropesca","CORREDOR","Hyphessobrycon natagaima",FALSE,9,5,1.8,NA,NA,98.2,0.7,75
+"342","Electropesca","CORREDOR","Eigenmannia camposi",FALSE,10,3,1.1,NA,NA,99.3,0.5,83.3
+"343","Electropesca","CORREDOR","Roeboides dayi",FALSE,11,1,0.4,NA,NA,99.6,0,91.7
+"344","Electropesca","CORREDOR","Rhamdia guatemalensis",FALSE,12,1,0.4,NA,NA,100,0,100
+"345","Electropesca","LA MORENA-TRECE","Characidium zebra",TRUE,1,116,29.4,NA,NA,29.4,2.1,4
+"346","Electropesca","LA MORENA-TRECE","Sturisomatichthys aureus",TRUE,2,54,13.7,NA,NA,43,1.7,8
+"347","Electropesca","LA MORENA-TRECE","Imparfinis usmai",TRUE,3,40,10.1,NA,NA,53.2,1.6,12
+"348","Electropesca","LA MORENA-TRECE","Eigenmannia camposi",FALSE,4,26,6.6,NA,NA,59.7,1.4,16
+"349","Electropesca","LA MORENA-TRECE","Ancistrus caucanus",FALSE,5,24,6.1,NA,NA,65.8,1.4,20
+"350","Electropesca","LA MORENA-TRECE","Gephyrocharax melanocheir",FALSE,6,18,4.6,NA,NA,70.4,1.3,24
+"351","Electropesca","LA MORENA-TRECE","Astyanax magdalenae",FALSE,7,13,3.3,NA,NA,73.7,1.1,28
+"352","Electropesca","LA MORENA-TRECE","Brachyhypopomus occidentalis",FALSE,8,12,3,NA,NA,76.7,1.1,32
+"353","Electropesca","LA MORENA-TRECE","Trichomycterus sp. 1",FALSE,9,12,3,NA,NA,79.7,1.1,36
+"354","Electropesca","LA MORENA-TRECE","Rineloricaria magdalenae",FALSE,10,11,2.8,NA,NA,82.5,1,40
+"355","Electropesca","LA MORENA-TRECE","Poecilia caucana",FALSE,11,10,2.5,NA,NA,85.1,1,44
+"356","Electropesca","LA MORENA-TRECE","Apteronotus milesi",FALSE,12,9,2.3,NA,NA,87.3,1,48
+"357","Electropesca","LA MORENA-TRECE","Rivulus xi",FALSE,13,8,2,NA,NA,89.4,0.9,52
+"358","Electropesca","LA MORENA-TRECE","Creagrutus magdalenae",FALSE,14,8,2,NA,NA,91.4,0.9,56
+"359","Electropesca","LA MORENA-TRECE","Heptapterinae Gen. nov. et sp. nov.",FALSE,15,6,1.5,NA,NA,92.9,0.8,60
+"360","Electropesca","LA MORENA-TRECE","Sternopygus aequilabiatus",FALSE,16,6,1.5,NA,NA,94.4,0.8,64
+"361","Electropesca","LA MORENA-TRECE","Rhamdia guatemalensis",FALSE,17,5,1.3,NA,NA,95.7,0.7,68
+"362","Electropesca","LA MORENA-TRECE","Andinoacara latifrons",FALSE,18,5,1.3,NA,NA,97,0.7,72
+"363","Electropesca","LA MORENA-TRECE","Trichomycterus sp. 2",FALSE,19,4,1,NA,NA,98,0.6,76
+"364","Electropesca","LA MORENA-TRECE","Hoplias malabaricus",FALSE,20,3,0.8,NA,NA,98.7,0.5,80
+"365","Electropesca","LA MORENA-TRECE","Gasteropelecus maculatus",FALSE,21,1,0.3,NA,NA,99,0,84
+"366","Electropesca","LA MORENA-TRECE","Nanocheirodon insignis",FALSE,22,1,0.3,NA,NA,99.2,0,88
+"367","Electropesca","LA MORENA-TRECE","Hypostomus hondae",FALSE,23,1,0.3,NA,NA,99.5,0,92
+"368","Electropesca","LA MORENA-TRECE","Farlowella yarigui",FALSE,24,1,0.3,NA,NA,99.7,0,96
+"369","Electropesca","LA MORENA-TRECE","Hoplosternum magdalenae",FALSE,25,1,0.3,NA,NA,100,0,100
+"370","Electropesca","MONTECRISTO-YARIRI","Andinoacara latifrons",TRUE,1,7,21.9,NA,NA,21.9,0.8,14.3
+"371","Electropesca","MONTECRISTO-YARIRI","Rineloricaria magdalenae",TRUE,2,7,21.9,NA,NA,43.8,0.8,28.6
+"372","Electropesca","MONTECRISTO-YARIRI","Hoplosternum magdalenae",TRUE,3,7,21.9,NA,NA,65.6,0.8,42.9
+"373","Electropesca","MONTECRISTO-YARIRI","Eigenmannia camposi",FALSE,4,5,15.6,NA,NA,81.2,0.7,57.1
+"374","Electropesca","MONTECRISTO-YARIRI","Caquetaia kraussii",FALSE,5,4,12.5,NA,NA,93.8,0.6,71.4
+"375","Electropesca","MONTECRISTO-YARIRI","Poecilia caucana",FALSE,6,1,3.1,NA,NA,96.9,0,85.7
+"376","Electropesca","MONTECRISTO-YARIRI","Trichopodus trichopterus",FALSE,7,1,3.1,NA,NA,100,0,100
+"377","Electropesca","SALADO-MAGDALENA","Nanocheirodon insignis",TRUE,1,21,28.8,NA,NA,28.8,1.3,5.6
+"378","Electropesca","SALADO-MAGDALENA","Characidium zebra",TRUE,2,15,20.5,NA,NA,49.3,1.2,11.1
+"379","Electropesca","SALADO-MAGDALENA","Saccoderma hastata",TRUE,3,7,9.6,NA,NA,58.9,0.8,16.7
+"380","Electropesca","SALADO-MAGDALENA","Bunocephalus colombianus",FALSE,4,6,8.2,NA,NA,67.1,0.8,22.2
+"381","Electropesca","SALADO-MAGDALENA","Rivulus xi",FALSE,5,5,6.8,NA,NA,74,0.7,27.8
+"382","Electropesca","SALADO-MAGDALENA","Poecilia caucana",FALSE,6,5,6.8,NA,NA,80.8,0.7,33.3
+"383","Electropesca","SALADO-MAGDALENA","Eigenmannia camposi",FALSE,7,2,2.7,NA,NA,83.6,0.3,38.9
+"384","Electropesca","SALADO-MAGDALENA","Hoplias malabaricus",FALSE,8,2,2.7,NA,NA,86.3,0.3,44.4
+"385","Electropesca","SALADO-MAGDALENA","Brachyhypopomus occidentalis",FALSE,9,1,1.4,NA,NA,87.7,0,50
+"386","Electropesca","SALADO-MAGDALENA","Synbranchus marmoratus",FALSE,10,1,1.4,NA,NA,89,0,55.6
+"387","Electropesca","SALADO-MAGDALENA","Hyphessobrycon natagaima",FALSE,11,1,1.4,NA,NA,90.4,0,61.1
+"388","Electropesca","SALADO-MAGDALENA","Imparfinis usmai",FALSE,12,1,1.4,NA,NA,91.8,0,66.7
+"389","Electropesca","SALADO-MAGDALENA","Rhamdia guatemalensis",FALSE,13,1,1.4,NA,NA,93.2,0,72.2
+"390","Electropesca","SALADO-MAGDALENA","Cyphocharax magdalenae",FALSE,14,1,1.4,NA,NA,94.5,0,77.8
+"391","Electropesca","SALADO-MAGDALENA","Rineloricaria magdalenae",FALSE,15,1,1.4,NA,NA,95.9,0,83.3
+"392","Electropesca","SALADO-MAGDALENA","Trachelyopterus insignis",FALSE,16,1,1.4,NA,NA,97.3,0,88.9
+"393","Electropesca","SALADO-MAGDALENA","Pimelodella floridablancaensis",FALSE,17,1,1.4,NA,NA,98.6,0,94.4
+"394","Electropesca","SALADO-MAGDALENA","Ctenolucius hujeta",FALSE,18,1,1.4,NA,NA,100,0,100
+"395","Electropesca","SOGAMOSITO-PAREDES","Apteronotus milesi",TRUE,1,19,21.8,NA,NA,21.8,1.3,4.8
+"396","Electropesca","SOGAMOSITO-PAREDES","Characidium zebra",TRUE,2,11,12.6,NA,NA,34.5,1,9.5
+"397","Electropesca","SOGAMOSITO-PAREDES","Imparfinis usmai",TRUE,3,11,12.6,NA,NA,47.1,1,14.3
+"398","Electropesca","SOGAMOSITO-PAREDES","Eigenmannia camposi",FALSE,4,7,8,NA,NA,55.2,0.8,19
+"399","Electropesca","SOGAMOSITO-PAREDES","Rineloricaria magdalenae",FALSE,5,6,6.9,NA,NA,62.1,0.8,23.8
+"400","Electropesca","SOGAMOSITO-PAREDES","Saccoderma hastata",FALSE,6,5,5.7,NA,NA,67.8,0.7,28.6
+"401","Electropesca","SOGAMOSITO-PAREDES","Hypostomus hondae",FALSE,7,5,5.7,NA,NA,73.6,0.7,33.3
+"402","Electropesca","SOGAMOSITO-PAREDES","Nanocheirodon insignis",FALSE,8,3,3.4,NA,NA,77,0.5,38.1
+"403","Electropesca","SOGAMOSITO-PAREDES","Trichomycterus sp. 1",FALSE,9,3,3.4,NA,NA,80.5,0.5,42.9
+"404","Electropesca","SOGAMOSITO-PAREDES","Astyanax magdalenae",FALSE,10,2,2.3,NA,NA,82.8,0.3,47.6
+"405","Electropesca","SOGAMOSITO-PAREDES","Leporinus striatus",FALSE,11,2,2.3,NA,NA,85.1,0.3,52.4
+"406","Electropesca","SOGAMOSITO-PAREDES","Brachyhypopomus occidentalis",FALSE,12,2,2.3,NA,NA,87.4,0.3,57.1
+"407","Electropesca","SOGAMOSITO-PAREDES","Sturisomatichthys aureus",FALSE,13,2,2.3,NA,NA,89.7,0.3,61.9
+"408","Electropesca","SOGAMOSITO-PAREDES","Sternopygus aequilabiatus",FALSE,14,2,2.3,NA,NA,92,0.3,66.7
+"409","Electropesca","SOGAMOSITO-PAREDES","Andinoacara latifrons",FALSE,15,1,1.1,NA,NA,93.1,0,71.4
+"410","Electropesca","SOGAMOSITO-PAREDES","Synbranchus marmoratus",FALSE,16,1,1.1,NA,NA,94.3,0,76.2
+"411","Electropesca","SOGAMOSITO-PAREDES","Rivulus xi",FALSE,17,1,1.1,NA,NA,95.4,0,81
+"412","Electropesca","SOGAMOSITO-PAREDES","Rhamdia guatemalensis",FALSE,18,1,1.1,NA,NA,96.6,0,85.7
+"413","Electropesca","SOGAMOSITO-PAREDES","Geophagus steindachneri",FALSE,19,1,1.1,NA,NA,97.7,0,90.5
+"414","Electropesca","SOGAMOSITO-PAREDES","Astyanax sp. 1",FALSE,20,1,1.1,NA,NA,98.9,0,95.2
+"415","Electropesca","SOGAMOSITO-PAREDES","Roeboides dayi",FALSE,21,1,1.1,NA,NA,100,0,100
+"416","Trasmallo","CAÑO NEGRO Y AFLUENTES","Hoplias malabaricus",TRUE,1,5,19.2,NA,NA,19.2,0.7,11.1
+"417","Trasmallo","CAÑO NEGRO Y AFLUENTES","Ctenolucius hujeta",TRUE,2,5,19.2,NA,NA,38.5,0.7,22.2
+"418","Trasmallo","CAÑO NEGRO Y AFLUENTES","Caquetaia kraussii",TRUE,3,4,15.4,NA,NA,53.8,0.6,33.3
+"419","Trasmallo","CAÑO NEGRO Y AFLUENTES","Hyphessobrycon natagaima",FALSE,4,4,15.4,NA,NA,69.2,0.6,44.4
+"420","Trasmallo","CAÑO NEGRO Y AFLUENTES","Andinoacara latifrons",FALSE,5,2,7.7,NA,NA,76.9,0.3,55.6
+"421","Trasmallo","CAÑO NEGRO Y AFLUENTES","Trichopodus pectoralis",FALSE,6,2,7.7,NA,NA,84.6,0.3,66.7
+"422","Trasmallo","CAÑO NEGRO Y AFLUENTES","Trichopodus trichopterus",FALSE,7,2,7.7,NA,NA,92.3,0.3,77.8
+"423","Trasmallo","CAÑO NEGRO Y AFLUENTES","Rineloricaria magdalenae",FALSE,8,1,3.8,NA,NA,96.2,0,88.9
+"424","Trasmallo","CAÑO NEGRO Y AFLUENTES","Dasyloricaria filamentosa",FALSE,9,1,3.8,NA,NA,100,0,100
+"425","Trasmallo","CORREDOR","Caquetaia kraussii",TRUE,1,2,66.7,NA,NA,66.7,0.3,50
+"426","Trasmallo","CORREDOR","Hoplias malabaricus",TRUE,2,1,33.3,NA,NA,100,0,100
+"427","Trasmallo","MONTECRISTO-YARIRI","Caquetaia kraussii",TRUE,1,2,50,NA,NA,50,0.3,33.3
+"428","Trasmallo","MONTECRISTO-YARIRI","Ctenolucius hujeta",TRUE,2,1,25,NA,NA,75,0,66.7
+"429","Trasmallo","MONTECRISTO-YARIRI","Trichopodus pectoralis",TRUE,3,1,25,NA,NA,100,0,100
+"430","Trasmallo","RIO MAGDALENA","Trachelyopterus insignis",TRUE,1,8,72.7,NA,NA,72.7,0.9,25
+"431","Trasmallo","RIO MAGDALENA","Cynopotamus magdalenae",TRUE,2,1,9.1,NA,NA,81.8,0,50
+"432","Trasmallo","RIO MAGDALENA","Pimelodus grosskopfii",TRUE,3,1,9.1,NA,NA,90.9,0,75
+"433","Trasmallo","RIO MAGDALENA","Pimelodus yuma",FALSE,4,1,9.1,NA,NA,100,0,100

@@ -25,10 +25,10 @@ library(dplyr)
 
 #0b) Define working directories and group variables
 
-outD<-'Peces_diurnos'#'Zooplancton' #master folder for output
-outDD<-'Peces'#'Hidrobiologicos' #Grupo like stated in the covariate file
-ctnm<- "CuerpAgua" #"CobMam" # 'waterBody' #CobColl'#"CuerpAgua" #reptiles y anfibios: CobHerp #escarabajos coprofagos: "CobCopr" #main factor for análisis
-gnm<- 'Pec' #'Coll'#"Zoop" #group prefix
+outD<-'Anfibios'#'Zooplancton' #master folder for output
+outDD<-'Anfibios'#'Hidrobiologicos' #Grupo like stated in the covariate file
+ctnm<- "CobHerp" #"CobMam" # 'waterBody' #CobColl'#"CuerpAgua" #reptiles y anfibios: CobHerp #escarabajos coprofagos: "CobCopr" #main factor for análisis
+gnm<- 'Anf' #'Coll'#"Zoop" #group prefix
 fnn<-"sum" #function to aggregate samples within sampling unites
 
 WDOut<-file.path(getwd(), "Analisis", "SalidasPreliminares")
@@ -51,7 +51,7 @@ source(file.path(WDFunc,'R/ANH_procAbu_functions.R'))
 
 #1) covariances
 
-covbk<- openxlsx::read.xlsx((file.path(WDCov,"BDPuntosMuestreoMag140722.xlsx")), 
+covbk<- openxlsx::read.xlsx((file.path(WDCov,"BDPuntosMuestreoMag180722.xlsx")), 
                             sheet = 1)
 covbk$FInt19meanx<-round(as.numeric(covbk$FInt19meanx),2)
 names(covbk)[c(2,23,24:31,39,40)]<-c('parentEventID','Cobertura','CobAves',
@@ -92,8 +92,8 @@ spa.c<-c("decimalLat","decimalLon")
 #Coprofagos ad: c("Plataf","CobCopr") # #Coprofagos lv: c("Plataf", "CobCopr", "UCSuelo") 
 #Hidrobiol?gicos=c("Plataf","Red.Hidrica","CuerpAgua")#,"CobHerp")
 # Aves: c("Plataf", "CobAves") #anfibios: c("Plataf", "CobHerp")
-# Mamiferos: c("Plataf", "CobMam")
-cat.c <- c("Plataf","Red.Hidrica","CuerpAgua") 
+# Mamiferos: c("Plataf", "CobHerp")
+cat.c <- c("Plataf","CobHerp")
 v.pres<-c("Dis_CP","Dis_Oleodu", "Dis_Pozo","Dis_Pozact","Dis_Ferroc","Dis_ViaPri","Dia_ViaSec")#,"HEH18meanx")
 v.rec<-c("Dis_Cienag","Dis_MGSG","Dis_Dre345", "DisBosque","Dis_CobNat","Tam_Parche")#,"FInt19meanx")
 v.msite<-NULL
@@ -123,6 +123,7 @@ if(outDD == "Murcielagos"){
 #Anfibios
 if(outDD == "Anfibios" | outDD == "Reptiles"){
   covbk<-covbk%>%filter(., GrupoBiolo == "Herpetos")
+  covbk$eventID <- gsub(pattern = "_TE2", replacement = "", x = covbk$eventID)
 }
 
 #others
@@ -286,7 +287,7 @@ kpv<-c(ls(),'kpv') #variables to keep all the time
 #Mamiferos=I2D-BIO_2021_083.xlsx
 #Botanica=I2D-BIO_2021_095.xlsx
 
-Data.et<-read.xlsx(file.path(getwd(),"data", "peces", "Peces_ANH_diurno_T1.xlsx"), 
+Data.et<-read.xlsx(file.path(getwd(),"data", "anfibios", "DwC_ANH_Anfibios_27072022_NoTag.xlsx"), 
                    sheet="Eventos", startRow = 1, na.strings = "N/A")
 
 # MISSING IFS
@@ -330,22 +331,31 @@ Data.et<-Data.et[!Data.et$samplingProtocol%in%c('M_Hierb','RAP_5cm'),]
 #Coprofagos_lv=rrbb_scarabaeidae_santanderANH_2021_PEM_Larvas.xlsx
 #mariposas=I2D-BIO_2021_084_rrbb.xlsx
 
-Data.r<-read.xlsx(file.path(getwd(),"data", "peces", "peces_ANH_diurno_T1.xlsx"), 
+Data.r<-read.xlsx(file.path(getwd(),"data", "anfibios", "DwC_ANH_Anfibios_27072022_NoTag.xlsx"), 
                   sheet="Registros", startRow = 1, na.strings = "N/A")
-#Data.r<-Data.r[Data.r$class=="Reptilia",] # use to get the group of the analysis
 
 #All
 Data.r$eventID<-gsub('-','_',Data.r$eventID)
+
+# birds 
+# matching eventID of eventos and registros with cov (ex. from eventID ANH_220_A_P1_R1 to ANH_220_A_P1)
+# removing the last one label "_R1"
+if(outDD == "Aves"){
+  Data.et <- modify_event_label(data = Data.et, n = 5)
+  Data.r <- modify_event_label(data = Data.r, n = 5)
+}
 
 # identificationQualifier is used when we can't arrive to specific epithets of species
 # used with fishes for example but not with birds
 if(!is.null(Data.r$identificationQualifier)){
   Data.r$identificationQualifier<-tolower(Data.r$identificationQualifier)
 }
+
 #pecesdiurnos
 Data.r <- Data.r %>% rename("scientificName"= Nombre.de.la.especie, "CuerpAgua" = Tipo.de.cuerpo.de.agua, 
                             "Plataf" = Plataforma, "eventDate" = dateIdentified)
 
+# All
 library(Hmisc)
 Data.r$scientificName[grep('^[[:lower:]]{1}',Data.r$scientificName)]<-
   capitalize(Data.r$scientificName[grep('^[[:lower:]]', Data.r$scientificName)])
@@ -485,13 +495,13 @@ kpv<-c(kpv,c('UM','UME','UMT'))
 
 # this applies for fish
 if(outD == "Peces"){
-  Data.r <- complete_cols(Data.r, Data.et,  "eventID", c("eventID", "samplingProtocol", "habitat"))#  
+  Data.r <- complete_cols(Data.r, Data.et,  "eventID", c("eventID", "samplingProtocol"))#  
 }
 
 # peces diurnos
 Data.r <- complete_cols(Data.r, Data.et,  "eventID", c("samplingEffort","eventTime"))#  
+
 #others
-# Complete columns in Data.r that are in Data.e.
 Data.r <- complete_cols(Data.r, Data.et, "eventID",vector_cols = c("samplingProtocol"))#
 
 library(stringi)
@@ -504,18 +514,18 @@ Data.r$samplingProtocol <- homolog_factors(Data.r, column = "samplingProtocol")
 Data.r$organismQuantity<-as.numeric(Data.r$organismQuantity)
 Data.et$samplingEffort[is.na(Data.et$samplingEffort)]<-0
 
-unique(Data.et$samplingProtocol)
-unique(Data.r$samplingProtocol)
+unique(Data.et$samplingProtocol); unique(Data.r$samplingProtocol)
+
 
 ###this applies for fish ###
-if(outD == "Peces"){
+if(outDD == "Peces"){
   Data.et$samplingProtocol[Data.et$samplingProtocol=="Red de arrastre"|Data.et$samplingProtocol=="Red de Arrastre"]<-"Arrastre"
   Data.et$samplingProtocol[Data.et$samplingProtocol=="trasmallo"]<-"Trasmallo"
   unique(Data.et$samplingProtocol);unique(Data.r$samplingProtocol)
 }
 
 ### This applies for birds###
-if(outD == "Aves"){
+if(outDD == "Aves"){
   names(Data.et)[2]<-'parentEventID'  
 }
 
@@ -636,8 +646,8 @@ Data.r$scientificName_2[Data.r$scientificName_2%in%duplsp[c(7,8)]]<-'Uroderma co
 Data.r$scientificName_2[Data.r$scientificName_2%in%duplsp[c(6,12)]]<-'Myotis nigricans'
 Data.r$scientificName_2[Data.r$scientificName_2%in%duplsp[c(10,11)]]<-'Uroderma magnirostrum'
 
-#Murcilagos_SinGenero
-selrr<-!is.na(Data.r$specificEpithet)
+#Murcilagos_Anfibios_Reptiles_SinGenero
+selrr<-!is.na(Data.r$genus)
 Data.r<-Data.r[selrr,]
 selr<-unique(Data.r$eventID)
 #fix emptly sampling events
@@ -738,12 +748,7 @@ samEff.ttt<-purrr::map(sameEff.tt, function(x) data.frame(as.data.frame(x),
 kpv<-c(kpv,'samEff.ttt')
 rm(list=ls()[!ls()%in%kpv])
 
-##
-#Not for Herpetos (anfibios and reptiles), Not for Escarabajos Coprofagos, not for mamiferos(murcielagos)
-#function for modyfing eventID from 5 or more labels to 4 in order to match with eventID from eventos database
-Data.r <- modify_event_label(data = Data.r)
-
-#aves solo punto fijo
+# birds: filter samplingprotocol
 Data.e <- Data.e %>% filter(samplingProtocol == "Punto Fijo" )
 Data.et <- Data.et %>% filter(samplingProtocol == "Punto Fijo" )
 Data.r <- Data.r %>% filter(samplingProtocol == "Punto Fijo" )
@@ -757,15 +762,15 @@ table(Data.r$parentEventID,Data.r$samplingProtocol)
 rowSums(table(Data.r$parentEventID,Data.r$samplingProtocol))
 
 # Collembola/Epifitas/Arboles/Anfibios/reptiles/coprofagos_ad/coprofagos_lv/Peces/
-# Aves/zooplancton/perifiton/fitoplancton/macrofitas/hormigas/ #murcielagos
-ommt<-c("") 
-ompv<-c("")
+# zooplancton/perifiton/fitoplancton/macrofitas/hormigas/ #murcielagos
+ommt<-c("") #method to be omitted
+ompv<-c("") #does not have covariates
 
 #Roedores
 ommt<-c("Manual")
 ompv<-c("")
 
-#Aves2
+#Aves
 ommt<-c("")
 ompv<-c("ANH_220", "ANH_250", "ANH_274", "ANH_279", "ANH_213_A_P3")
 
@@ -814,7 +819,7 @@ rm(list=ls()[!ls()%in%kpv])
 
 #3b) Overall Diversity incidence
 
-#Aves2
+#Aves
 ommt<-c("")
 ompv<-c("ANH_220", "ANH_250", "ANH_274", "ANH_279", "ANH_213_A_P3")
 
@@ -836,23 +841,15 @@ rm(list=ls()[!ls()%in%kpv])
 #3c) Hill by factor and method with abundance
 
 #Aves
-ommt<-c("Recorrido en lancha", "Recorrido Libre", "Accidental") #method to be omitted
-ompv<-c("ANH_380")
-#Aves2
-ommt<-c("Recorrido en lancha", "Recorrido Libre", "Accidental")
-ompv<-c("ANH_220", "ANH_250", "ANH_274", "ANH_279", "ANH_213_A_P3", "ANH_380")
-#Arboles/Anfibios/Reptiles/Coprofagos/hidrobiol?gicos/murcielagos
+ommt<-c("")
+ompv<-c("ANH_220", "ANH_250", "ANH_274", "ANH_279", "ANH_213_A_P3")
+#Arboles/Anfibios/Reptiles/Coprofagos/hidrobiol?gicos/murcielagos/peces
 ommt<-c("")
 ompv<-c("")
 #Roedores
 ommt<-c("Manual")
 ompv<-c("")
-#mam?feros
-ommt<-c("RedNiebla_Av","GrbUltrasonido")
-ompv<-c("")
-#otros
-ommt<-c("")
-ompv<-c("")
+
 
 # ctnm
 Data.ee.oo<-Data.a.f(catnm = ctnm, fn="sum",scale=TRUE) #scale is used for groups non-integer abundance
@@ -992,18 +989,9 @@ rm(list=ls()[!ls()%in%kpv])
 #3d) Hill by factor with Incidence
 ommt<-c("") #method to be omitted
 ompv<-c("") 
-#aves
-ompv<-c("ANH_380")
-ommt<-c("")
-#Aves2
+#Aves
 ommt<-c()
-ompv<-c("ANH_220", "ANH_250", "ANH_274", "ANH_279", "ANH_213_A_P3", "ANH_380")
-#Coprofagos
-ompv<-c("")
-ommt<-c("")
-#murcielago
-ommt<-c("")
-ompv<-c("")
+ompv<-c("ANH_220", "ANH_250", "ANH_274", "ANH_279", "ANH_213_A_P3")
 
 #ctnm
 Data.ei.oo<-Data.i.f(ctnm)
@@ -1060,14 +1048,8 @@ save.image(file.path(WDOut,paste("wrkspc",gnm,Sys.Date(),".RData",sep="")))
 #4) Hills by MU
 rowSums(table(Data.r$parentEventID,Data.r$organismQuantity))
 #Aves
-ommt<-c("") #method to be omitted
-ompv<-c("ANH_380","ANH_64","ANH_65") #does not have covariates
-#Aves2
 ommt<-c("")
-ompv<-c("ANH_220", "ANH_250", "ANH_274", "ANH_279", "ANH_213_A_P3", "ANH_380", "ANH_64","ANH_65")
-#reptiles
-ommt<-c("") #method to be omitted
-ompv<-c("ANH_9") 
+ompv<-c("ANH_220", "ANH_250", "ANH_274", "ANH_279", "ANH_213_A_P3")
 #Arboles/Anfibios/Reptiles/Peces/zooplancton/Coprofagos/#murcielagos
 ommt<-c("")
 ompv<-c("")
@@ -1090,16 +1072,8 @@ rm(list=ls()[!ls()%in%kpv])
 rowSums(table(Data.r$eventID,Data.r$organismQuantity))
 
 #Aves
-ommt<-c("") #method to be omitted
-ompv<-c("ANH_380","ANH_64","ANH_65")
-
-#Aves2
 ommt<-c("")
-ompv<-c("ANH_220", "ANH_250", "ANH_274", "ANH_279", "ANH_213_A_P3", "ANH_380", "ANH_64","ANH_65")
-
-#Reptiles
-ommt<-c("") #method to be omitted
-ompv<-c("ANH_9") #c("ANH_380","ANH_64","ANH_65")
+ompv<-c("ANH_220", "ANH_250", "ANH_274", "ANH_279", "ANH_213_A_P3")
 
 #Arboles/Anfibios/Reptiles/peces/hidrobiologicos/coprofagos/murcielagos
 ommt<-c("")
@@ -1122,10 +1096,9 @@ rm(list=ls()[!ls()%in%kpv])
 ommt<-c("") #method to be omitted
 ompv<-c("")
 
-#Aves2
+#Aves
 ommt<-c("")
-ompv<-c("ANH_220", "ANH_250", "ANH_274", "ANH_279", "ANH_213_A_P3", "ANH_380", 
-        "ANH_64","ANH_65")
+ompv<-c("ANH_220", "ANH_250", "ANH_274", "ANH_279", "ANH_213_A_P3")
 
 #text for period event
 
@@ -1140,8 +1113,6 @@ ompv<-c("ANH_220", "ANH_250", "ANH_274", "ANH_279", "ANH_213_A_P3", "ANH_380",
 #schtxt <- "_Captura manual_"
 ##herpetos: anfibios y reptiles
 #schtxt<-"_Herp_T[1|2|3]_"
-#Murcielagos
-# shchtxt<-paste('Data.r$parentEventID', 'hour(as.POSIXct(date_decimal(as.numeric(Data.r$eventTime)),format="%H:%M:%S"))',sep='_')
 
 #coprofagos
 
@@ -1155,15 +1126,13 @@ Data.pr$eventPer<-paste(Data.pr$parentEventID,Data.pr$eventPer,sep='_')
 #murcielagos/
 
 library(lubridate)
-eventPer <- hour(as.POSIXct(Data.r$eventTime,format="%H:%M:%S"))
+# la ultima base de datos de murcielagos venia la T1 con datos HMS y la T2 en decimal 
+# es posible que no sea necesario usarla si la base de datos esta homologada
+eventPer <- hour(as.POSIXct(Data.r$eventTime,format="%H:%M:%S", origin="1970-01-01"))
 eventPer[which(is.na(eventPer))] <- hour(as.POSIXct(date_decimal(as.numeric(Data.r$eventTime[which(is.na(eventPer))])),format="%H:%M:%S"))
 Data.pr<-Data.r%>% mutate('eventPer'= eventPer)
 Data.pr$eventPer[Data.pr$eventPer<18|Data.pr$eventPer>21]<-21
 Data.pr$eventPer<-paste(Data.pr$parentEventID,Data.pr$eventPer,sep='_')
-
-#Aves2
-Data.pr<-Data.r%>%
-  mutate('eventPer'=gsub(schtxt,"_",eventID))
 
 #Others
 Data.pr<-Data.r%>%
@@ -1177,15 +1146,9 @@ rm(list=ls()[!ls()%in%kpv])
 
 #4d) Diversidad agregando protocols
 #Aves
-ommt<-c("Recorrido en lancha","Recorrido Libre", "Accidental")
-ompv<-c("ANH_380","ANH_64","ANH_65")
-#Aves2
-ommt<-c("Recorrido en lancha","Recorrido Libre", "Accidental")
-ompv<-c("ANH_220", "ANH_250", "ANH_274", "ANH_279", "ANH_213_A_P3", "ANH_380", "ANH_64","ANH_65")
-#Peces
-ommt<-""
-ompv<-c("ANH_9")
-#Epifitas/Arboles/Anfibios/reptiles/coprofagos/zooplanction/collembola/murcielagos
+ommt<-c("")
+ompv<-c("ANH_220", "ANH_250", "ANH_274", "ANH_279", "ANH_213_A_P3")
+#Epifitas/Arboles/Anfibios/reptiles/coprofagos/zooplanction/collembola/murcielagos/peces
 ommt<-c("")
 ompv<-c("")
 
@@ -1195,14 +1158,14 @@ Data.pt<-Data.r%>%
 nsp<-length(unique(Data.pt$parentEventID))
 
 #fish
-grp<-list('Ar_At'=c('Red de arrastre','Atarraya'),
-           'Ar_At_El'=c('Red de arrastre','Atarraya','Electropesca'),
-           'Ar_At_Tr'=c('Red de arrastre','Atarraya','Trasmallo'))
+Data.r$samplingProtocol %>% unique()
+grp<-list('Ar_At'=c('Arrastre','Atarraya'),
+           'Ar_At_El'=c('Arrastre','Atarraya','Electropesca'),
+           'Ar_At_Tr'=c('Arrastre','Atarraya','Trasmallo'))
 #herpetos: anfibios y reptiles
 grp<-list('VES'=c('VES'))
 #Aves
-grp<-list('PntFijo'=c('Punto Fijo'), 
-          'PntFijo_RdNiebla'=c('Punto Fijo', "Redes de Niebla"))
+grp<-list('PntFijo'=c('Punto Fijo'))
 #Coprofagos_ad
 grp<-list('TrmpExHum'=c('TrmpExHum'))#dfad
 #Coprofagos_lv
@@ -1317,19 +1280,19 @@ rm(list=ls()[!ls()%in%kpv])
 ommt<-c("") #method to be omitted
 ompv<-c("")
 
-#Aves2
+#Aves
 ommt<-c("")
-ompv<-c("ANH_220", "ANH_250", "ANH_274", "ANH_279", "ANH_213_A_P3", "ANH_380", "ANH_64","ANH_65")
+ompv<-c("ANH_220", "ANH_250", "ANH_274", "ANH_279", "ANH_213_A_P3")
 
 Data.pr<-Data.r%>%
-  mutate('eventPer'=gsub(shchtxt,"_",eventID))%>%dplyr::select(-eventID) #Peces _
+  mutate('eventPer'=gsub(schtxt,"_",eventID))%>%dplyr::select(-eventID) #Peces _
 
 Data.ei.t<-Data.a.pt(grp,Data.pr,'eventPer',fn="sum")
 ## sampling method which will be the baseline of the grouping. In orignal form
 #Peces
-c('Red de arrastre','Atarraya')
+c('Arrastre','Atarraya')
 #Aves
-c('Punto Fijo',"Redes de Niebla")
+c('Punto Fijo')
 #Herpetos
 c('VES')
 #coprofagos ad
@@ -1340,7 +1303,7 @@ c('CapManual')
 c('RedNiebla_Av')
 
 
-Data.ei.ttt<-Data.a.t(Data.t = Data.ei.t,evID = 'evenPer',grpp = grp,samEf = samEff.ttt,selcc = c('RedNiebla_Av')) 
+Data.ei.ttt<-Data.a.t(Data.t = Data.ei.t,evID = 'evenPer',grpp = grp,samEf = samEff.ttt,selcc = c('VES')) 
 write.csv(Data.ei.ttt,file.path(WDOut,'CurvasDiversidad', paste(gnm,'_','SubTempMU_Estim_Grp.csv',sep='')))
 kpv<-c(kpv,'Data.ei.t','Data.ei.ttt')
 rm(list=ls()[!ls()%in%kpv])
@@ -1463,7 +1426,7 @@ map(names(Data.ee.nn),function(x){
 
 
 #plot by sub-MU-period abundance
-#ctnm
+#ctnm*******************************************************
 map(names(Data.ee.tt),function(x){
   point.dff<-Data.ee.tt[[x]]
   plotMU_cat(x,point.df = point.dff,catnm = ctnm,feven = 'eventPer',sxnm = 'HabsubMUPer_Est')
@@ -1475,7 +1438,7 @@ map(names(Data.ee.tt),function(x){
   plotMU_cat(x,point.dff,'Cobertura','eventPer','CobsubMUPer_Est')
 })
 
-#Plataforma
+#Plataforma**************************************************
 map(names(Data.ee.tt),function(x){
   point.dff<-Data.ee.tt[[x]]
   plotMU_cat(x,point.dff,'Plataf','eventPer','CobsubMUPer_Est')
@@ -1565,14 +1528,11 @@ save.image(file.path(WDOut,paste("wrkspc",gnm,Sys.Date(),".RData",sep="")))
 
 #6 Curvas de Rank-Abundancia
 #Aves
-ommt<-c("Recorrido en lancha","Recorrido Libre")
-ompv<-c("ANH_380","ANH_64","ANH_65")
+ommt<-c("")
+ompv<-c("ANH_220", "ANH_250", "ANH_274", "ANH_279", "ANH_213_A_P3")
 #Arboles/Reptiles/anfibios/coprofagos_ad/zooplanction/murcielagos
 ommt<-c("")
 ompv<-c("")
-#Peces
-ommt<-c("")
-ompv<-c("ANH_9")
 #roedores
 ommt<-c("Manual")
 ompv<-c("")
@@ -1622,19 +1582,16 @@ map(names(Data.rk.sl), function(x){
 })
 
 #Rank-abundance by hour
-# shchtxt<-paste('Data.r$parentEventID',
-#                'hour(as.POSIXct(Data.r$eventTime,format="%H:%M:%S"))',sep='_')
 ommt<-c("")
 ompv<-c("")
+#Aves
+ommt<-c("")
+ompv<-c("ANH_220", "ANH_250", "ANH_274", "ANH_279", "ANH_213_A_P3")
 
-library(lubridate)
 Data.pr<-Data.r%>%
-  mutate('Periodo'=hour(as.POSIXct(Data.r$eventTime,
-                                             format="%H:%M:%S")))
-Data.pr$Periodo[Data.pr$Periodo<18|Data.pr$Periodo>21]<-21
-Data.pr<-Data.pr%>%filter(!parentEventID%in%ompv&!samplingProtocol%in%ommt)
+  mutate('Periodo'=gsub(schtxt,"_",eventID))#%>%dplyr::select(-eventID)
 
-Data.rk.at<-Data.a.rt(Data.pr,ctnm,'Periodo',gnm,fnn,scale=FALSE)
+Data.rk.at<-Data.a.rt(Data.rr = Data.pr,cnm1 = ctnm, cnm2 = 'Periodo',grnm = gnm,fn = fnn,scale=FALSE)
 map(names(Data.rk.at), function(x){
   RA.data<-Data.rk.at[[x]]
   plotRnkAb(RA.data,gnm,"Cob_Period",x)

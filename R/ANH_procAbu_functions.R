@@ -909,7 +909,7 @@ Data.a.rt<-function(Data.rr,cnm1,cnm2,grnm,fn,scale=FALSE){
   nsp<-length(nsp[!nsp%in%ompv])
   if(fn=="sum"){
     Data.ee.o<-Data.r2%>%
-      inner_join(.,cov.1, by="parentEventID")%>%mutate(categ=paste(get(cnm1),get(cnm2),sep='_'))%>%
+      inner_join(.,cov.1, by=c("parentEventID"))%>%mutate(categ=paste(get(cnm1),get(cnm2),sep='_'))%>%
       dplyr::select(samplingProtocol,categ,organismQuantity,scientificName_2)%>%
       pivot_wider(names_from=scientificName_2,values_from=organismQuantity, 
                   values_fn=sum,values_fill=0)
@@ -1033,11 +1033,12 @@ homolog_factors <- function(database, column, max.distance = 0.2){
   return(tosave)
 }
 
-modify_event_label <- function(data, column = "eventID"){
+modify_event_label <- function(data, column = "eventID", n){
   require(stringr)
-  original <- data[,column] 
+  original <- data1[,column] 
   splitted <- original%>% str_split(., "_")
-  index_vect <- lapply(X= splitted, FUN = function(X){length(X)>=5}) %>% unlist()
+  index_vect <- lapply(X= splitted, FUN = function(X){length(X)>=n}) %>% unlist()
+  
   if(sum(index_vect) != 0 ){
     print("modifying")
     modified <- lapply(X = splitted[index_vect], FUN = function(X){X[1:4]} %>% paste(., collapse = "_")) %>% unlist()

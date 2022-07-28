@@ -1,0 +1,444 @@
+"","samplingProtocol","Grouping","species","labelit","rank","abundance","proportion","plower","pupper","accumfreq","logabun","rankfreq"
+"1","Punto Fijo","Bosque Abierto","Hirundo rustica",TRUE,1,248,25.2,NA,NA,25.2,2.4,1.1
+"2","Punto Fijo","Bosque Abierto","Jacana jacana",TRUE,2,55,5.6,NA,NA,30.7,1.7,2.2
+"3","Punto Fijo","Bosque Abierto","Patagioenas cayennensis",TRUE,3,53,5.4,NA,NA,36.1,1.7,3.4
+"4","Punto Fijo","Bosque Abierto","Crotophaga major",FALSE,4,46,4.7,NA,NA,40.8,1.7,4.5
+"5","Punto Fijo","Bosque Abierto","Crotophaga ani",FALSE,5,36,3.7,NA,NA,44.4,1.6,5.6
+"6","Punto Fijo","Bosque Abierto","Pitangus sulphuratus",FALSE,6,30,3,NA,NA,47.5,1.5,6.7
+"7","Punto Fijo","Bosque Abierto","Quiscalus lugubris",FALSE,7,25,2.5,NA,NA,50,1.4,7.9
+"8","Punto Fijo","Bosque Abierto","Eupsittula pertinax",FALSE,8,24,2.4,NA,NA,52.4,1.4,9
+"9","Punto Fijo","Bosque Abierto","Ortalis garrula",FALSE,9,24,2.4,NA,NA,54.9,1.4,10.1
+"10","Punto Fijo","Bosque Abierto","Columbina talpacoti",FALSE,10,23,2.3,NA,NA,57.2,1.4,11.2
+"11","Punto Fijo","Bosque Abierto","Saltator coerulescens",FALSE,11,23,2.3,NA,NA,59.5,1.4,12.4
+"12","Punto Fijo","Bosque Abierto","Melanerpes rubricapillus",FALSE,12,22,2.2,NA,NA,61.8,1.3,13.5
+"13","Punto Fijo","Bosque Abierto","Bubulcus ibis",FALSE,13,22,2.2,NA,NA,64,1.3,14.6
+"14","Punto Fijo","Bosque Abierto","Fluvicola pica",FALSE,14,20,2,NA,NA,66,1.3,15.7
+"15","Punto Fijo","Bosque Abierto","Campylorhynchus griseus",FALSE,15,18,1.8,NA,NA,67.8,1.3,16.9
+"16","Punto Fijo","Bosque Abierto","Certhiaxis cinnamomeus",FALSE,16,17,1.7,NA,NA,69.6,1.2,18
+"17","Punto Fijo","Bosque Abierto","Chrysomus icterocephalus",FALSE,17,17,1.7,NA,NA,71.3,1.2,19.1
+"18","Punto Fijo","Bosque Abierto","Sakesphorus canadensis",FALSE,18,16,1.6,NA,NA,72.9,1.2,20.2
+"19","Punto Fijo","Bosque Abierto","Leptotila verreauxi",FALSE,19,16,1.6,NA,NA,74.5,1.2,21.3
+"20","Punto Fijo","Bosque Abierto","Donacobius atricapilla",FALSE,20,14,1.4,NA,NA,76,1.1,22.5
+"21","Punto Fijo","Bosque Abierto","Ardea cocoi",FALSE,21,12,1.2,NA,NA,77.2,1.1,23.6
+"22","Punto Fijo","Bosque Abierto","Hypnelus ruficollis",FALSE,22,12,1.2,NA,NA,78.4,1.1,24.7
+"23","Punto Fijo","Bosque Abierto","Protonotaria citrea",FALSE,23,11,1.1,NA,NA,79.5,1,25.8
+"24","Punto Fijo","Bosque Abierto","Thraupis episcopus",FALSE,24,11,1.1,NA,NA,80.6,1,27
+"25","Punto Fijo","Bosque Abierto","Icterus nigrogularis",FALSE,25,10,1,NA,NA,81.6,1,28.1
+"26","Punto Fijo","Bosque Abierto","Myiozetetes cayanensis",FALSE,26,10,1,NA,NA,82.7,1,29.2
+"27","Punto Fijo","Bosque Abierto","Tyrannus melancholicus",FALSE,27,10,1,NA,NA,83.7,1,30.3
+"28","Punto Fijo","Bosque Abierto","Ardea alba",FALSE,28,7,0.7,NA,NA,84.4,0.8,31.5
+"29","Punto Fijo","Bosque Abierto","Furnarius leucopus",FALSE,29,7,0.7,NA,NA,85.1,0.8,32.6
+"30","Punto Fijo","Bosque Abierto","Porphyrio martinica",FALSE,30,7,0.7,NA,NA,85.8,0.8,33.7
+"31","Punto Fijo","Bosque Abierto","Megaceryle torquata",FALSE,31,7,0.7,NA,NA,86.5,0.8,34.8
+"32","Punto Fijo","Bosque Abierto","Ramphocelus dimidiatus",FALSE,32,6,0.6,NA,NA,87.1,0.8,36
+"33","Punto Fijo","Bosque Abierto","Euphonia laniirostris",FALSE,33,6,0.6,NA,NA,87.7,0.8,37.1
+"34","Punto Fijo","Bosque Abierto","Phimosus infuscatus",FALSE,34,6,0.6,NA,NA,88.3,0.8,38.2
+"35","Punto Fijo","Bosque Abierto","Milvago chimachima",FALSE,35,6,0.6,NA,NA,88.9,0.8,39.3
+"36","Punto Fijo","Bosque Abierto","Tyrannulus elatus",FALSE,36,5,0.5,NA,NA,89.5,0.7,40.4
+"37","Punto Fijo","Bosque Abierto","Butorides striata",FALSE,37,5,0.5,NA,NA,90,0.7,41.6
+"38","Punto Fijo","Bosque Abierto","Tringa solitaria",FALSE,38,5,0.5,NA,NA,90.5,0.7,42.7
+"39","Punto Fijo","Bosque Abierto","Elaenia flavogaster",FALSE,39,4,0.4,NA,NA,90.9,0.6,43.8
+"40","Punto Fijo","Bosque Abierto","Camptostoma obsoletum",FALSE,40,4,0.4,NA,NA,91.3,0.6,44.9
+"41","Punto Fijo","Bosque Abierto","Herpetotheres cachinnans",FALSE,41,4,0.4,NA,NA,91.7,0.6,46.1
+"42","Punto Fijo","Bosque Abierto","Thraupis palmarum",FALSE,42,4,0.4,NA,NA,92.1,0.6,47.2
+"43","Punto Fijo","Bosque Abierto","Colaptes punctigula",FALSE,43,4,0.4,NA,NA,92.5,0.6,48.3
+"44","Punto Fijo","Bosque Abierto","Stelgidopteryx ruficollis",FALSE,44,3,0.3,NA,NA,92.8,0.5,49.4
+"45","Punto Fijo","Bosque Abierto","Poecilotriccus sylvia",FALSE,45,3,0.3,NA,NA,93.1,0.5,50.6
+"46","Punto Fijo","Bosque Abierto","Legatus leucophaius",FALSE,46,3,0.3,NA,NA,93.4,0.5,51.7
+"47","Punto Fijo","Bosque Abierto","Sporophila intermedia",FALSE,47,3,0.3,NA,NA,93.7,0.5,52.8
+"48","Punto Fijo","Bosque Abierto","Setophaga petechia",FALSE,48,3,0.3,NA,NA,94,0.5,53.9
+"49","Punto Fijo","Bosque Abierto","Aramides cajaneus",FALSE,49,3,0.3,NA,NA,94.3,0.5,55.1
+"50","Punto Fijo","Bosque Abierto","Sporophila funerea",FALSE,50,3,0.3,NA,NA,94.6,0.5,56.2
+"51","Punto Fijo","Bosque Abierto","Progne tapera",FALSE,51,3,0.3,NA,NA,94.9,0.5,57.3
+"52","Punto Fijo","Bosque Abierto","Dendroplex picus",FALSE,52,3,0.3,NA,NA,95.2,0.5,58.4
+"53","Punto Fijo","Bosque Abierto","Psarocolius decumanus",FALSE,53,2,0.2,NA,NA,95.4,0.3,59.6
+"54","Punto Fijo","Bosque Abierto","Nemosia pileata",FALSE,54,2,0.2,NA,NA,95.6,0.3,60.7
+"55","Punto Fijo","Bosque Abierto","Myiozetetes similis",FALSE,55,2,0.2,NA,NA,95.8,0.3,61.8
+"56","Punto Fijo","Bosque Abierto","Parkesia noveboracensis",FALSE,56,2,0.2,NA,NA,96,0.3,62.9
+"57","Punto Fijo","Bosque Abierto","Tapera naevia",FALSE,57,2,0.2,NA,NA,96.2,0.3,64
+"58","Punto Fijo","Bosque Abierto","Coccycua pumila",FALSE,58,2,0.2,NA,NA,96.5,0.3,65.2
+"59","Punto Fijo","Bosque Abierto","Synallaxis candei",FALSE,59,2,0.2,NA,NA,96.7,0.3,66.3
+"60","Punto Fijo","Bosque Abierto","Tigrisoma lineatum",FALSE,60,2,0.2,NA,NA,96.9,0.3,67.4
+"61","Punto Fijo","Bosque Abierto","Troglodytes aedon",FALSE,61,2,0.2,NA,NA,97.1,0.3,68.5
+"62","Punto Fijo","Bosque Abierto","Chloroceryle amazona",FALSE,62,2,0.2,NA,NA,97.3,0.3,69.7
+"63","Punto Fijo","Bosque Abierto","Pachyramphus cinnamomeus",FALSE,63,1,0.1,NA,NA,97.4,0,70.8
+"64","Punto Fijo","Bosque Abierto","Dryocopus lineatus",FALSE,64,1,0.1,NA,NA,97.5,0,71.9
+"65","Punto Fijo","Bosque Abierto","Caracara cheriway",FALSE,65,1,0.1,NA,NA,97.6,0,73
+"66","Punto Fijo","Bosque Abierto","Mycteria americana",FALSE,66,1,0.1,NA,NA,97.7,0,74.2
+"67","Punto Fijo","Bosque Abierto","Anthracothorax nigricollis",FALSE,67,1,0.1,NA,NA,97.8,0,75.3
+"68","Punto Fijo","Bosque Abierto","Chauna chavaria",FALSE,68,1,0.1,NA,NA,97.9,0,76.4
+"69","Punto Fijo","Bosque Abierto","Tyrannus dominicensis",FALSE,69,1,0.1,NA,NA,98,0,77.5
+"70","Punto Fijo","Bosque Abierto","Chloroceryle americana",FALSE,70,1,0.1,NA,NA,98.1,0,78.7
+"71","Punto Fijo","Bosque Abierto","Vanellus chilensis",FALSE,71,1,0.1,NA,NA,98.2,0,79.8
+"72","Punto Fijo","Bosque Abierto","Pteroglossus torquatus",FALSE,72,1,0.1,NA,NA,98.3,0,80.9
+"73","Punto Fijo","Bosque Abierto","Empidonax virescens",FALSE,73,1,0.1,NA,NA,98.4,0,82
+"74","Punto Fijo","Bosque Abierto","Coragyps atratus",FALSE,74,1,0.1,NA,NA,98.5,0,83.1
+"75","Punto Fijo","Bosque Abierto","Progne chalybea",FALSE,75,1,0.1,NA,NA,98.6,0,84.3
+"76","Punto Fijo","Bosque Abierto","Machetornis rixosa",FALSE,76,1,0.1,NA,NA,98.7,0,85.4
+"77","Punto Fijo","Bosque Abierto","Piranga rubra",FALSE,77,1,0.1,NA,NA,98.8,0,86.5
+"78","Punto Fijo","Bosque Abierto","Phaetusa simplex",FALSE,78,1,0.1,NA,NA,98.9,0,87.6
+"79","Punto Fijo","Bosque Abierto","Cantorchilus leucotis",FALSE,79,1,0.1,NA,NA,99,0,88.8
+"80","Punto Fijo","Bosque Abierto","Buteo nitidus",FALSE,80,1,0.1,NA,NA,99.1,0,89.9
+"81","Punto Fijo","Bosque Abierto","Myiarchus crinitus",FALSE,81,1,0.1,NA,NA,99.2,0,91
+"82","Punto Fijo","Bosque Abierto","Actitis macularius",FALSE,82,1,0.1,NA,NA,99.3,0,92.1
+"83","Punto Fijo","Bosque Abierto","Todirostrum cinereum",FALSE,83,1,0.1,NA,NA,99.4,0,93.3
+"84","Punto Fijo","Bosque Abierto","Tachycineta albiventer",FALSE,84,1,0.1,NA,NA,99.5,0,94.4
+"85","Punto Fijo","Bosque Abierto","Sporophila minuta",FALSE,85,1,0.1,NA,NA,99.6,0,95.5
+"86","Punto Fijo","Bosque Abierto","Chaetura brachyura",FALSE,86,1,0.1,NA,NA,99.7,0,96.6
+"87","Punto Fijo","Bosque Abierto","Butorides virescens",FALSE,87,1,0.1,NA,NA,99.8,0,97.8
+"88","Punto Fijo","Bosque Abierto","Megarynchus pitangua",FALSE,88,1,0.1,NA,NA,99.9,0,98.9
+"89","Punto Fijo","Bosque Abierto","Chloroceryle aenea",FALSE,89,1,0.1,NA,NA,100,0,100
+"90","Punto Fijo","Bosque Denso","Crotophaga ani",TRUE,1,9,10.7,NA,NA,10.7,1,3.3
+"91","Punto Fijo","Bosque Denso","Ortalis columbiana",TRUE,2,7,8.3,NA,NA,19,0.8,6.7
+"92","Punto Fijo","Bosque Denso","Manacus manacus",TRUE,3,7,8.3,NA,NA,27.4,0.8,10
+"93","Punto Fijo","Bosque Denso","Coereba flaveola",FALSE,4,6,7.1,NA,NA,34.5,0.8,13.3
+"94","Punto Fijo","Bosque Denso","Setophaga castanea",FALSE,5,5,6,NA,NA,40.5,0.7,16.7
+"95","Punto Fijo","Bosque Denso","Patagioenas cayennensis",FALSE,6,5,6,NA,NA,46.4,0.7,20
+"96","Punto Fijo","Bosque Denso","Catharus ustulatus",FALSE,7,5,6,NA,NA,52.4,0.7,23.3
+"97","Punto Fijo","Bosque Denso","Momotus subrufescens",FALSE,8,4,4.8,NA,NA,57.1,0.6,26.7
+"98","Punto Fijo","Bosque Denso","Thamnophilus nigriceps",FALSE,9,4,4.8,NA,NA,61.9,0.6,30
+"99","Punto Fijo","Bosque Denso","Melanerpes rubricapillus",FALSE,10,4,4.8,NA,NA,66.7,0.6,33.3
+"100","Punto Fijo","Bosque Denso","Pitangus sulphuratus",FALSE,11,3,3.6,NA,NA,70.2,0.5,36.7
+"101","Punto Fijo","Bosque Denso","Ceratopipra erythrocephala",FALSE,12,3,3.6,NA,NA,73.8,0.5,40
+"102","Punto Fijo","Bosque Denso","Icterus nigrogularis",FALSE,13,2,2.4,NA,NA,76.2,0.3,43.3
+"103","Punto Fijo","Bosque Denso","Pachyramphus polychopterus",FALSE,14,2,2.4,NA,NA,78.6,0.3,46.7
+"104","Punto Fijo","Bosque Denso","Crypturellus soui",FALSE,15,2,2.4,NA,NA,81,0.3,50
+"105","Punto Fijo","Bosque Denso","Tyrannus melancholicus",FALSE,16,2,2.4,NA,NA,83.3,0.3,53.3
+"106","Punto Fijo","Bosque Denso","Myiarchus tyrannulus",FALSE,17,1,1.2,NA,NA,84.5,0,56.7
+"107","Punto Fijo","Bosque Denso","Milvago chimachima",FALSE,18,1,1.2,NA,NA,85.7,0,60
+"108","Punto Fijo","Bosque Denso","Setophaga fusca",FALSE,19,1,1.2,NA,NA,86.9,0,63.3
+"109","Punto Fijo","Bosque Denso","Attila spadiceus",FALSE,20,1,1.2,NA,NA,88.1,0,66.7
+"110","Punto Fijo","Bosque Denso","Myiarchus tuberculifer",FALSE,21,1,1.2,NA,NA,89.3,0,70
+"111","Punto Fijo","Bosque Denso","Chlorestes julie",FALSE,22,1,1.2,NA,NA,90.5,0,73.3
+"112","Punto Fijo","Bosque Denso","Leptotila verreauxi",FALSE,23,1,1.2,NA,NA,91.7,0,76.7
+"113","Punto Fijo","Bosque Denso","Turdus nudigenis",FALSE,24,1,1.2,NA,NA,92.9,0,80
+"114","Punto Fijo","Bosque Denso","Campylorhynchus griseus",FALSE,25,1,1.2,NA,NA,94,0,83.3
+"115","Punto Fijo","Bosque Denso","Amazilia tzacatl",FALSE,26,1,1.2,NA,NA,95.2,0,86.7
+"116","Punto Fijo","Bosque Denso","Protonotaria citrea",FALSE,27,1,1.2,NA,NA,96.4,0,90
+"117","Punto Fijo","Bosque Denso","Phaethornis anthophilus",FALSE,28,1,1.2,NA,NA,97.6,0,93.3
+"118","Punto Fijo","Bosque Denso","Herpetotheres cachinnans",FALSE,29,1,1.2,NA,NA,98.8,0,96.7
+"119","Punto Fijo","Bosque Denso","Chrysuronia goudoti",FALSE,30,1,1.2,NA,NA,100,0,100
+"120","Punto Fijo","Bosque Ripario","Campylorhynchus griseus",TRUE,1,105,6.5,NA,NA,6.5,2,0.9
+"121","Punto Fijo","Bosque Ripario","Crotophaga major",TRUE,2,103,6.3,NA,NA,12.8,2,1.8
+"122","Punto Fijo","Bosque Ripario","Patagioenas cayennensis",TRUE,3,92,5.7,NA,NA,18.4,2,2.6
+"123","Punto Fijo","Bosque Ripario","Momotus subrufescens",FALSE,4,80,4.9,NA,NA,23.4,1.9,3.5
+"124","Punto Fijo","Bosque Ripario","Manacus manacus",FALSE,5,71,4.4,NA,NA,27.7,1.9,4.4
+"125","Punto Fijo","Bosque Ripario","Crotophaga ani",FALSE,6,58,3.6,NA,NA,31.3,1.8,5.3
+"126","Punto Fijo","Bosque Ripario","Milvago chimachima",FALSE,7,54,3.3,NA,NA,34.6,1.7,6.1
+"127","Punto Fijo","Bosque Ripario","Thamnophilus nigriceps",FALSE,8,53,3.3,NA,NA,37.9,1.7,7
+"128","Punto Fijo","Bosque Ripario","Ortalis columbiana",FALSE,9,49,3,NA,NA,40.9,1.7,7.9
+"129","Punto Fijo","Bosque Ripario","Thraupis palmarum",FALSE,10,46,2.8,NA,NA,43.7,1.7,8.8
+"130","Punto Fijo","Bosque Ripario","Coereba flaveola",FALSE,11,44,2.7,NA,NA,46.4,1.6,9.6
+"131","Punto Fijo","Bosque Ripario","Bubulcus ibis",FALSE,12,41,2.5,NA,NA,48.9,1.6,10.5
+"132","Punto Fijo","Bosque Ripario","Pitangus sulphuratus",FALSE,13,39,2.4,NA,NA,51.3,1.6,11.4
+"133","Punto Fijo","Bosque Ripario","Xiphorhynchus susurrans",FALSE,14,36,2.2,NA,NA,53.5,1.6,12.3
+"134","Punto Fijo","Bosque Ripario","Rupornis magnirostris",FALSE,15,35,2.2,NA,NA,55.7,1.5,13.2
+"135","Punto Fijo","Bosque Ripario","Leptotila verreauxi",FALSE,16,34,2.1,NA,NA,57.8,1.5,14
+"136","Punto Fijo","Bosque Ripario","Columbina talpacoti",FALSE,17,34,2.1,NA,NA,59.9,1.5,14.9
+"137","Punto Fijo","Bosque Ripario","Tyrannus melancholicus",FALSE,18,34,2.1,NA,NA,62,1.5,15.8
+"138","Punto Fijo","Bosque Ripario","Melanerpes rubricapillus",FALSE,19,32,2,NA,NA,63.9,1.5,16.7
+"139","Punto Fijo","Bosque Ripario","Thraupis episcopus",FALSE,20,29,1.8,NA,NA,65.7,1.5,17.5
+"140","Punto Fijo","Bosque Ripario","Poecilotriccus sylvia",FALSE,21,25,1.5,NA,NA,67.2,1.4,18.4
+"141","Punto Fijo","Bosque Ripario","Crypturellus soui",FALSE,22,25,1.5,NA,NA,68.8,1.4,19.3
+"142","Punto Fijo","Bosque Ripario","Cantorchilus leucotis",FALSE,23,24,1.5,NA,NA,70.3,1.4,20.2
+"143","Punto Fijo","Bosque Ripario","Formicivora grisea",FALSE,24,22,1.4,NA,NA,71.6,1.3,21.1
+"144","Punto Fijo","Bosque Ripario","Myiozetetes cayanensis",FALSE,25,21,1.3,NA,NA,72.9,1.3,21.9
+"145","Punto Fijo","Bosque Ripario","Furnarius leucopus",FALSE,26,20,1.2,NA,NA,74.1,1.3,22.8
+"146","Punto Fijo","Bosque Ripario","Megarynchus pitangua",FALSE,27,17,1,NA,NA,75.2,1.2,23.7
+"147","Punto Fijo","Bosque Ripario","Pteroglossus torquatus",FALSE,28,16,1,NA,NA,76.2,1.2,24.6
+"148","Punto Fijo","Bosque Ripario","Camptostoma obsoletum",FALSE,29,16,1,NA,NA,77.1,1.2,25.4
+"149","Punto Fijo","Bosque Ripario","Setophaga castanea",FALSE,30,14,0.9,NA,NA,78,1.1,26.3
+"150","Punto Fijo","Bosque Ripario","Cercomacra nigricans",FALSE,31,14,0.9,NA,NA,78.9,1.1,27.2
+"151","Punto Fijo","Bosque Ripario","Egretta thula",FALSE,32,13,0.8,NA,NA,79.7,1.1,28.1
+"152","Punto Fijo","Bosque Ripario","Pheugopedius fasciatoventris",FALSE,33,13,0.8,NA,NA,80.5,1.1,28.9
+"153","Punto Fijo","Bosque Ripario","Brotogeris jugularis",FALSE,34,12,0.7,NA,NA,81.2,1.1,29.8
+"154","Punto Fijo","Bosque Ripario","Ortalis garrula",FALSE,35,12,0.7,NA,NA,81.9,1.1,30.7
+"155","Punto Fijo","Bosque Ripario","Phaethornis anthophilus",FALSE,36,12,0.7,NA,NA,82.7,1.1,31.6
+"156","Punto Fijo","Bosque Ripario","Euphonia laniirostris",FALSE,37,11,0.7,NA,NA,83.3,1,32.5
+"157","Punto Fijo","Bosque Ripario","Aramides cajaneus",FALSE,38,11,0.7,NA,NA,84,1,33.3
+"158","Punto Fijo","Bosque Ripario","Myiarchus crinitus",FALSE,39,11,0.7,NA,NA,84.7,1,34.2
+"159","Punto Fijo","Bosque Ripario","Phimosus infuscatus",FALSE,40,10,0.6,NA,NA,85.3,1,35.1
+"160","Punto Fijo","Bosque Ripario","Dendroplex picus",FALSE,41,10,0.6,NA,NA,85.9,1,36
+"161","Punto Fijo","Bosque Ripario","Galbula ruficauda",FALSE,42,10,0.6,NA,NA,86.5,1,36.8
+"162","Punto Fijo","Bosque Ripario","Veniliornis kirkii",FALSE,43,10,0.6,NA,NA,87.2,1,37.7
+"163","Punto Fijo","Bosque Ripario","Sporophila funerea",FALSE,44,9,0.6,NA,NA,87.7,1,38.6
+"164","Punto Fijo","Bosque Ripario","Coragyps atratus",FALSE,45,9,0.6,NA,NA,88.3,1,39.5
+"165","Punto Fijo","Bosque Ripario","Icterus nigrogularis",FALSE,46,9,0.6,NA,NA,88.8,1,40.4
+"166","Punto Fijo","Bosque Ripario","Porphyrio martinica",FALSE,47,9,0.6,NA,NA,89.4,1,41.2
+"167","Punto Fijo","Bosque Ripario","Leiothlypis peregrina",FALSE,48,7,0.4,NA,NA,89.8,0.8,42.1
+"168","Punto Fijo","Bosque Ripario","Hirundo rustica",FALSE,49,7,0.4,NA,NA,90.2,0.8,43
+"169","Punto Fijo","Bosque Ripario","Chrysuronia goudoti",FALSE,50,7,0.4,NA,NA,90.7,0.8,43.9
+"170","Punto Fijo","Bosque Ripario","Tyrannulus elatus",FALSE,51,7,0.4,NA,NA,91.1,0.8,44.7
+"171","Punto Fijo","Bosque Ripario","Amazilia tzacatl",FALSE,52,6,0.4,NA,NA,91.5,0.8,45.6
+"172","Punto Fijo","Bosque Ripario","Herpetotheres cachinnans",FALSE,53,6,0.4,NA,NA,91.8,0.8,46.5
+"173","Punto Fijo","Bosque Ripario","Empidonax virescens",FALSE,54,6,0.4,NA,NA,92.2,0.8,47.4
+"174","Punto Fijo","Bosque Ripario","Ramphocelus dimidiatus",FALSE,55,6,0.4,NA,NA,92.6,0.8,48.2
+"175","Punto Fijo","Bosque Ripario","Mionectes oleagineus",FALSE,56,5,0.3,NA,NA,92.9,0.7,49.1
+"176","Punto Fijo","Bosque Ripario","Chlorestes julie",FALSE,57,5,0.3,NA,NA,93.2,0.7,50
+"177","Punto Fijo","Bosque Ripario","Attila spadiceus",FALSE,58,5,0.3,NA,NA,93.5,0.7,50.9
+"178","Punto Fijo","Bosque Ripario","Piranga rubra",FALSE,59,5,0.3,NA,NA,93.8,0.7,51.8
+"179","Punto Fijo","Bosque Ripario","Psarocolius decumanus",FALSE,60,5,0.3,NA,NA,94.1,0.7,52.6
+"180","Punto Fijo","Bosque Ripario","Glyphorynchus spirurus",FALSE,61,4,0.2,NA,NA,94.3,0.6,53.5
+"181","Punto Fijo","Bosque Ripario","Myiodynastes maculatus",FALSE,62,4,0.2,NA,NA,94.6,0.6,54.4
+"182","Punto Fijo","Bosque Ripario","Vanellus chilensis",FALSE,63,4,0.2,NA,NA,94.8,0.6,55.3
+"183","Punto Fijo","Bosque Ripario","Dendrocincla fuliginosa",FALSE,64,3,0.2,NA,NA,95,0.5,56.1
+"184","Punto Fijo","Bosque Ripario","Glaucis hirsutus",FALSE,65,3,0.2,NA,NA,95.2,0.5,57
+"185","Punto Fijo","Bosque Ripario","Todirostrum cinereum",FALSE,66,3,0.2,NA,NA,95.4,0.5,57.9
+"186","Punto Fijo","Bosque Ripario","Chauna chavaria",FALSE,67,3,0.2,NA,NA,95.6,0.5,58.8
+"187","Punto Fijo","Bosque Ripario","Cathartes aura",FALSE,68,3,0.2,NA,NA,95.8,0.5,59.6
+"188","Punto Fijo","Bosque Ripario","Legatus leucophaius",FALSE,69,3,0.2,NA,NA,95.9,0.5,60.5
+"189","Punto Fijo","Bosque Ripario","Mesembrinibis cayennensis",FALSE,70,2,0.1,NA,NA,96.1,0.3,61.4
+"190","Punto Fijo","Bosque Ripario","Dryocopus lineatus",FALSE,71,2,0.1,NA,NA,96.2,0.3,62.3
+"191","Punto Fijo","Bosque Ripario","Cacicus cela",FALSE,72,2,0.1,NA,NA,96.3,0.3,63.2
+"192","Punto Fijo","Bosque Ripario","Henicorhina leucosticta",FALSE,73,2,0.1,NA,NA,96.4,0.3,64
+"193","Punto Fijo","Bosque Ripario","Elaenia flavogaster",FALSE,74,2,0.1,NA,NA,96.6,0.3,64.9
+"194","Punto Fijo","Bosque Ripario","Myiozetetes similis",FALSE,75,2,0.1,NA,NA,96.7,0.3,65.8
+"195","Punto Fijo","Bosque Ripario","Falco femoralis",FALSE,76,2,0.1,NA,NA,96.8,0.3,66.7
+"196","Punto Fijo","Bosque Ripario","Volatinia jacarina",FALSE,77,2,0.1,NA,NA,96.9,0.3,67.5
+"197","Punto Fijo","Bosque Ripario","Myiarchus tyrannulus",FALSE,78,2,0.1,NA,NA,97,0.3,68.4
+"198","Punto Fijo","Bosque Ripario","Patagioenas speciosa",FALSE,79,2,0.1,NA,NA,97.2,0.3,69.3
+"199","Punto Fijo","Bosque Ripario","Inezia caudata",FALSE,80,2,0.1,NA,NA,97.3,0.3,70.2
+"200","Punto Fijo","Bosque Ripario","Tigrisoma lineatum",FALSE,81,2,0.1,NA,NA,97.4,0.3,71.1
+"201","Punto Fijo","Bosque Ripario","Icterus auricapillus",FALSE,82,2,0.1,NA,NA,97.5,0.3,71.9
+"202","Punto Fijo","Bosque Ripario","Celeus loricatus",FALSE,83,2,0.1,NA,NA,97.7,0.3,72.8
+"203","Punto Fijo","Bosque Ripario","Coccyzus americanus",FALSE,84,2,0.1,NA,NA,97.8,0.3,73.7
+"204","Punto Fijo","Bosque Ripario","Amazona amazonica",FALSE,85,2,0.1,NA,NA,97.9,0.3,74.6
+"205","Punto Fijo","Bosque Ripario","Polyerata amabilis",FALSE,86,2,0.1,NA,NA,98,0.3,75.4
+"206","Punto Fijo","Bosque Ripario","Saltator coerulescens",FALSE,87,2,0.1,NA,NA,98.2,0.3,76.3
+"207","Punto Fijo","Bosque Ripario","Piranga olivacea",FALSE,88,2,0.1,NA,NA,98.3,0.3,77.2
+"208","Punto Fijo","Bosque Ripario","Ictinia plumbea",FALSE,89,2,0.1,NA,NA,98.4,0.3,78.1
+"209","Punto Fijo","Bosque Ripario","Catharus ustulatus",FALSE,90,2,0.1,NA,NA,98.5,0.3,78.9
+"210","Punto Fijo","Bosque Ripario","Tigrisoma fasciatum",FALSE,91,1,0.1,NA,NA,98.6,0,79.8
+"211","Punto Fijo","Bosque Ripario","Contopus virens",FALSE,92,1,0.1,NA,NA,98.6,0,80.7
+"212","Punto Fijo","Bosque Ripario","Tersina viridis",FALSE,93,1,0.1,NA,NA,98.7,0,81.6
+"213","Punto Fijo","Bosque Ripario","Geranospiza caerulescens",FALSE,94,1,0.1,NA,NA,98.8,0,82.5
+"214","Punto Fijo","Bosque Ripario","Ixobrychus exilis",FALSE,95,1,0.1,NA,NA,98.8,0,83.3
+"215","Punto Fijo","Bosque Ripario","Chloroceryle inda",FALSE,96,1,0.1,NA,NA,98.9,0,84.2
+"216","Punto Fijo","Bosque Ripario","Colaptes punctigula",FALSE,97,1,0.1,NA,NA,99,0,85.1
+"217","Punto Fijo","Bosque Ripario","Megaceryle torquata",FALSE,98,1,0.1,NA,NA,99,0,86
+"218","Punto Fijo","Bosque Ripario","Vireo olivaceus",FALSE,99,1,0.1,NA,NA,99.1,0,86.8
+"219","Punto Fijo","Bosque Ripario","Zenaida auriculata",FALSE,100,1,0.1,NA,NA,99.1,0,87.7
+"220","Punto Fijo","Bosque Ripario","Falco sparverius",FALSE,101,1,0.1,NA,NA,99.2,0,88.6
+"221","Punto Fijo","Bosque Ripario","Thamnophilus doliatus",FALSE,102,1,0.1,NA,NA,99.3,0,89.5
+"222","Punto Fijo","Bosque Ripario","Chaetura",FALSE,103,1,0.1,NA,NA,99.3,0,90.4
+"223","Punto Fijo","Bosque Ripario","Ornithion brunneicapillus",FALSE,104,1,0.1,NA,NA,99.4,0,91.2
+"224","Punto Fijo","Bosque Ripario","Setophaga petechia",FALSE,105,1,0.1,NA,NA,99.4,0,92.1
+"225","Punto Fijo","Bosque Ripario","Quiscalus lugubris",FALSE,106,1,0.1,NA,NA,99.5,0,93
+"226","Punto Fijo","Bosque Ripario","Schiffornis stenorhyncha",FALSE,107,1,0.1,NA,NA,99.6,0,93.9
+"227","Punto Fijo","Bosque Ripario","Chaetura brachyura",FALSE,108,1,0.1,NA,NA,99.6,0,94.7
+"228","Punto Fijo","Bosque Ripario","Chloroceryle aenea",FALSE,109,1,0.1,NA,NA,99.7,0,95.6
+"229","Punto Fijo","Bosque Ripario","Troglodytes aedon",FALSE,110,1,0.1,NA,NA,99.8,0,96.5
+"230","Punto Fijo","Bosque Ripario","Parkesia noveboracensis",FALSE,111,1,0.1,NA,NA,99.8,0,97.4
+"231","Punto Fijo","Bosque Ripario","Buteo nitidus",FALSE,112,1,0.1,NA,NA,99.9,0,98.2
+"232","Punto Fijo","Bosque Ripario","Butorides striata",FALSE,113,1,0.1,NA,NA,99.9,0,99.1
+"233","Punto Fijo","Bosque Ripario","Tyrannus savana",FALSE,114,1,0.1,NA,NA,100,0,100
+"234","Punto Fijo","Herbazal","Crotophaga major",TRUE,1,35,7.2,NA,NA,7.2,1.5,1.2
+"235","Punto Fijo","Herbazal","Campylorhynchus griseus",TRUE,2,35,7.2,NA,NA,14.4,1.5,2.5
+"236","Punto Fijo","Herbazal","Chrysomus icterocephalus",TRUE,3,27,5.6,NA,NA,20,1.4,3.7
+"237","Punto Fijo","Herbazal","Eupsittula pertinax",FALSE,4,26,5.3,NA,NA,25.3,1.4,4.9
+"238","Punto Fijo","Herbazal","Crotophaga ani",FALSE,5,24,4.9,NA,NA,30.2,1.4,6.2
+"239","Punto Fijo","Herbazal","Pitangus sulphuratus",FALSE,6,23,4.7,NA,NA,35,1.4,7.4
+"240","Punto Fijo","Herbazal","Patagioenas cayennensis",FALSE,7,23,4.7,NA,NA,39.7,1.4,8.6
+"241","Punto Fijo","Herbazal","Milvago chimachima",FALSE,8,18,3.7,NA,NA,43.4,1.3,9.9
+"242","Punto Fijo","Herbazal","Saltator coerulescens",FALSE,9,14,2.9,NA,NA,46.3,1.1,11.1
+"243","Punto Fijo","Herbazal","Furnarius leucopus",FALSE,10,14,2.9,NA,NA,49.2,1.1,12.3
+"244","Punto Fijo","Herbazal","Ramphocelus dimidiatus",FALSE,11,13,2.7,NA,NA,51.9,1.1,13.6
+"245","Punto Fijo","Herbazal","Myiozetetes cayanensis",FALSE,12,13,2.7,NA,NA,54.5,1.1,14.8
+"246","Punto Fijo","Herbazal","Setophaga petechia",FALSE,13,12,2.5,NA,NA,57,1.1,16
+"247","Punto Fijo","Herbazal","Jacana jacana",FALSE,14,12,2.5,NA,NA,59.5,1.1,17.3
+"248","Punto Fijo","Herbazal","Columbina talpacoti",FALSE,15,12,2.5,NA,NA,61.9,1.1,18.5
+"249","Punto Fijo","Herbazal","Ortalis columbiana",FALSE,16,10,2.1,NA,NA,64,1,19.8
+"250","Punto Fijo","Herbazal","Ortalis garrula",FALSE,17,9,1.9,NA,NA,65.8,1,21
+"251","Punto Fijo","Herbazal","Elaenia flavogaster",FALSE,18,7,1.4,NA,NA,67.3,0.8,22.2
+"252","Punto Fijo","Herbazal","Icterus nigrogularis",FALSE,19,7,1.4,NA,NA,68.7,0.8,23.5
+"253","Punto Fijo","Herbazal","Phimosus infuscatus",FALSE,20,6,1.2,NA,NA,70,0.8,24.7
+"254","Punto Fijo","Herbazal","Poecilotriccus sylvia",FALSE,21,6,1.2,NA,NA,71.2,0.8,25.9
+"255","Punto Fijo","Herbazal","Dendrocincla fuliginosa",FALSE,22,6,1.2,NA,NA,72.4,0.8,27.2
+"256","Punto Fijo","Herbazal","Leptotila verreauxi",FALSE,23,6,1.2,NA,NA,73.7,0.8,28.4
+"257","Punto Fijo","Herbazal","Rupornis magnirostris",FALSE,24,6,1.2,NA,NA,74.9,0.8,29.6
+"258","Punto Fijo","Herbazal","Tyrannus melancholicus",FALSE,25,5,1,NA,NA,75.9,0.7,30.9
+"259","Punto Fijo","Herbazal","Melanerpes rubricapillus",FALSE,26,5,1,NA,NA,77,0.7,32.1
+"260","Punto Fijo","Herbazal","Dendroplex picus",FALSE,27,5,1,NA,NA,78,0.7,33.3
+"261","Punto Fijo","Herbazal","Bubulcus ibis",FALSE,28,5,1,NA,NA,79,0.7,34.6
+"262","Punto Fijo","Herbazal","Legatus leucophaius",FALSE,29,5,1,NA,NA,80,0.7,35.8
+"263","Punto Fijo","Herbazal","Thraupis palmarum",FALSE,30,4,0.8,NA,NA,80.9,0.6,37
+"264","Punto Fijo","Herbazal","Empidonax virescens",FALSE,31,4,0.8,NA,NA,81.7,0.6,38.3
+"265","Punto Fijo","Herbazal","Stelgidopteryx ruficollis",FALSE,32,4,0.8,NA,NA,82.5,0.6,39.5
+"266","Punto Fijo","Herbazal","Pteroglossus torquatus",FALSE,33,4,0.8,NA,NA,83.3,0.6,40.7
+"267","Punto Fijo","Herbazal","Colaptes punctigula",FALSE,34,4,0.8,NA,NA,84.2,0.6,42
+"268","Punto Fijo","Herbazal","Thraupis episcopus",FALSE,35,4,0.8,NA,NA,85,0.6,43.2
+"269","Punto Fijo","Herbazal","Saltator maximus",FALSE,36,4,0.8,NA,NA,85.8,0.6,44.4
+"270","Punto Fijo","Herbazal","Todirostrum cinereum",FALSE,37,4,0.8,NA,NA,86.6,0.6,45.7
+"271","Punto Fijo","Herbazal","Donacobius atricapilla",FALSE,38,3,0.6,NA,NA,87.2,0.5,46.9
+"272","Punto Fijo","Herbazal","Ardea cocoi",FALSE,39,3,0.6,NA,NA,87.9,0.5,48.1
+"273","Punto Fijo","Herbazal","Porphyrio martinica",FALSE,40,3,0.6,NA,NA,88.5,0.5,49.4
+"274","Punto Fijo","Herbazal","Formicivora grisea",FALSE,41,3,0.6,NA,NA,89.1,0.5,50.6
+"275","Punto Fijo","Herbazal","Thamnophilus nigriceps",FALSE,42,2,0.4,NA,NA,89.5,0.3,51.9
+"276","Punto Fijo","Herbazal","Geothlypis philadelphia",FALSE,43,2,0.4,NA,NA,89.9,0.3,53.1
+"277","Punto Fijo","Herbazal","Polytmus guainumbi",FALSE,44,2,0.4,NA,NA,90.3,0.3,54.3
+"278","Punto Fijo","Herbazal","Protonotaria citrea",FALSE,45,2,0.4,NA,NA,90.7,0.3,55.6
+"279","Punto Fijo","Herbazal","Chloroceryle americana",FALSE,46,2,0.4,NA,NA,91.2,0.3,56.8
+"280","Punto Fijo","Herbazal","Dendrocygna viduata",FALSE,47,2,0.4,NA,NA,91.6,0.3,58
+"281","Punto Fijo","Herbazal","Vanellus chilensis",FALSE,48,2,0.4,NA,NA,92,0.3,59.3
+"282","Punto Fijo","Herbazal","Butorides striata",FALSE,49,2,0.4,NA,NA,92.4,0.3,60.5
+"283","Punto Fijo","Herbazal","Fluvicola pica",FALSE,50,2,0.4,NA,NA,92.8,0.3,61.7
+"284","Punto Fijo","Herbazal","Momotus subrufescens",FALSE,51,2,0.4,NA,NA,93.2,0.3,63
+"285","Punto Fijo","Herbazal","Cantorchilus leucotis",FALSE,52,2,0.4,NA,NA,93.6,0.3,64.2
+"286","Punto Fijo","Herbazal","Sakesphorus canadensis",FALSE,53,2,0.4,NA,NA,94,0.3,65.4
+"287","Punto Fijo","Herbazal","Sporophila funerea",FALSE,54,2,0.4,NA,NA,94.4,0.3,66.7
+"288","Punto Fijo","Herbazal","Parkesia noveboracensis",FALSE,55,1,0.2,NA,NA,94.7,0,67.9
+"289","Punto Fijo","Herbazal","Certhiaxis cinnamomeus",FALSE,56,1,0.2,NA,NA,94.9,0,69.1
+"290","Punto Fijo","Herbazal","Setophaga castanea",FALSE,57,1,0.2,NA,NA,95.1,0,70.4
+"291","Punto Fijo","Herbazal","Hylophilus flavipes",FALSE,58,1,0.2,NA,NA,95.3,0,71.6
+"292","Punto Fijo","Herbazal","Myiarchus crinitus",FALSE,59,1,0.2,NA,NA,95.5,0,72.8
+"293","Punto Fijo","Herbazal","Cyanocorax affinis",FALSE,60,1,0.2,NA,NA,95.7,0,74.1
+"294","Punto Fijo","Herbazal","Coereba flaveola",FALSE,61,1,0.2,NA,NA,95.9,0,75.3
+"295","Punto Fijo","Herbazal","Anthracothorax nigricollis",FALSE,62,1,0.2,NA,NA,96.1,0,76.5
+"296","Punto Fijo","Herbazal","Vireo olivaceus",FALSE,63,1,0.2,NA,NA,96.3,0,77.8
+"297","Punto Fijo","Herbazal","Aramides cajaneus",FALSE,64,1,0.2,NA,NA,96.5,0,79
+"298","Punto Fijo","Herbazal","Veniliornis kirkii",FALSE,65,1,0.2,NA,NA,96.7,0,80.2
+"299","Punto Fijo","Herbazal","Amazona amazonica",FALSE,66,1,0.2,NA,NA,96.9,0,81.5
+"300","Punto Fijo","Herbazal","Galbula ruficauda",FALSE,67,1,0.2,NA,NA,97.1,0,82.7
+"301","Punto Fijo","Herbazal","Megarynchus pitangua",FALSE,68,1,0.2,NA,NA,97.3,0,84
+"302","Punto Fijo","Herbazal","Nyctidromus albicollis",FALSE,69,1,0.2,NA,NA,97.5,0,85.2
+"303","Punto Fijo","Herbazal","Megaceryle torquata",FALSE,70,1,0.2,NA,NA,97.7,0,86.4
+"304","Punto Fijo","Herbazal","Sporophila minuta",FALSE,71,1,0.2,NA,NA,97.9,0,87.7
+"305","Punto Fijo","Herbazal","Tringa solitaria",FALSE,72,1,0.2,NA,NA,98.1,0,88.9
+"306","Punto Fijo","Herbazal","Tapera naevia",FALSE,73,1,0.2,NA,NA,98.4,0,90.1
+"307","Punto Fijo","Herbazal","Euphonia laniirostris",FALSE,74,1,0.2,NA,NA,98.6,0,91.4
+"308","Punto Fijo","Herbazal","Xiphorhynchus susurrans",FALSE,75,1,0.2,NA,NA,98.8,0,92.6
+"309","Punto Fijo","Herbazal","Inezia caudata",FALSE,76,1,0.2,NA,NA,99,0,93.8
+"310","Punto Fijo","Herbazal","Myiozetetes similis",FALSE,77,1,0.2,NA,NA,99.2,0,95.1
+"311","Punto Fijo","Herbazal","Phalacrocorax brasilianus",FALSE,78,1,0.2,NA,NA,99.4,0,96.3
+"312","Punto Fijo","Herbazal","Actitis macularius",FALSE,79,1,0.2,NA,NA,99.6,0,97.5
+"313","Punto Fijo","Herbazal","Caracara cheriway",FALSE,80,1,0.2,NA,NA,99.8,0,98.8
+"314","Punto Fijo","Herbazal","Tyrannulus elatus",FALSE,81,1,0.2,NA,NA,100,0,100
+"315","Punto Fijo","Palma","Crotophaga ani",TRUE,1,106,14.5,NA,NA,14.5,2,1.3
+"316","Punto Fijo","Palma","Campylorhynchus griseus",TRUE,2,105,14.4,NA,NA,28.9,2,2.5
+"317","Punto Fijo","Palma","Tyrannus melancholicus",TRUE,3,42,5.8,NA,NA,34.7,1.6,3.8
+"318","Punto Fijo","Palma","Milvago chimachima",FALSE,4,42,5.8,NA,NA,40.5,1.6,5.1
+"319","Punto Fijo","Palma","Pitangus sulphuratus",FALSE,5,35,4.8,NA,NA,45.3,1.5,6.3
+"320","Punto Fijo","Palma","Patagioenas cayennensis",FALSE,6,28,3.8,NA,NA,49.1,1.4,7.6
+"321","Punto Fijo","Palma","Tyrannus dominicensis",FALSE,7,23,3.2,NA,NA,52.3,1.4,8.9
+"322","Punto Fijo","Palma","Melanerpes rubricapillus",FALSE,8,22,3,NA,NA,55.3,1.3,10.1
+"323","Punto Fijo","Palma","Thraupis palmarum",FALSE,9,22,3,NA,NA,58.3,1.3,11.4
+"324","Punto Fijo","Palma","Columbina talpacoti",FALSE,10,20,2.7,NA,NA,61,1.3,12.7
+"325","Punto Fijo","Palma","Rupornis magnirostris",FALSE,11,17,2.3,NA,NA,63.4,1.2,13.9
+"326","Punto Fijo","Palma","Sporophila funerea",FALSE,12,15,2.1,NA,NA,65.4,1.2,15.2
+"327","Punto Fijo","Palma","Psarocolius decumanus",FALSE,13,11,1.5,NA,NA,66.9,1,16.5
+"328","Punto Fijo","Palma","Thraupis episcopus",FALSE,14,10,1.4,NA,NA,68.3,1,17.7
+"329","Punto Fijo","Palma","Leptotila verreauxi",FALSE,15,10,1.4,NA,NA,69.7,1,19
+"330","Punto Fijo","Palma","Troglodytes aedon",FALSE,16,10,1.4,NA,NA,71.1,1,20.3
+"331","Punto Fijo","Palma","Bubulcus ibis",FALSE,17,10,1.4,NA,NA,72.4,1,21.5
+"332","Punto Fijo","Palma","Coereba flaveola",FALSE,18,9,1.2,NA,NA,73.7,1,22.8
+"333","Punto Fijo","Palma","Chaetura",FALSE,19,9,1.2,NA,NA,74.9,1,24.1
+"334","Punto Fijo","Palma","Crotophaga major",FALSE,20,9,1.2,NA,NA,76.1,1,25.3
+"335","Punto Fijo","Palma","Volatinia jacarina",FALSE,21,9,1.2,NA,NA,77.4,1,26.6
+"336","Punto Fijo","Palma","Ortalis columbiana",FALSE,22,9,1.2,NA,NA,78.6,1,27.8
+"337","Punto Fijo","Palma","Furnarius leucopus",FALSE,23,8,1.1,NA,NA,79.7,0.9,29.1
+"338","Punto Fijo","Palma","Dendroplex picus",FALSE,24,7,1,NA,NA,80.7,0.8,30.4
+"339","Punto Fijo","Palma","Icterus nigrogularis",FALSE,25,7,1,NA,NA,81.6,0.8,31.6
+"340","Punto Fijo","Palma","Camptostoma obsoletum",FALSE,26,6,0.8,NA,NA,82.4,0.8,32.9
+"341","Punto Fijo","Palma","Euphonia laniirostris",FALSE,27,6,0.8,NA,NA,83.3,0.8,34.2
+"342","Punto Fijo","Palma","Gampsonyx swainsonii",FALSE,28,6,0.8,NA,NA,84.1,0.8,35.4
+"343","Punto Fijo","Palma","Buteo nitidus",FALSE,29,5,0.7,NA,NA,84.8,0.7,36.7
+"344","Punto Fijo","Palma","Myiodynastes maculatus",FALSE,30,5,0.7,NA,NA,85.5,0.7,38
+"345","Punto Fijo","Palma","Amazilia tzacatl",FALSE,31,4,0.5,NA,NA,86,0.6,39.2
+"346","Punto Fijo","Palma","Amazona amazonica",FALSE,32,4,0.5,NA,NA,86.6,0.6,40.5
+"347","Punto Fijo","Palma","Attila spadiceus",FALSE,33,4,0.5,NA,NA,87.1,0.6,41.8
+"348","Punto Fijo","Palma","Megarynchus pitangua",FALSE,34,4,0.5,NA,NA,87.7,0.6,43
+"349","Punto Fijo","Palma","Myiozetetes cayanensis",FALSE,35,4,0.5,NA,NA,88.2,0.6,44.3
+"350","Punto Fijo","Palma","Pteroglossus torquatus",FALSE,36,4,0.5,NA,NA,88.8,0.6,45.6
+"351","Punto Fijo","Palma","Thamnophilus nigriceps",FALSE,37,4,0.5,NA,NA,89.3,0.6,46.8
+"352","Punto Fijo","Palma","Cantorchilus leucotis",FALSE,38,4,0.5,NA,NA,89.8,0.6,48.1
+"353","Punto Fijo","Palma","Crypturellus soui",FALSE,39,4,0.5,NA,NA,90.4,0.6,49.4
+"354","Punto Fijo","Palma","Cathartes aura",FALSE,40,3,0.4,NA,NA,90.8,0.5,50.6
+"355","Punto Fijo","Palma","Cercomacra nigricans",FALSE,41,3,0.4,NA,NA,91.2,0.5,51.9
+"356","Punto Fijo","Palma","Piranga olivacea",FALSE,42,3,0.4,NA,NA,91.6,0.5,53.2
+"357","Punto Fijo","Palma","Tyrannulus elatus",FALSE,43,3,0.4,NA,NA,92,0.5,54.4
+"358","Punto Fijo","Palma","Formicivora grisea",FALSE,44,3,0.4,NA,NA,92.5,0.5,55.7
+"359","Punto Fijo","Palma","Hirundo rustica",FALSE,45,3,0.4,NA,NA,92.9,0.5,57
+"360","Punto Fijo","Palma","Dryocopus lineatus",FALSE,46,3,0.4,NA,NA,93.3,0.5,58.2
+"361","Punto Fijo","Palma","Setophaga castanea",FALSE,47,3,0.4,NA,NA,93.7,0.5,59.5
+"362","Punto Fijo","Palma","Vireo olivaceus",FALSE,48,2,0.3,NA,NA,94,0.3,60.8
+"363","Punto Fijo","Palma","Saltator coerulescens",FALSE,49,2,0.3,NA,NA,94.2,0.3,62
+"364","Punto Fijo","Palma","Myiarchus crinitus",FALSE,50,2,0.3,NA,NA,94.5,0.3,63.3
+"365","Punto Fijo","Palma","Pheugopedius fasciatoventris",FALSE,51,2,0.3,NA,NA,94.8,0.3,64.6
+"366","Punto Fijo","Palma","Colaptes punctigula",FALSE,52,2,0.3,NA,NA,95.1,0.3,65.8
+"367","Punto Fijo","Palma","Molothrus bonariensis",FALSE,53,2,0.3,NA,NA,95.3,0.3,67.1
+"368","Punto Fijo","Palma","Elaenia flavogaster",FALSE,54,2,0.3,NA,NA,95.6,0.3,68.4
+"369","Punto Fijo","Palma","Picumnus olivaceus",FALSE,55,2,0.3,NA,NA,95.9,0.3,69.6
+"370","Punto Fijo","Palma","Momotus subrufescens",FALSE,56,2,0.3,NA,NA,96.2,0.3,70.9
+"371","Punto Fijo","Palma","Falco sparverius",FALSE,57,2,0.3,NA,NA,96.4,0.3,72.2
+"372","Punto Fijo","Palma","Manacus manacus",FALSE,58,2,0.3,NA,NA,96.7,0.3,73.4
+"373","Punto Fijo","Palma","Xiphorhynchus susurrans",FALSE,59,2,0.3,NA,NA,97,0.3,74.7
+"374","Punto Fijo","Palma","Herpetotheres cachinnans",FALSE,60,2,0.3,NA,NA,97.3,0.3,75.9
+"375","Punto Fijo","Palma","Phimosus infuscatus",FALSE,61,2,0.3,NA,NA,97.5,0.3,77.2
+"376","Punto Fijo","Palma","Falco femoralis",FALSE,62,1,0.1,NA,NA,97.7,0,78.5
+"377","Punto Fijo","Palma","Phaethornis anthophilus",FALSE,63,1,0.1,NA,NA,97.8,0,79.7
+"378","Punto Fijo","Palma","Icterus auricapillus",FALSE,64,1,0.1,NA,NA,97.9,0,81
+"379","Punto Fijo","Palma","Empidonax virescens",FALSE,65,1,0.1,NA,NA,98.1,0,82.3
+"380","Punto Fijo","Palma","Legatus leucophaius",FALSE,66,1,0.1,NA,NA,98.2,0,83.5
+"381","Punto Fijo","Palma","Columbina minuta",FALSE,67,1,0.1,NA,NA,98.4,0,84.8
+"382","Punto Fijo","Palma","Mesembrinibis cayennensis",FALSE,68,1,0.1,NA,NA,98.5,0,86.1
+"383","Punto Fijo","Palma","Tyrannus savana",FALSE,69,1,0.1,NA,NA,98.6,0,87.3
+"384","Punto Fijo","Palma","Sporophila minuta",FALSE,70,1,0.1,NA,NA,98.8,0,88.6
+"385","Punto Fijo","Palma","Anthracothorax nigricollis",FALSE,71,1,0.1,NA,NA,98.9,0,89.9
+"386","Punto Fijo","Palma","Catharus ustulatus",FALSE,72,1,0.1,NA,NA,99,0,91.1
+"387","Punto Fijo","Palma","Colinus cristatus",FALSE,73,1,0.1,NA,NA,99.2,0,92.4
+"388","Punto Fijo","Palma","Caracara cheriway",FALSE,74,1,0.1,NA,NA,99.3,0,93.7
+"389","Punto Fijo","Palma","Machetornis rixosa",FALSE,75,1,0.1,NA,NA,99.5,0,94.9
+"390","Punto Fijo","Palma","Phaeomyias murina",FALSE,76,1,0.1,NA,NA,99.6,0,96.2
+"391","Punto Fijo","Palma","Zenaida auriculata",FALSE,77,1,0.1,NA,NA,99.7,0,97.5
+"392","Punto Fijo","Palma","Poecilotriccus sylvia",FALSE,78,1,0.1,NA,NA,99.9,0,98.7
+"393","Punto Fijo","Palma","Donacobius atricapilla",FALSE,79,1,0.1,NA,NA,100,0,100
+"394","Punto Fijo","Pastos","Pitangus sulphuratus",TRUE,1,16,9,NA,NA,9,1.2,2
+"395","Punto Fijo","Pastos","Crotophaga ani",TRUE,2,15,8.5,NA,NA,17.5,1.2,4
+"396","Punto Fijo","Pastos","Leistes militaris",TRUE,3,11,6.2,NA,NA,23.7,1,6
+"397","Punto Fijo","Pastos","Hirundo rustica",FALSE,4,10,5.6,NA,NA,29.4,1,8
+"398","Punto Fijo","Pastos","Sporophila funerea",FALSE,5,10,5.6,NA,NA,35,1,10
+"399","Punto Fijo","Pastos","Bubulcus ibis",FALSE,6,9,5.1,NA,NA,40.1,1,12
+"400","Punto Fijo","Pastos","Patagioenas cayennensis",FALSE,7,8,4.5,NA,NA,44.6,0.9,14
+"401","Punto Fijo","Pastos","Campylorhynchus griseus",FALSE,8,8,4.5,NA,NA,49.2,0.9,16
+"402","Punto Fijo","Pastos","Colinus cristatus",FALSE,9,6,3.4,NA,NA,52.5,0.8,18
+"403","Punto Fijo","Pastos","Volatinia jacarina",FALSE,10,6,3.4,NA,NA,55.9,0.8,20
+"404","Punto Fijo","Pastos","Zenaida auriculata",FALSE,11,5,2.8,NA,NA,58.8,0.7,22
+"405","Punto Fijo","Pastos","Cathartes aura",FALSE,12,5,2.8,NA,NA,61.6,0.7,24
+"406","Punto Fijo","Pastos","Tyrannus melancholicus",FALSE,13,5,2.8,NA,NA,64.4,0.7,26
+"407","Punto Fijo","Pastos","Poecilotriccus sylvia",FALSE,14,4,2.3,NA,NA,66.7,0.6,28
+"408","Punto Fijo","Pastos","Mimus gilvus",FALSE,15,4,2.3,NA,NA,68.9,0.6,30
+"409","Punto Fijo","Pastos","Coereba flaveola",FALSE,16,4,2.3,NA,NA,71.2,0.6,32
+"410","Punto Fijo","Pastos","Melanerpes rubricapillus",FALSE,17,3,1.7,NA,NA,72.9,0.5,34
+"411","Punto Fijo","Pastos","Saltator coerulescens",FALSE,18,3,1.7,NA,NA,74.6,0.5,36
+"412","Punto Fijo","Pastos","Leptotila verreauxi",FALSE,19,3,1.7,NA,NA,76.3,0.5,38
+"413","Punto Fijo","Pastos","Milvago chimachima",FALSE,20,3,1.7,NA,NA,78,0.5,40
+"414","Punto Fijo","Pastos","Ramphocelus dimidiatus",FALSE,21,3,1.7,NA,NA,79.7,0.5,42
+"415","Punto Fijo","Pastos","Myiozetetes cayanensis",FALSE,22,2,1.1,NA,NA,80.8,0.3,44
+"416","Punto Fijo","Pastos","Cyanocorax affinis",FALSE,23,2,1.1,NA,NA,81.9,0.3,46
+"417","Punto Fijo","Pastos","Todirostrum cinereum",FALSE,24,2,1.1,NA,NA,83.1,0.3,48
+"418","Punto Fijo","Pastos","Formicivora grisea",FALSE,25,2,1.1,NA,NA,84.2,0.3,50
+"419","Punto Fijo","Pastos","Buteogallus meridionalis",FALSE,26,2,1.1,NA,NA,85.3,0.3,52
+"420","Punto Fijo","Pastos","Elaenia flavogaster",FALSE,27,2,1.1,NA,NA,86.4,0.3,54
+"421","Punto Fijo","Pastos","Rupornis magnirostris",FALSE,28,2,1.1,NA,NA,87.6,0.3,56
+"422","Punto Fijo","Pastos","Myiarchus crinitus",FALSE,29,1,0.6,NA,NA,88.1,0,58
+"423","Punto Fijo","Pastos","Piranga olivacea",FALSE,30,1,0.6,NA,NA,88.7,0,60
+"424","Punto Fijo","Pastos","Thraupis palmarum",FALSE,31,1,0.6,NA,NA,89.3,0,62
+"425","Punto Fijo","Pastos","Manacus manacus",FALSE,32,1,0.6,NA,NA,89.8,0,64
+"426","Punto Fijo","Pastos","Chrysuronia goudoti",FALSE,33,1,0.6,NA,NA,90.4,0,66
+"427","Punto Fijo","Pastos","Polyerata amabilis",FALSE,34,1,0.6,NA,NA,91,0,68
+"428","Punto Fijo","Pastos","Icterus nigrogularis",FALSE,35,1,0.6,NA,NA,91.5,0,70
+"429","Punto Fijo","Pastos","Coragyps atratus",FALSE,36,1,0.6,NA,NA,92.1,0,72
+"430","Punto Fijo","Pastos","Forpus conspicillatus",FALSE,37,1,0.6,NA,NA,92.7,0,74
+"431","Punto Fijo","Pastos","Camptostoma obsoletum",FALSE,38,1,0.6,NA,NA,93.2,0,76
+"432","Punto Fijo","Pastos","Vanellus chilensis",FALSE,39,1,0.6,NA,NA,93.8,0,78
+"433","Punto Fijo","Pastos","Setophaga petechia",FALSE,40,1,0.6,NA,NA,94.4,0,80
+"434","Punto Fijo","Pastos","Megarynchus pitangua",FALSE,41,1,0.6,NA,NA,94.9,0,82
+"435","Punto Fijo","Pastos","Ortalis columbiana",FALSE,42,1,0.6,NA,NA,95.5,0,84
+"436","Punto Fijo","Pastos","Thraupis episcopus",FALSE,43,1,0.6,NA,NA,96,0,86
+"437","Punto Fijo","Pastos","Buteo nitidus",FALSE,44,1,0.6,NA,NA,96.6,0,88
+"438","Punto Fijo","Pastos","Euphonia laniirostris",FALSE,45,1,0.6,NA,NA,97.2,0,90
+"439","Punto Fijo","Pastos","Piranga rubra",FALSE,46,1,0.6,NA,NA,97.7,0,92
+"440","Punto Fijo","Pastos","Saltator maximus",FALSE,47,1,0.6,NA,NA,98.3,0,94
+"441","Punto Fijo","Pastos","Molothrus bonariensis",FALSE,48,1,0.6,NA,NA,98.9,0,96
+"442","Punto Fijo","Pastos","Hypnelus ruficollis",FALSE,49,1,0.6,NA,NA,99.4,0,98
+"443","Punto Fijo","Pastos","Legatus leucophaius",FALSE,50,1,0.6,NA,NA,100,0,100

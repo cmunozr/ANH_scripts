@@ -1,0 +1,88 @@
+"","samplingProtocol","Grouping","species","labelit","rank","abundance","proportion","plower","pupper","accumfreq","logabun","rankfreq"
+"1","VES","Bosque Abierto","Scinax ruber",TRUE,1,8,26.7,NA,NA,26.7,0.9,10
+"2","VES","Bosque Abierto","Dendropsophus microcephalus",TRUE,2,5,16.7,NA,NA,43.3,0.7,20
+"3","VES","Bosque Abierto","Engystomops pustulosus",TRUE,3,4,13.3,NA,NA,56.7,0.6,30
+"4","VES","Bosque Abierto","Boana pugnax",FALSE,4,3,10,NA,NA,66.7,0.5,40
+"5","VES","Bosque Abierto","Scinax rostratus",FALSE,5,3,10,NA,NA,76.7,0.5,50
+"6","VES","Bosque Abierto","Pseudopaludicola pusilla",FALSE,6,2,6.7,NA,NA,83.3,0.3,60
+"7","VES","Bosque Abierto","Elachistocleis panamensis",FALSE,7,2,6.7,NA,NA,90,0.3,70
+"8","VES","Bosque Abierto","Trachycephalus typhonius",FALSE,8,1,3.3,NA,NA,93.3,0,80
+"9","VES","Bosque Abierto","Leptodactylus fuscus",FALSE,9,1,3.3,NA,NA,96.7,0,90
+"10","VES","Bosque Abierto","Elachistocleis pearsei",FALSE,10,1,3.3,NA,NA,100,0,100
+"11","VES","Bosque Denso","Engystomops pustulosus",TRUE,1,16,29.1,NA,NA,29.1,1.2,7.7
+"12","VES","Bosque Denso","Pristimantis gaigei",TRUE,2,10,18.2,NA,NA,47.3,1,15.4
+"13","VES","Bosque Denso","Dendrobates truncatus",TRUE,3,10,18.2,NA,NA,65.5,1,23.1
+"14","VES","Bosque Denso","Smilisca phaeota",FALSE,4,5,9.1,NA,NA,74.5,0.7,30.8
+"15","VES","Bosque Denso","Craugastor metriosistus",FALSE,5,3,5.5,NA,NA,80,0.5,38.5
+"16","VES","Bosque Denso","Phyllomedusa venusta",FALSE,6,2,3.6,NA,NA,83.6,0.3,46.2
+"17","VES","Bosque Denso","Allobates niputidea",FALSE,7,2,3.6,NA,NA,87.3,0.3,53.8
+"18","VES","Bosque Denso","Diasporus anthrax",FALSE,8,2,3.6,NA,NA,90.9,0.3,61.5
+"19","VES","Bosque Denso","Scinax ruber",FALSE,9,1,1.8,NA,NA,92.7,0,69.2
+"20","VES","Bosque Denso","Scinax rostratus",FALSE,10,1,1.8,NA,NA,94.5,0,76.9
+"21","VES","Bosque Denso","Boana pugnax",FALSE,11,1,1.8,NA,NA,96.4,0,84.6
+"22","VES","Bosque Denso","Agalychnis terranova",FALSE,12,1,1.8,NA,NA,98.2,0,92.3
+"23","VES","Bosque Denso","Lithobates vaillanti",FALSE,13,1,1.8,NA,NA,100,0,100
+"24","VES","Bosque Ripario","Craugastor metriosistus",TRUE,1,145,28.5,NA,NA,28.5,2.2,4.5
+"25","VES","Bosque Ripario","Engystomops pustulosus",TRUE,2,107,21.1,NA,NA,49.6,2,9.1
+"26","VES","Bosque Ripario","Dendrobates truncatus",TRUE,3,68,13.4,NA,NA,63,1.8,13.6
+"27","VES","Bosque Ripario","Scinax rostratus",FALSE,4,30,5.9,NA,NA,68.9,1.5,18.2
+"28","VES","Bosque Ripario","Lithobates vaillanti",FALSE,5,30,5.9,NA,NA,74.8,1.5,22.7
+"29","VES","Bosque Ripario","Bolitoglossa lozanoi",FALSE,6,25,4.9,NA,NA,79.7,1.4,27.3
+"30","VES","Bosque Ripario","Leptodactylus savagei",FALSE,7,22,4.3,NA,NA,84.1,1.3,31.8
+"31","VES","Bosque Ripario","Rhinella horribilis",FALSE,8,19,3.7,NA,NA,87.8,1.3,36.4
+"32","VES","Bosque Ripario","Boana pugnax",FALSE,9,12,2.4,NA,NA,90.2,1.1,40.9
+"33","VES","Bosque Ripario","Leptodactylus insularum",FALSE,10,10,2,NA,NA,92.1,1,45.5
+"34","VES","Bosque Ripario","Dendropsophus microcephalus",FALSE,11,9,1.8,NA,NA,93.9,1,50
+"35","VES","Bosque Ripario","Scinax ruber",FALSE,12,6,1.2,NA,NA,95.1,0.8,54.5
+"36","VES","Bosque Ripario","Phyllomedusa venusta",FALSE,13,6,1.2,NA,NA,96.3,0.8,59.1
+"37","VES","Bosque Ripario","Pristimantis gaigei",FALSE,14,5,1,NA,NA,97.2,0.7,63.6
+"38","VES","Bosque Ripario","Leptodactylus fragilis",FALSE,15,4,0.8,NA,NA,98,0.6,68.2
+"39","VES","Bosque Ripario","Smilisca phaeota",FALSE,16,3,0.6,NA,NA,98.6,0.5,72.7
+"40","VES","Bosque Ripario","Pleurodema brachyops",FALSE,17,2,0.4,NA,NA,99,0.3,77.3
+"41","VES","Bosque Ripario","Hyalinobatrachium tatayoi",FALSE,18,1,0.2,NA,NA,99.2,0,81.8
+"42","VES","Bosque Ripario","Elachistocleis pearsei",FALSE,19,1,0.2,NA,NA,99.4,0,86.4
+"43","VES","Bosque Ripario","Boana platanera",FALSE,20,1,0.2,NA,NA,99.6,0,90.9
+"44","VES","Bosque Ripario","Leptodactylus fuscus",FALSE,21,1,0.2,NA,NA,99.8,0,95.5
+"45","VES","Bosque Ripario","Scarthyla vigilans",FALSE,22,1,0.2,NA,NA,100,0,100
+"46","VES","Ciénaga","Scarthyla vigilans",TRUE,1,208,53.6,NA,NA,53.6,2.3,9.1
+"47","VES","Ciénaga","Dendropsophus microcephalus",TRUE,2,139,35.8,NA,NA,89.4,2.1,18.2
+"48","VES","Ciénaga","Scinax ruber",TRUE,3,15,3.9,NA,NA,93.3,1.2,27.3
+"49","VES","Ciénaga","Pseudis paradoxa",FALSE,4,9,2.3,NA,NA,95.6,1,36.4
+"50","VES","Ciénaga","Leptodactylus fuscus",FALSE,5,5,1.3,NA,NA,96.9,0.7,45.5
+"51","VES","Ciénaga","Boana pugnax",FALSE,6,4,1,NA,NA,97.9,0.6,54.5
+"52","VES","Ciénaga","Rhinella horribilis",FALSE,7,3,0.8,NA,NA,98.7,0.5,63.6
+"53","VES","Ciénaga","Pseudopaludicola pusilla",FALSE,8,2,0.5,NA,NA,99.2,0.3,72.7
+"54","VES","Ciénaga","Leptodactylus fragilis",FALSE,9,1,0.3,NA,NA,99.5,0,81.8
+"55","VES","Ciénaga","Leptodactylus insularum",FALSE,10,1,0.3,NA,NA,99.7,0,90.9
+"56","VES","Ciénaga","Rhinella humboldti",FALSE,11,1,0.3,NA,NA,100,0,100
+"57","VES","Herbazal","Scarthyla vigilans",TRUE,1,100,34.2,NA,NA,34.2,2,5.9
+"58","VES","Herbazal","Dendropsophus microcephalus",TRUE,2,60,20.5,NA,NA,54.8,1.8,11.8
+"59","VES","Herbazal","Boana pugnax",TRUE,3,28,9.6,NA,NA,64.4,1.4,17.6
+"60","VES","Herbazal","Engystomops pustulosus",FALSE,4,26,8.9,NA,NA,73.3,1.4,23.5
+"61","VES","Herbazal","Leptodactylus fuscus",FALSE,5,23,7.9,NA,NA,81.2,1.4,29.4
+"62","VES","Herbazal","Leptodactylus fragilis",FALSE,6,18,6.2,NA,NA,87.3,1.3,35.3
+"63","VES","Herbazal","Scinax rostratus",FALSE,7,9,3.1,NA,NA,90.4,1,41.2
+"64","VES","Herbazal","Scinax ruber",FALSE,8,7,2.4,NA,NA,92.8,0.8,47.1
+"65","VES","Herbazal","Pseudis paradoxa",FALSE,9,5,1.7,NA,NA,94.5,0.7,52.9
+"66","VES","Herbazal","Rhinella humboldti",FALSE,10,5,1.7,NA,NA,96.2,0.7,58.8
+"67","VES","Herbazal","Leptodactylus insularum",FALSE,11,3,1,NA,NA,97.3,0.5,64.7
+"68","VES","Herbazal","Pseudopaludicola pusilla",FALSE,12,2,0.7,NA,NA,97.9,0.3,70.6
+"69","VES","Herbazal","Elachistocleis pearsei",FALSE,13,2,0.7,NA,NA,98.6,0.3,76.5
+"70","VES","Herbazal","Lithobates vaillanti",FALSE,14,1,0.3,NA,NA,99,0,82.4
+"71","VES","Herbazal","Bolitoglossa lozanoi",FALSE,15,1,0.3,NA,NA,99.3,0,88.2
+"72","VES","Herbazal","Pleurodema brachyops",FALSE,16,1,0.3,NA,NA,99.7,0,94.1
+"73","VES","Herbazal","Craugastor metriosistus",FALSE,17,1,0.3,NA,NA,100,0,100
+"74","VES","Pastos","Leptodactylus fragilis",TRUE,1,6,31.6,NA,NA,31.6,0.8,16.7
+"75","VES","Pastos","Rhinella humboldti",TRUE,2,5,26.3,NA,NA,57.9,0.7,33.3
+"76","VES","Pastos","Boana pugnax",TRUE,3,3,15.8,NA,NA,73.7,0.5,50
+"77","VES","Pastos","Dendropsophus microcephalus",FALSE,4,3,15.8,NA,NA,89.5,0.5,66.7
+"78","VES","Pastos","Leptodactylus insularum",FALSE,5,1,5.3,NA,NA,94.7,0,83.3
+"79","VES","Pastos","Pleurodema brachyops",FALSE,6,1,5.3,NA,NA,100,0,100
+"80","VES","Vías","Engystomops pustulosus",TRUE,1,18,36.7,NA,NA,36.7,1.3,12.5
+"81","VES","Vías","Dendropsophus microcephalus",TRUE,2,15,30.6,NA,NA,67.3,1.2,25
+"82","VES","Vías","Boana pugnax",TRUE,3,5,10.2,NA,NA,77.6,0.7,37.5
+"83","VES","Vías","Scinax ruber",FALSE,4,3,6.1,NA,NA,83.7,0.5,50
+"84","VES","Vías","Craugastor metriosistus",FALSE,5,3,6.1,NA,NA,89.8,0.5,62.5
+"85","VES","Vías","Pseudopaludicola pusilla",FALSE,6,2,4.1,NA,NA,93.9,0.3,75
+"86","VES","Vías","Leptodactylus fragilis",FALSE,7,2,4.1,NA,NA,98,0.3,87.5
+"87","VES","Vías","Lithobates vaillanti",FALSE,8,1,2,NA,NA,100,0,100
