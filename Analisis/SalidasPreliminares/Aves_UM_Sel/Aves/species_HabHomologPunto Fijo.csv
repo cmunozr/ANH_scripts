@@ -1,7 +1,7 @@
 "","Pastos","Bosque Ripario","Bosque Abierto","Bosque Denso","Palma","Herbazal"
 "Volatinia jacarina",10,11,0,0,24,1
 "Chrysolampis mosquitus",13,0,0,0,0,0
-"Formicivora grisea",4,26,0,3,4,6
+"Formicivora grisea",4,26,0,3,4,7
 "Columbina minuta",7,1,1,0,1,0
 "Megarynchus pitangua",2,28,12,0,16,3
 "Leptotila verreauxi",10,106,31,6,40,19
@@ -9,12 +9,12 @@
 "Columbina talpacoti",9,56,47,1,44,17
 "Sporophila funerea",15,32,3,0,18,18
 "Thamnophilus nigriceps",1,71,1,4,5,3
-"Ortalis garrula",1,18,65,0,3,9
-"Ortalis columbiana",5,80,3,7,10,15
+"Ortalis garrula",1,18,65,0,3,16
+"Ortalis columbiana",5,80,3,7,10,17
 "Campylorhynchus griseus",25,232,41,3,200,67
 "Crotophaga ani",33,81,79,31,182,47
 "Crypturellus soui",4,49,0,3,7,2
-"Milvago chimachima",23,99,21,1,108,25
+"Milvago chimachima",23,99,21,1,108,26
 "Eupsittula pertinax",2,5,139,0,3,34
 "Poecilotriccus sylvia",10,39,7,4,5,9
 "Myrmeciza longipes",2,1,1,0,1,2
@@ -23,9 +23,9 @@
 "Coragyps atratus",5,15,5,1,15,0
 "Cyanocorax affinis",5,0,0,0,0,1
 "Tyrannus melancholicus",19,72,29,4,63,20
-"Patagioenas cayennensis",12,147,96,8,58,38
+"Patagioenas cayennensis",12,147,96,8,58,42
 "Megaceryle torquata",1,4,19,0,0,4
-"Dendroplex picus",1,23,8,0,18,8
+"Dendroplex picus",1,23,8,0,18,9
 "Xiphorhynchus susurrans",1,59,1,2,7,3
 "Streptoprocne zonaris",2,0,0,0,3,0
 "Thraupis palmarum",5,72,5,0,45,6
@@ -37,11 +37,11 @@
 "Elaenia flavogaster",6,8,8,0,5,11
 "Thraupis episcopus",7,42,31,2,28,10
 "Cathartes burrovianus",0,3,0,10,4,0
-"Pteroglossus torquatus",0,33,1,0,4,5
+"Pteroglossus torquatus",0,33,1,0,4,7
 "Florisuga mellivora",0,1,0,0,0,0
 "Fluvicola pica",0,0,35,0,0,6
 "Jacana jacana",0,0,110,0,0,16
-"Pitangus sulphuratus",22,68,68,3,50,35
+"Pitangus sulphuratus",22,68,68,3,50,36
 "Todirostrum cinereum",4,5,11,0,2,5
 "Phimosus infuscatus",5,12,36,0,10,7
 "Saltator coerulescens",10,4,40,0,5,17
@@ -54,7 +54,7 @@
 "Certhiaxis cinnamomeus",0,0,32,0,0,1
 "Ardea cocoi",0,0,22,0,0,7
 "Sakesphorus canadensis",2,3,22,2,0,4
-"Crotophaga major",7,141,99,1,26,52
+"Crotophaga major",7,141,99,1,26,53
 "Melanerpes rubricapillus",3,47,36,4,33,6
 "Hypnelus ruficollis",3,1,15,0,0,1
 "Butorides striata",2,2,21,0,0,6
@@ -100,7 +100,7 @@
 "Tachycineta albiventer",0,0,2,0,0,0
 "Phaetusa simplex",0,0,3,0,0,0
 "Laterallus albigularis",0,0,1,0,0,1
-"Ramphocelus dimidiatus",3,9,8,0,4,19
+"Ramphocelus dimidiatus",3,9,8,0,4,20
 "Chlorostilbon gibsoni",0,1,1,0,0,0
 "Dendrocygna viduata",0,0,4,0,0,4
 "Caracara cheriway",5,2,2,0,24,1
@@ -167,7 +167,7 @@
 "Chlorestes julie",0,5,0,1,0,0
 "Turdus nudigenis",0,0,0,1,0,0
 "Ceratopipra erythrocephala",0,0,0,3,0,0
-"Setophaga petechia",1,1,3,0,0,12
+"Setophaga petechia",1,1,3,0,0,13
 "Chloroceryle aenea",0,1,1,0,0,0
 "Sporophila intermedia",0,0,3,0,0,0
 "Protonotaria citrea",0,0,11,1,0,2
@@ -181,7 +181,7 @@
 "Piranga olivacea",1,2,0,0,3,0
 "Chaetura brachyura",0,1,1,0,0,0
 "Butorides virescens",0,0,1,0,0,0
-"Empidonax virescens",0,6,1,0,1,4
+"Empidonax virescens",0,6,1,0,1,5
 "Mycteria americana",0,0,1,0,0,0
 "Patagioenas speciosa",0,2,0,0,0,0
 "Schiffornis stenorhyncha",0,1,0,0,0,0

@@ -1035,7 +1035,7 @@ homolog_factors <- function(database, column, max.distance = 0.2){
 
 modify_event_label <- function(data, column = "eventID", n){
   require(stringr)
-  original <- data1[,column] 
+  original <- data[,column] 
   splitted <- original%>% str_split(., "_")
   index_vect <- lapply(X= splitted, FUN = function(X){length(X)>=n}) %>% unlist()
   

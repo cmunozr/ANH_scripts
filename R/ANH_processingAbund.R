@@ -25,10 +25,10 @@ library(dplyr)
 
 #0b) Define working directories and group variables
 
-outD<-'Reptiles'#'Zooplancton' #master folder for output
-outDD<-'Reptiles'#'Hidrobiologicos' #Grupo like stated in the covariate file
-ctnm<- "CobHerp" #"CobMam" # 'waterBody' #CobColl'#"CuerpAgua" #reptiles y anfibios: CobHerp #escarabajos coprofagos: "CobCopr" #main factor for análisis
-gnm<- 'Rept' #'Coll'#"Zoop" #group prefix
+outD<-'Aves'#'Zooplancton' #master folder for output
+outDD<-'Aves'#'Hidrobiologicos' #Grupo like stated in the covariate file
+ctnm<- "CobAves" #"CobMam" # 'waterBody' #CobColl'#"CuerpAgua" #reptiles y anfibios: CobHerp #escarabajos coprofagos: "CobCopr" #main factor for análisis
+gnm<- 'Aves' #'Coll'#"Zoop" #group prefix
 fnn<-"sum" #function to aggregate samples within sampling unites
 
 WDOut<-file.path(getwd(), "Analisis", "SalidasPreliminares")
@@ -93,7 +93,7 @@ spa.c<-c("decimalLat","decimalLon")
 #Hidrobiol?gicos=c("Plataf","Red.Hidrica","CuerpAgua")#,"CobHerp")
 # Aves: c("Plataf", "CobAves") #anfibios: c("Plataf", "CobHerp")
 # Mamiferos: c("Plataf", "CobMam")
-cat.c <- c("Plataf","CobHerp")
+cat.c <- c("Plataf","CobAves")
 v.pres<-c("Dis_CP","Dis_Oleodu", "Dis_Pozo","Dis_Pozact","Dis_Ferroc","Dis_ViaPri","Dia_ViaSec")#,"HEH18meanx")
 v.rec<-c("Dis_Cienag","Dis_MGSG","Dis_Dre345", "DisBosque","Dis_CobNat","Tam_Parche")#,"FInt19meanx")
 v.msite<-NULL
@@ -287,7 +287,7 @@ kpv<-c(ls(),'kpv') #variables to keep all the time
 #Mamiferos=I2D-BIO_2021_083.xlsx
 #Botanica=I2D-BIO_2021_095.xlsx
 
-Data.et<-read.xlsx(file.path(getwd(),"data", "reptiles", "I2D-BIO_2022_060 DwC_Reptiles_final_NoTag.xlsx"), 
+Data.et<-read.xlsx(file.path(getwd(),"data", "aves", "I2D-BIO_2021_050_v5_T2.xlsx"), 
                    sheet="Eventos", startRow = 1, na.strings = "N/A")
 
 # MISSING IFS
@@ -331,7 +331,7 @@ Data.et<-Data.et[!Data.et$samplingProtocol%in%c('M_Hierb','RAP_5cm'),]
 #Coprofagos_lv=rrbb_scarabaeidae_santanderANH_2021_PEM_Larvas.xlsx
 #mariposas=I2D-BIO_2021_084_rrbb.xlsx
 
-Data.r<-read.xlsx(file.path(getwd(),"data", "reptiles", "I2D-BIO_2022_060 DwC_Reptiles_final_NoTag.xlsx"), 
+Data.r<-read.xlsx(file.path(getwd(),"data", "aves", "I2D-BIO_2021_050_v5_T2.xlsx"), 
                   sheet="Registros", startRow = 1, na.strings = "N/A")
 
 #All
@@ -526,7 +526,7 @@ if(outDD == "Peces"){
 
 ### This applies for birds###
 if(outDD == "Aves"){
-  names(Data.et)[2]<-'parentEventID'  
+  names(Data.et)[3]<-'parentEventID'  
 }
 
 
@@ -1303,7 +1303,7 @@ c('CapManual')
 c('RedNiebla_Av')
 
 
-Data.ei.ttt<-Data.a.t(Data.t = Data.ei.t,evID = 'evenPer',grpp = grp,samEf = samEff.ttt,selcc = c('VES')) 
+Data.ei.ttt<-Data.a.t(Data.t = Data.ei.t,evID = 'evenPer',grpp = grp,samEf = samEff.ttt,selcc = c('Punto Fijo')) 
 write.csv(Data.ei.ttt,file.path(WDOut,'CurvasDiversidad', paste(gnm,'_','SubTempMU_Estim_Grp.csv',sep='')))
 kpv<-c(kpv,'Data.ei.t','Data.ei.ttt')
 rm(list=ls()[!ls()%in%kpv])
@@ -1602,10 +1602,7 @@ rm(list=ls()[!ls()%in%kpv])
 
 save.image(file.path(WDOut,paste("wrkspc",gnm,Sys.Date(),".RData",sep="")))
 
-
 #7) Ordenamiento NMDS por m?todo
-load("Analisis/SalidasPreliminares/Escarabajos/wrkspcEsc2022-07-14.RData")
-
 pal <- c("lightsalmon1", "gold1", "palegreen4","slategray3","lightpink3","skyblue2","sienna2",
          'olivedrab4','slateblue3')
 clean_background <- theme(plot.background = element_rect("white"),

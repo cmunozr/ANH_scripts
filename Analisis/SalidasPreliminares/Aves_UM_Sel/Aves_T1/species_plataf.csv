@@ -4,17 +4,17 @@
 "Formicivora grisea",7,3,3
 "Columbina minuta",8,1,0
 "Megarynchus pitangua",1,20,16
-"Leptotila verreauxi",25,75,42
+"Leptotila verreauxi",25,74,43
 "Coereba flaveola",19,14,5
 "Columbina talpacoti",17,51,17
 "Sporophila funerea",10,23,14
 "Thamnophilus nigriceps",6,12,4
 "Ortalis garrula",5,42,4
-"Ortalis columbiana",9,21,14
-"Campylorhynchus griseus",23,183,90
-"Crotophaga ani",49,101,55
-"Crypturellus soui",12,15,7
-"Milvago chimachima",25,60,68
+"Ortalis columbiana",9,18,17
+"Campylorhynchus griseus",23,182,91
+"Crotophaga ani",49,93,63
+"Crypturellus soui",12,14,8
+"Milvago chimachima",25,59,69
 "Eupsittula pertinax",1,124,8
 "Poecilotriccus sylvia",17,13,5
 "Myrmeciza longipes",1,4,2
@@ -24,7 +24,7 @@
 "Cyanocorax affinis",3,0,0
 "Tyrannus melancholicus",14,51,44
 "Patagioenas cayennensis",10,103,37
-"Megaceryle torquata",1,16,2
+"Megaceryle torquata",1,15,3
 "Dendroplex picus",4,15,14
 "Xiphorhynchus susurrans",6,22,6
 "Streptoprocne zonaris",5,0,0
@@ -37,7 +37,7 @@
 "Elaenia flavogaster",2,10,9
 "Thraupis episcopus",4,39,22
 "Cathartes burrovianus",11,3,3
-"Pteroglossus torquatus",2,10,6
+"Pteroglossus torquatus",2,8,8
 "Florisuga mellivora",1,0,0
 "Fluvicola pica",0,15,4
 "Jacana jacana",0,56,3
@@ -54,7 +54,7 @@
 "Certhiaxis cinnamomeus",0,15,0
 "Ardea cocoi",0,10,4
 "Sakesphorus canadensis",2,9,4
-"Crotophaga major",15,86,32
+"Crotophaga major",15,85,33
 "Melanerpes rubricapillus",2,20,19
 "Hypnelus ruficollis",0,4,3
 "Butorides striata",0,16,7
@@ -64,7 +64,7 @@
 "Nemosia pileata",1,2,0
 "Pachyramphus cinnamomeus",0,3,0
 "Campylorhynchus zonatus",0,10,0
-"Aramides cajaneus",0,14,8
+"Aramides cajaneus",0,13,9
 "Myiozetetes cayanensis",1,15,5
 "Camptostoma obsoletum",0,5,5
 "Myiozetetes similis",0,2,6
@@ -100,7 +100,7 @@
 "Tachycineta albiventer",0,1,0
 "Phaetusa simplex",0,2,0
 "Laterallus albigularis",0,2,0
-"Ramphocelus dimidiatus",2,11,2
+"Ramphocelus dimidiatus",2,10,3
 "Chlorostilbon gibsoni",1,1,0
 "Dendrocygna viduata",0,6,0
 "Caracara cheriway",6,8,17
@@ -112,7 +112,7 @@
 "Colinus cristatus",4,3,3
 "Polyerata amabilis",0,0,2
 "Buteogallus meridionalis",4,3,3
-"Chrysuronia goudoti",1,6,1
+"Chrysuronia goudoti",1,5,2
 "Troglodytes aedon",0,2,14
 "Veniliornis kirkii",1,2,1
 "Glyphorynchus spirurus",0,1,1
@@ -124,12 +124,12 @@
 "Legatus leucophaius",0,4,2
 "Psarocolius decumanus",12,2,19
 "Hylophilus flavipes",0,0,3
-"Momotus subrufescens",7,14,5
+"Momotus subrufescens",7,11,8
 "Geranospiza caerulescens",0,1,1
 "Trogon chionurus",0,0,1
 "Chloroceryle inda",0,0,2
 "Phaethornis anthophilus",1,7,2
-"Pheugopedius fasciatoventris",1,6,2
+"Pheugopedius fasciatoventris",1,5,3
 "Myiodynastes maculatus",0,5,0
 "Amazona",0,4,0
 "Leptodon cayanensis",0,1,0
